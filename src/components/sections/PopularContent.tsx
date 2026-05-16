@@ -1,0 +1,279 @@
+"use client";
+import { useMemo, Suspense, useState, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { usePopularContent } from "@/hooks/usePopularContent";
+import { useSearchContent } from "@/hooks/useSearchContent";
+import { FilterBar } from "./popular/FilterBar";
+import { BrowseCard } from "./popular/BrowseCard";
+import { Skeleton } from "@/components/ui/Skeleton";
+import { type Trending } from "@/constants/trending-data";
+
+import { ArrowLeft, Search, Loader2 } from "lucide-react";
+
+const ContentDetailsModal = dynamic(
+  () =>
+    import("./popular/ContentDetailsModal").then(
+      (mod) => mod.ContentDetailsModal,
+    ),
+  { ssr: false },
+);
+
+type ContentType = "all" | "movies" | "series" | "lives" | "sports";
+
+const CONTENT_TYPES: ContentType[] = [
+  "all",
+  "movies",
+  "series",
+  "lives",
+  "sports",
+];
+
+const PopularContentInner = () => {
+  const searchParams = useSearchParams();
+  const {
+    trendingContent,
+    liveContent,
+    sportsContent,
+    loading,
+    loadingMore,
+    loadMore,
+    hasMore,
+  } = usePopularContent();
+
+  const { searchContent, isSearching, searchQuery, setSearchQuery } =
+    useSearchContent();
+
+  const loadMoreRef = useRef<HTMLDivElement>(null);
+
+  const paramType = searchParams.get("type");
+  const initialType =
+    paramType && CONTENT_TYPES.includes(paramType as ContentType)
+      ? (paramType as ContentType)
+      : "all";
+  const initialGenre = searchParams.get("genre") || "Tous";
+
+  const [activeType, setActiveType] = useState<ContentType>(initialType);
+  const [activeGenre, setActiveGenre] = useState(initialGenre);
+  const [sortBy, setSortBy] = useState<"popularity" | "rating" | "newest">(
+    "popularity",
+  );
+  const [selectedItem, setSelectedItem] = useState<Trending | null>(null);
+
+  const genres = useMemo(() => {
+    const currentData = searchQuery
+      ? searchContent
+      : [...trendingContent, ...liveContent, ...sportsContent];
+    const allGenres = currentData.map((item) => item.genre);
+    return ["Tous", ...Array.from(new Set(allGenres))];
+  }, [searchQuery, searchContent, trendingContent, liveContent, sportsContent]);
+
+  const filteredContent = useMemo(() => {
+    let source: Trending[] = [];
+
+    if (searchQuery.trim().length > 1) {
+      const matchedLives = liveContent.filter((i) =>
+        i.title.toLowerCase().includes(searchQuery.toLowerCase()),
+      );
+      const matchedSports = sportsContent.filter((i) =>
+        i.title.toLowerCase().includes(searchQuery.toLowerCase()),
+      );
+      source = [...searchContent, ...matchedLives, ...matchedSports];
+    } else {
+      source = [...trendingContent, ...liveContent, ...sportsContent];
+    }
+
+    const result = source.filter((item) => {
+      const matchesType = activeType === "all" || item.type === activeType;
+      const matchesGenre = activeGenre === "Tous" || item.genre === activeGenre;
+      return matchesType && matchesGenre;
+    });
+
+    return result.sort((a, b) => {
+      if (sortBy === "popularity")
+        return (b.popularity || 0) - (a.popularity || 0);
+      if (sortBy === "rating")
+        return (Number(b.rating) || 0) - (Number(a.rating) || 0);
+      if (sortBy === "newest")
+        return (Number(b.date) || 0) - (Number(a.date) || 0);
+      return 0;
+    });
+  }, [
+    searchQuery,
+    activeType,
+    activeGenre,
+    sortBy,
+    trendingContent,
+    searchContent,
+    liveContent,
+    sportsContent,
+  ]);
+
+  // Infinite Scroll Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && hasMore && !loadingMore && !searchQuery) {
+          loadMore();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (loadMoreRef.current) {
+      observer.observe(loadMoreRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [loadMore, hasMore, loadingMore, searchQuery]);
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      {/* Header */}
+      <div className="mb-12 animate-fade-in">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-4 group"
+            >
+              <ArrowLeft
+                size={16}
+                className="group-hover:-translate-x-1 transition-transform"
+              />
+              Retour à l&apos;Accueil
+            </Link>
+            <h1 className="font-display font-black text-4xl sm:text-6xl text-white mb-4 leading-tight">
+              Contenu <span className="text-gradient">Populaire</span>
+            </h1>
+            <p className="text-slate-400 max-w-xl">
+              Découvrez notre bibliothèque complète de films premium, séries et
+              chaînes TV live du monde entier.
+            </p>
+          </div>
+
+          {/* Search Bar */}
+          <div className="relative w-full md:w-96 group">
+            {isSearching ? (
+              <div className="absolute left-5 top-1/2 -translate-y-1/2">
+                <div className="w-5 h-5 border-2 border-accent-cyan/30 border-t-accent-cyan rounded-full animate-spin"></div>
+              </div>
+            ) : (
+              <Search
+                className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-accent-cyan transition-colors"
+                size={20}
+              />
+            )}
+            <input
+              type="text"
+              placeholder="Cherchez films, séries ou genres..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-14 pr-6 py-4 rounded-2xl glass text-white placeholder-slate-600 border border-white/10 focus:outline-none focus:border-accent-cyan/50 transition-all outline-hidden"
+            />
+          </div>
+        </div>
+      </div>
+
+      <FilterBar
+        activeType={activeType}
+        setActiveType={setActiveType}
+        activeGenre={activeGenre}
+        setActiveGenre={setActiveGenre}
+        genres={genres}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+      />
+
+      {loading ? (
+        <PopularContentSkeleton />
+      ) : filteredContent.length > 0 ? (
+        <>
+          <div
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 animate-slide-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            {filteredContent.map((item, idx) => (
+              <BrowseCard
+                key={item.id != null ? `${item.id}` : `${item.type}-${item.title}-${idx}`}
+                item={item}
+                index={idx}
+                onClick={() => setSelectedItem(item)}
+              />
+            ))}
+          </div>
+          
+          {/* Infinite Scroll Loader */}
+          <div ref={loadMoreRef} className="py-12 flex justify-center">
+            {hasMore && !searchQuery && (
+              <div className="flex flex-col items-center gap-4">
+                <Loader2 className="animate-spin text-accent-cyan" size={32} />
+                <p className="text-slate-500 text-sm font-bold uppercase tracking-widest">Charger plus de contenu...</p>
+              </div>
+            )}
+            {!hasMore && !searchQuery && (
+              <p className="text-slate-600 text-sm font-bold uppercase tracking-widest">Vous avez atteint la fin</p>
+            )}
+          </div>
+        </>
+      ) : (
+        <div className="text-center py-20 sm:py-24 glass rounded-2xl border border-white/5 animate-fade-in">
+          <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-6 text-slate-600">
+            <Search size={32} />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-2">
+            Aucun résultat trouvé
+          </h3>
+          <p className="text-slate-400">
+            Essayez un autre terme de recherche ou modifiez les filtres.
+          </p>
+          <button
+            onClick={() => {
+              setSearchQuery("");
+              setActiveType("all");
+              setActiveGenre("Tous");
+            }}
+            className="mt-6 text-accent-cyan font-bold hover:underline cursor-pointer"
+          >
+            Réinitialiser les filtres
+          </button>
+        </div>
+      )}
+
+      <ContentDetailsModal
+        item={selectedItem}
+        onClose={() => setSelectedItem(null)}
+      />
+    </div>
+  );
+};
+
+const PopularContentSkeleton = () => (
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+    {Array.from({ length: 10 }).map((_, i) => (
+      <div
+        key={i}
+        className="aspect-2/3 rounded-2xl border border-white/5 bg-white/5 p-4 flex flex-col gap-4"
+      >
+        <Skeleton className="h-full rounded-xl" />
+        <div className="space-y-2">
+          <Skeleton className="h-4 w-3/4" />
+          <Skeleton className="h-3 w-1/2" />
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
+export default function PopularContent() {
+  return (
+    <section className="min-h-screen bg-slate-950 pt-28 sm:pt-32 pb-20 sm:pb-24 relative overflow-hidden">
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent-cyan/10 blur-[120px] rounded-full -z-10" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-purple/10 blur-[120px] rounded-full -z-10" />
+      <Suspense fallback={<PopularContentSkeleton />}>
+        <PopularContentInner />
+      </Suspense>
+    </section>
+  );
+}

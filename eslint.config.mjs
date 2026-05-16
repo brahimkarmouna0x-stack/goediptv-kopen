@@ -13,6 +13,12 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      // Allow single quotes (apostrophes) in French text content
+      "react/no-unescaped-entities": ["error", { forbid: [">", "}"] }],
+    },
+  },
 ]);
 
 export default eslintConfig;

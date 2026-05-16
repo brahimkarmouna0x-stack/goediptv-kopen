@@ -1,26 +1,346 @@
 @import "tailwindcss";
 
+/* ===== DESIGN TOKENS ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030712;
+  --foreground: #f8fafc;
+  --surface: #07111f;
+  --surface-raised: #0b1728;
+  --glow-blue: rgba(59, 130, 246, 0.34);
+  --glow-purple: rgba(239, 65, 53, 0.26);
+  --glass-bg: rgba(8, 20, 36, 0.58);
+  --glass-border: rgba(148, 163, 184, 0.16);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --color-brand-50: #EFF6FF;
+  --color-brand-100: #DBEAFE;
+  --color-brand-200: #BFDBFE;
+  --color-brand-300: #93C5FD;
+  --color-brand-400: #60A5FA;
+  --color-brand-500: #3B82F6;
+  --color-brand-600: #0055A4;
+  --color-brand-700: #004488;
+  --color-brand-800: #002258;
+  --color-brand-900: #001140;
+
+  --color-accent-purple: #EF4135;
+  --color-accent-pink: #EF4135;
+  --color-accent-cyan: #3B82F6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ===== BASE ===== */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html { scroll-padding-top: 88px; }
+main {
+  isolation: isolate;
+  contain: layout style;
+}
+
+button,
+[role="button"],
+a { cursor: pointer; }
+
+/* ===== FOCUS VISIBLE ===== */
+:focus-visible {
+  outline: 2px solid var(--color-brand-400);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ===== SKIP TO CONTENT ===== */
+#skip-to-content:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #030712; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+/* ===== GLASS EFFECTS ===== */
+.glass {
+  background: rgba(8, 20, 36, 0.86);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 14px 34px -28px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-strong {
+  background: rgba(8, 19, 35, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 44px -32px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ===== GLOW EFFECTS ===== */
+.glow-blue {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.3), 0 0 80px rgba(59, 130, 246, 0.1);
+}
+.glow-purple {
+  box-shadow: 0 0 40px rgba(239, 65, 53, 0.3), 0 0 80px rgba(239, 65, 53, 0.1);
+}
+.glow-emerald {
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.3), 0 0 80px rgba(16, 185, 129, 0.1);
+}
+/* ===== TEXT GRADIENT ===== */
+.text-gradient {
+  background: linear-gradient(135deg, #3B82F6, #FFFFFF, #EF4135);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== BACKGROUND ===== */
+.gradient-bg {
+  position: relative;
+  background: linear-gradient(135deg, #030712 0%, #06111f 38%, #092033 62%, #030712 100%);
+}
+.gradient-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 18% 45%, rgba(59, 130, 246, 0.06) 0%, transparent 54%),
+    radial-gradient(ellipse at 82% 18%, rgba(239, 65, 53, 0.04) 0%, transparent 56%),
+    radial-gradient(ellipse at 50% 100%, rgba(59, 130, 246, 0.035) 0%, transparent 58%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+  /* Isolate paint — the radial gradients cover the whole viewport and
+     repaint on scroll if not isolated. */
+  contain: layout style paint;
+  will-change: opacity;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ===== UTILITIES ===== */
+@utility animate-shimmer {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.04) 40%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.04) 60%, transparent 100%);
+    transform: translateX(-100%);
+    animation: shimmer 2s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@utility animate-slide-up {
+  opacity: 0;
+  animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+@utility animate-pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+}
+
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+@utility hover-effect {
+  /* Only compositor-friendly properties (opacity, transform). 
+     box-shadow removed — triggers repaint on every hover frame. */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@utility hover-shadow {
+  transition: box-shadow 0.3s ease;
+}
+
+@utility hero-float-card {
+  animation: floatCard 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+@utility defer-paint {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+@utility mask-fade-edges {
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+/* ===== MARQUEE TRACKS ===== */
+.poster-slider-track {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation: marquee 56s linear infinite;
+}
+
+.channel-slider-track {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation: marquee 32s linear infinite;
+}
+
+.feature-logo-track {
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+
+.feature-logo-ribbon {
+  transform-style: preserve-3d;
+}
+
+.feature-logo-card:nth-child(4n + 1) { transform: translateY(-10px) rotate(-2.2deg); }
+.feature-logo-card:nth-child(4n + 2) { transform: translateY(8px) rotate(1.7deg); }
+.feature-logo-card:nth-child(4n + 3) { transform: translateY(-3px) rotate(1deg); }
+.feature-logo-card:nth-child(4n) { transform: translateY(10px) rotate(-1.4deg); }
+
+.google-review-track {
+  width: max-content;
+  will-change: transform;
+  animation: marquee 42s linear infinite;
+}
+
+/* ===== FEATURE CARD ===== */
+.feature-card {
+  /* Only compositor-friendly property in transition (transform).
+     box-shadow removed from transition — triggers repaint on every frame. */
+  transition: transform 0.4s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  contain: layout style;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(59, 130, 246, 0.1);
+}
+
+/* ===== BUTTON SHINE ===== */
+.btn-shine { position: relative; overflow: hidden; }
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+  transform: rotate(30deg) translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.btn-shine:hover::after { transform: rotate(30deg) translateX(100%); }
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .poster-slider-track,
+  .channel-slider-track,
+  .feature-logo-track,
+  .google-review-track,
+  .animate-marquee {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .hero-float-card {
+    animation: none !important;
+  }
+}
+
+/* ===== TOUCH / MOBILE ===== */
+@media (max-width: 640px) {
+  main > section { overflow-x: clip; }
+  .btn-shine::after { display: none; }
+  .feature-logo-card:nth-child(n) { transform: translateY(0) rotate(0deg); }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .feature-card:hover,
+  .category-card:hover,
+  .movie-card:hover { transform: none; }
+
+  .feature-logo-track,
+  .google-review-track,
+  .poster-slider-track,
+  .channel-slider-track,
+  .animate-marquee {
+    animation-duration: 70s;
+  }
 }

@@ -1,0 +1,58 @@
+import Image from "next/image";
+
+interface LoaderProps {
+  size?: "sm" | "md" | "lg";
+  fullScreen?: boolean;
+}
+
+const Loader = ({ size = "md", fullScreen = false }: LoaderProps) => {
+  const sizeClasses = {
+    sm: "w-8 h-8",
+    md: "w-16 h-16",
+    lg: "w-24 h-24",
+  };
+
+  const iconSizes = { sm: 20, md: 36, lg: 56 };
+
+  const loaderContent = (
+    <div className="relative flex items-center justify-center">
+      {/* Outer spinning ring */}
+      <div
+        className={`${sizeClasses[size]} rounded-full border-2 border-transparent border-t-[#3B82F6] border-r-[#EF4135] animate-spin-slow`}
+      />
+
+      {/* Inner pulsing logo circle */}
+      <div
+        className={`absolute ${size === "sm" ? "w-5 h-5" : size === "lg" ? "w-14 h-14" : "w-9 h-9"} overflow-hidden rounded-full bg-[#061827] flex items-center justify-center ring-1 ring-white/10`}
+      >
+        <Image
+          src="/images/logo.svg"
+          alt="IPTV SERVICE"
+          width={iconSizes[size]}
+          height={iconSizes[size]}
+          className="h-full w-full object-cover animate-pulse-gentle"
+        />
+      </div>
+
+      {/* Glow effect */}
+      <div
+        className={`absolute inset-0 bg-[#3B82F6]/20 blur-xl rounded-full animate-pulse-gentle`}
+      />
+    </div>
+  );
+
+  if (fullScreen) {
+    return (
+      <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-md">
+        {loaderContent}
+        <p className="mt-6 text-slate-400 font-display font-medium tracking-widest uppercase text-xs animate-pulse">
+          Chargement IPTV SERVICE...
+        </p>
+      </div>
+    );
+  }
+
+  return loaderContent;
+};
+
+export default Loader;

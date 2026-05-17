@@ -41,7 +41,7 @@ const SmartText = ({ text, currentSlug }: SmartTextProps) => {
         <Link 
           key={i} 
           href={`/iptv-streaming/${matchedPage.slug}`}
-          className="text-[#3B82F6] hover:text-[#60A5FA] underline decoration-[#3B82F6]/35 underline-offset-4 font-bold transition-colors"
+          className="text-france-500 hover:text-france-400 underline decoration-france-500/35 underline-offset-4 font-bold transition-colors"
         >
           {part}
         </Link>

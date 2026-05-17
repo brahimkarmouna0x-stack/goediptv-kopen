@@ -18,12 +18,12 @@ const Loader = ({ size = "md", fullScreen = false }: LoaderProps) => {
     <div className="relative flex items-center justify-center">
       {/* Outer spinning ring */}
       <div
-        className={`${sizeClasses[size]} rounded-full border-2 border-transparent border-t-[#3B82F6] border-r-[#EF4135] animate-spin-slow`}
+        className={`${sizeClasses[size]} rounded-full border-2 border-transparent border-t-france-500 border-r-rouge-500 animate-spin-slow`}
       />
 
       {/* Inner pulsing logo circle */}
       <div
-        className={`absolute ${size === "sm" ? "w-5 h-5" : size === "lg" ? "w-14 h-14" : "w-9 h-9"} overflow-hidden rounded-full bg-[#061827] flex items-center justify-center ring-1 ring-white/10`}
+        className={`absolute ${size === "sm" ? "w-5 h-5" : size === "lg" ? "w-14 h-14" : "w-9 h-9"} overflow-hidden rounded-full bg-france-950 flex items-center justify-center ring-1 ring-blanc-50/10`}
       >
         <Image
           src="/images/logo.svg"
@@ -36,16 +36,16 @@ const Loader = ({ size = "md", fullScreen = false }: LoaderProps) => {
 
       {/* Glow effect */}
       <div
-        className={`absolute inset-0 bg-[#3B82F6]/20 blur-xl rounded-full animate-pulse-gentle`}
+        className={`absolute inset-0 bg-france-500/20 blur-xl rounded-full animate-pulse-gentle`}
       />
     </div>
   );
 
   if (fullScreen) {
     return (
-      <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-md">
+      <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-france-950/80 backdrop-blur-md">
         {loaderContent}
-        <p className="mt-6 text-slate-400 font-display font-medium tracking-widest uppercase text-xs animate-pulse">
+        <p className="mt-6 text-blanc-400 font-display font-medium tracking-widest uppercase text-xs animate-pulse">
           Chargement IPTV SERVICE...
         </p>
       </div>

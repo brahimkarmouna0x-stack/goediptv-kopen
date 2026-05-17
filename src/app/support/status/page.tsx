@@ -62,10 +62,10 @@ const StatusPage = () => {
           <span className="inline-block px-4 py-1.5 rounded-full glass text-emerald-400 text-sm font-bold mb-4 uppercase tracking-wider glow-emerald">
             Tous les Systèmes Fonctionnent
           </span>
-          <h1 className="font-display font-black text-4xl sm:text-6xl mb-6 text-white leading-tight">
+          <h1 className="font-display font-black text-4xl sm:text-6xl mb-6       text-blanc-50 leading-tight">
             Statut du <span className="text-gradient">Service</span>
           </h1>
-          <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-blanc-400 text-base sm:text-lg max-w-2xl mx-auto">
             Surveillance en temps réel de notre infrastructure mondiale et de nos services de streaming.
           </p>
         </div>
@@ -83,12 +83,12 @@ const StatusPage = () => {
               <div className="absolute inset-0 bg-emerald-500/20 blur-xl rounded-full"></div>
             </div>
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">Tous les Systèmes Opérationnels</h2>
-              <p className="text-slate-400 text-sm">Dernière vérification : À l'instant (actualisation automatique)</p>
+              <h2 className="text-xl sm:text-2xl font-bold       text-blanc-50 mb-1">Tous les Systèmes Opérationnels</h2>
+              <p className="text-blanc-400 text-sm">Dernière vérification : À l'instant (actualisation automatique)</p>
             </div>
           </div>
           <div className="flex gap-4 w-full md:w-auto">
-             <button className="px-6 py-3 rounded-xl glass text-white font-bold hover:bg-white/10 transition-all border border-white/10">
+             <button className="px-6 py-3 rounded-xl glass       text-blanc-50 font-bold hover:bg-blanc-50/10 transition-all border border-blanc-50/10">
                 Actualiser le Statut
              </button>
           </div>
@@ -97,23 +97,23 @@ const StatusPage = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Services */}
           <div className="lg:col-span-2 space-y-4 animate-slide-up">
-            <h2 className="text-xl font-bold text-white mb-6 ml-2">Services Principaux</h2>
+            <h2 className="text-xl font-bold       text-blanc-50 mb-6 ml-2">Services Principaux</h2>
             {services.map((service, i) => (
-              <div key={i} className="glass rounded-2xl p-5 sm:p-6 border border-white/5 hover:border-white/10 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4 group">
+              <div key={i} className="glass rounded-2xl p-5 sm:p-6 border border-blanc-50/5 hover:border-blanc-50/10 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4 group">
                 <div className="flex items-center gap-4 min-w-0">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400 group-hover:text-[#3B82F6] transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-blanc-50/5 flex items-center justify-center text-blanc-400 group-hover:text-france-500 transition-colors">
                     <service.Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="text-white font-bold text-sm mb-0.5">{service.name}</h3>
+                    <h3 className="      text-blanc-50 font-bold text-sm mb-0.5">{service.name}</h3>
                     <div className="flex items-center gap-2">
-                      <div className="w-32 h-1 rounded-full bg-white/5 overflow-hidden">
+                      <div className="w-32 h-1 rounded-full bg-blanc-50/5 overflow-hidden">
                         <div 
                           className="h-full bg-emerald-500" 
                           style={{ width: `${service.health}%` }}
                         ></div>
                       </div>
-                      <span className="text-[10px] text-slate-500">{service.health}% Santé</span>
+                      <span className="text-[10px] text-blanc-500">{service.health}% Santé</span>
                     </div>
                   </div>
                 </div>
@@ -128,21 +128,21 @@ const StatusPage = () => {
           {/* Regional Status */}
           <div className="space-y-8 animate-slide-up">
             <div>
-              <h2 className="text-xl font-bold text-white mb-6 ml-2">Nœuds Régionaux</h2>
-              <div className="glass rounded-2xl p-6 sm:p-8 border border-white/5 space-y-8">
+              <h2 className="text-xl font-bold       text-blanc-50 mb-6 ml-2">Nœuds Régionaux</h2>
+              <div className="glass rounded-2xl p-6 sm:p-8 border border-blanc-50/5 space-y-8">
                 {regions.map((region, i) => (
                   <div key={i} className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <h3 className="text-white font-bold text-sm">{region.name}</h3>
-                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{region.latency}</span>
+                      <h3 className="      text-blanc-50 font-bold text-sm">{region.name}</h3>
+                      <span className="text-[10px] font-bold text-blanc-500 uppercase tracking-widest">{region.latency}</span>
                     </div>
-                    <div className="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div className="w-full h-2 rounded-full bg-blanc-50/5 overflow-hidden">
                       <div 
-                        className="h-full bg-linear-to-r from-[#3B82F6] to-[#EF4135]" 
+                        className="h-full bg-linear-to-r from-france-500 to-rouge-500" 
                         style={{ width: region.load }}
                       ></div>
                     </div>
-                    <div className="flex justify-between text-[10px] font-medium text-slate-500">
+                    <div className="flex justify-between text-[10px] font-medium text-blanc-500">
                       <span>Charge serveur</span>
                       <span>{region.load}</span>
                     </div>
@@ -152,11 +152,11 @@ const StatusPage = () => {
             </div>
 
             {/* Support Callout */}
-            <div className="glass rounded-2xl p-6 sm:p-8 border border-[#3B82F6]/20 bg-[#3B82F6]/5 relative overflow-hidden group">
-               <div className="absolute -right-8 -bottom-8 w-24 h-24 bg-[#3B82F6]/10 blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-               <h2 className="text-lg font-bold text-white mb-2">Un problème constaté ?</h2>
-               <p className="text-sm text-slate-400 mb-6 leading-relaxed">Si vous rencontrez des problèmes de streaming qui ne sont pas affichés ici, veuillez nous contacter.</p>
-               <Link href="/support/contact" className="text-sm font-bold text-[#3B82F6] hover:text-white transition-colors flex items-center gap-2 group/btn">
+            <div className="glass rounded-2xl p-6 sm:p-8 border border-france-500/20 bg-france-500/5 relative overflow-hidden group">
+               <div className="absolute -right-8 -bottom-8 w-24 h-24 bg-france-500/10 blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+               <h2 className="text-lg font-bold       text-blanc-50 mb-2">Un problème constaté ?</h2>
+               <p className="text-sm text-blanc-400 mb-6 leading-relaxed">Si vous rencontrez des problèmes de streaming qui ne sont pas affichés ici, veuillez nous contacter.</p>
+               <Link href="/support/contact" className="text-sm font-bold text-france-500 hover:      text-blanc-50 transition-colors flex items-center gap-2 group/btn">
                   Signaler un Problème
                   <ArrowRight
                     className="h-4 w-4 transition-transform group-hover/btn:translate-x-1"

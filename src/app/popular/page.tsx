@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import PopularContent from "@/components/sections/PopularContent";
 
 export const metadata: Metadata = {
-  title: "Contenu Populaire — IPTV SERVICE",
+  title: "Contenu Populaire",
   description:
     "Découvrez notre bibliothèque complète de films premium, séries et chaînes TV en direct.",
   alternates: {
     canonical: "https://iptvstreaming.nl/popular",
   },
   openGraph: {
-    title: "Contenu Populaire — IPTV SERVICE",
+    title: "Contenu Populaire",
     description:
       "Découvrez notre bibliothèque complète de films premium, séries et chaînes TV en direct.",
     url: "https://iptvstreaming.nl/popular",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contenu Populaire — IPTV SERVICE",
+    title: "Contenu Populaire",
     description:
       "Découvrez notre bibliothèque complète de films premium, séries et chaînes TV en direct.",
   },

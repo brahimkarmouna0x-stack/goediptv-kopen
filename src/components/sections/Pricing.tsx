@@ -40,6 +40,18 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
 
   const currentPrices = PRICING_DATA[connections as keyof typeof PRICING_DATA];
 
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isModalOpen]);
+
   const handleConnectionsChange = useCallback(
     (n: number) => setConnections(n),
     [],
@@ -74,7 +86,7 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
       className="py-24 relative overflow-hidden"
       style={{ contentVisibility: "auto", containIntrinsicSize: "auto 900px" }}
     >
-      <div className="absolute inset-0 bg-linear-to-b from-transparent via-accent-cyan/5 to-transparent"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-france-400/5 to-transparent"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <PricingHeading pillText={pillText} title={title} subtitle={subtitle} />
 
@@ -120,7 +132,7 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
             badge={{
               icon: Bolt,
               text: "40% DE RÉDUCTION",
-              className: "text-accent-cyan",
+              className: "text-france-400",
             }}
             savingsLabel={`ÉCONOMIE - €${monthlyPrices.halfYear}/mois`}
             monthlyPriceLabel={`Seulement €${monthlyPrices.halfYear} par mois`}
@@ -184,7 +196,7 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
             badge={{
               icon: Gem,
               text: "MEILLEUR RAPPORT | 60% DE RÉDUCTION",
-              className: "text-[#EF4135]",
+              className: "text-rouge-500",
             }}
             savingsLabel={`ÉCONOMISEZ 2 ANS - €${monthlyPrices.biyearly}/mois`}
             monthlyPriceLabel={`Seulement €${monthlyPrices.biyearly} par mois`}

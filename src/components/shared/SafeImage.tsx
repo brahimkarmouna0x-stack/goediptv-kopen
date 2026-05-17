@@ -14,6 +14,8 @@ interface SafeImageProps {
   quality?: number;
   className?: string;
   unoptimized?: boolean;
+  loading?: "lazy" | "eager";
+  priority?: boolean;
 }
 
 /**
@@ -32,6 +34,8 @@ export function SafeImage({
   quality = 55,
   className,
   unoptimized,
+  loading = "lazy",
+  priority,
 }: SafeImageProps) {
   const [error, setError] = useState(false);
 
@@ -39,8 +43,8 @@ export function SafeImage({
     return fallback ? (
       <>{fallback}</>
     ) : (
-      <div className="absolute inset-0 flex items-center justify-center bg-slate-900 p-4">
-        <span className="text-center text-xs font-bold text-slate-500">{alt}</span>
+      <div className="absolute inset-0 flex items-center justify-center bg-france-900 p-4">
+        <span className="text-center text-xs font-bold text-blanc-500">{alt}</span>
       </div>
     );
   }
@@ -56,6 +60,8 @@ export function SafeImage({
       quality={quality}
       className={className}
       unoptimized={unoptimized}
+      loading={loading}
+      priority={priority}
       onError={() => setError(true)}
     />
   );

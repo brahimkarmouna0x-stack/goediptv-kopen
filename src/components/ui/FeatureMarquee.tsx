@@ -25,22 +25,22 @@ const MARQUEE_LOGOS = [...LOGOS, ...LOGOS];
 const FeatureMarquee = () => {
   return (
     <section
-      className="relative overflow-hidden border-y border-white/10 bg-[#06111f]/70 py-6"
+      className="relative overflow-hidden border-y border-blanc-50/10 bg-france-950/70 py-6"
       style={{ contentVisibility: "auto", containIntrinsicSize: "auto 92px" }}
       aria-label="Kanalen en netwerken"
     >
-      <div className="absolute inset-0 bg-linear-to-r from-[#3B82F6]/10 via-transparent to-emerald-300/5" />
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-28 w-[86%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#93C5FD]/15 bg-[#93C5FD]/10 blur-[1px]" />
-      <div className="absolute inset-y-0 left-0 w-20 sm:w-56 pointer-events-none z-10 bg-linear-to-r from-[#06111f] to-transparent" />
-      <div className="absolute inset-y-0 right-0 w-20 sm:w-56 pointer-events-none z-10 bg-linear-to-l from-[#06111f] to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-france-500/10 via-transparent to-emerald-300/5" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-28 w-[86%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-france-300/15 bg-france-300/10 blur-[1px]" />
+      <div className="absolute inset-y-0 left-0 w-20 sm:w-56 pointer-events-none z-10 bg-linear-to-r from-france-950 to-transparent" />
+      <div className="absolute inset-y-0 right-0 w-20 sm:w-56 pointer-events-none z-10 bg-linear-to-l from-france-950 to-transparent" />
 
       <div className="feature-logo-track feature-logo-ribbon relative flex items-center gap-4 py-5 will-change-transform sm:gap-6">
         {MARQUEE_LOGOS.map((logo, index) => (
           <div
             key={`${logo.name}-${index}`}
-            className="feature-logo-card group relative flex h-20 w-40 shrink-0 items-center justify-center overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/[0.08] shadow-[0_20px_50px_-32px_rgba(59,130,246,0.55),inset_0_1px_0_rgba(255,255,255,0.08)] transition-colors hover:border-[#93C5FD]/40 hover:bg-white/[0.11] sm:h-24 sm:w-52"
+            className="feature-logo-card group relative flex h-20 w-40 shrink-0 items-center justify-center overflow-hidden rounded-[1.35rem] border border-blanc-50/10 bg-blanc-50/[0.08] shadow-[0_20px_50px_-32px_rgba(37,99,235,0.55),inset_0_1px_0_rgba(255,255,255,0.08)] transition-colors hover:border-france-300/40 hover:bg-blanc-50/[0.11] sm:h-24 sm:w-52"
           >
-            <div className="absolute inset-x-3 top-0 h-px bg-linear-to-r from-transparent via-[#93C5FD]/30 to-transparent" />
+            <div className="absolute inset-x-3 top-0 h-px bg-linear-to-r from-transparent via-france-300/30 to-transparent" />
             <div
               className={`relative ${
                 logo.shape === "wide"

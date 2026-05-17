@@ -39,10 +39,10 @@ export const LogoText = ({ className = "text-xl" }: { className?: string }) => {
   return (
     <span className="inline-flex">
       <span
-        className={`font-display font-black text-white transition-colors duration-300 group-hover:text-[#93C5FD] ${className}`}
+        className={`font-display font-black text-blanc-50 transition-colors duration-300 group-hover:text-france-300 ${className}`}
       >
         IPTV
-        <span className="text-[#EF4135] transition-colors duration-300 group-hover:text-white">
+        <span className="text-rouge-500 transition-colors duration-300 group-hover:text-blanc-50">
           SERVICE
         </span>
       </span>

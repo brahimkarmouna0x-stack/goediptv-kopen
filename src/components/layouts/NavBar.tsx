@@ -5,16 +5,6 @@ import { NAV_LINKS } from "@/constants/data";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 
-/**
- * OPTIMIZED: Replaced scroll event + offsetTop reads with IntersectionObserver.
- *
- * Previous: `window.scroll` event → `document.getElementById(id)` → read
- * `offsetTop` + `offsetHeight` for every nav link, every scroll tick (no throttle).
- *
- * Now: A single IntersectionObserver passively watches all sections.
- * Zero DOM reads in the scroll path. The browser calls us only when a
- * section enters/leaves the viewport.
- */
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState<string>(NAV_LINKS[0].href);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -98,10 +88,9 @@ const NavBar = () => {
     };
 
     document.addEventListener("keydown", handleKeyDown);
-    // Focus first element in menu
     requestAnimationFrame(() => {
       const first = mobileMenuRef.current?.querySelector<HTMLElement>(
-        'a[href], button:not([disabled])',
+        "a[href], button:not([disabled])",
       );
       first?.focus();
     });
@@ -122,7 +111,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <header className="fixed left-0 right-0 z-50 top-0 px-0 border-b border-white/10 bg-[#030712]/95">
+    <header className="fixed left-0 right-0 z-50 top-0 px-0 border-b border-blanc-800/20 bg-france-950/95 backdrop-blur-sm">
       <div className="mx-auto flex justify-between items-center container px-4 sm:px-6 lg:px-8 py-3.5 md:py-4">
         <Logo />
 
@@ -138,13 +127,15 @@ const NavBar = () => {
                 href={link.href}
                 onClick={() => handleLinkClick(link.href)}
                 className={`text-[11px] font-bold relative group uppercase tracking-[0.12em] transition-colors duration-300 ${
-                   isActive ? "text-[#93C5FD]" : "text-slate-300 hover:text-white"
+                  isActive
+                    ? "text-france-300"
+                    : "text-blanc-400 hover:text-blanc-50"
                 }`}
                 aria-current={isActive ? "page" : undefined}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-1.5 left-0 h-px bg-[#3B82F6] transition-all duration-300 ${
+                  className={`absolute -bottom-1.5 left-0 h-px bg-france-500 transition-all duration-300 ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 />
@@ -157,7 +148,7 @@ const NavBar = () => {
           <button
             onClick={goToPricing}
             type="button"
-            className="hidden lg:inline-flex whitespace-nowrap btn-shine items-center justify-center px-5 py-2.5 rounded-full bg-[#EF4135] text-slate-950 text-xs font-black uppercase tracking-[0.12em] shadow-lg shadow-[#EF4135]/20 hover:bg-[#EF4135] active:scale-[0.98] cursor-pointer"
+            className="hidden lg:inline-flex whitespace-nowrap btn-shine items-center justify-center px-5 py-2.5 rounded-full bg-rouge-500 text-blanc-50 text-xs font-black uppercase tracking-[0.12em] shadow-lg shadow-rouge-500/20 hover:bg-rouge-600 active:scale-[0.98] transition-all duration-200"
           >
             Choisir abonnement
           </button>
@@ -170,7 +161,7 @@ const NavBar = () => {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             onClick={() => setMenuOpen((open) => !open)}
-            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white transition-colors hover:bg-white/10"
+            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border border-blanc-800/20 bg-blanc-50/5 text-blanc-50 transition-colors hover:bg-blanc-50/10"
           >
             {menuOpen ? <X size={21} /> : <Menu size={21} />}
           </button>
@@ -183,7 +174,7 @@ const NavBar = () => {
         role="dialog"
         aria-modal="true"
         aria-label="Menu de navigation"
-        className={`lg:hidden overflow-hidden border-t border-white/10 bg-[#06111f]/96 backdrop-blur-xl transition-[max-height,opacity] duration-300 ${
+        className={`lg:hidden overflow-hidden border-t border-blanc-800/20 bg-france-950/98 backdrop-blur-xl transition-[max-height,opacity] duration-300 ${
           menuOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -200,8 +191,8 @@ const NavBar = () => {
                 onClick={() => handleLinkClick(link.href)}
                 className={`rounded-xl px-4 py-3 text-sm font-bold transition-colors ${
                   isActive
-                    ? "bg-[#3B82F6]/15 text-[#DBEAFE]"
-                    : "text-slate-300 hover:bg-white/[0.06] hover:text-white"
+                    ? "bg-france-500/15 text-france-100"
+                    : "text-blanc-400 hover:bg-blanc-50/5 hover:text-blanc-50"
                 }`}
                 aria-current={isActive ? "page" : undefined}
               >
@@ -212,7 +203,7 @@ const NavBar = () => {
           <button
             type="button"
             onClick={goToPricing}
-            className="mt-2 rounded-xl bg-[#EF4135] px-4 py-3 text-sm font-black text-slate-950 shadow-[0_12px_30px_rgba(239,65,53,0.18)]"
+            className="mt-2 rounded-xl bg-rouge-500 px-4 py-3 text-sm font-black text-blanc-50 shadow-[0_12px_30px_rgba(220,38,38,0.18)] hover:bg-rouge-600 transition-colors"
           >
             Choisir abonnement
           </button>

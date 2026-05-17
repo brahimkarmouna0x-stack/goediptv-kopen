@@ -82,18 +82,18 @@ const Compatibility = () => {
       className="relative overflow-hidden py-20 sm:py-24"
       style={{ contentVisibility: "auto", containIntrinsicSize: "auto 900px" }}
     >
-      <div className="absolute inset-x-0 top-0 h-56 bg-linear-to-b from-[#3B82F6]/10 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-56 bg-linear-to-b from-france-500/10 to-transparent" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#3B82F6]/20 bg-[#3B82F6]/15 px-3.5 py-1.5 text-xs font-black uppercase tracking-[0.14em] text-[#DBEAFE]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-france-500/20 bg-france-500/15 px-3.5 py-1.5 text-xs font-black uppercase tracking-[0.14em] text-france-100">
             <Tv size={14} aria-hidden="true" />
             Compatibilité Universelle
           </span>
-          <h2 className="mt-4 font-display text-4xl font-black text-white sm:text-5xl">
+          <h2 className="mt-4 font-display text-4xl font-black text-blanc-50 sm:text-5xl">
             Fonctionne sur <span className="text-gradient">presque tous les appareils</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm font-medium leading-6 text-slate-400 sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-sm font-medium leading-6 text-blanc-400 sm:text-base">
             Cherchez votre marque, application, type de TV ou player. Nous supportons {totalItems}+
             appareils populaires, applications et plateformes IPTV.
           </p>
@@ -106,7 +106,7 @@ const Compatibility = () => {
           <div className="relative">
             <Search
               size={20}
-              className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500"
+              className="absolute left-5 top-1/2 -translate-y-1/2 text-blanc-500"
               aria-hidden="true"
             />
             <input
@@ -115,14 +115,14 @@ const Compatibility = () => {
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
               placeholder="Cherchez Samsung, LG, Firestick, MAG, TiviMate, iPhone..."
-              className="w-full rounded-2xl border border-white/10 bg-[#081423] py-4 pl-13 pr-12 text-white outline-none transition-colors placeholder:text-slate-500 focus:border-[#3B82F6]/50"
+              className="w-full rounded-2xl border border-blanc-50/10 bg-france-900 py-4 pl-13 pr-12 text-blanc-50 outline-none transition-colors placeholder:text-blanc-500 focus:border-france-500/50"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
                 aria-label="Vider le champ de recherche"
-                className="absolute right-4 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/5 text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
+                className="absolute right-4 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/5 text-blanc-400 transition-colors hover:bg-white/10 hover:text-blanc-50"
               >
                 <X size={16} aria-hidden="true" />
               </button>
@@ -130,7 +130,7 @@ const Compatibility = () => {
           </div>
           {searchQuery && (
             <p
-              className="mt-3 text-center text-sm font-medium text-slate-500"
+              className="mt-3 text-center text-sm font-medium text-blanc-500"
               role="status"
               aria-live="polite"
               aria-atomic="true"
@@ -149,25 +149,25 @@ const Compatibility = () => {
               <details
                 key={category.title}
                 {...(forceOpen ? { open: true } : {})}
-                className="group overflow-hidden rounded-2xl border border-white/10 bg-[#081423]/90 transition-all duration-200"
+                className="group overflow-hidden rounded-2xl border border-blanc-50/10 bg-france-900/90 transition-all duration-200"
               >
                 <summary className="flex w-full items-center justify-between gap-4 p-5 text-left sm:p-6 cursor-pointer list-none">
                   <div className="flex min-w-0 items-center gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#3B82F6]/15 text-[#DBEAFE]">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-france-500/15 text-france-100">
                       <Icon size={23} aria-hidden="true" />
                     </div>
                     <div className="min-w-0">
-                      <h3 className="truncate text-lg font-black text-white sm:text-xl">
+                      <h3 className="truncate text-lg font-black text-blanc-50 sm:text-xl">
                         {category.title}
                       </h3>
-                      <p className="mt-0.5 text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+                      <p className="mt-0.5 text-xs font-bold uppercase tracking-[0.12em] text-blanc-500">
                         {category.matchedItems.length} options
                       </p>
                     </div>
                   </div>
                   <ChevronDown
                     size={20}
-                    className="shrink-0 text-slate-500 transition-transform duration-300 group-open:rotate-180"
+                    className="shrink-0 text-blanc-500 transition-transform duration-300 group-open:rotate-180"
                     aria-hidden="true"
                   />
                 </summary>
@@ -181,14 +181,14 @@ const Compatibility = () => {
                         key={item}
                         className={`flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium ${
                           isMatch
-                            ? "bg-[#3B82F6]/15 text-[#DBEAFE]"
-                            : "bg-white/[0.035] text-slate-300"
+                            ? "bg-france-500/15 text-france-100"
+                            : "bg-white/[0.035] text-blanc-300"
                         }`}
                       >
                         <Check
                           size={14}
                           className={
-                            isMatch ? "text-[#DBEAFE]" : "text-emerald-300"
+                            isMatch ? "text-france-100" : "text-emerald-300"
                           }
                           aria-hidden="true"
                         />
@@ -202,16 +202,16 @@ const Compatibility = () => {
           })}
 
           {filteredCategories.length === 0 && (
-            <div className="col-span-full rounded-2xl border border-white/10 bg-[#081423] px-6 py-16 text-center">
+            <div className="col-span-full rounded-2xl border border-blanc-50/10 bg-france-900 px-6 py-16 text-center">
               <Search
                 size={34}
-                className="mx-auto mb-4 text-slate-600"
+                className="mx-auto mb-4 text-blanc-600"
                 aria-hidden="true"
               />
-              <h3 className="text-xl font-black text-white">
+              <h3 className="text-xl font-black text-blanc-50">
                 Aucun appareil trouvé
               </h3>
-              <p className="mt-2 text-slate-400">
+              <p className="mt-2 text-blanc-400">
                 Contactez-nous. L&apos;IPTV fonctionne souvent via M3U, Xtream Codes ou
                 un lecteur web.
               </p>
@@ -219,16 +219,16 @@ const Compatibility = () => {
           )}
         </div>
 
-        <div className="rounded-2xl bg-[#081423] p-6 shadow-[0_22px_70px_-52px_rgba(34,211,238,0.45)] sm:p-8">
+        <div className="rounded-2xl bg-france-900 p-6 shadow-[0_22px_70px_-52px_rgba(34,211,238,0.45)] sm:p-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#3B82F6]/15 text-[#DBEAFE]">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-france-500/15 text-france-100">
                 <Headphones size={24} aria-hidden="true" />
               </div>
-              <h3 className="font-display text-2xl font-black text-white">
+              <h3 className="font-display text-2xl font-black text-blanc-50">
                 Votre appareil n&apos;est pas dans la liste ?
               </h3>
-              <p className="mt-3 text-sm leading-6 text-slate-400">
+              <p className="mt-3 text-sm leading-6 text-blanc-400">
                 Notre IPTV fonctionne sur presque tous les appareils avec Internet, un
                 navigateur, un lecteur M3U, une app Xtream Codes ou un environnement
                 Android/Smart TV.
@@ -240,14 +240,14 @@ const Compatibility = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-[#EF4135] px-5 py-3 text-sm font-black text-slate-950 transition-colors hover:bg-[#EF4135]"
+                className="inline-flex items-center justify-center rounded-xl bg-rouge-500 px-5 py-3 text-sm font-black text-blanc-950 transition-colors hover:bg-rouge-500"
               >
                 Chat en Direct
               </a>
               <button
                 type="button"
                 onClick={copyPhone}
-                className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.05] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center justify-center gap-3 rounded-xl border border-blanc-50/10 bg-blanc-50/[0.05] px-5 py-3 text-sm font-bold text-blanc-50 transition-colors hover:bg-white/10"
               >
                 <Copy size={16} aria-hidden="true" />
                 {copied ? "Copié" : `+${WHATSAPP_PHONE}`}

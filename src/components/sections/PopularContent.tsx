@@ -136,7 +136,7 @@ const PopularContentInner = () => {
           <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-4 group"
+              className="inline-flex items-center gap-2 text-blanc-500 hover:text-blanc-50 transition-colors mb-4 group"
             >
               <ArrowLeft
                 size={16}
@@ -144,10 +144,10 @@ const PopularContentInner = () => {
               />
               Retour à l&apos;Accueil
             </Link>
-            <h1 className="font-display font-black text-4xl sm:text-6xl text-white mb-4 leading-tight">
+            <h1 className="font-display font-black text-4xl sm:text-6xl text-blanc-50 mb-4 leading-tight">
               Contenu <span className="text-gradient">Populaire</span>
             </h1>
-            <p className="text-slate-400 max-w-xl">
+            <p className="text-blanc-400 max-w-xl">
               Découvrez notre bibliothèque complète de films premium, séries et
               chaînes TV live du monde entier.
             </p>
@@ -157,11 +157,11 @@ const PopularContentInner = () => {
           <div className="relative w-full md:w-96 group">
             {isSearching ? (
               <div className="absolute left-5 top-1/2 -translate-y-1/2">
-                <div className="w-5 h-5 border-2 border-accent-cyan/30 border-t-accent-cyan rounded-full animate-spin"></div>
+                <div className="w-5 h-5 border-2 border-france-400/30 border-t-france-400 rounded-full animate-spin"></div>
               </div>
             ) : (
               <Search
-                className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-accent-cyan transition-colors"
+                className="absolute left-5 top-1/2 -translate-y-1/2 text-blanc-500 group-focus-within:text-france-400 transition-colors"
                 size={20}
               />
             )}
@@ -170,7 +170,7 @@ const PopularContentInner = () => {
               placeholder="Cherchez films, séries ou genres..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-14 pr-6 py-4 rounded-2xl glass text-white placeholder-slate-600 border border-white/10 focus:outline-none focus:border-accent-cyan/50 transition-all outline-hidden"
+              className="w-full pl-14 pr-6 py-4 rounded-2xl glass text-blanc-50 placeholder-blanc-600 border border-blanc-50/10 focus:outline-none focus:border-france-400/50 transition-all outline-hidden"
             />
           </div>
         </div>
@@ -208,24 +208,24 @@ const PopularContentInner = () => {
           <div ref={loadMoreRef} className="py-12 flex justify-center">
             {hasMore && !searchQuery && (
               <div className="flex flex-col items-center gap-4">
-                <Loader2 className="animate-spin text-accent-cyan" size={32} />
-                <p className="text-slate-500 text-sm font-bold uppercase tracking-widest">Charger plus de contenu...</p>
+                <Loader2 className="animate-spin text-france-400" size={32} />
+                <p className="text-blanc-500 text-sm font-bold uppercase tracking-widest">Charger plus de contenu...</p>
               </div>
             )}
             {!hasMore && !searchQuery && (
-              <p className="text-slate-600 text-sm font-bold uppercase tracking-widest">Vous avez atteint la fin</p>
+              <p className="text-blanc-600 text-sm font-bold uppercase tracking-widest">Vous avez atteint la fin</p>
             )}
           </div>
         </>
       ) : (
-        <div className="text-center py-20 sm:py-24 glass rounded-2xl border border-white/5 animate-fade-in">
-          <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-6 text-slate-600">
+        <div className="text-center py-20 sm:py-24 glass rounded-2xl border border-blanc-50/5 animate-fade-in">
+          <div className="w-20 h-20 rounded-full bg-blanc-50/5 flex items-center justify-center mx-auto mb-6 text-blanc-600">
             <Search size={32} />
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">
+          <h3 className="text-xl font-bold text-blanc-50 mb-2">
             Aucun résultat trouvé
           </h3>
-          <p className="text-slate-400">
+          <p className="text-blanc-400">
             Essayez un autre terme de recherche ou modifiez les filtres.
           </p>
           <button
@@ -234,7 +234,7 @@ const PopularContentInner = () => {
               setActiveType("all");
               setActiveGenre("Tous");
             }}
-            className="mt-6 text-accent-cyan font-bold hover:underline cursor-pointer"
+            className="mt-6 text-france-400 font-bold hover:underline cursor-pointer"
           >
             Réinitialiser les filtres
           </button>
@@ -254,7 +254,7 @@ const PopularContentSkeleton = () => (
     {Array.from({ length: 10 }).map((_, i) => (
       <div
         key={i}
-        className="aspect-2/3 rounded-2xl border border-white/5 bg-white/5 p-4 flex flex-col gap-4"
+        className="aspect-2/3 rounded-2xl border border-blanc-50/5 bg-blanc-50/5 p-4 flex flex-col gap-4"
       >
         <Skeleton className="h-full rounded-xl" />
         <div className="space-y-2">
@@ -268,9 +268,9 @@ const PopularContentSkeleton = () => (
 
 export default function PopularContent() {
   return (
-    <section className="min-h-screen bg-slate-950 pt-28 sm:pt-32 pb-20 sm:pb-24 relative overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent-cyan/10 blur-[120px] rounded-full -z-10" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-purple/10 blur-[120px] rounded-full -z-10" />
+    <section className="min-h-screen bg-france-950 pt-28 sm:pt-32 pb-20 sm:pb-24 relative overflow-hidden">
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-france-400/10 blur-[120px] rounded-full -z-10" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-rouge-400/10 blur-[120px] rounded-full -z-10" />
       <Suspense fallback={<PopularContentSkeleton />}>
         <PopularContentInner />
       </Suspense>

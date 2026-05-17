@@ -84,10 +84,10 @@ const ContactUsPage = () => {
                 <MessageCircle className="h-4 w-4" aria-hidden="true" />
                 Support WhatsApp uniquement
               </span>
-              <h1 className="mt-6 max-w-4xl font-display text-4xl font-black leading-tight text-white sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 max-w-4xl font-display text-4xl font-black leading-tight text-blanc-50 sm:text-6xl lg:text-7xl">
                 Discutez directement avec IPTV SERVICE via WhatsApp.
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+              <p className="mt-6 max-w-2xl text-base leading-8 text-blanc-300 sm:text-lg">
                 Pour commander, activer, installer et obtenir de l'aide technique,
                 WhatsApp est notre seul canal de contact. Vous obtenez ainsi une réponse
                 plus rapide et tout reste clair dans une seule conversation.
@@ -98,14 +98,14 @@ const ContactUsPage = () => {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-2xl bg-emerald-400 px-8 py-4 text-base font-black text-slate-950 transition-colors hover:bg-emerald-300"
+                  className="inline-flex items-center justify-center gap-3 rounded-2xl bg-emerald-400 px-8 py-4 text-base font-black text-blanc-950 transition-colors hover:bg-emerald-300"
                 >
                   <MessageCircle className="h-5 w-5" aria-hidden="true" />
                   Ouvrir WhatsApp
                 </Link>
                 <Link
                   href="/support/guides"
-                  className="inline-flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-8 py-4 text-base font-bold text-white transition-colors hover:bg-white/[0.08]"
+                  className="inline-flex items-center justify-center gap-3 rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.04] px-8 py-4 text-base font-bold text-blanc-50 transition-colors hover:bg-blanc-50/[0.08]"
                 >
                   Guides d'installation
                   <ArrowRight className="h-5 w-5" aria-hidden="true" />
@@ -116,10 +116,10 @@ const ContactUsPage = () => {
                 {highlights.map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-4"
+                    className="rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.03] p-4"
                   >
-                    <p className="text-2xl font-black text-white">{item.value}</p>
-                    <p className="mt-1 text-xs font-bold uppercase tracking-wide text-slate-500">
+                    <p className="text-2xl font-black text-blanc-50">{item.value}</p>
+                    <p className="mt-1 text-xs font-bold uppercase tracking-wide text-blanc-500">
                       {item.label}
                     </p>
                   </div>
@@ -128,8 +128,8 @@ const ContactUsPage = () => {
             </div>
 
             <div className="glass-strong animate-slide-up overflow-hidden rounded-2xl p-5 sm:p-7">
-              <div className="flex items-center gap-4 border-b border-white/10 pb-5">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04]">
+              <div className="flex items-center gap-4 border-b border-blanc-50/10 pb-5">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.04]">
                   <Image
                     src="/images/logo.svg"
                     alt="IPTV SERVICE"
@@ -142,7 +142,7 @@ const ContactUsPage = () => {
                   <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-200">
                     Accueil WhatsApp
                   </p>
-                  <h2 className="mt-1 text-2xl font-black text-white">
+                  <h2 className="mt-1 text-2xl font-black text-blanc-50">
                     Prêt à vous aider
                   </h2>
                 </div>
@@ -152,13 +152,13 @@ const ContactUsPage = () => {
                 {trustSignals.map(({ label, Icon }) => (
                   <div
                     key={label}
-                    className="rounded-xl border border-white/10 bg-slate-950/40 p-4"
+                    className="rounded-xl border border-blanc-50/10 bg-france-950/40 p-4"
                   >
                     <Icon
                       className="h-5 w-5 text-emerald-300"
                       aria-hidden="true"
                     />
-                    <p className="mt-3 text-sm font-bold text-white">{label}</p>
+                    <p className="mt-3 text-sm font-bold text-blanc-50">{label}</p>
                   </div>
                 ))}
               </div>
@@ -175,10 +175,10 @@ const ContactUsPage = () => {
                     aria-hidden="true"
                   />
                   <div>
-                    <p className="font-bold text-white">
+                    <p className="font-bold text-blanc-50">
                       Démarrer une conversation WhatsApp
                     </p>
-                    <p className="mt-1 text-sm leading-6 text-slate-300">
+                    <p className="mt-1 text-sm leading-6 text-blanc-300">
                       Indiquez votre appareil, application et question. Nous pourrons
                       ainsi vous aider immédiatement.
                     </p>
@@ -200,7 +200,7 @@ const ContactUsPage = () => {
             <p className="text-sm font-black uppercase tracking-[0.2em] text-emerald-200">
               Avec quoi vous aidons-nous sur WhatsApp ?
             </p>
-            <h2 className="mt-3 max-w-3xl text-3xl font-black text-white">
+            <h2 className="mt-3 max-w-3xl text-3xl font-black text-blanc-50">
               Un seul chat pour tout ce dont vous avez besoin pour streamer en toute fluidité.
             </h2>
           </div>
@@ -209,13 +209,13 @@ const ContactUsPage = () => {
             {supportTopics.map(({ title, text, Icon }) => (
               <div
                 key={title}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+                className="rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.03] p-6"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-300 text-slate-950">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-300 text-blanc-950">
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
-                <h3 className="mt-6 text-xl font-black text-white">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-400">{text}</p>
+                <h3 className="mt-6 text-xl font-black text-blanc-50">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-blanc-400">{text}</p>
               </div>
             ))}
           </div>
@@ -223,16 +223,16 @@ const ContactUsPage = () => {
       </section>
 
       <section className="mt-12 px-4 sm:mt-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+        <div className="mx-auto max-w-7xl rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.03] p-6 sm:p-8">
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-300/10 text-emerald-200">
                 <Headphones className="h-6 w-6" aria-hidden="true" />
               </div>
-              <h2 className="text-2xl font-black text-white">
+              <h2 className="text-2xl font-black text-blanc-50">
                 Besoin d'aide avant de commander ?
               </h2>
-              <p className="mt-3 text-sm leading-6 text-slate-400">
+              <p className="mt-3 text-sm leading-6 text-blanc-400">
                 Ouvrez WhatsApp et envoyez votre question. Nous vous aidons à choisir le bon
                 forfait, le nombre d'appareils et l'installation.
               </p>
@@ -242,7 +242,7 @@ const ContactUsPage = () => {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 rounded-xl bg-emerald-400 px-6 py-4 text-sm font-black text-slate-950 transition-colors hover:bg-emerald-300"
+              className="inline-flex items-center justify-center gap-3 rounded-xl bg-emerald-400 px-6 py-4 text-sm font-black text-blanc-950 transition-colors hover:bg-emerald-300"
             >
               <MessageCircle className="h-5 w-5" aria-hidden="true" />
               Discuter sur WhatsApp

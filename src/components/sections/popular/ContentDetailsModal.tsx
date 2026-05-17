@@ -63,7 +63,7 @@ export const ContentDetailsModal = ({
         }
       } catch (err) {
         if (err instanceof DOMException && err.name === "AbortError") return;
-        console.error("Trailer fetch failed:", err);
+        if (process.env.NODE_ENV !== 'production') console.error("Trailer fetch failed:", err);
       }
     };
 
@@ -87,23 +87,23 @@ export const ContentDetailsModal = ({
   if (!item) return null;
 
   return (
-    <div className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
       <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-xl"
+        className="absolute inset-0 bg-france-950/80 backdrop-blur-xl animate-fade-in"
         onClick={onClose}
       />
-      <div className="relative z-10 max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-[2.5rem] border border-white/10 glass-strong shadow-2xl">
+      <div className="relative z-10 max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-[2.5rem] border border-blanc-50/10 glass-strong shadow-2xl animate-modal-enter">
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full glass text-white transition-colors hover:bg-white/10"
+          className="absolute top-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full glass text-blanc-50 transition-colors hover:bg-blanc-50/10"
           aria-label="Fermer les détails"
         >
           <X size={20} aria-hidden="true" />
         </button>
 
         <div className="flex flex-col lg:flex-row">
-          <div className="relative aspect-video w-full bg-black lg:w-3/5">
+          <div className="relative aspect-video w-full bg-france-950 lg:w-3/5">
             {trailerUrl ? (
               <iframe
                 src={trailerUrl}
@@ -122,15 +122,15 @@ export const ContentDetailsModal = ({
                   sizes="(max-width: 768px) 100vw, 60vw"
                   quality={55}
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-france-950 via-france-950/40 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="p-6 text-center text-white">
+                  <div className="p-6 text-center text-blanc-50">
                     <PlayCircle
                       size={64}
-                      className="mx-auto mb-4 text-[#3B82F6]/80"
+                      className="mx-auto mb-4 text-france-500/80"
                       aria-hidden="true"
                     />
-                    <p className="text-sm font-bold uppercase tracking-widest text-slate-400">
+                    <p className="text-sm font-bold uppercase tracking-widest text-blanc-400">
                       Aucune bande-annonce disponible
                     </p>
                   </div>
@@ -142,26 +142,26 @@ export const ContentDetailsModal = ({
           <div className="flex w-full flex-col justify-between p-8 lg:w-2/5 lg:p-10">
             <div>
               <div className="mb-6 flex items-center gap-3">
-                <span className="rounded-full bg-[#3B82F6] px-3 py-1 text-[10px] font-black uppercase text-white">
+                <span className="rounded-full bg-france-500 px-3 py-1 text-[10px] font-black uppercase text-blanc-50">
                   {item.quality}
                 </span>
-                <span className="rounded-full bg-white/10 px-3 py-1 text-[10px] font-black uppercase text-white">
+                <span className="rounded-full bg-blanc-50/10 px-3 py-1 text-[10px] font-black uppercase text-blanc-50">
                   {item.genre}
                 </span>
               </div>
-              <h2 className="mb-4 font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
+              <h2 className="mb-4 font-display text-3xl font-bold leading-tight text-blanc-50 sm:text-4xl">
                 {item.title}
               </h2>
               <div className="mb-8 flex items-center gap-6 text-sm">
                 <div className="flex items-center gap-2 font-bold text-[#F4C430]">
                   <Star size={16} fill="currentColor" aria-hidden="true" />
-                  <span className="text-white">{item.rating}</span>
+                  <span className="text-blanc-50">{item.rating}</span>
                 </div>
-                <div className="font-bold text-slate-400">
+                <div className="font-bold text-blanc-400">
                   {item.date ? new Date(item.date).getFullYear() : "2024"}
                 </div>
               </div>
-              <p className="mb-10 text-base leading-relaxed text-slate-400">
+              <p className="mb-10 text-base leading-relaxed text-blanc-400">
                 {item.overview ||
                   "Aucune description disponible pour ce titre. Profitez d'une expérience de visionnage premium avec IPTV SERVICE."}
               </p>
@@ -170,14 +170,14 @@ export const ContentDetailsModal = ({
             <div className="flex flex-col gap-4">
               <button
                 type="button"
-                className="flex w-full items-center justify-center gap-3 rounded-2xl bg-[#EF4135] py-4 text-lg font-bold text-white shadow-lg shadow-[#EF4135]/25 transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                className="flex w-full items-center justify-center gap-3 rounded-2xl bg-rouge-500 py-4 text-lg font-bold text-blanc-50 shadow-lg shadow-rouge-500/25 transition-transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Play size={20} fill="currentColor" aria-hidden="true" />
                 Regarder
               </button>
               <button
                 type="button"
-                className="w-full rounded-2xl py-4 glass font-bold text-white transition-colors hover:bg-white/10"
+                className="w-full rounded-2xl py-4 glass font-bold text-blanc-50 transition-colors hover:bg-blanc-50/10"
               >
                 Ajouter à la Liste de Souhaits
               </button>

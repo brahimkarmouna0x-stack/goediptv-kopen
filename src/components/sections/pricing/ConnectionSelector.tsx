@@ -10,7 +10,7 @@ interface ConnectionSelectorProps {
 export const ConnectionSelector = memo(({ active, onChange }: ConnectionSelectorProps) => {
   return (
     <div className="flex justify-center mt-8">
-      <div className="p-1.5 rounded-2xl flex flex-wrap justify-center gap-1 relative z-10 border border-white/10 bg-white/[0.04] shadow-[0_18px_44px_-34px_rgba(0,0,0,0.9)]">
+      <div className="p-1.5 rounded-2xl flex flex-wrap justify-center gap-1 relative z-10 border border-blanc-50/10 bg-blanc-50/[0.04] shadow-[0_18px_44px_-34px_rgba(0,0,0,0.9)]">
         {[1, 2, 3, 4].map((num) => (
           <ConnectionButton
             key={num}
@@ -44,8 +44,8 @@ const ConnectionButton = memo(({
       onClick={handleClick}
       className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-colors duration-200 whitespace-nowrap flex items-center gap-2 cursor-pointer ${
         active === num
-          ? "bg-[#3B82F6] text-slate-950"
-          : "text-slate-400 hover:text-white hover:bg-white/5"
+          ? "bg-france-500 text-blanc-950"
+          : "text-blanc-400 hover:text-blanc-50 hover:bg-blanc-50/5"
       }`}
     >
       <Icon

@@ -31,13 +31,13 @@ export default function IPTVStreamingPage() {
   return (
     <main className="flex-1 px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pt-40">
       <div className="mx-auto max-w-7xl">
-        <p className="mb-5 inline-flex rounded-full border border-[#3B82F6]/25 bg-[#3B82F6]/15 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-[#DBEAFE]">
+        <p className="mb-5 inline-flex rounded-full border border-france-500/25 bg-france-500/15 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-france-100">
           Base de connaissances IPTV SERVICE
         </p>
-        <h1 className="max-w-4xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+        <h1 className="max-w-4xl text-4xl font-black leading-tight tracking-tight text-blanc-50 sm:text-5xl lg:text-6xl">
           IPTV SERVICE
         </h1>
-        <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+        <p className="mt-6 max-w-3xl text-base leading-8 text-blanc-300 sm:text-lg">
           Une bibliothèque centrale avec des guides IPTV pratiques et humains pour
           les applications, lecteurs, appareils, abonnements, qualité et streaming sécurisé.
         </p>
@@ -52,10 +52,10 @@ export default function IPTVStreamingPage() {
             <Link
               key={page.slug}
               href={`/iptv-streaming/${page.slug}`}
-              className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 transition-colors hover:border-[#3B82F6]/40 hover:bg-white/6"
+              className="rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.035] p-5 transition-colors hover:border-france-500/40 hover:bg-blanc-50/5"
             >
-              <h2 className="text-lg font-black text-white">{page.keyword}</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-400">
+              <h2 className="text-lg font-black text-blanc-50">{page.keyword}</h2>
+              <p className="mt-3 text-sm leading-6 text-blanc-400">
                 {page.metaDescription}
               </p>
             </Link>

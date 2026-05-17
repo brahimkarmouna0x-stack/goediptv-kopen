@@ -8,14 +8,14 @@ interface StatItemProps {
 
 const StatItem = ({ value, label, icon: Icon }: StatItemProps) => {
   return (
-    <div className="group flex flex-col items-center rounded-3xl border border-white/5 bg-[#081423] p-8 text-center">
-      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/5 bg-white/5 transition-transform duration-300 group-hover:scale-105 group-hover:border-accent-cyan/30">
-        <Icon size={26} className="text-accent-cyan" aria-hidden="true" />
+    <div className="group flex flex-col items-center rounded-3xl border border-blanc-50/5 bg-france-900 p-8 text-center">
+      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-blanc-50/5 bg-blanc-50/5 transition-transform duration-300 group-hover:scale-105 group-hover:border-france-400/30">
+        <Icon size={26} className="text-france-400" aria-hidden="true" />
       </div>
-      <div className="mb-2 text-4xl font-black text-white sm:text-5xl">
+      <div className="mb-2 text-4xl font-black text-blanc-50 sm:text-5xl">
         {value}
       </div>
-      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 sm:text-xs">
+      <p className="text-[10px] font-bold uppercase tracking-widest text-blanc-400 sm:text-xs">
         {label}
       </p>
     </div>

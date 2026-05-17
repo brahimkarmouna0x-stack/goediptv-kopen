@@ -6,8 +6,8 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 const Button = ({ children, className, ...props }: ButtonProps) => {
   return (
     <button
-      className={`btn-shine inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#EF4135] text-slate-950 text-xs font-black 
-       hover-effect uppercase tracking-[0.12em] shadow-lg shadow-[#EF4135]/20 hover:bg-[#EF4135] active:scale-[0.98] ${className}`}
+      className={`btn-shine inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-rouge-500 text-blanc-950 text-xs font-black 
+       hover-effect uppercase tracking-[0.12em] shadow-lg shadow-rouge-500/20 hover:bg-rouge-500 active:scale-[0.98] ${className}`}
       {...props}
       style={{ willChange: 'transform' }}
     >

@@ -4,10 +4,10 @@ interface AnimatedPriceProps {
 
 export const AnimatedPrice = ({ price }: AnimatedPriceProps) => {
   const value = parseFloat(price.replace(",", "."));
-  const formatted = `€${value.toLocaleString("fr-FR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  })}`;
+  const formatted = new Intl.NumberFormat("fr-FR", {
+    style: "currency",
+    currency: "EUR",
+  }).format(value);
 
   return <>{formatted}</>;
 };

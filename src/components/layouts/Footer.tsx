@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="mb-6">
               <Logo />
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-sm mt-6">
+            <p className="text-blanc-400 text-sm leading-relaxed mb-8 max-w-sm mt-6">
               L'expérience IPTV premium ultime. Plus de 25 000 chaînes, 4K
               Ultra HD et zéro buffering. Un divertissement sans limites.
             </p>
@@ -31,8 +31,8 @@ const Footer = () => {
 
           {/* WhatsApp Support Section */}
           <div className="flex flex-col items-center sm:items-start p-6 rounded-2xl bg-white/2 border border-white/5 relative overflow-hidden group">
-            <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-[#EF4135]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <h2 className="font-bold text-white mb-4 flex items-center gap-2">
+            <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-rouge-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <h2 className="font-bold text-blanc-50 mb-4 flex items-center gap-2">
               <MessageCircle
                 size={16}
                 className="text-emerald-300"
@@ -40,7 +40,7 @@ const Footer = () => {
               />
               Support WhatsApp
             </h2>
-            <p className="text-sm text-slate-400 mb-6 leading-relaxed">
+            <p className="text-sm text-blanc-400 mb-6 leading-relaxed">
               Des questions sur l'installation, l'activation ou les abonnements ? Discutez directement
               avec notre équipe.
             </p>
@@ -48,7 +48,7 @@ const Footer = () => {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-xl bg-emerald-400 px-5 py-3 text-sm font-black text-slate-950 shadow-[0_0_15px_rgba(16,185,129,0.25)] transition-colors hover:bg-emerald-300"
+              className="inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-xl bg-emerald-400 px-5 py-3 text-sm font-black text-blanc-950 shadow-[0_0_15px_rgba(16,185,129,0.25)] transition-colors hover:bg-emerald-300"
             >
               <MessageCircle size={16} aria-hidden="true" />
               Discuter sur WhatsApp
@@ -58,7 +58,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-blanc-500">
             &copy; 2026 <LogoText className="text-sm" />. Tous droits
             réservés.
           </p>
@@ -79,7 +79,7 @@ const Footer = () => {
 const FooterBottomLink = ({ label, href }: { label: string; href: string }) => (
   <Link
     href={href}
-    className="text-xs font-medium text-slate-500 hover:text-accent-cyan transition-colors hover-effect"
+    className="text-xs font-medium text-blanc-500 hover:text-france-400 transition-colors hover-effect"
   >
     {label}
   </Link>
@@ -88,7 +88,7 @@ const FooterBottomLink = ({ label, href }: { label: string; href: string }) => (
 const ProductsLinks = () => {
   return (
     <div className="flex flex-col items-center sm:items-start">
-      <h2 className="text-sm font-black uppercase tracking-widest text-white/50 mb-6">
+      <h2 className="text-sm font-black uppercase tracking-widest text-blanc-50/50 mb-6">
         Produit
       </h2>
       <ul className="space-y-4">
@@ -96,9 +96,9 @@ const ProductsLinks = () => {
           <li key={idx} className="group">
             <Link
               href={link.href}
-              className="text-sm text-slate-400 group-hover:text-[#3B82F6] transition-all flex items-center gap-2"
+              className="text-sm text-blanc-400 group-hover:text-france-500 transition-all flex items-center gap-2"
             >
-              <span className="w-1 h-1 rounded-full bg-[#3B82F6] scale-0 group-hover:scale-100 transition-transform duration-300" />
+              <span className="w-1 h-1 rounded-full bg-france-500 scale-0 group-hover:scale-100 transition-transform duration-300" />
               {link.label}
             </Link>
           </li>
@@ -111,7 +111,7 @@ const ProductsLinks = () => {
 const SupportLinks = () => {
   return (
     <div className="flex flex-col items-center sm:items-start">
-      <h2 className="text-sm font-black uppercase tracking-widest text-white/50 mb-6">
+      <h2 className="text-sm font-black uppercase tracking-widest text-blanc-50/50 mb-6">
         Assistance
       </h2>
       <ul className="space-y-4">
@@ -119,9 +119,9 @@ const SupportLinks = () => {
           <li key={idx} className="group">
             <Link
               href={link.href}
-              className="text-sm text-slate-400 group-hover:text-[#3B82F6] transition-all flex items-center gap-2"
+              className="text-sm text-blanc-400 group-hover:text-france-500 transition-all flex items-center gap-2"
             >
-              <span className="w-1 h-1 rounded-full bg-[#3B82F6] scale-0 group-hover:scale-100 transition-transform duration-300" />
+              <span className="w-1 h-1 rounded-full bg-france-500 scale-0 group-hover:scale-100 transition-transform duration-300" />
               {link.label}
             </Link>
           </li>

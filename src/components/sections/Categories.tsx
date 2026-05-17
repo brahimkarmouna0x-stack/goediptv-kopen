@@ -10,7 +10,7 @@ import {
   Trophy,
   Tv,
 } from "lucide-react";
-import type { ElementType } from "react";
+import { memo, type ElementType } from "react";
 
 interface Category {
   name: string;
@@ -33,21 +33,21 @@ const categoryCopy: Record<
     description: "Compétitions, événements pay-per-view et chaînes sport premium.",
     icon: Trophy,
     href: "/popular?type=sports",
-    tone: "from-[#3B82F6]/20 to-[#0055A4]/15 text-[#93C5FD]",
+    tone: "from-france-500/20 to-france-700/15 text-france-300",
   },
   Films: {
     eyebrow: "Cinéma à la maison",
     description: "Nouveautés, classiques et films internationaux.",
     icon: Clapperboard,
     href: "/popular?type=movies",
-    tone: "from-[#EF4135]/20 to-[#EF4135]/10 text-[#EF4135]/80",
+    tone: "from-rouge-500/20 to-rouge-500/10 text-rouge-500/80",
   },
   Series: {
     eyebrow: "Prêt pour le binge",
     description: "Séries populaires et saisons complètes en streaming.",
     icon: Tv,
     href: "/popular?type=series",
-    tone: "from-[#3B82F6]/20 to-[#3B82F6]/10 text-[#3B82F6]/80",
+    tone: "from-france-500/20 to-france-500/10 text-france-500/80",
   },
   Enfants: {
     eyebrow: "Adapté aux familles",
@@ -61,14 +61,14 @@ const categoryCopy: Record<
     description: "Actualités, divertissement et émissions en direct sans détour.",
     icon: RadioTower,
     href: "/popular?type=lives",
-    tone: "from-[#0055A4]/25 to-[#3B82F6]/15 text-[#93C5FD]",
+    tone: "from-france-700/25 to-france-500/15 text-france-300",
   },
   International: {
     eyebrow: "Mondial",
     description: "Chaînes d'Europe, d'Amérique, MENA et Asie-Pacifique.",
     icon: Globe2,
     href: "/popular?genre=Internationaal",
-    tone: "from-[#3B82F6]/20 to-[#EF4135]/10 text-[#DBEAFE]",
+    tone: "from-france-500/20 to-rouge-500/10 text-france-100",
   },
 };
 
@@ -84,15 +84,15 @@ const Categories = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex flex-col gap-5 sm:mb-12 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#3B82F6]/20 bg-[#3B82F6]/15 px-3.5 py-1.5 text-xs font-black uppercase tracking-[0.14em] text-[#DBEAFE]">
+            <span className="inline-flex items-center gap-2 rounded-full border border-france-500/20 bg-france-500/15 px-3.5 py-1.5 text-xs font-black uppercase tracking-[0.14em] text-france-100">
               <Sparkles size={14} aria-hidden="true" />
               Bibliothèque
             </span>
-            <h2 className="mt-4 font-display text-3xl font-black leading-tight text-white sm:text-5xl">
+            <h2 className="mt-4 font-display text-3xl font-black leading-tight text-blanc-50 sm:text-5xl">
               Choisissez votre moment de visionnage.
             </h2>
           </div>
-          <p className="max-w-xl text-sm font-medium leading-6 text-slate-400 sm:text-base">
+          <p className="max-w-xl text-sm font-medium leading-6 text-blanc-400 sm:text-base">
             Accès rapide au sport en direct, aux films, aux séries et à la TV internationale,
             conçu pour une navigation aussi fluide sur mobile que sur desktop.
           </p>
@@ -116,14 +116,14 @@ const Categories = () => {
 
 const getMeta = (category: Category) => categoryCopy[category.name];
 
-const CategoryFeature = ({ category }: { category: Category }) => {
+const CategoryFeature = memo(function CategoryFeature({ category }: { category: Category }) {
   const meta = getMeta(category);
   const Icon = meta.icon;
 
   return (
     <Link
       href={meta.href}
-      className="group relative min-h-[440px] overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-[0_24px_80px_-48px_rgba(0,0,0,0.9)] lg:col-span-5 lg:row-span-2"
+      className="group relative min-h-[440px] overflow-hidden rounded-2xl border border-blanc-800/20 bg-france-900 shadow-[0_24px_80px_-48px_rgba(0,0,0,0.9)] lg:col-span-5 lg:row-span-2"
     >
       <Image
         src={category.image}
@@ -134,43 +134,44 @@ const CategoryFeature = ({ category }: { category: Category }) => {
         priority
         className="object-cover brightness-110 saturate-125 scale-[1.02] transition-transform duration-700 group-hover:scale-[1.07]"
       />
-      <div className="absolute inset-0 bg-linear-to-t from-[#020617]/82 via-[#020617]/18 to-transparent" />
-      <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/12 bg-[#06111f]/68 p-5 shadow-2xl backdrop-blur-sm sm:inset-x-5 sm:bottom-5 sm:p-6">
+      <div className="absolute inset-0 bg-linear-to-t from-blanc-950/82 via-blanc-950/18 to-transparent" />
+      <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-blanc-800/20 bg-france-950/68 p-5 shadow-2xl backdrop-blur-sm sm:inset-x-5 sm:bottom-5 sm:p-6">
         <div
-          className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br ${meta.tone} border border-white/15 backdrop-blur-md`}
+          className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br ${meta.tone} border border-blanc-800/20 backdrop-blur-md`}
         >
           <Icon size={23} aria-hidden="true" />
         </div>
-        <p className="mb-3 text-xs font-black uppercase tracking-[0.16em] text-[#DBEAFE]/80">
+        <p className="mb-3 text-xs font-black uppercase tracking-[0.16em] text-france-100/80">
           {meta.eyebrow}
         </p>
-        <h3 className="font-display text-4xl font-black text-white sm:text-5xl">
+        <h3 className="font-display text-4xl font-black text-blanc-50 sm:text-5xl">
           {category.name}
         </h3>
-        <p className="mt-3 max-w-sm text-sm leading-6 text-slate-200">
+        <p className="mt-3 max-w-sm text-sm leading-6 text-blanc-200">
           {meta.description}
         </p>
         <div className="mt-6 flex items-center justify-between gap-4">
-          <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-black uppercase tracking-[0.12em] text-white">
+          <span className="rounded-full border border-blanc-800/20 bg-blanc-800/10 px-3 py-1 text-xs font-black uppercase tracking-[0.12em] text-blanc-50">
             {category.count}
           </span>
-          <span className="text-sm font-bold text-[#DBEAFE] transition-transform group-hover:translate-x-1">
+          <span className="text-sm font-bold text-france-100 transition-transform group-hover:translate-x-1">
             Explorer
           </span>
         </div>
       </div>
     </Link>
   );
-};
+});
+CategoryFeature.displayName = "CategoryFeature";
 
-const CategoryTile = ({ category }: { category: Category }) => {
+const CategoryTile = memo(function CategoryTile({ category }: { category: Category }) {
   const meta = getMeta(category);
   const Icon = meta.icon;
 
   return (
     <Link
       href={meta.href}
-      className="group relative min-h-[230px] overflow-hidden rounded-2xl border border-white/10 bg-[#081423] transition-colors hover:border-[#93C5FD]/30 hover:bg-[#0a1a2b]"
+      className="group relative min-h-[230px] overflow-hidden rounded-2xl border border-blanc-800/20 bg-france-900 transition-colors hover:border-france-300/30 hover:bg-france-900"
     >
       <Image
         src={category.image}
@@ -178,43 +179,45 @@ const CategoryTile = ({ category }: { category: Category }) => {
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 22vw"
         quality={68}
+        loading="lazy"
         className="object-cover brightness-105 saturate-125 scale-[1.02] transition duration-700 group-hover:scale-[1.07]"
       />
-      <div className="absolute inset-0 bg-linear-to-t from-[#020617]/88 via-[#020617]/24 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-blanc-950/88 via-blanc-950/24 to-transparent" />
       <div className="relative flex h-full min-h-[230px] flex-col justify-between p-4 sm:p-5">
         <div className="flex items-start justify-between gap-4">
           <div
-            className={`inline-flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br ${meta.tone} border border-white/10`}
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br ${meta.tone} border border-blanc-800/20`}
           >
             <Icon size={21} aria-hidden="true" />
           </div>
-          <span className="rounded-full bg-[#06111f]/62 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-slate-100 backdrop-blur-sm">
+          <span className="rounded-full bg-france-950/62 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-blanc-100 backdrop-blur-sm">
             {meta.eyebrow}
           </span>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-[#06111f]/62 p-4 backdrop-blur-sm">
-          <h3 className="text-2xl font-black text-white">{category.name}</h3>
-          <p className="mt-2 text-sm leading-5 text-slate-200">
+        <div className="rounded-2xl border border-blanc-800/20 bg-france-950/62 p-4 backdrop-blur-sm">
+          <h3 className="text-2xl font-black text-blanc-50">{category.name}</h3>
+          <p className="mt-2 text-sm leading-5 text-blanc-200">
             {meta.description}
           </p>
-          <p className="mt-4 text-xs font-black uppercase tracking-[0.12em] text-[#DBEAFE]">
+          <p className="mt-4 text-xs font-black uppercase tracking-[0.12em] text-france-100">
             {category.count}
           </p>
         </div>
       </div>
     </Link>
   );
-};
+});
+CategoryTile.displayName = "CategoryTile";
 
-const CategoryWide = ({ category }: { category: Category }) => {
+const CategoryWide = memo(function CategoryWide({ category }: { category: Category }) {
   const meta = getMeta(category);
   const Icon = meta.icon;
 
   return (
     <Link
       href={meta.href}
-      className="group relative min-h-[190px] overflow-hidden rounded-2xl border border-white/10 bg-[#081423] p-5 sm:p-6 lg:col-span-12"
+      className="group relative min-h-[190px] overflow-hidden rounded-2xl border border-blanc-800/20 bg-france-900 p-5 sm:p-6 lg:col-span-12"
     >
       <Image
         src={category.image}
@@ -222,34 +225,36 @@ const CategoryWide = ({ category }: { category: Category }) => {
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1280px) 92vw, 1180px"
         quality={50}
+        loading="lazy"
         className="object-cover brightness-105 saturate-125 scale-[1.02] transition duration-700 group-hover:scale-[1.07]"
       />
-      <div className="absolute inset-0 bg-linear-to-r from-[#020617]/86 via-[#020617]/52 to-[#020617]/18" />
-      <div className="relative flex min-h-[140px] flex-col gap-5 rounded-2xl border border-white/10 bg-[#06111f]/58 p-4 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between">
+      <div className="absolute inset-0 bg-linear-to-r from-blanc-950/86 via-blanc-950/52 to-blanc-950/18" />
+      <div className="relative flex min-h-[140px] flex-col gap-5 rounded-2xl border border-blanc-800/20 bg-france-950/58 p-4 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-4">
           <div
-            className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br ${meta.tone} border border-white/10`}
+            className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br ${meta.tone} border border-blanc-800/20`}
           >
             <Icon size={23} aria-hidden="true" />
           </div>
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.16em] text-[#DBEAFE]/80">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-france-100/80">
               {meta.eyebrow}
             </p>
-            <h3 className="mt-1 text-2xl font-black text-white">
+            <h3 className="mt-1 text-2xl font-black text-blanc-50">
               {category.name}
             </h3>
           </div>
         </div>
-        <p className="max-w-xl text-sm leading-6 text-slate-200">
+        <p className="max-w-xl text-sm leading-6 text-blanc-200">
           {meta.description}
         </p>
-        <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-black uppercase tracking-[0.12em] text-white">
+        <span className="rounded-full border border-blanc-800/20 bg-blanc-800/10 px-3 py-1 text-xs font-black uppercase tracking-[0.12em] text-blanc-50">
           {category.count}
         </span>
       </div>
     </Link>
   );
-};
+});
+CategoryWide.displayName = "CategoryWide";
 
 export default Categories;

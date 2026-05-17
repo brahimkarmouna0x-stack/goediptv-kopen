@@ -43,10 +43,10 @@ const PlanCardComponent = ({
     <div className="h-full relative">
       {/* Popular Badge */}
       {isPopular && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full bg-linear-to-r from-[#EF4135] via-[#EF4135] to-[#cc3328] text-slate-950 text-[10px] font-black uppercase tracking-[0.15em] shadow-[0_0_20px_rgba(239,65,53,0.4)] border border-white/20 whitespace-nowrap z-50 flex items-center gap-1.5">
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full bg-linear-to-r from-rouge-500 via-rouge-500 to-rouge-600 text-blanc-950 text-[10px] font-black uppercase tracking-[0.15em] shadow-[0_0_20px_rgba(239,65,53,0.4)] border border-blanc-50/20 whitespace-nowrap z-50 flex items-center gap-1.5">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950/40 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-950/80"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blanc-950/40 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-blanc-950/80"></span>
           </span>
           POPULAIRE
         </div>
@@ -54,13 +54,13 @@ const PlanCardComponent = ({
       <div
         className={`h-full rounded-2xl p-7 flex flex-col relative overflow-hidden border transition-[border-color,background-color,box-shadow] duration-250 ${
           isPopular
-            ? "border-[#EF4135]/35 bg-[#071827] shadow-[0_20px_50px_-36px_rgba(59,130,246,0.45),inset_0_1px_0_rgba(255,255,255,0.06)]"
-            : "border-white/10 bg-[#081423]/90 hover:border-white/20"
+            ? "border-rouge-500/35 bg-france-900 shadow-[0_20px_50px_-36px_rgba(59,130,246,0.45),inset_0_1px_0_rgba(255,255,255,0.06),inset_0_0_30px_rgba(59,130,246,0.04)]"
+            : "border-blanc-50/10 bg-france-900/90 hover:border-blanc-50/20"
         }`}
       >
         {/* Background Effects */}
         {isPopular && (
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#EF4135]/15 blur-3xl -mr-16 -mt-16 animate-pulse duration-[4000ms]"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-rouge-500/15 blur-3xl -mr-16 -mt-16 animate-pulse duration-[4000ms]"></div>
         )}
         {isFree && (
           <div className="absolute top-0 right-0 p-3">
@@ -71,8 +71,8 @@ const PlanCardComponent = ({
 
 
         {/* Header */}
-        <div className="mb-8">
-          <h3 className="font-display font-bold text-xl mb-2 text-white uppercase">
+        <div className="mb-8 border-b border-blanc-50/5 pb-4 mb-6">
+          <h3 className="font-display font-bold text-xl mb-2 text-blanc-50 uppercase">
             {name}
           </h3>
           {badge && (
@@ -83,13 +83,13 @@ const PlanCardComponent = ({
               {badge.text}
             </p>
           )}
-          {isFree && <p className="text-slate-400 text-sm">Testez d'abord</p>}
+          {isFree && <p className="text-blanc-400 text-sm">Testez d'abord</p>}
         </div>
 
         {/* Price */}
         <div className="mb-8 flex items-baseline gap-1">
           <span
-            className={`font-display font-bold text-5xl ${isPopular ? "text-gradient" : "text-white"}`}
+            className={`font-display font-bold text-5xl ${isPopular ? "text-gradient" : "text-blanc-50"}`}
           >
             {isFree ? (
               "Gratuit"
@@ -99,7 +99,7 @@ const PlanCardComponent = ({
               "N/A"
             )}
           </span>
-          <span className="text-slate-400">/{duration}</span>
+          <span className="text-blanc-400">/{duration}</span>
         </div>
 
         {/* Labels */}
@@ -107,10 +107,10 @@ const PlanCardComponent = ({
           <div
             className={`px-3 py-1.5 rounded-lg text-xs font-bold mb-6 w-fit border ${
               isPopular
-                ? "bg-[#0055A4]/15 border-[#0055A4]/25 text-accent-cyan"
+                ? "bg-france-700/15 border-france-700/25 text-france-400"
                 : isBestValue
                   ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400"
-                  : "bg-white/5 border-white/10 text-slate-300"
+                  : "bg-blanc-50/5 border-blanc-50/10 text-blanc-300"
             }`}
           >
             {savingsLabel}
@@ -119,10 +119,10 @@ const PlanCardComponent = ({
 
         {/* Features */}
         <ul className="space-y-4 mb-8 grow">
-          <li className="flex items-center gap-3 text-sm text-slate-300 font-medium">
+          <li className="flex items-center gap-3 text-sm text-blanc-300 font-medium">
             <Check
               size={16}
-              className={isPopular ? "text-accent-cyan" : "text-emerald-400"}
+              className={isPopular ? "text-france-400" : "text-emerald-400"}
               aria-hidden="true"
             />
             {isFree
@@ -132,18 +132,18 @@ const PlanCardComponent = ({
           {features.map((feature, idx) => (
             <li
               key={idx}
-              className="flex items-center gap-3 text-sm text-slate-300 font-medium"
+              className="flex items-center gap-3 text-sm text-blanc-300 font-medium"
             >
               <Check
                 size={16}
-                className={isPopular ? "text-accent-cyan" : "text-emerald-400"}
+                className={isPopular ? "text-france-400" : "text-emerald-400"}
                 aria-hidden="true"
               />
               {feature}
             </li>
           ))}
           {isFree && (
-            <li className="flex items-start gap-3 text-xs text-[#F4C430]/80 font-medium pt-2 border-t border-white/5">
+            <li className="flex items-start gap-3 text-xs text-[#F4C430]/80 font-medium pt-2 border-t border-blanc-50/5">
               <TriangleAlert size={14} className="mt-0.5" aria-hidden="true" />
               <span>Sport en direct et événements non inclus</span>
             </li>
@@ -153,7 +153,7 @@ const PlanCardComponent = ({
         {/* Footer Info */}
         {monthlyPriceLabel && (
           <div className="mb-6 text-center">
-            <p className="text-slate-400 text-[10px] uppercase tracking-tighter">
+            <p className="text-blanc-400 text-[10px] uppercase tracking-tighter">
               {monthlyPriceLabel}
             </p>
           </div>
@@ -164,8 +164,8 @@ const PlanCardComponent = ({
           onClick={onBuy}
           className={`w-full py-4 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
             isPopular
-              ? "bg-[#EF4135] text-slate-950 hover:bg-[#EF4135]"
-              : "bg-white/[0.06] text-white border border-white/10 hover:bg-white/10"
+              ? "bg-rouge-500 text-blanc-50 hover:bg-rouge-600"
+              : "bg-blanc-50/[0.06] text-blanc-50 border border-blanc-50/10 hover:bg-blanc-50/10"
           }`}
         >
           {buttonText}

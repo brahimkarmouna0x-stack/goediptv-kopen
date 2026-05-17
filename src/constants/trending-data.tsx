@@ -105,7 +105,7 @@ export const trendingNow: Trending[] = [
   {
     title: "BBC News",
     quality: "HD",
-    genre: "Nieuws",
+    genre: "Actualités",
     rating: "Live",
     type: "lives",
     image: "/images-/bbc.webp",

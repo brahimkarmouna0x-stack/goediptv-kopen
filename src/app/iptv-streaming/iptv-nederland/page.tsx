@@ -53,21 +53,21 @@ const IPTVNederland = () => {
 
         {/* Guarantee Section */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl border border-white/10 bg-linear-to-br from-[#081423] to-[#050505] p-8 lg:p-12 relative overflow-hidden group">
+          <div className="rounded-3xl border border-blanc-50/10 bg-linear-to-br from-france-900 to-france-950 p-8 lg:p-12 relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-10 transition-opacity">
-              <ShieldCheck size={200} className="text-[#3B82F6]" />
+              <ShieldCheck size={200} className="text-france-500" />
             </div>
             <div className="max-w-3xl relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6">
                 <ShieldCheck size={14} />
                 Sans Risque
               </div>
-              <h2 className="text-3xl lg:text-4xl font-black text-white mb-6">
+              <h2 className="text-3xl lg:text-4xl font-black text-blanc-50 mb-6">
                 Garantie Satisfait ou Remboursé
               </h2>
-              <p className="text-xl text-slate-300 leading-relaxed">
+              <p className="text-xl text-blanc-300 leading-relaxed">
                 Pas satisfait après l'achat IPTV ? Remboursement intégral –{" "}
-                <span className="text-white font-bold">sans complication.</span>
+                <span className="text-blanc-50 font-bold">sans complication.</span>
               </p>
             </div>
           </div>
@@ -77,18 +77,18 @@ const IPTVNederland = () => {
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="animate-slide-up">
-              <span className="text-[#3B82F6] font-bold uppercase tracking-widest text-sm mb-4 block">
+              <span className="text-france-500 font-bold uppercase tracking-widest text-sm mb-4 block">
                 Pourquoi nous choisir
               </span>
-              <h2 className="text-3xl lg:text-5xl font-black text-white leading-tight mb-8">
+              <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 leading-tight mb-8">
                 Pourquoi notre fournisseur IPTV est le{" "}
                 <span className="text-gradient">meilleur choix</span> aux Pays-Bas
               </h2>
-              <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
+              <div className="space-y-6 text-blanc-300 text-lg leading-relaxed">
                 <p>
                   En tant que l'un des principaux fournisseurs IPTV aux Pays-Bas,
                   nous nous concentrons sur ce qui compte vraiment :{" "}
-                  <span className="text-white font-semibold">
+                  <span className="text-blanc-50 font-semibold">
                     la stabilité, la vitesse et la fiabilité.
                   </span>{" "}
                   Notre infrastructure serveur est spécialement optimisée pour le
@@ -100,7 +100,7 @@ const IPTVNederland = () => {
                   du streaming d'un nouveau film – votre image reste fluide et
                   stable. Ce qui nous distingue des autres fournisseurs : Nous
                   offrons un{" "}
-                  <span className="text-white font-semibold">
+                  <span className="text-blanc-50 font-semibold">
                     service client entièrement en français
                   </span>{" "}
                   disponible 24h/24 via WhatsApp, e-mail ou téléphone.
@@ -129,12 +129,12 @@ const IPTVNederland = () => {
               ].map((benefit) => (
                 <div
                   key={benefit}
-                  className="flex items-center gap-3 p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors group"
+                  className="flex items-center gap-3 p-5 rounded-2xl border border-blanc-50/5 bg-blanc-50/[0.02] hover:bg-blanc-50/[0.05] transition-colors group"
                 >
-                  <div className="h-8 w-8 rounded-lg bg-[#0055A4]/15 flex items-center justify-center border border-[#0055A4]/25 group-hover:border-[#0055A4]/45 transition-colors">
-                    <CheckCircle2 size={18} className="text-[#3B82F6]" />
+                  <div className="h-8 w-8 rounded-lg bg-france-700/15 flex items-center justify-center border border-france-700/25 group-hover:border-france-700/45 transition-colors">
+                    <CheckCircle2 size={18} className="text-france-500" />
                   </div>
-                  <span className="text-white font-bold">{benefit}</span>
+                  <span className="text-blanc-50 font-bold">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -144,11 +144,11 @@ const IPTVNederland = () => {
         {/* Step-by-Step Guide */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-black text-white mb-6">
+            <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 mb-6">
               Comment acheter IPTV ?{" "}
               <span className="text-gradient">(Étape par étape)</span>
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            <p className="text-blanc-400 max-w-2xl mx-auto text-lg">
               Prêt à streamer en quelques minutes sur tous vos appareils
               préférés.
             </p>
@@ -161,14 +161,14 @@ const IPTVNederland = () => {
                 title: "Choisir le forfait",
                 desc: "Sélectionnez le forfait IPTV qui vous convient le mieux – 6 mois, 1 an ou 2 ans.",
                 icon: ShoppingCart,
-                color: "from-[#0055A4] to-[#3B82F6]",
+                color: "from-france-700 to-france-500",
               },
               {
                 step: "2",
                 title: "Finaliser la commande",
                 desc: "Payez en toute sécurité via PayPal, carte de crédit ou un autre moyen de paiement de votre choix.",
                 icon: Zap,
-                color: "from-[#EF4135] to-[#cc3328]",
+                color: "from-rouge-500 to-rouge-600",
               },
               {
                 step: "3",
@@ -187,20 +187,20 @@ const IPTVNederland = () => {
             ].map((item) => (
               <div
                 key={item.step}
-                className="relative group p-8 rounded-3xl border border-white/5 bg-[#081423] hover:border-white/10 transition-all hover:-translate-y-2"
+                className="relative group p-8 rounded-3xl border border-blanc-50/5 bg-france-900 hover:border-blanc-50/10 transition-all hover:-translate-y-2"
               >
                 <div
                   className={`h-16 w-16 rounded-2xl bg-linear-to-br ${item.color} flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform`}
                 >
-                  <item.icon size={32} className="text-white" />
-                  <div className="absolute -top-3 -right-3 h-10 w-10 rounded-full bg-slate-900 border-4 border-[#081423] flex items-center justify-center text-white font-black text-xl">
+                  <item.icon size={32} className="text-blanc-50" />
+                  <div className="absolute -top-3 -right-3 h-10 w-10 rounded-full bg-france-900 border-4 border-france-900 flex items-center justify-center text-blanc-50 font-black text-xl">
                     {item.step}
                   </div>
                 </div>
-                <h3 className="text-xl font-black text-white mb-4">
+                <h3 className="text-xl font-black text-blanc-50 mb-4">
                   {item.title}
                 </h3>
-                <p className="text-slate-400 leading-relaxed">{item.desc}</p>
+                <p className="text-blanc-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -209,38 +209,38 @@ const IPTVNederland = () => {
         {/* Market Comparison Table */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-[#3B82F6] font-bold uppercase tracking-widest text-sm mb-4 block">
+            <span className="text-france-500 font-bold uppercase tracking-widest text-sm mb-4 block">
               Comparaison du Marché
             </span>
-            <h2 className="text-3xl lg:text-5xl font-black text-white mb-6">
+            <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 mb-6">
               Pourquoi <span className="text-gradient">IPTV SERVICE</span> est le
               meilleur choix
             </h2>
-            <p className="text-slate-400 max-w-3xl mx-auto text-lg">
+            <p className="text-blanc-400 max-w-3xl mx-auto text-lg">
               Nous offrons non seulement plus de contenu, mais aussi un service et une
               stabilité supérieurs par rapport aux autres fournisseurs sur le marché.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-3xl border border-white/10 bg-[#081423]/50 backdrop-blur-sm">
+          <div className="overflow-x-auto rounded-3xl border border-blanc-50/10 bg-france-900/50 backdrop-blur-sm">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-white/10">
-                  <th className="p-6 text-slate-400 font-bold uppercase tracking-wider text-sm">
+                <tr className="border-b border-blanc-50/10">
+                  <th className="p-6 text-blanc-400 font-bold uppercase tracking-wider text-sm">
                     Fonctionnalité
                   </th>
-                  <th className="p-6 text-[#3B82F6] font-black uppercase tracking-wider text-sm bg-[#3B82F6]/5">
+                  <th className="p-6 text-france-500 font-black uppercase tracking-wider text-sm bg-france-500/5">
                     IPTV SERVICE
                   </th>
-                  <th className="p-6 text-slate-400 font-bold uppercase tracking-wider text-sm">
+                  <th className="p-6 text-blanc-400 font-bold uppercase tracking-wider text-sm">
                     Fournisseur A
                   </th>
-                  <th className="p-6 text-slate-400 font-bold uppercase tracking-wider text-sm">
+                  <th className="p-6 text-blanc-400 font-bold uppercase tracking-wider text-sm">
                     Fournisseur B
                   </th>
                 </tr>
               </thead>
-              <tbody className="text-white">
+              <tbody className="text-blanc-50">
                 {[
                   {
                     name: "Nombre de chaînes",
@@ -283,12 +283,12 @@ const IPTVNederland = () => {
                 ].map((row) => (
                   <tr
                     key={row.name}
-                    className={`border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors`}
+                    className={`border-b border-blanc-50/5 last:border-0 hover:bg-blanc-50/[0.02] transition-colors`}
                   >
-                    <td className="p-6 font-medium text-slate-300">
+                    <td className="p-6 font-medium text-blanc-300">
                       {row.name}
                     </td>
-                    <td className="p-6 bg-[#3B82F6]/5 font-bold">
+                    <td className="p-6 bg-france-500/5 font-bold">
                       {typeof row.v === "boolean" ? (
                         row.v ? (
                           <CheckCircle2
@@ -302,10 +302,10 @@ const IPTVNederland = () => {
                         row.v
                       )}
                     </td>
-                    <td className="p-6 text-slate-400">
+                    <td className="p-6 text-blanc-400">
                       {typeof row.a === "boolean" ? (
                         row.a ? (
-                          <CheckCircle2 className="text-slate-500" size={20} />
+                          <CheckCircle2 className="text-blanc-500" size={20} />
                         ) : (
                           <span className="text-red-400/50">✕</span>
                         )
@@ -313,10 +313,10 @@ const IPTVNederland = () => {
                         row.a
                       )}
                     </td>
-                    <td className="p-6 text-slate-400">
+                    <td className="p-6 text-blanc-400">
                       {typeof row.b === "boolean" ? (
                         row.b ? (
-                          <CheckCircle2 className="text-slate-500" size={20} />
+                          <CheckCircle2 className="text-blanc-500" size={20} />
                         ) : (
                           <span className="text-red-400/50">✕</span>
                         )
@@ -337,10 +337,10 @@ const IPTVNederland = () => {
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <span className="text-[#3B82F6] font-bold uppercase tracking-widest text-sm mb-4 block">
+              <span className="text-france-500 font-bold uppercase tracking-widest text-sm mb-4 block">
                 Guide IPTV 2026
               </span>
-              <h2 className="text-3xl lg:text-5xl font-black text-white mb-8">
+              <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 mb-8">
                 Acheter IPTV aux Pays-Bas –{" "}
                 <span className="text-gradient">Votre guide complet</span>
               </h2>
@@ -349,13 +349,13 @@ const IPTVNederland = () => {
             <div className="space-y-16">
               {/* Point 1 */}
               <div className="animate-fade-in">
-                <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0055A4]/15 border border-[#0055A4]/25 text-[#3B82F6]">
+                <h3 className="text-2xl font-black text-blanc-50 mb-6 flex items-center gap-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-france-700/15 border border-france-700/25 text-france-500">
                     1
                   </span>
                   Qu&apos;est-ce qu&apos;acheter IPTV signifie ?
                 </h3>
-                <div className="text-slate-300 text-lg leading-relaxed space-y-4">
+                <div className="text-blanc-300 text-lg leading-relaxed space-y-4">
                   <p>
                     Acheter IPTV signifie acquérir un service de streaming
                     numérique qui propose des programmes télévisés via
@@ -365,13 +365,13 @@ const IPTVNederland = () => {
                   </p>
                   <p>
                     Lorsque vous achetez IPTV chez{" "}
-                    <span className="text-white font-bold">IPTV SERVICE</span>,
+                    <span className="text-blanc-50 font-bold">IPTV SERVICE</span>,
                     vous avez accès à plus de{" "}
-                    <span className="text-[#3B82F6] font-bold">
+                    <span className="text-france-500 font-bold">
                        31 000 chaînes en direct
                     </span>{" "}
                     et plus de{" "}
-                    <span className="text-[#3B82F6] font-bold">
+                    <span className="text-france-500 font-bold">
                        140 000 films et séries
                     </span>{" "}
                     – le tout dans une qualité HD et 4K cristalline.
@@ -381,13 +381,13 @@ const IPTVNederland = () => {
 
               {/* Point 2 */}
               <div>
-                <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EF4135]/15 border border-[#EF4135]/25 text-[#EF4135]">
+                <h3 className="text-2xl font-black text-blanc-50 mb-6 flex items-center gap-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rouge-500/15 border border-rouge-500/25 text-rouge-500">
                     2
                   </span>
                   Pourquoi acheter IPTV ?
                 </h3>
-                <p className="text-slate-300 text-lg mb-8">
+                <p className="text-blanc-300 text-lg mb-8">
                   De plus en plus de Français passent à l&apos;IPTV. Voici les
                   principales raisons :
                 </p>
@@ -405,15 +405,15 @@ const IPTVNederland = () => {
                   ].map((item) => (
                     <div
                       key={item.t}
-                      className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] flex items-start gap-4"
+                      className="p-6 rounded-2xl border border-blanc-50/5 bg-blanc-50/[0.02] flex items-start gap-4"
                     >
                       <CheckCircle2
                         className="text-emerald-400 shrink-0 mt-1"
                         size={20}
                       />
                       <div>
-                        <h4 className="text-white font-bold mb-1">{item.t}</h4>
-                        <p className="text-slate-400 text-sm">{item.d}</p>
+                        <h4 className="text-blanc-50 font-bold mb-1">{item.t}</h4>
+                        <p className="text-blanc-400 text-sm">{item.d}</p>
                       </div>
                     </div>
                   ))}
@@ -422,8 +422,8 @@ const IPTVNederland = () => {
 
               {/* Point 3 */}
               <div>
-                <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#3B82F6]/15 border border-[#3B82F6]/25 text-[#3B82F6]">
+                <h3 className="text-2xl font-black text-blanc-50 mb-6 flex items-center gap-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-france-500/15 border border-france-500/25 text-france-500">
                     3
                   </span>
                   Quels appareils sont pris en charge ?
@@ -445,7 +445,7 @@ const IPTVNederland = () => {
                   ].map((device) => (
                     <span
                       key={device}
-                      className="px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-slate-300 font-medium text-sm"
+                      className="px-4 py-2 rounded-xl border border-blanc-50/10 bg-blanc-50/5 text-blanc-300 font-medium text-sm"
                     >
                       {device}
                     </span>
@@ -454,16 +454,16 @@ const IPTVNederland = () => {
               </div>
 
               {/* Point 4 */}
-              <div className="p-8 rounded-3xl border border-[#0055A4]/25 bg-[#0055A4]/10">
-                <h3 className="text-2xl font-black text-white mb-6">
+              <div className="p-8 rounded-3xl border border-france-700/25 bg-france-700/10">
+                <h3 className="text-2xl font-black text-blanc-50 mb-6">
                   Chaînes néerlandaises & Sport
                 </h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h4 className="text-[#3B82F6] font-bold mb-4 uppercase tracking-wider text-xs">
+                    <h4 className="text-france-500 font-bold mb-4 uppercase tracking-wider text-xs">
                       Chaînes Néerlandaises
                     </h4>
-                    <ul className="space-y-2 text-slate-300">
+                    <ul className="space-y-2 text-blanc-300">
                       <li>• NPO 1, 2, 3 (HD)</li>
                       <li>• RTL 4, 5, 7, 8, Z</li>
                       <li>• SBS6, Veronica, Net5</li>
@@ -472,10 +472,10 @@ const IPTVNederland = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-[#EF4135] font-bold mb-4 uppercase tracking-wider text-xs">
-                       Sportifs
+                    <h4 className="text-rouge-500 font-bold mb-4 uppercase tracking-wider text-xs">
+                      Sportifs
                     </h4>
-                    <ul className="space-y-2 text-slate-300">
+                    <ul className="space-y-2 text-blanc-300">
                       <li>• Eredivisie & Keuken Kampioen</li>
                       <li>• Champions & Europa League</li>
                       <li>• Formule 1 (Viaplay & F1TV)</li>
@@ -486,8 +486,8 @@ const IPTVNederland = () => {
               </div>
 
               {/* Point 6 */}
-              <div className="border-t border-white/10 pt-16">
-                <h3 className="text-2xl font-black text-white mb-8">
+              <div className="border-t border-blanc-50/10 pt-16">
+                <h3 className="text-2xl font-black text-blanc-50 mb-8">
                   Sécurité lors de l&apos;achat IPTV
                 </h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -499,13 +499,13 @@ const IPTVNederland = () => {
                   ].map((s) => (
                     <div
                       key={s.t}
-                      className="text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5"
+                      className="text-center p-6 rounded-2xl bg-blanc-50/[0.02] border border-blanc-50/5"
                     >
                       <s.icon
-                        className="mx-auto mb-4 text-[#3B82F6]"
+                        className="mx-auto mb-4 text-france-500"
                         size={32}
                       />
-                      <span className="text-white font-bold text-sm">
+                      <span className="text-blanc-50 font-bold text-sm">
                         {s.t}
                       </span>
                     </div>
@@ -519,14 +519,14 @@ const IPTVNederland = () => {
         {/* Compatibility Section */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-[#3B82F6] font-bold uppercase tracking-widest text-sm mb-4 block">
+            <span className="text-france-500 font-bold uppercase tracking-widest text-sm mb-4 block">
               Compatibilité
             </span>
-            <h2 className="text-3xl lg:text-5xl font-black text-white mb-6">
+            <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 mb-6">
               Acheter IPTV pour{" "}
               <span className="text-gradient">tous les appareils</span>
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            <p className="text-blanc-400 max-w-2xl mx-auto text-lg">
               Notre service IPTV fonctionne sur plus de 50 types d&apos;appareils. Achetez
               une fois et diffusez partout.
             </p>
@@ -573,27 +573,27 @@ const IPTVNederland = () => {
             ].map((item) => (
               <div
                 key={item.title}
-                className="p-8 rounded-3xl border border-white/5 bg-[#081423] hover:border-white/10 transition-all group"
+                className="p-8 rounded-3xl border border-blanc-50/5 bg-france-900 hover:border-blanc-50/10 transition-all group"
               >
-                <span className="text-xs font-bold uppercase tracking-tighter text-[#3B82F6]/60 mb-2 block">
+                <span className="text-xs font-bold uppercase tracking-tighter text-france-500/60 mb-2 block">
                   {item.label}
                 </span>
-                <h3 className="text-2xl font-black text-white mb-4 flex items-center justify-between">
+                <h3 className="text-2xl font-black text-blanc-50 mb-4 flex items-center justify-between">
                   {item.title}
                   <CheckCircle2
                     size={20}
                     className="text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"
                   />
                 </h3>
-                <p className="text-slate-400 leading-relaxed">{item.desc}</p>
+                <p className="text-blanc-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 p-6 rounded-2xl border border-white/5 bg-white/[0.02] text-center">
-            <p className="text-slate-400 italic">
+          <div className="mt-12 p-6 rounded-2xl border border-blanc-50/5 bg-blanc-50/[0.02] text-center">
+            <p className="text-blanc-400 italic">
               + de nombreux autres appareils. Besoin d&apos;aide pour l&apos;installation ? Notre{" "}
-              <span className="text-white font-bold">
+              <span className="text-blanc-50 font-bold">
                 support 24/7 en français
               </span>{" "}
               est là pour vous aider.
@@ -610,13 +610,13 @@ const IPTVNederland = () => {
         {/* Guarantees Section */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-[#3B82F6] font-bold uppercase tracking-widest text-sm mb-4 block">
+            <span className="text-france-500 font-bold uppercase tracking-widest text-sm mb-4 block">
               Garanties
             </span>
-            <h2 className="text-3xl lg:text-5xl font-black text-white mb-6">
+            <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 mb-6">
               Nos <span className="text-gradient">Garanties</span>
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            <p className="text-blanc-400 max-w-2xl mx-auto text-lg">
               Votre confiance est notre capital. Nous soutenons notre service avec
               des garanties qui assurent votre sécurité et une expérience de première classe.
             </p>
@@ -635,30 +635,30 @@ const IPTVNederland = () => {
                 title: "Confidentialité & Sécurité",
                 desc: "Vos données sont en sécurité chez nous. Nous respectons les normes de confidentialité les plus élevées et ne partageons aucune donnée avec des tiers.",
                 icon: Key,
-                color: "text-[#3B82F6]",
-                bg: "bg-[#0055A4]/15",
+                color: "text-france-500",
+                bg: "bg-france-700/15",
               },
               {
                 title: "Mises à jour Régulières",
                 desc: "Nos listes de chaînes et VOD sont mises à jour quotidiennement pour vous garantir toujours le contenu le plus récent.",
                 icon: Zap,
-                color: "text-[#EF4135]",
-                bg: "bg-[#EF4135]/15",
+                color: "text-rouge-500",
+                bg: "bg-rouge-500/15",
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="p-10 rounded-3xl border border-white/5 bg-[#081423] hover:border-white/10 transition-all text-center"
+                className="p-10 rounded-3xl border border-blanc-50/5 bg-france-900 hover:border-blanc-50/10 transition-all text-center"
               >
                 <div
                   className={`h-16 w-16 rounded-2xl ${item.bg} flex items-center justify-center mb-8 mx-auto`}
                 >
                   <item.icon size={32} className={item.color} />
                 </div>
-                <h3 className="text-xl font-black text-white mb-4">
+                <h3 className="text-xl font-black text-blanc-50 mb-4">
                   {item.title}
                 </h3>
-                <p className="text-slate-400 leading-relaxed">{item.desc}</p>
+                <p className="text-blanc-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

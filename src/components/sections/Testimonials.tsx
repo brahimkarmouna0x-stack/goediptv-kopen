@@ -54,14 +54,14 @@ const Stars = ({ rating, className = "" }: { rating: number; className?: string 
   <div
     role="img"
     className={`flex items-center gap-0.5 ${className}`}
-    aria-label={`${rating} van 5 sterren`}
+    aria-label={`${rating} sur 5 étoiles`}
   >
     {Array.from({ length: 5 }, (_, index) => (
       <svg
         key={index}
         viewBox="0 0 20 20"
         className={`h-3.5 w-3.5 ${
-          index < Math.round(rating) ? "fill-[#fbbc04]" : "fill-slate-200"
+          index < Math.round(rating) ? "fill-[#fbbc04]" : "fill-blanc-200"
         }`}
         aria-hidden="true"
       >
@@ -79,30 +79,30 @@ const Testimonials = () => {
       aria-labelledby="reviews-title"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_22px_70px_-42px_rgba(15,23,42,0.65)]">
+          <div className="overflow-hidden rounded-2xl border border-blanc-800/20 bg-blanc-50/[0.97] shadow-[0_22px_70px_-42px_rgba(15,23,42,0.65)]">
           <div className="grid gap-0 lg:grid-cols-[300px_1fr]">
-            <div className="border-b border-slate-200/80 bg-white p-5 sm:p-6 lg:border-b-0 lg:border-r">
+            <div className="border-b border-blanc-200/60 bg-blanc-50 p-5 sm:p-6 lg:border-b-0 lg:border-r">
               <GoogleLogo />
               <h2
                 id="reviews-title"
-                className="mt-4 text-xl font-black tracking-tight text-slate-950"
+                className="mt-4 text-xl font-black tracking-tight text-blanc-950"
               >
                 Google reviews
               </h2>
               <div className="mt-3 flex items-center gap-2">
-                <span className="text-2xl font-black text-slate-950">4,9</span>
+                <span className="text-2xl font-black text-blanc-950">4,9</span>
                 <Stars rating={5} />
               </div>
-              <p className="mt-1 text-sm font-medium text-slate-500">
-                Gebaseerd op 2.470+ beoordelingen
+              <p className="mt-1 text-sm font-medium text-blanc-500">
+                Basé sur 2 470+ avis
               </p>
-              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-bold text-slate-700">
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-blanc-200/50 bg-blanc-50 px-3 py-1.5 text-xs font-bold text-blanc-700">
                 <span className="h-2 w-2 rounded-full bg-[#34a853]" />
-                Geverifieerde klanten
+                Clients vérifiés
               </div>
             </div>
 
-            <div className="relative overflow-hidden bg-[#f8fafc] py-4">
+            <div className="relative overflow-hidden bg-blanc-50/[0.95] py-4">
               <div className="google-review-track mask-fade-edges flex gap-3 px-4">
                 {REVIEW_ITEMS.map((testimonial, index) => (
                   <ReviewCard
@@ -120,10 +120,10 @@ const Testimonials = () => {
 };
 
 const ReviewCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <article className="w-[275px] shrink-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:w-[315px]">
+  <article className="w-[275px] shrink-0 rounded-xl border border-blanc-200/50 bg-blanc-50 p-4 shadow-sm sm:w-[315px]">
     <div className="flex items-start justify-between gap-3">
       <div className="flex min-w-0 items-center gap-3">
-        <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200">
+        <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full bg-blanc-100 ring-1 ring-blanc-200">
           <Image
             src={testimonial.image}
             alt={testimonial.name}
@@ -135,10 +135,10 @@ const ReviewCard = ({ testimonial }: { testimonial: Testimonial }) => (
           />
         </div>
         <div className="min-w-0">
-          <h3 className="truncate text-sm font-bold text-slate-950">
+          <h3 className="truncate text-sm font-bold text-blanc-950">
             {testimonial.name}
           </h3>
-          <p className="text-xs font-medium text-slate-500">
+          <p className="text-xs font-medium text-blanc-500">
             {testimonial.time}
           </p>
         </div>
@@ -148,7 +148,7 @@ const ReviewCard = ({ testimonial }: { testimonial: Testimonial }) => (
 
     <Stars rating={testimonial.rating} className="mt-3" />
 
-    <p className="mt-3 line-clamp-4 text-sm leading-5 text-slate-700">
+    <p className="mt-3 line-clamp-4 text-sm leading-5 text-blanc-700">
       {testimonial.content}
     </p>
   </article>

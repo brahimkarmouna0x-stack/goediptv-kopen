@@ -13,14 +13,14 @@ const featureItems = [
     description:
       "Contrairement à la TV traditionnelle, l'IPTV offre des fonctions comme la pause, le retour en arrière et l'enregistrement. Vous gérez votre propre programme.",
     icon: Infinity,
-    tone: "text-[#DBEAFE] bg-[#3B82F6]/15 border-[#3B82F6]/25",
+    tone: "text-france-100 bg-france-500/15 border-france-500/25",
   },
   {
     title: "Installation Facile",
     description:
       "Aucun installateur requis. Entrez votre code IPTV dans des applications comme IPTV Smarters ou TiviMate et commencez à regarder immédiatement.",
     icon: Sparkles,
-    tone: "text-[#DBEAFE] bg-[#0055A4]/15 border-[#0055A4]/25",
+    tone: "text-france-100 bg-france-700/15 border-france-700/25",
   },
   {
     title: "Regarder Partout",
@@ -34,22 +34,22 @@ const featureItems = [
 const Guide = () => {
   return (
     <section id="guide" className="relative overflow-hidden py-20 sm:py-24" style={{ contentVisibility: "auto", containIntrinsicSize: "auto 800px" }}>
-      <div className="absolute inset-x-0 top-0 h-72 bg-linear-to-b from-[#3B82F6]/10 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-72 bg-linear-to-b from-france-500/10 to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-14 grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-14">
           <div>
-            <span className="inline-flex rounded-full border border-[#3B82F6]/25 bg-[#3B82F6]/15 px-4 py-1.5 text-sm font-black uppercase tracking-[0.14em] text-[#DBEAFE]">
+            <span className="inline-flex rounded-full border border-france-500/25 bg-france-500/15 px-4 py-1.5 text-sm font-black uppercase tracking-[0.14em] text-france-100">
               Le Guide Complet
             </span>
-            <h2 className="mt-6 font-display text-4xl font-black leading-tight text-white sm:text-5xl">
+            <h2 className="mt-6 font-display text-4xl font-black leading-tight text-blanc-50 sm:text-5xl">
               Qu&apos;est-ce que l&apos;IPTV et <br />
               <span className="text-gradient">comment ça marche ?</span>
             </h2>
-            <div className="mt-7 space-y-5 text-base leading-7 text-slate-300 sm:text-lg">
+            <div className="mt-7 space-y-5 text-base leading-7 text-blanc-300 sm:text-lg">
               <p>
                 IPTV signifie{" "}
-                <span className="font-semibold text-white">
+                <span className="font-semibold text-blanc-50">
                   Internet Protocol Television
                 </span>{" "}
                 et désigne la télévision diffusée via Internet. Au lieu du
@@ -64,11 +64,11 @@ const Guide = () => {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#081423] p-6 sm:p-8">
+          <div className="relative overflow-hidden rounded-2xl border border-blanc-50/10 bg-france-900 p-6 sm:p-8">
             <Tv size={170} aria-hidden="true" className="absolute right-0 top-8 opacity-5 pointer-events-none" />
 
-            <h3 className="relative mb-6 flex items-center gap-3 text-xl font-black text-white">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#3B82F6]/25 bg-[#3B82F6]/15 text-[#DBEAFE]">
+            <h3 className="relative mb-6 flex items-center gap-3 text-xl font-black text-blanc-50">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-france-500/25 bg-france-500/15 text-france-100">
                 <Zap size={21} aria-hidden="true" />
               </span>
               Accès Immédiat
@@ -76,10 +76,10 @@ const Guide = () => {
 
             <ul className="relative space-y-3">
               {accessItems.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-slate-300">
+                <li key={item} className="flex items-start gap-3 text-blanc-300">
                   <CheckCircle2
                     size={18}
-                    className="mt-0.5 shrink-0 text-[#93C5FD]"
+                    className="mt-0.5 shrink-0 text-france-300"
                     aria-hidden="true"
                   />
                   <span className="font-medium">{item}</span>
@@ -87,7 +87,7 @@ const Guide = () => {
               ))}
             </ul>
 
-            <div className="relative mt-7 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-sm italic text-slate-300">
+            <div className="relative mt-7 rounded-xl border border-blanc-50/10 bg-blanc-50/[0.04] p-4 text-sm italic text-blanc-300">
               &quot;L&apos;avenir de la télévision est ici. Flexible, abordable et sans limites.&quot;
             </div>
           </div>
@@ -99,17 +99,17 @@ const Guide = () => {
             return (
               <div
                 key={feature.title}
-                className="rounded-2xl border border-white/10 bg-[#081423] p-6"
+                className="rounded-2xl border border-blanc-50/10 bg-france-900 p-6"
               >
                 <div
                   className={`mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border ${feature.tone}`}
                 >
                   <Icon size={23} aria-hidden="true" />
                 </div>
-                <h3 className="mb-3 text-xl font-black text-white">
+                <h3 className="mb-3 text-xl font-black text-blanc-50">
                   {feature.title}
                 </h3>
-                <p className="leading-6 text-slate-400">{feature.description}</p>
+                <p className="leading-6 text-blanc-400">{feature.description}</p>
               </div>
             );
           })}

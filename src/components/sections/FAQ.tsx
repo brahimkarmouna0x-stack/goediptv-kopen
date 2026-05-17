@@ -18,13 +18,13 @@ const FAQ = ({
     <section id="faq" className="py-24 relative overflow-hidden" style={{ contentVisibility: "auto", containIntrinsicSize: "auto 700px" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <span className="inline-block px-4 py-1.5 rounded-full glass text-accent-purple text-sm font-bold mb-4 uppercase tracking-wider glow-purple">
+          <span className="inline-block px-4 py-1.5 rounded-full glass text-rouge-400 text-sm font-bold mb-4 uppercase tracking-wider glow-purple">
             FAQ
           </span>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl mb-4 text-white">
+          <h2 className="font-display font-bold text-4xl sm:text-5xl mb-4 text-blanc-50">
             Questions Fréquemment <span className="text-gradient">Posées</span>
           </h2>
-          <p className="text-slate-400 font-medium">
+          <p className="text-blanc-400 font-medium">
             Tout ce que vous devez savoir sur IPTV SERVICE.
           </p>
         </div>
@@ -33,20 +33,20 @@ const FAQ = ({
           {displayFaqs.map((faq, idx) => (
             <details
               key={idx}
-              className="group animate-slide-up glass rounded-2xl overflow-hidden border border-white/5 transition-all duration-300 open:border-accent-cyan/30 open:glow-blue"
+              className="group animate-slide-up glass rounded-2xl overflow-hidden border border-blanc-50/5 transition-all duration-300 open:border-france-400/30 open:glow-blue"
               style={{ animationDelay: `${0.1 * idx}s` }}
             >
               <summary className="list-none w-full flex items-center justify-between p-6 text-left cursor-pointer">
-                <span className="font-bold text-white pr-4">
+                <span className="font-bold text-blanc-50 pr-4">
                   {faq.question}
                 </span>
                 <ChevronDown
                   size={20}
-                  className="text-accent-cyan transition-transform duration-300 shrink-0 group-open:rotate-180"
+                  className="text-france-400 transition-transform duration-300 shrink-0 group-open:rotate-180"
                   aria-hidden="true"
                 />
               </summary>
-              <p className="text-slate-400 text-sm leading-relaxed font-medium px-6 pb-6">
+              <p className="text-blanc-400 text-sm leading-relaxed font-medium px-6 pb-6">
                 {faq.answer}
               </p>
             </details>

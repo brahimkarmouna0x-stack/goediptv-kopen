@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/layouts/NavBar";
 import Footer from "@/components/layouts/Footer";
@@ -9,12 +9,7 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  display: "optional",
-  variable: "--font-space-grotesk",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -91,11 +86,12 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`h-full antialiased ${inter.variable} ${spaceGrotesk.variable}`}
+      className={`h-full antialiased ${inter.variable}`}
       suppressHydrationWarning
     >
       <head>
-        <meta name="theme-color" content="#06111f" />
+        <meta name="theme-color" content="#0F172A" />
+        <meta name="color-scheme" content="dark" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://image.tmdb.org" />
@@ -103,15 +99,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://api.themoviedb.org" />
         <link rel="dns-prefetch" href="https://api.themoviedb.org" />
       </head>
-      <body
-        className="min-h-full flex flex-col gradient-bg"
-        suppressHydrationWarning
-      >
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {/* Skip-to-content link for keyboard users — first focusable element */}
         <a
           href="#main-content"
           id="skip-to-content"
-          className="fixed -top-40 left-4 z-[9999] rounded-xl bg-[#EF4135] px-6 py-3 font-black text-slate-950 shadow-lg transition-all focus:top-4 focus:outline-2 focus:outline-[#3B82F6]"
+          className="fixed -top-40 left-4 z-[9999] rounded-xl bg-rouge-500 px-6 py-3 font-black text-blanc-50 shadow-lg transition-all focus:top-4 focus:outline-2 focus:outline-france-400"
         >
           Aller au contenu
         </a>
@@ -124,7 +117,6 @@ export default function RootLayout({
 
         <WhatsAppButton />
 
-        {/* CLS FIX: mt-15 moved directly onto the <footer> element in Footer.tsx */}
         <Footer />
       </body>
     </html>

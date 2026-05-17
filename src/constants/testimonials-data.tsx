@@ -61,7 +61,7 @@ export const testimonials: Testimonial[] = [
     time: "Il y a 3 mois",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
     rating: 5,
-    border: "border-[#EF4135]/35",
+    border: "border-rouge-500/35",
   },
   {
     name: "Nicolas Girard",

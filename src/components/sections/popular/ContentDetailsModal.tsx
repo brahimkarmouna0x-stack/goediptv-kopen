@@ -4,9 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { Play, PlayCircle, Star, X } from "lucide-react";
 import { type Trending } from "@/constants/trending-data";
-
-const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
-const TMDB_BASE_URL = "https://api.themoviedb.org/3";
+import { TMDB_API_KEY, TMDB_BASE_URL } from "@/lib/tmdb";
 
 interface ContentDetailsModalProps {
   item: Trending | null;

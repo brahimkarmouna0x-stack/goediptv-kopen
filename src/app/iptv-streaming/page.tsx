@@ -4,28 +4,14 @@ import Pricing from "@/components/sections/Pricing";
 import CTA from "@/components/sections/CTA";
 import Link from "next/link";
 import VaultSearch from "@/components/iptv-streaming/VaultSearch";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Base de connaissances IPTV SERVICE",
   description:
     "Parcourez la base de connaissances IPTV SERVICE avec des guides sur les applications, abonnements, 4K, IPTV, playlists M3U et streaming sécurisé.",
-  alternates: {
-    canonical: "/iptv-streaming",
-  },
-  openGraph: {
-    title: "Base de connaissances IPTV SERVICE | IPTV SERVICE",
-    description:
-      "Tous les guides IPTV SERVICE au même endroit : applications, lecteurs, abonnements, appareils, 4K et streaming sécurisé.",
-    url: "/iptv-streaming",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Base de connaissances IPTV SERVICE | IPTV SERVICE",
-    description:
-      "Découvrez des guides IPTV SERVICE pratiques pour les applications, appareils, forfaits et un visionnage responsable.",
-  },
-};
+  path: "/iptv-streaming",
+});
 
 export default function IPTVStreamingPage() {
   return (

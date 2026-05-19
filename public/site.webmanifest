@@ -68,9 +68,9 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/images/logo.png",
+      "src": "/images/logo.webp",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "any maskable"
     }
   ]

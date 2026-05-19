@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/layouts/NavBar";
 import Footer from "@/components/layouts/Footer";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
+import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   icons: {
     icon: [
-      { url: "/images/logo.png", type: "image/png", sizes: "512x512" },
+      { url: "/images/logo.webp", type: "image/webp", sizes: "512x512" },
       { url: "/favicon.ico", type: "image/x-icon" },
       { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
       { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
       "Streaming 4K illimité avec 25 000+ chaînes et zéro buffering.",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/images/logo.webp",
         width: 512,
         height: 512,
         alt: "IPTV SERVICE",
@@ -82,7 +83,7 @@ export const metadata: Metadata = {
     title: "IPTV SERVICE — Service IPTV Premium en France",
     description:
       "Streaming 4K illimité avec 25 000+ chaînes et zéro buffering.",
-    images: ["/images/logo.png"],
+    images: ["/images/logo.webp"],
   },
   robots: {
     index: true,
@@ -110,6 +111,18 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://image.tmdb.org" />
         <link rel="preconnect" href="https://api.themoviedb.org" />
         <link rel="dns-prefetch" href="https://api.themoviedb.org" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema()),
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {/* Skip-to-content link for keyboard users — first focusable element */}

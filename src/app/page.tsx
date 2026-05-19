@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "IPTV SERVICE — Service IPTV Premium en France",
+  description:
+    "Streaming 4K illimité avec 25 000+ chaînes et zéro buffering. Découvrez le meilleur service IPTV premium en France avec IPTV SERVICE.",
+  path: "/",
+});
 
 // Above-fold: Hero is static (LCP element)
 // Below-fold sections: dynamically imported with SSR enabled (pre-rendered, not client-only)

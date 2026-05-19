@@ -4,13 +4,13 @@ const PARTNERS = [
   {
     name: "Netflix",
     label: "Streaming via IPTV",
-    logo: "/images-/netflix.png",
+    logo: "/images-/netflix.webp",
     imageClass: "scale-90",
   },
   {
     name: "Apple TV",
     label: "Streaming via IPTV",
-    logo: "/images-/apple 2.png",
+    logo: "/images-/apple-2.webp",
     imageClass: "scale-95",
   },
   {
@@ -34,7 +34,7 @@ const PARTNERS = [
   {
     name: "Videoland",
     label: "Streaming via IPTV",
-    logo: "/images-/video-land.png",
+    logo: "/images-/video-land.webp",
     imageClass: "scale-110",
   },
   {

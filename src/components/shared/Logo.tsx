@@ -18,7 +18,7 @@ const Logo = () => {
     >
       <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden">
         <Image
-          src="/images/logo.png"
+          src="/images/logo.webp"
           alt="IPTV SERVICE"
           width={40}
           height={40}

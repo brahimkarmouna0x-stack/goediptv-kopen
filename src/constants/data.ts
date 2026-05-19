@@ -77,20 +77,6 @@ export const supportFooterLinks: Link[] = [
   },
 ];
 
-export const socialLinks: Link[] = [
-  {
-    label: "WhatsApp",
-    href: "/support/contact",
-  },
-];
-
-export const heroStats = [
-  { label: "Chaînes Live", value: "25K+", color: "text-[#3B82F6]" },
-  { label: "Qualité Ultra HD", value: "4K", color: "text-[#EF4135]" },
-  { label: "Films & Séries", value: "∞", color: "text-[#F4C430]" },
-  { label: "Pays", value: "190+", color: "text-[#3B82F6]" },
-];
-
 export const categories = [
   {
     name: "Sport",
@@ -184,58 +170,6 @@ export const features = [
     color: "text-[#3B82F6]",
     gradient: "from-[#0055A4]/25 to-[#3B82F6]/20",
     hoverBorder: "hover:border-[#0055A4]/40",
-  },
-];
-
-export const pricingPlans = [
-  {
-    name: "Mensuel",
-    price: "14,99",
-    period: "mois",
-    description: "Parfait pour essayer",
-    features: [
-      "25 000+ Chaînes Live",
-      "Qualité HD & Full HD",
-      "1 Connexion Appareil",
-      "EPG & Catch-up",
-    ],
-    missingFeatures: ["4K Ultra HD", "Bibliothèque VOD"],
-    isPopular: false,
-    hoverBorder: "hover:border-[#0055A4]/40",
-  },
-  {
-    name: "Trimestriel",
-    price: "34,99",
-    period: "3 mois",
-    description:
-      "Meilleur rapport qualité-prix pour les téléspectateurs réguliers",
-    features: [
-      "25 000+ Chaînes Live",
-      "Qualité Full HD & 4K",
-      "2 Connexions Appareils",
-      "EPG & Catch-up",
-      "Bibliothèque VOD de Base",
-    ],
-    missingFeatures: ["Synchronisation Multi-Écran"],
-    isPopular: true,
-    hoverBorder: "hover:border-[#0055A4]/40",
-  },
-  {
-    name: "Annuel",
-    price: "89,99",
-    period: "an",
-    description: "L'expérience premium ultime",
-    features: [
-      "25 000+ Chaînes Live",
-      "4K Ultra HD & Prêt pour la 8K",
-      "4 Connexions Appareils",
-      "Accès Complet à la Bibliothèque VOD",
-      "Support 24/7 Prioritaire",
-      "Synchronisation Multi-Écran",
-    ],
-    missingFeatures: [],
-    isPopular: false,
-    hoverBorder: "hover:border-[#EF4135]/35",
   },
 ];
 

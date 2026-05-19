@@ -15,21 +15,14 @@ import {
 } from "lucide-react";
 import Trending from "@/components/sections/Trending";
 
-export const metadata: Metadata = {
-  title: "IPTV Pays-Bas — #1 Abonnement IPTV Premium (2024)",
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "IPTV Pays-Bas — #1 Abonnement IPTV Premium (2026)",
   description:
     "Meilleur IPTV Pays-Bas & Belgique avec 31 000+ chaînes, 140 000+ VOD en qualité 4K/8K. Achetez IPTV avec support 24/7, activation immédiate et 100% stable.",
-  alternates: {
-    canonical: "/iptv-streaming/iptv-nederland",
-  },
-  openGraph: {
-  title: "IPTV Pays-Bas — #1 Abonnement IPTV Premium (2026)",
-    description:
-      "Découvrez le meilleur IPTV aux Pays-Bas avec 31 000+ chaînes et 140 000+ VOD en 4K. Accès direct au sport en direct, films et séries.",
-    url: "/iptv-streaming/iptv-nederland",
-    type: "website",
-  },
-};
+  path: "/iptv-streaming/iptv-nederland",
+});
 
 const IPTVNederland = () => {
   return (

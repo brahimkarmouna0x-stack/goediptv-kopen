@@ -1,24 +1,32 @@
 import { MetadataRoute } from "next";
 import { FOOTER_PAGES } from "@/constants/data";
+import { getIptvStreamingPath } from "@/content/iptv-streaming-pages";
+
+/** Stable date for legal pages that rarely change (avoids "lastModified" churn) */
+const LEGAL_LAST_MOD = new Date("2026-01-15");
+
+/** Build ISO date string for today — content pages actually update */
+const today = () => new Date();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://iptvstreaming.nl";
 
   // Static routes with priority and frequency
   const staticRoutes = [
-    { url: "", priority: 1.0, freq: "weekly" as const },
-    { url: "/popular", priority: 0.9, freq: "weekly" as const },
-    { url: "/support", priority: 0.8, freq: "weekly" as const },
-    { url: "/support/guides", priority: 0.8, freq: "monthly" as const },
-    { url: "/support/contact", priority: 0.8, freq: "monthly" as const },
-    { url: "/support/status", priority: 0.6, freq: "daily" as const },
-    { url: "/privacy-policy", priority: 0.4, freq: "yearly" as const },
-    { url: "/terms-of-service", priority: 0.4, freq: "yearly" as const },
-    { url: "/cookie-policy", priority: 0.4, freq: "yearly" as const },
-    { url: "/iptv-streaming", priority: 0.9, freq: "weekly" as const },
+    { url: "", priority: 1.0, freq: "weekly" as const, lastMod: today },
+    { url: "/popular", priority: 0.9, freq: "weekly" as const, lastMod: today },
+    { url: "/support", priority: 0.8, freq: "weekly" as const, lastMod: today },
+    { url: "/support/guides", priority: 0.8, freq: "monthly" as const, lastMod: today },
+    { url: "/support/contact", priority: 0.8, freq: "monthly" as const, lastMod: today },
+    { url: "/support/status", priority: 0.6, freq: "daily" as const, lastMod: today },
+    { url: "/privacy-policy", priority: 0.4, freq: "yearly" as const, lastMod: () => LEGAL_LAST_MOD },
+    { url: "/terms-of-service", priority: 0.4, freq: "yearly" as const, lastMod: () => LEGAL_LAST_MOD },
+    { url: "/cookie-policy", priority: 0.4, freq: "yearly" as const, lastMod: () => LEGAL_LAST_MOD },
+    { url: "/iptv-streaming", priority: 0.9, freq: "weekly" as const, lastMod: today },
+    { url: getIptvStreamingPath("iptv-nederland"), priority: 0.9, freq: "weekly" as const, lastMod: today },
   ].map((route) => ({
     url: `${baseUrl}${route.url}`,
-    lastModified: new Date(),
+    lastModified: route.lastMod(),
     changeFrequency: route.freq,
     priority: route.priority,
   }));
@@ -26,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Dynamic SEO pages from FOOTER_PAGES
   const dynamicPages = FOOTER_PAGES.map((page) => ({
     url: `${baseUrl}${page.href}`,
-    lastModified: new Date(),
+    lastModified: today(),
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));

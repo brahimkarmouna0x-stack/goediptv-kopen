@@ -14,7 +14,7 @@ const LOGOS = [
   { name: "KSA Sports", path: "/images-/ksal.webp", shape: "mark", scale: 0.9 },
   {
     name: "National Geographic",
-    path: "/images-/National-Geographic-Logo-2105276458.png",
+    path: "/images-/National-Geographic-Logo-2105276458.webp",
     shape: "wide",
     scale: 0.9,
   },

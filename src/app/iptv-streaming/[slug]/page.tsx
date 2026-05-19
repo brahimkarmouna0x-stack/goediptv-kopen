@@ -6,6 +6,7 @@ import {
   getIptvStreamingPath,
   IPTV_STREAMING_PAGES,
 } from "@/content/iptv-streaming-pages";
+import { absoluteUrl, OG_IMAGE } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -33,26 +34,29 @@ export async function generateMetadata({
     };
   }
 
-  const url = getIptvStreamingPath(page.slug);
+  const relativeUrl = getIptvStreamingPath(page.slug);
+  const canonicalUrl = absoluteUrl(relativeUrl);
 
   return {
     title: page.metaTitle,
     description: page.metaDescription,
     alternates: {
-      canonical: url,
+      canonical: canonicalUrl,
     },
     openGraph: {
       type: "article",
-      url,
+      url: canonicalUrl,
       siteName: "IPTV SERVICE",
       title: page.metaTitle,
       description: page.metaDescription,
       locale: page.language === "nl" ? "nl_NL" : page.language,
+      images: [OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title: page.metaTitle,
       description: page.metaDescription,
+      images: [OG_IMAGE.url],
     },
   };
 }

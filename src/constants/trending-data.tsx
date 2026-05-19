@@ -19,8 +19,8 @@ export const trendingNow: Trending[] = [
     genre: "Fantasy",
     rating: "9.2",
     type: "series",
-    image: "/images-/movies/10.jpg",
-    backdrop: "/images-/movies/10.jpg",
+    image: "/images-/movies/10.webp",
+    backdrop: "/images-/movies/10.webp",
   },
   {
     title: "Vikings",
@@ -91,8 +91,8 @@ export const trendingNow: Trending[] = [
     genre: "Sci-Fi",
     rating: "8.7",
     type: "series",
-    image: "/images-/movies/6.jpg",
-    backdrop: "/images-/movies/6.jpg",
+    image: "/images-/movies/6.webp",
+    backdrop: "/images-/movies/6.webp",
   },
   {
     title: "Sky Sports 1",

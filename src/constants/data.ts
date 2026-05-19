@@ -18,6 +18,10 @@ export const NAV_LINKS: Link[] = [
     href: "/#pricing",
   },
   {
+    label: "iptv kopen",
+    href: "/iptv-streaming/iptv-kopen",
+  },
+  {
     label: "abonnement iptv",
     href: "/iptv-streaming/iptv-abonnement",
   },
@@ -203,7 +207,8 @@ export const pricingPlans = [
     name: "Trimestriel",
     price: "34,99",
     period: "3 mois",
-    description: "Meilleur rapport qualité-prix pour les téléspectateurs réguliers",
+    description:
+      "Meilleur rapport qualité-prix pour les téléspectateurs réguliers",
     features: [
       "25 000+ Chaînes Live",
       "Qualité Full HD & 4K",

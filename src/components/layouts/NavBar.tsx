@@ -189,7 +189,7 @@ const NavBar = () => {
                 key={link.label}
                 href={link.href}
                 onClick={() => handleLinkClick(link.href)}
-                className={`rounded-xl px-4 py-3 text-sm font-bold transition-colors ${
+                className={`rounded-xl px-4 py-3 text-sm font-bold uppercase tracking-wide transition-colors duration-300 ${
                   isActive
                     ? "bg-france-500/15 text-france-100"
                     : "text-blanc-400 hover:bg-blanc-50/5 hover:text-blanc-50"

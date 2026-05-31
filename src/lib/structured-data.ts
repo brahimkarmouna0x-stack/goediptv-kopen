@@ -14,6 +14,10 @@ export function organizationSchema() {
       contactType: "customer support",
       url: `${SITE.url}/support/contact`,
     },
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "DE",
+    },
     sameAs: [] as string[],
   };
 }
@@ -26,7 +30,7 @@ export function websiteSchema() {
     name: SITE.name,
     url: SITE.url,
     description: SITE.description,
-    inLanguage: "fr",
+    inLanguage: "de",
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE.url}/search?q={search_term_string}`,

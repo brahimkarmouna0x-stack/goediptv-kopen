@@ -28,14 +28,14 @@ export const PurchaseModal = ({
   if (!isOpen || !plan) return null;
 
   const devicesText =
-    plan.name === "Essai Gratuit" || plan.devices === 1 ? "1 appareil" : `${plan.devices} appareils`;
+    plan.name === "Kostenlos Testen" || plan.devices === 1 ? "1 Gerät" : `${plan.devices} Geräte`;
 
-  const message = `Bonjour, je souhaite commander :
+  const message = `Hallo, ich möchte bestellen:
 
-- Abonnement : ${plan.name}
-- Nombre d'appareils : ${devicesText}
+- Abonnement: ${plan.name}
+- Anzahl Geräte: ${devicesText}
 
-Pouvez-vous m'en dire plus ?
+Können Sie mir mehr Details geben?
 
 ${plan.name}
 ${plan.duration}
@@ -77,10 +77,10 @@ ${devicesText}`;
             </div>
             <div>
               <h3 className="text-xl md:text-2xl font-display font-bold text-blanc-50">
-                Votre Commande
+                Ihre Bestellung
               </h3>
               <p className="text-blanc-400 text-xs md:text-sm">
-                Vérifiez votre forfait choisi
+                Überprüfen Sie Ihr ausgewähltes Angebot
               </p>
             </div>
           </div>
@@ -102,7 +102,7 @@ ${devicesText}`;
               className="btn-shine w-full py-5 bg-emerald-500 hover:bg-emerald-600 text-blanc-950 font-bold rounded-2xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-emerald-500/20 cursor-pointer"
             >
               <MessageCircle size={24} aria-hidden="true" />
-              COMMANDER VIA WHATSAPP
+              PER WHATSAPP BESTELLEN
             </a>
 
             <button
@@ -133,15 +133,15 @@ ${devicesText}`;
               </div>
               {copied && (
                 <span className="text-xs text-emerald-500 font-bold ml-2">
-                  Copié !
+                  Kopiert!
                 </span>
               )}
             </button>
           </div>
 
           <p className="mt-8 text-center text-blanc-500 text-xs px-4">
-            Vous serez redirigé vers WhatsApp pour finaliser votre commande en
-            toute sécurité avec l'un de nos conseillers.
+            Sie werden zu WhatsApp weitergeleitet, um Ihre Bestellung sicher
+            mit einem unserer Berater abzuschließen.
           </p>
         </div>
       </div>

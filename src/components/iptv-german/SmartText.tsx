@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IPTV_STREAMING_PAGES } from "@/content/iptv-streaming-pages";
+import { IPTV_GERMAN_PAGES } from "@/content/iptv-german-pages";
 
 interface SmartTextProps {
   text: string;
@@ -10,7 +10,7 @@ const SmartText = ({ text, currentSlug }: SmartTextProps) => {
   if (!text) return null;
 
   // Sort pages by keyword length descending to match longer phrases first (e.g., "IPTV Smarters Pro" before "IPTV")
-  const sortedPages = [...IPTV_STREAMING_PAGES]
+  const sortedPages = [...IPTV_GERMAN_PAGES]
     .sort((a, b) => b.keyword.length - a.keyword.length)
     .filter(p => p.slug !== currentSlug); // Don't link to the current page
 
@@ -40,7 +40,7 @@ const SmartText = ({ text, currentSlug }: SmartTextProps) => {
       result.push(
         <Link 
           key={i} 
-          href={`/iptv-streaming/${matchedPage.slug}`}
+          href={`/iptv-german/${matchedPage.slug}`}
           className="text-france-500 hover:text-france-400 underline decoration-france-500/35 underline-offset-4 font-bold transition-colors"
         >
           {part}

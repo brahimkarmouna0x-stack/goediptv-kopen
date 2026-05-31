@@ -1,7 +1,7 @@
 {
-  "name": "IPTV SERVICE",
-  "short_name": "IPTV SERVICE",
-  "description": "Streaming 4K illimité — 25 000+ chaînes, zéro buffering. Service IPTV premium en France.",
+  "name": "IPTV German",
+  "short_name": "IPTV German",
+  "description": "Unbegrenztes 4K-Streaming — 25.000+ Sender, null Buffering. Premium IPTV Dienst in Deutschland.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#030712",

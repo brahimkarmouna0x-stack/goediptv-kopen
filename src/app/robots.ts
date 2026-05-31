@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/_next/", "/static/"],
+      disallow: ["/_next/", "/static/", "/api/"],
     },
-    sitemap: "https://iptvstreaming.nl/sitemap.xml",
+    sitemap: "https://iptvgerman.de/sitemap.xml",
   };
 }

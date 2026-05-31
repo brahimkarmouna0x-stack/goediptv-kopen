@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 
 // ─── Site configuration ────────────────────────────────────────────────────
 export const SITE = {
-  name: "IPTV SERVICE",
-  url: "https://iptvstreaming.nl",
-  locale: "fr_FR",
-  localeAlt: "nl_NL",
+  name: "IPTV German",
+  url: "https://iptvgerman.de",
+  locale: "de_DE",
+  localeAlt: "en_DE",
   description:
-    "Streaming 4K illimité avec 25 000+ chaînes et zéro buffering. Découvrez le meilleur service IPTV premium en France avec IPTV SERVICE.",
+    "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering. Entdecken Sie den besten Premium-IPTV-Dienst in Deutschland mit IPTV German.",
   twitterHandle: undefined as string | undefined,
 } as const;
 
@@ -23,7 +23,7 @@ export const OG_IMAGE = {
   url: `${SITE.url}/images/logo.webp`,
   width: 512,
   height: 512,
-  alt: SITE.name,
+  alt: "IPTV German – Premium IPTV Dienst in Deutschland",
 };
 
 // ─── Build canonical + alternate metadata ───────────────────────────────────
@@ -34,7 +34,7 @@ export function canonicalMetadata(
   return {
     alternates: {
       canonical: absoluteUrl(path),
-      ...(language && language !== "fr"
+      ...(language && language !== "de"
         ? { languages: { [language]: absoluteUrl(path) } }
         : {}),
     },

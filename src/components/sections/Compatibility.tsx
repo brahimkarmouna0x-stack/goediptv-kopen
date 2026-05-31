@@ -88,20 +88,20 @@ const Compatibility = () => {
         <div className="mb-10 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-france-500/20 bg-france-500/15 px-3.5 py-1.5 text-xs font-black uppercase tracking-[0.14em] text-france-100">
             <Tv size={14} aria-hidden="true" />
-            Compatibilité Universelle
+            Universelle Kompatibilität
           </span>
           <h2 className="mt-4 font-display text-4xl font-black text-blanc-50 sm:text-5xl">
-            Fonctionne sur <span className="text-gradient">presque tous les appareils</span>
+            Funktioniert auf <span className="text-gradient">fast allen Geräten</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm font-medium leading-6 text-blanc-400 sm:text-base">
-            Cherchez votre marque, application, type de TV ou player. Nous supportons {totalItems}+
-            appareils populaires, applications et plateformes IPTV.
+            Suchen Sie Ihre Marke, App, TV-Typ oder Player. Wir unterstützen {totalItems}+
+            beliebte Geräte, Apps und IPTV-Plattformen.
           </p>
         </div>
 
         <div className="mx-auto mb-10 max-w-2xl">
           <label htmlFor="device-search" className="sr-only">
-              Cherchez un appareil ou une marque
+              Suchen Sie ein Gerät oder eine Marke
           </label>
           <div className="relative">
             <Search
@@ -114,14 +114,14 @@ const Compatibility = () => {
               type="search"
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
-              placeholder="Cherchez Samsung, LG, Firestick, MAG, TiviMate, iPhone..."
+              placeholder="Suchen Sie Samsung, LG, Firestick, MAG, TiviMate, iPhone..."
               className="w-full rounded-2xl border border-blanc-50/10 bg-france-900 py-4 pl-13 pr-12 text-blanc-50 outline-none transition-colors placeholder:text-blanc-500 focus:border-france-500/50"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                aria-label="Vider le champ de recherche"
+                aria-label="Suchfeld leeren"
                 className="absolute right-4 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/5 text-blanc-400 transition-colors hover:bg-white/10 hover:text-blanc-50"
               >
                 <X size={16} aria-hidden="true" />
@@ -135,7 +135,7 @@ const Compatibility = () => {
               aria-live="polite"
               aria-atomic="true"
             >
-              {filteredCategories.length} catégories trouvées pour &quot;
+              {filteredCategories.length} Kategorien gefunden für &quot;
               {searchQuery}&quot;
             </p>
           )}
@@ -209,11 +209,11 @@ const Compatibility = () => {
                 aria-hidden="true"
               />
               <h3 className="text-xl font-black text-blanc-50">
-                Aucun appareil trouvé
+                Kein Gerät gefunden
               </h3>
               <p className="mt-2 text-blanc-400">
-                Contactez-nous. L&apos;IPTV fonctionne souvent via M3U, Xtream Codes ou
-                un lecteur web.
+                Kontaktieren Sie uns. IPTV funktioniert oft über M3U, Xtream Codes oder
+                einen Web-Player.
               </p>
             </div>
           )}
@@ -226,12 +226,11 @@ const Compatibility = () => {
                 <Headphones size={24} aria-hidden="true" />
               </div>
               <h3 className="font-display text-2xl font-black text-blanc-50">
-                Votre appareil n&apos;est pas dans la liste ?
+                Ihr Gerät ist nicht in der Liste?
               </h3>
               <p className="mt-3 text-sm leading-6 text-blanc-400">
-                Notre IPTV fonctionne sur presque tous les appareils avec Internet, un
-                navigateur, un lecteur M3U, une app Xtream Codes ou un environnement
-                Android/Smart TV.
+                Unser IPTV funktioniert auf fast allen Geräten mit Internet,
+                Browser, M3U-Player, Xtream-Codes-App oder Android/Smart-TV-Umgebung.
               </p>
             </div>
 
@@ -242,7 +241,7 @@ const Compatibility = () => {
                 rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-xl bg-rouge-500 px-5 py-3 text-sm font-black text-blanc-950 transition-colors hover:bg-rouge-500"
               >
-                Chat en Direct
+                Live-Chat
               </a>
               <button
                 type="button"

@@ -2,26 +2,26 @@ import type { Metadata } from "next";
 import PopularContent from "@/components/sections/PopularContent";
 
 export const metadata: Metadata = {
-  title: "Contenu Populaire",
+  title: "Beliebte Inhalte",
   description:
-    "Découvrez notre bibliothèque complète de films premium, séries et chaînes TV en direct.",
+    "Entdecken Sie unsere umfangreiche Bibliothek mit Premium-Filmen, Serien und Live-TV-Sendern.",
   alternates: {
-    canonical: "https://iptvstreaming.nl/popular",
+    canonical: "https://iptvgerman.de/popular",
   },
   openGraph: {
-    title: "Contenu Populaire",
+    title: "Beliebte Inhalte",
     description:
-      "Découvrez notre bibliothèque complète de films premium, séries et chaînes TV en direct.",
-    url: "https://iptvstreaming.nl/popular",
-    siteName: "IPTV SERVICE",
-    locale: "fr_FR",
+      "Entdecken Sie unsere umfangreiche Bibliothek mit Premium-Filmen, Serien und Live-TV-Sendern.",
+    url: "https://iptvgerman.de/popular",
+    siteName: "IPTV German",
+    locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contenu Populaire",
+    title: "Beliebte Inhalte",
     description:
-      "Découvrez notre bibliothèque complète de films premium, séries et chaînes TV en direct.",
+      "Entdecken Sie unsere umfangreiche Bibliothek mit Premium-Filmen, Serien und Live-TV-Sendern.",
   },
 };
 

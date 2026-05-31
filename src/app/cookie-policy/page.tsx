@@ -2,23 +2,23 @@ import type { Metadata } from "next";
 import { WHATSAPP_URL } from "@/constants";
 
 export const metadata: Metadata = {
-  title: "Politique des Cookies — IPTV SERVICE",
-  description: "Découvrez comment nous utilisons les cookies pour améliorer votre expérience.",
+  title: "Cookie-Richtlinie — IPTV German",
+  description: "Erfahren Sie, wie wir Cookies verwenden, um Ihr Erlebnis zu verbessern.",
   alternates: {
-    canonical: "https://iptvstreaming.nl/cookie-policy",
+    canonical: "https://iptvgerman.de/cookie-policy",
   },
   openGraph: {
-    title: "Politique des Cookies — IPTV SERVICE",
-    description: "Découvrez comment nous utilisons les cookies pour améliorer votre expérience.",
-    url: "https://iptvstreaming.nl/cookie-policy",
-    siteName: "IPTV SERVICE",
-    locale: "fr_FR",
+    title: "Cookie-Richtlinie — IPTV German",
+    description: "Erfahren Sie, wie wir Cookies verwenden, um Ihr Erlebnis zu verbessern.",
+    url: "https://iptvgerman.de/cookie-policy",
+    siteName: "IPTV German",
+    locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Politique des Cookies — IPTV SERVICE",
-    description: "Découvrez comment nous utilisons les cookies pour améliorer votre expérience.",
+    title: "Cookie-Richtlinie — IPTV German",
+    description: "Erfahren Sie, wie wir Cookies verwenden, um Ihr Erlebnis zu verbessern.",
   },
 };
 
@@ -27,35 +27,35 @@ const CookiePolicyPage = () => {
     <main className="pt-28 sm:pt-32 pb-20 sm:pb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-france-500 text-sm font-bold mb-4 uppercase tracking-wider glow-blue">
-              Juridique
+            <span className="inline-block px-4 py-1.5 rounded-full glass text-france-400 text-sm font-bold mb-4 uppercase tracking-wider glow-gold">
+              Rechtlich
             </span>
             <h1 className="font-display font-black text-4xl sm:text-6xl mb-6 text-blanc-50 leading-tight">
-              Politique des <span className="text-gradient">Cookies</span>
+              <span className="text-gradient">Cookie</span>-Richtlinie
             </h1>
             <p className="text-blanc-400 text-lg">
-              Dernière mise à jour : 6 mai 2026
+              Zuletzt aktualisiert: 6. Mai 2026
             </p>
           </div>
 
           <div className="glass rounded-2xl p-5 sm:p-8 lg:p-12 space-y-10 sm:space-y-12 animate-slide-up">
             <section>
-              <h2 className="text-2xl font-bold text-blanc-50 mb-4">Que Sont les Cookies ?</h2>
+              <h2 className="text-2xl font-bold text-blanc-50 mb-4">Was Sind Cookies?</h2>
               <p className="text-blanc-300 leading-relaxed">
-                Les cookies sont de petits fichiers texte stockés sur votre appareil lorsque vous visitez un site web. Ils aident le site à reconnaître votre appareil et à mémoriser des informations sur votre visite, comme votre langue préférée et d'autres paramètres.
+                Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, wenn Sie eine Website besuchen. Sie helfen der Website, Ihr Gerät zu erkennen und Informationen über Ihren Besuch zu speichern, wie z.B. Ihre bevorzugte Sprache und andere Einstellungen.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-blanc-50 mb-4">Comment Nous Utilisons les Cookies</h2>
+              <h2 className="text-2xl font-bold text-blanc-50 mb-4">Wie Wir Cookies Verwenden</h2>
               <p className="text-blanc-300 mb-6">
-                Nous utilisons les cookies aux fins suivantes :
+                Wir verwenden Cookies für folgende Zwecke:
               </p>
               <div className="grid gap-4">
                 {[
-                  { title: "Cookies Essentiels", desc: "Nécessaires au bon fonctionnement du site web, comme la gestion de session et la sécurité." },
-                  { title: "Cookies de Préférence", desc: "Mémorisent vos paramètres et choix pour offrir une expérience plus personnalisée." },
-                  { title: "Cookies Analytiques", desc: "Nous aident à comprendre comment les visiteurs interagissent avec notre site en collectant des données anonymes." }
+                  { title: "Notwendige Cookies", desc: "Erforderlich für das ordnungsgemäße Funktionieren der Website, wie Sitzungsverwaltung und Sicherheit." },
+                  { title: "Präferenz-Cookies", desc: "Speichern Ihre Einstellungen und Auswahlmöglichkeiten, um ein personalisierteres Erlebnis zu bieten." },
+                  { title: "Analyse-Cookies", desc: "Helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem sie anonyme Daten sammeln." }
                 ].map((cookie, index) => (
                   <div key={index} className="p-4 rounded-xl bg-blanc-50/5 border border-blanc-50/10">
                     <h3 className="text-blanc-50 font-bold mb-1">{cookie.title}</h3>
@@ -66,17 +66,17 @@ const CookiePolicyPage = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-blanc-50 mb-4">Gérer les Cookies</h2>
+              <h2 className="text-2xl font-bold text-blanc-50 mb-4">Cookies Verwalten</h2>
               <p className="text-blanc-300 leading-relaxed">
-                La plupart des navigateurs web vous permettent de gérer les cookies via leurs paramètres. Vous pouvez choisir de bloquer tous les cookies ou uniquement les cookies tiers. Notez toutefois que la désactivation des cookies essentiels peut affecter le fonctionnement de notre service.
+                Die meisten Webbrowser ermöglichen Ihnen die Verwaltung von Cookies über ihre Einstellungen. Sie können wählen, ob Sie alle Cookies oder nur Cookies von Drittanbietern blockieren möchten. Beachten Sie jedoch, dass die Deaktivierung wesentlicher Cookies die Funktionalität unseres Dienstes beeinträchtigen kann.
               </p>
             </section>
 
             <section className="pt-8 border-t border-blanc-50/10">
-              <h2 className="text-xl font-bold text-blanc-50 mb-4">Contactez-Nous</h2>
+              <h2 className="text-xl font-bold text-blanc-50 mb-4">Kontaktieren Sie Uns</h2>
               <p className="text-blanc-300">
-                Si vous avez des questions sur notre utilisation des cookies, veuillez nous
-                contacter via{" "}
+                Wenn Sie Fragen zu unserer Verwendung von Cookies haben, kontaktieren Sie
+                uns bitte über{" "}
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"

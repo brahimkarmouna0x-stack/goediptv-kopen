@@ -26,19 +26,19 @@ const Features = ({ title }: { title?: string }) => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <span className="inline-block px-4 py-1.5 rounded-full glass text-france-400 text-sm font-bold mb-4 uppercase tracking-wider glow-blue">
-            Pourquoi IPTV SERVICE
+          <span className="inline-block px-4 py-1.5 rounded-full glass text-france-400 text-sm font-bold mb-4 uppercase tracking-wider glow-gold">
+            Warum IPTV German
           </span>
           <h2 className="font-display font-bold text-4xl sm:text-5xl mb-4 text-blanc-50">
             {title || (
               <>
-                Conçu pour la <span className="text-gradient">Perfection</span>
+                Entwickelt für <span className="text-gradient">Perfektion</span>
               </>
             )}
           </h2>
           <p className="text-blanc-400 max-w-2xl mx-auto font-medium">
-            Chaque détail est conçu pour l&apos;expérience de streaming ultime. L&apos;infrastructure
-            premium rencontre le design intuitif.
+            Jedes Detail ist für das ultimative Streaming-Erlebnis konzipiert. Premium-Infrastruktur
+            trifft auf intuitives Design.
           </p>
         </div>
 

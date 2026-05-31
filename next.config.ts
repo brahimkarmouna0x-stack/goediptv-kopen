@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [480, 768, 1024, 1280, 1536],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Quality values used across components (next/image only generates these)
+    qualities: [45, 50, 55, 60, 62, 68, 70, 72, 75],
     remotePatterns: [
       {
         protocol: "https",
@@ -56,6 +58,14 @@ const nextConfig: NextConfig = {
           {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
           },
         ],
       },

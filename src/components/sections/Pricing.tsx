@@ -100,24 +100,24 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {/* Free Trial */}
           <PlanCard
-            name="Essai Gratuit"
-            duration="1 heure"
+            name="Kostenlos Testen"
+            duration="1 Stunde"
             isFree
             connections={1}
             features={[
-              "Accès aux chaînes de base",
-              "Support client 24/7",
-              "Qualité HD & Full HD",
-              "4K disponible",
-              "Carte bancaire non requise",
-              "Activation immédiate",
-              "Sans engagement",
+              "Zugang zu Basissendern",
+              "Kunden-Support 24/7",
+              "HD & Full HD Qualität",
+              "4K verfügbar",
+              "Keine Kreditkarte nötig",
+              "Sofortige Aktivierung",
+              "Ohne Verpflichtung",
             ]}
-            buttonText="Essai gratuit 1h"
+            buttonText="1h kostenlos testen"
             onBuy={() =>
               handleBuy({
-                name: "Essai Gratuit",
-                duration: "1 heure",
+                name: "Kostenlos Testen",
+                duration: "1 Stunde",
                 isFree: true,
               })
             }
@@ -125,30 +125,30 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
 
           {/* 6 Months */}
           <PlanCard
-            name="Abonnement 6 Mois"
-            duration="6 mois"
+            name="6 Monate Abo"
+            duration="6 Monate"
             price={currentPrices.halfYear}
             connections={connections}
             badge={{
               icon: Bolt,
-              text: "40% DE RÉDUCTION",
+              text: "40% RABATT",
               className: "text-france-400",
             }}
-            savingsLabel={`ÉCONOMIE - €${monthlyPrices.halfYear}/mois`}
-            monthlyPriceLabel={`Seulement €${monthlyPrices.halfYear} par mois`}
+            savingsLabel={`SPAREN - €${monthlyPrices.halfYear}/Monat`}
+            monthlyPriceLabel={`Nur €${monthlyPrices.halfYear} pro Monat`}
             features={[
-              "+140 000 Films & Séries",
-              "Support client 24/7",
+              "+140.000 Filme & Serien",
+              "Kunden-Support 24/7",
               "4K, Full HD, HD & SD",
-              "+31 000 chaînes IPTV",
-              "Mises à jour gratuites",
-              "30 Jours Satisfait ou Remboursé",
+              "+31.000 IPTV-Sender",
+              "Kostenlose Updates",
+              "30 Tage Geld-zurück-Garantie",
             ]}
-            buttonText="Commencer maintenant"
+            buttonText="Jetzt starten"
             onBuy={() =>
               handleBuy({
-                name: "ABONNEMENT 6 MOIS",
-                duration: "6 mois",
+                name: "6 MONATE ABO",
+                duration: "6 Monate",
                 price: currentPrices.halfYear,
               })
             }
@@ -156,31 +156,31 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
 
           {/* 12 Months - POPULAR */}
           <PlanCard
-            name="Abonnement 1 An"
-            duration="1 an"
+            name="1 Jahr Abo"
+            duration="1 Jahr"
             price={currentPrices.yearly}
             isPopular
             connections={connections}
             badge={{
               icon: Star,
-              text: "RECOMMANDÉ | 50% DE RÉDUCTION",
+              text: "EMPFEHLUNG | 50% RABATT",
               className: "text-yellow-400",
             }}
-            savingsLabel={`POPULAIRE - €${monthlyPrices.yearly}/mois`}
-            monthlyPriceLabel={`Seulement €${monthlyPrices.yearly} par mois`}
+            savingsLabel={`BELIEBT - €${monthlyPrices.yearly}/Monat`}
+            monthlyPriceLabel={`Nur €${monthlyPrices.yearly} pro Monat`}
             features={[
-              "+140 000 Films & Séries",
-              "Support client 24/7",
+              "+140.000 Filme & Serien",
+              "Kunden-Support 24/7",
               "4K, Full HD, HD & SD",
-              "+31 000 chaînes IPTV",
-              "Mises à jour gratuites",
-              "30 Jours Satisfait ou Remboursé",
+              "+31.000 IPTV-Sender",
+              "Kostenlose Updates",
+              "30 Tage Geld-zurück-Garantie",
             ]}
-            buttonText="Commencer maintenant"
+            buttonText="Jetzt starten"
             onBuy={() =>
               handleBuy({
-                name: "ABONNEMENT 1 AN",
-                duration: "1 an",
+                name: "1 JAHR ABO",
+                duration: "1 Jahr",
                 price: currentPrices.yearly,
               })
             }
@@ -188,31 +188,31 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
 
           {/* 24 Months - BEST VALUE */}
           <PlanCard
-            name="Abonnement 2 Ans"
-            duration="2 ans"
+            name="2 Jahre Abo"
+            duration="2 Jahre"
             price={currentPrices.biyearly}
             isBestValue
             connections={connections}
             badge={{
               icon: Gem,
-              text: "MEILLEUR RAPPORT | 60% DE RÉDUCTION",
+              text: "BESTER PREIS | 60% RABATT",
               className: "text-rouge-500",
             }}
-            savingsLabel={`ÉCONOMISEZ 2 ANS - €${monthlyPrices.biyearly}/mois`}
-            monthlyPriceLabel={`Seulement €${monthlyPrices.biyearly} par mois`}
+            savingsLabel={`2 JAHRE SPAREN - €${monthlyPrices.biyearly}/Monat`}
+            monthlyPriceLabel={`Nur €${monthlyPrices.biyearly} pro Monat`}
             features={[
-              "+140 000 Films & Séries",
-              "Support VIP 24/7",
+              "+140.000 Filme & Serien",
+              "VIP-Support 24/7",
               "4K, Full HD, HD & SD",
-              "+31 000 chaînes IPTV",
-              "Mises à jour prioritaires",
-              "30 Jours Satisfait ou Remboursé",
+              "+31.000 IPTV-Sender",
+              "Priorisierte Updates",
+              "30 Tage Geld-zurück-Garantie",
             ]}
-            buttonText="Commencer maintenant"
+            buttonText="Jetzt starten"
             onBuy={() =>
               handleBuy({
-                name: "ABONNEMENT 2 ANS",
-                duration: "2 ans",
+                name: "2 JAHRE ABO",
+                duration: "2 Jahre",
                 price: currentPrices.biyearly,
               })
             }

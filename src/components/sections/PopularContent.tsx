@@ -142,14 +142,14 @@ const PopularContentInner = () => {
                 size={16}
                 className="group-hover:-translate-x-1 transition-transform"
               />
-              Retour à l&apos;Accueil
+              Zurück zur Startseite
             </Link>
             <h1 className="font-display font-black text-4xl sm:text-6xl text-blanc-50 mb-4 leading-tight">
-              Contenu <span className="text-gradient">Populaire</span>
+              Beliebte <span className="text-gradient">Inhalte</span>
             </h1>
             <p className="text-blanc-400 max-w-xl">
-              Découvrez notre bibliothèque complète de films premium, séries et
-              chaînes TV live du monde entier.
+              Entdecken Sie unsere umfangreiche Bibliothek mit Premium-Filmen, Serien und
+              Live-TV-Sendern aus aller Welt.
             </p>
           </div>
 
@@ -167,7 +167,7 @@ const PopularContentInner = () => {
             )}
             <input
               type="text"
-              placeholder="Cherchez films, séries ou genres..."
+              placeholder="Filme, Serien oder Genres suchen..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-14 pr-6 py-4 rounded-2xl glass text-blanc-50 placeholder-blanc-600 border border-blanc-50/10 focus:outline-none focus:border-france-400/50 transition-all outline-hidden"
@@ -223,7 +223,7 @@ const PopularContentInner = () => {
             <Search size={32} />
           </div>
           <h3 className="text-xl font-bold text-blanc-50 mb-2">
-            Aucun résultat trouvé
+            Keine Ergebnisse gefunden
           </h3>
           <p className="text-blanc-400">
             Essayez un autre terme de recherche ou modifiez les filtres.
@@ -236,7 +236,7 @@ const PopularContentInner = () => {
             }}
             className="mt-6 text-france-400 font-bold hover:underline cursor-pointer"
           >
-            Réinitialiser les filtres
+            Filter zurücksetzen
           </button>
         </div>
       )}

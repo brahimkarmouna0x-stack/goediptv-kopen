@@ -48,7 +48,7 @@ const PlanCardComponent = ({
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blanc-950/40 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blanc-950/80"></span>
           </span>
-          POPULAIRE
+          BELIEBT
         </div>
       )}
       <div
@@ -83,7 +83,7 @@ const PlanCardComponent = ({
               {badge.text}
             </p>
           )}
-          {isFree && <p className="text-blanc-400 text-sm">Testez d'abord</p>}
+              {isFree && <p className="text-blanc-400 text-sm">Erst testen</p>}
         </div>
 
         {/* Price */}
@@ -92,7 +92,7 @@ const PlanCardComponent = ({
             className={`font-display font-bold text-5xl ${isPopular ? "text-gradient" : "text-blanc-50"}`}
           >
             {isFree ? (
-              "Gratuit"
+              "Kostenlos"
             ) : price ? (
               <AnimatedPrice price={price} />
             ) : (

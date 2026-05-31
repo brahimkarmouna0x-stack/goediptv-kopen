@@ -14,12 +14,12 @@ const Logo = () => {
     <Link
       href="/"
       className="group flex shrink-0 items-center gap-1"
-      aria-label="IPTV SERVICE - Page d'accueil"
+      aria-label="IPTV German - Startseite"
     >
       <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden">
         <Image
           src="/images/logo.webp"
-          alt="IPTV SERVICE"
+          alt="IPTV German"
           width={40}
           height={40}
           priority
@@ -43,7 +43,7 @@ export const LogoText = ({ className = "text-xl" }: { className?: string }) => {
       >
         IPTV
         <span className="text-rouge-500 transition-colors duration-300 group-hover:text-blanc-50">
-          SERVICE
+          Germany
         </span>
       </span>
     </span>

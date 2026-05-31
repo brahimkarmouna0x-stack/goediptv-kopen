@@ -1,78 +1,78 @@
 import { Link } from ".";
 import {
-  getIptvStreamingPath,
-  IPTV_STREAMING_PAGES,
-} from "@/content/iptv-streaming-pages";
+  getIptvGermanPath,
+  IPTV_GERMAN_PAGES,
+} from "@/content/iptv-german-pages";
 
 export const NAV_LINKS: Link[] = [
   {
-    label: "iptv service",
+    label: "IPTV German",
     href: "/",
   },
   {
-    label: "iptv france",
-    href: "/iptv-streaming/iptv-france",
+    label: "IPTV Deutschland",
+    href: "/iptv-german/iptv-deutschland",
   },
   {
-    label: "tarifs",
+    label: "Preise",
     href: "/#pricing",
   },
   {
-    label: "iptv kopen",
-    href: "/iptv-streaming/iptv-kopen",
+    label: "IPTV kaufen",
+    href: "/iptv-german/iptv-abonnement",
   },
   {
-    label: "abonnement iptv",
-    href: "/iptv-streaming/iptv-abonnement",
+    label: "IPTV Abo",
+    href: "/iptv-german/iptv-abonnement",
   },
   {
-    label: "meilleur iptv",
-    href: "/iptv-streaming/meilleur-iptv",
+    label: "bester IPTV",
+    href: "/iptv-german/meilleur-iptv",
   },
   {
-    label: "fournisseur iptv",
-    href: "/iptv-streaming/fournisseur-iptv",
+    label: "IPTV Anbieter",
+    href: "/iptv-german/fournisseur-iptv",
   },
   {
-    label: "contact",
+    label: "Kontakt",
     href: "/support/contact",
   },
 ];
 
 export const productsFooterLinks: Link[] = [
   {
-    label: "Fonctionnalités",
+    label: "Funktionen",
     href: "#features",
   },
   {
-    label: "Tarifs",
+    label: "Preise",
     href: "#pricing",
   },
   {
-    label: "Liste des chaînes",
+    label: "Senderliste",
     href: "#features",
   },
   {
-    label: "Bibliothèque VOD",
+    label: "VOD-Bibliothek",
     href: "#features",
   },
 ];
 
 export const supportFooterLinks: Link[] = [
   {
-    label: "Centre d'aide",
+    label: "Hilfe-Center",
     href: "/support",
   },
   {
-    label: "Guides d'installation",
+    label: "Installationsanleitungen",
     href: "/support/guides",
   },
   {
-    label: "Contactez-nous",
+    label: "Kontakt",
     href: "/support/contact",
   },
   {
-    label: "Statut du système",
+    label: "Systemstatus",
     href: "/support/status",
   },
 ];
@@ -80,37 +80,37 @@ export const supportFooterLinks: Link[] = [
 export const categories = [
   {
     name: "Sport",
-    count: "2.400+ Kanalen",
+    count: "2.400+ Sender",
     image:
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=80&auto=format&fit=crop",
   },
   {
-    name: "Films",
-    count: "50.000+ Titels",
+    name: "Filme",
+    count: "50.000+ Titel",
     image:
       "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
   {
-    name: "Series",
+    name: "Serien",
     count: "15.000+ Shows",
     image:
       "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
   {
-    name: "Enfants",
-    count: "800+ Chaînes",
+    name: "Kinder",
+    count: "800+ Sender",
     image:
       "https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
   {
     name: "TV Live",
-    count: "Direct en temps réel",
+    count: "Live in Echtzeit",
     image:
       "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
   {
     name: "International",
-    count: "190+ Pays",
+    count: "190+ Länder",
     image:
       "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
@@ -118,94 +118,94 @@ export const categories = [
 
 export const features = [
   {
-    title: "Streaming Ultra HD",
+    title: "Ultra HD Streaming",
     description:
-      "Résolution 4K cristalline avec prise en charge HDR. Vivez chaque image avec un détail à couper le souffle.",
+      "Kristallklare 4K-Auflösung mit HDR-Unterstützung. Erleben Sie jedes Bild mit atemberaubender Detailtreue.",
     icon: "tv",
-    color: "text-[#3B82F6]",
-    gradient: "from-[#0055A4]/25 to-[#3B82F6]/20",
-    hoverBorder: "hover:border-[#0055A4]/40",
+    color: "text-france-400",
+    gradient: "from-france-600/30 to-france-400/15",
+    hoverBorder: "hover:border-france-500/40",
   },
   {
-    title: "Serveurs Rapides",
+    title: "Schnelle Server",
     description:
-      "Réseau CDN mondial avec 99,9% de disponibilité. Contenu livré depuis le serveur edge le plus proche.",
+      "Globales CDN-Netzwerk mit 99,9% Verfügbarkeit. Inhalte werden vom nächstgelegenen Edge-Server geliefert.",
     icon: "server",
-    color: "text-[#EF4135]",
-    gradient: "from-[#EF4135]/20 to-[#EF4135]/15",
-    hoverBorder: "hover:border-[#EF4135]/35",
+    color: "text-rouge-400",
+    gradient: "from-rouge-600/30 to-rouge-500/15",
+    hoverBorder: "hover:border-rouge-500/40",
   },
   {
-    title: "Zéro Buffering",
+    title: "Null Buffering",
     description:
-      "Le streaming à débit adaptatif assure une lecture fluide, même sur les connexions plus lentes.",
+      "Adaptives Bitrate-Streaming sorgt für flüssige Wiedergabe, auch bei langsameren Verbindungen.",
     icon: "bolt",
-    color: "text-[#3B82F6]",
-    gradient: "from-[#3B82F6]/20 to-[#3B82F6]/15",
-    hoverBorder: "hover:border-[#3B82F6]/35",
+    color: "text-france-400",
+    gradient: "from-france-600/30 to-france-400/15",
+    hoverBorder: "hover:border-france-500/40",
   },
   {
-    title: "Support Multi-Appareils",
+    title: "Multi-Geräte Support",
     description:
-      "Regardez sur Smart TV, téléphone, tablette ou ordinateur portable. Synchronisation transparente entre tous vos appareils.",
+      "Streamen Sie auf Smart TV, Handy, Tablet oder Laptop. Nahtlose Synchronisierung zwischen all Ihren Geräten.",
     icon: "mobile",
-    color: "text-[#F4C430]",
-    gradient: "from-[#F4C430]/20 to-[#EF4135]/15",
-    hoverBorder: "hover:border-[#F4C430]/35",
+    color: "text-rouge-400",
+    gradient: "from-rouge-600/30 to-rouge-500/15",
+    hoverBorder: "hover:border-rouge-500/40",
   },
   {
-    title: "Chaînes Mondiales",
+    title: "Weltweite Sender",
     description:
-      "Accès au contenu de 190+ pays. Chaînes locales et internationales en un seul endroit.",
+      "Zugriff auf Inhalte aus 190+ Ländern. Lokale und internationale Sender an einem Ort.",
     icon: "globe",
-    color: "text-[#EF4135]",
-    gradient: "from-[#EF4135]/20 to-[#EF4135]/15",
-    hoverBorder: "hover:border-[#EF4135]/35",
+    color: "text-france-400",
+    gradient: "from-france-600/30 to-france-400/15",
+    hoverBorder: "hover:border-france-500/40",
   },
   {
-    title: "Support 24/7",
+    title: "24/7 Support",
     description:
-      "Aide experte 24h/24 et 7j/7. Temps de réponse moyen de moins de 5 minutes.",
+      "Fachkundige Hilfe rund um die Uhr. Durchschnittliche Antwortzeit unter 5 Minuten.",
     icon: "headset",
-    color: "text-[#3B82F6]",
-    gradient: "from-[#0055A4]/25 to-[#3B82F6]/20",
-    hoverBorder: "hover:border-[#0055A4]/40",
+    color: "text-rouge-400",
+    gradient: "from-rouge-600/30 to-rouge-500/15",
+    hoverBorder: "hover:border-rouge-500/40",
   },
 ];
 
 export const faqs = [
   {
-    question: "Quels appareils sont pris en charge ?",
+    question: "Welche Geräte werden unterstützt?",
     answer:
-      "IPTV SERVICE fonctionne sur presque tous les appareils modernes, y compris les Smart TV (Samsung, LG, Sony), les téléphones et tablettes Android, les iPhones et iPads, les ordinateurs Windows et Mac, l'Amazon Fire Stick, les boîtiers Android TV et les appareils MAG. Nous supportons également les applications IPTV populaires comme IPTV Smarters, TiviMate et VLC.",
+      "IPTV German funktioniert auf nahezu allen modernen Geräten, darunter Smart-TVs (Samsung, LG, Sony), Android-Handys und -Tablets, iPhones und iPads, Windows- und Mac-Computer, Amazon Fire Stick, Android-TV-Boxen und MAG-Geräte. Wir unterstützen auch gängige IPTV-Apps wie IPTV Smarters, TiviMate und VLC.",
   },
   {
-    question: "Comment configurer mon abonnement ?",
+    question: "Wie richte ich mein Abonnement ein?",
     answer:
-      "L'installation prend moins de 5 minutes. Après l'achat, vous recevrez un e-mail avec votre URL de liste de lecture M3U et les détails de l'API Xtream Codes. Saisissez ces informations dans votre application IPTV préférée et vous êtes prêt à streamer. Notre équipe de support est disponible 24h/24 et 7j/7 pour vous aider.",
+      "Die Einrichtung dauert weniger als 5 Minuten. Nach dem Kauf erhalten Sie eine E-Mail mit Ihrer M3U-Playlist-URL und den Xtream-Codes-API-Daten. Geben Sie diese Informationen in Ihre bevorzugte IPTV-App ein und schon können Sie streamen. Unser Support-Team steht Ihnen rund um die Uhr zur Verfügung.",
   },
   {
-    question: "Puis-je regarder sur plusieurs appareils en même temps ?",
+    question: "Kann ich auf mehreren Geräten gleichzeitig sehen?",
     answer:
-      "Oui ! Selon votre abonnement, vous pouvez streamer sur 1 à 3 appareils simultanément. L'abonnement Trimestriel prend en charge 2 connexions et l'abonnement Annuel prend en charge 4 connexions. Cela signifie que toute votre famille peut profiter de différents contenus en même temps sur différents appareils.",
+      "Ja! Je nach Abonnement können Sie auf 1 bis 4 Geräten gleichzeitig streamen. Das Jahresabo unterstützt 4 Verbindungen. Ihre ganze Familie kann also gleichzeitig verschiedene Inhalte auf unterschiedlichen Geräten genießen.",
   },
   {
-    question: "Y a-t-il un essai gratuit disponible ?",
+    question: "Gibt es eine kostenlose Testversion?",
     answer:
-      "Oui ! Nous proposons un essai gratuit de 24 heures pour vous permettre de découvrir notre service avant de prendre une décision. L'essai comprend un accès complet à toutes les chaînes et au contenu VOD. Contactez notre équipe de support pour demander votre essai gratuit.",
+      "Ja! Wir bieten eine 24-stündige kostenlose Testversion an, damit Sie unseren Dienst vor einer Entscheidung testen können. Die Testversion beinhaltet vollen Zugriff auf alle Sender und VOD-Inhalte. Kontaktieren Sie unser Support-Team, um Ihre kostenlose Testversion anzufordern.",
   },
   {
-    question: "Quelle vitesse Internet ai-je besoin ?",
+    question: "Welche Internetgeschwindigkeit benötige ich?",
     answer:
-      "Pour un streaming optimal, nous recommandons : qualité SD (10 Mbps), qualité HD (15 Mbps) et 4K Ultra HD (25 Mbps). Notre technologie de streaming adaptatif ajuste automatiquement la qualité en fonction de votre connexion pour éviter la mise en mémoire tampon.",
+      "Für optimales Streaming empfehlen wir: SD-Qualität (10 Mbps), HD-Qualität (15 Mbps) und 4K Ultra HD (25 Mbps). Unsere adaptive Streaming-Technologie passt die Qualität automatisch an Ihre Verbindung an, um Pufferung zu vermeiden.",
   },
   {
-    question: "Comment puis-je annuler mon abonnement ?",
+    question: "Wie kann ich mein Abonnement kündigen?",
     answer:
-      "Vous pouvez annuler à tout moment depuis votre tableau de bord ou en contactant notre équipe de support. Il n'y a pas de frais d'annulation ni de coûts cachés. Votre service reste actif jusqu'à la fin de votre période de facturation en cours.",
+      "Sie können jederzeit über Ihr Dashboard oder durch Kontaktaufnahme mit unserem Support-Team kündigen. Es fallen keine Kündigungsgebühren oder versteckten Kosten an. Ihr Service bleibt bis zum Ende Ihres aktuellen Abrechnungszeitraums aktiv.",
   },
 ];
-export const FOOTER_PAGES: Link[] = IPTV_STREAMING_PAGES.map((page) => ({
+export const FOOTER_PAGES: Link[] = IPTV_GERMAN_PAGES.map((page) => ({
   label: page.keyword.toLowerCase(),
-  href: getIptvStreamingPath(page.slug),
+  href: getIptvGermanPath(page.slug),
 }));

@@ -10,26 +10,26 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Guides d'Installation — IPTV SERVICE",
+  title: "Installationsanleitungen — IPTV German",
   description:
-    "Instructions étape par étape pour configurer IPTV SERVICE sur tous vos appareils.",
+    "Schritt-für-Schritt-Anleitungen zur Einrichtung von IPTV German auf allen Ihren Geräten.",
   alternates: {
-    canonical: "https://iptvstreaming.nl/support/guides",
+    canonical: "https://iptvgerman.de/support/guides",
   },
   openGraph: {
-    title: "Guides d'Installation — IPTV SERVICE",
+    title: "Installationsanleitungen — IPTV German",
     description:
-      "Instructions étape par étape pour configurer IPTV SERVICE sur tous vos appareils.",
-    url: "https://iptvstreaming.nl/support/guides",
-    siteName: "IPTV SERVICE",
-    locale: "fr_FR",
+      "Schritt-für-Schritt-Anleitungen zur Einrichtung von IPTV German auf allen Ihren Geräten.",
+    url: "https://iptvgerman.de/support/guides",
+    siteName: "IPTV German",
+    locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guides d'Installation — IPTV SERVICE",
+    title: "Installationsanleitungen — IPTV German",
     description:
-      "Instructions étape par étape pour configurer IPTV SERVICE sur tous vos appareils.",
+      "Schritt-für-Schritt-Anleitungen zur Einrichtung von IPTV German auf allen Ihren Geräten.",
   },
 };
 
@@ -45,10 +45,10 @@ const SetupGuidesPage = () => {
       Icon: MonitorPlay,
       apps: ["IPTV Smarters Pro", "TiviMate", "Nanomid"],
       steps: [
-        "Téléchargez l'application de votre choix depuis le TV App Store.",
-        "Ouvrez l'application et sélectionnez 'Connexion avec Xtream Codes API'.",
-        "Saisissez le nom, l'identifiant, le mot de passe et l'URL que vous avez reçus par e-mail.",
-        "Cliquez sur 'Ajouter un utilisateur' et attendez que le contenu se charge.",
+        "Laden Sie die gewünschte App aus dem TV App Store herunter.",
+        "Öffnen Sie die App und wählen Sie 'Anmeldung mit Xtream Codes API'.",
+        "Geben Sie den Namen, Benutzernamen, das Passwort und die URL ein, die Sie per E-Mail erhalten haben.",
+        "Klicken Sie auf 'Benutzer hinzufügen' und warten Sie, bis der Inhalt geladen wird.",
       ],
     },
     {
@@ -56,10 +56,10 @@ const SetupGuidesPage = () => {
       Icon: Box,
       apps: ["Downloader", "IPTV Smarters", "Perfect Player"],
       steps: [
-        "Activez 'Applications de sources inconnues' dans les paramètres de votre appareil.",
-        "Utilisez l'application 'Downloader' pour installer le lecteur IPTV de votre choix.",
-        "Saisissez vos identifiants de connexion (M3U ou Xtream Codes).",
-        "Redémarrez l'application pour actualiser la liste des chaînes.",
+        "Aktivieren Sie 'Apps aus unbekannten Quellen' in den Geräteeinstellungen.",
+        "Verwenden Sie die 'Downloader'-App, um den gewünschten IPTV-Player zu installieren.",
+        "Geben Sie Ihre Anmeldedaten ein (M3U oder Xtream Codes).",
+        "Starten Sie die App neu, um die Senderliste zu aktualisieren.",
       ],
     },
     {
@@ -67,10 +67,10 @@ const SetupGuidesPage = () => {
       Icon: Apple,
       apps: ["GSE Smart IPTV", "Cloud Stream", "iPlayTV"],
       steps: [
-        "Cherchez 'GSE Smart IPTV' dans l'App Store.",
-        "Allez dans 'Remote Playlists' et cliquez sur l'icône '+'.",
-        "Sélectionnez 'Ajouter une URL M3U' et collez votre lien unique.",
-        "Donnez un nom à la liste de lecture et cliquez sur 'Ajouter'.",
+        "Suchen Sie im App Store nach 'GSE Smart IPTV'.",
+        "Gehen Sie zu 'Remote Playlists' und klicken Sie auf das '+' Symbol.",
+        "Wählen Sie 'M3U-URL hinzufügen' und fügen Sie Ihren eindeutigen Link ein.",
+        "Geben Sie der Playlist einen Namen und klicken Sie auf 'Hinzufügen'.",
       ],
     },
   ];
@@ -79,15 +79,15 @@ const SetupGuidesPage = () => {
     <main className="pt-28 sm:pt-32 pb-20 sm:pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <span className="inline-block px-4 py-1.5 rounded-full glass text-rouge-500 text-sm font-bold mb-4 uppercase tracking-wider glow-purple">
-            Tutoriels
+          <span className="inline-block px-4 py-1.5 rounded-full glass text-france-400 text-sm font-bold mb-4 uppercase tracking-wider glow-gold">
+            Tutorials
           </span>
           <h1 className="font-display font-black text-4xl sm:text-6xl mb-6 text-blanc-50 leading-tight">
-            Guides d'<span className="text-gradient">Installation</span>
+            Installations<span className="text-gradient">anleitungen</span>
           </h1>
           <p className="text-blanc-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Instructions simples étape par étape pour streamer sur n'importe quel
-            appareil en moins de 5 minutes.
+            Einfache Schritt-für-Schritt-Anleitungen zum Streamen auf jedem
+            Gerät in weniger als 5 Minuten.
           </p>
         </div>
 
@@ -108,7 +108,7 @@ const SetupGuidesPage = () => {
 
               <div className="mb-6">
                 <span className="text-xs font-bold text-blanc-500 uppercase tracking-widest block mb-3">
-                  Applications Recommandées
+                  Empfohlene Apps
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {guide.apps.map((app, i) => (
@@ -145,28 +145,28 @@ const SetupGuidesPage = () => {
         {/* Video Tutorial Placeholder */}
         <div className="mt-14 sm:mt-20 glass rounded-2xl p-6 sm:p-8 md:p-12 border border-blanc-50/10 bg-linear-to-br from-blanc-50/5 to-transparent flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div className="flex-1">
-            <h2 className="text-2xl sm:text-3xl font-bold text-blanc-50 mb-4">
-              Vous préférez la vidéo ?
-            </h2>
-            <p className="text-blanc-400 mb-8">
-              Regardez nos tutoriels vidéo détaillés sur notre chaîne YouTube.
-              Nous couvrons tout, de la première installation à l'utilisation
-              avancée.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/support/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-red-600 text-blanc-50 font-bold hover:bg-red-700 transition-all shadow-lg shadow-red-600/20"
-              >
-                <Play className="h-5 w-5 fill-current" aria-hidden="true" />
-                Aide à l'installation
-              </Link>
-              <a
-                href="/support/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass text-blanc-50 font-bold hover:bg-blanc-50/10 transition-all border border-blanc-50/10"
-              >
-                Besoin d'aide ?
-              </a>
+              <h2 className="text-2xl sm:text-3xl font-bold text-blanc-50 mb-4">
+                Bevorzugen Sie ein Video?
+              </h2>
+              <p className="text-blanc-400 mb-8">
+                Sehen Sie sich unsere detaillierten Video-Tutorials an.
+                Wir decken alles ab, von der ersten Einrichtung bis zur
+                fortgeschrittenen Nutzung.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/support/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-red-600 text-blanc-50 font-bold hover:bg-red-700 transition-all shadow-lg shadow-red-600/20"
+                >
+                  <Play className="h-5 w-5 fill-current" aria-hidden="true" />
+                  Installationshilfe
+                </Link>
+                <a
+                  href="/support/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass text-blanc-50 font-bold hover:bg-blanc-50/10 transition-all border border-blanc-50/10"
+                >
+                  Hilfe nötig?
+                </a>
             </div>
           </div>
           <div className="flex-1 w-full aspect-video rounded-2xl bg-france-900 border border-blanc-50/10 flex items-center justify-center relative overflow-hidden group">

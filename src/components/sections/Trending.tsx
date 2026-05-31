@@ -24,15 +24,15 @@ const TrendingSection = () => {
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-france-500/20 bg-france-500/15 px-3.5 py-1.5 text-xs font-black uppercase tracking-[0.14em] text-france-100">
               <Sparkles size={14} aria-hidden="true" />
-              Streaming Premium
+              Premium Streaming
             </span>
             <h2 className="mt-4 font-display text-4xl font-black leading-tight text-blanc-50 sm:text-5xl">
-              Films &amp; Séries Populaires
+              Beliebte Filme &amp; Serien
             </h2>
           </div>
           <p className="max-w-xl text-sm font-medium leading-6 text-blanc-400 sm:text-base">
-            Découvrez les séries et films les plus regardés comme Game of Thrones, Vikings et The
-            Walking Dead, ainsi que les derniers blockbusters.
+            Entdecken Sie die meistgesehenen Serien und Filme wie Game of Thrones, Vikings und The
+            Walking Dead sowie die neuesten Blockbuster.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ const TrendingSection = () => {
                   <span className="grid h-10 w-10 place-items-center rounded-full border border-france-300/20 bg-france-500/15 text-france-300">
                     <PlayCircle size={21} aria-hidden="true" />
                   </span>
-                  Séries &amp; Films les Plus Regardés
+                  Meistgesehene Serien &amp; Filme
                 </h3>
               </div>
 

@@ -14,13 +14,13 @@ import {
   Zap,
   ArrowLeft,
 } from "lucide-react";
-import type { IptvStreamingPage } from "@/content/iptv-streaming-pages";
-import SmartText from "@/components/iptv-streaming/SmartText";
+import type { IptvGermanPage } from "@/content/iptv-german-pages";
+import SmartText from "@/components/iptv-german/SmartText";
 
 // Direct import of VaultSearch — it's a Client Component ('use client' inside),
 // so React automatically handles the server/client boundary.
 // Cannot use dynamic({ ssr: false }) from a Server Component.
-import VaultSearch from "@/components/iptv-streaming/VaultSearch";
+import VaultSearch from "@/components/iptv-german/VaultSearch";
 
 // Below-the-fold sections: dynamic with ssr:true for code splitting
 // (ssr:true IS allowed from Server Components)
@@ -38,7 +38,7 @@ const Pricing = dynamic(
 );
 
 interface VaultPageTemplateProps {
-  page: IptvStreamingPage;
+  page: IptvGermanPage;
 }
 
 // No "use client" — this is now a Server Component
@@ -71,15 +71,15 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
           <nav
             className={`flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blanc-500 mb-8 ${page.isCentered ? "justify-center" : ""}`}
           >
-            <Link href="/" className="hover:text-france-500 transition-colors">
-              Home
-            </Link>
+              <Link href="/" className="hover:text-france-500 transition-colors">
+                Startseite
+              </Link>
             <ChevronRight size={12} />
             <Link
-              href="/iptv-streaming"
+              href="/iptv-german"
               className="hover:text-france-500 transition-colors"
             >
-              Base de Connaissances
+              Wissensdatenbank
             </Link>
             <ChevronRight size={12} />
             <span className="text-blanc-300">{page.keyword}</span>
@@ -88,7 +88,7 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
           <div className={page.isCentered ? "mx-auto max-w-4xl" : "max-w-4xl"}>
             <span className="inline-flex items-center gap-2 rounded-full border border-france-500/25 bg-france-500/15 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-france-100 mb-6">
               <Zap size={14} className="text-france-500" />
-              Base de Connaissances IPTV SERVICE
+              IPTV German Wissensdatenbank
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-blanc-50 leading-[1.1] tracking-tight mb-8">
               {page.heroHeading}
@@ -101,17 +101,17 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
               className={`flex flex-wrap gap-4 ${page.isCentered ? "justify-center" : ""}`}
             >
               <Link
-                href={`/iptv-streaming/${page.slug}/#pricing`}
+                href={`/iptv-german/${page.slug}/#pricing`}
                 className="btn-shine px-8 py-4 rounded-full bg-linear-to-r from-rouge-500 to-rouge-600 text-blanc-50 font-bold text-sm uppercase tracking-widest shadow-lg shadow-rouge-500/25 transition-all active:scale-95 flex items-center gap-3"
               >
-                Voir les Forfaits
+                Pakete Ansehen
                 <ArrowRight size={18} />
               </Link>
               <Link
-                href="/iptv-streaming"
+                href="/iptv-german"
                 className="px-8 py-4 rounded-full glass text-blanc-50 font-bold text-sm uppercase tracking-widest border border-blanc-50/10 hover:bg-blanc-50/5 transition-all flex items-center gap-3"
               >
-                Tous les Guides
+                Alle Guides
               </Link>
             </div>
           </div>
@@ -177,7 +177,7 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
                 {/* Search in Sidebar */}
                 <div className="mb-8">
                   <h3 className="text-sm font-bold text-blanc-500 uppercase tracking-widest mb-4 px-2">
-                    Rechercher dans les guides
+                    Guides durchsuchen
                   </h3>
                   <VaultSearch />
                 </div>
@@ -186,7 +186,7 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
                 <div className="rounded-3xl border border-blanc-50/10 bg-blanc-50/[0.03] p-8 backdrop-blur-md">
                   <h3 className="text-xl font-black text-blanc-50 mb-6 flex items-center gap-3">
                     <Layout size={20} className="text-rouge-500" />
-                    Guides Connexes
+                    Verwandte Guides
                   </h3>
                   <div className="space-y-4">
                     {page.internalLinks.map((link, index) => (
@@ -210,11 +210,11 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
                 <div className="rounded-3xl border border-emerald-500/20 bg-emerald-500/5 p-8">
                   <ShieldCheck size={32} className="text-emerald-400 mb-4" />
                   <h3 className="text-lg font-black text-blanc-50 mb-2">
-                    Garantie IPTV SERVICE
+                    IPTV German Garantie
                   </h3>
                   <p className="text-sm text-blanc-400 leading-relaxed font-medium">
-                    Tous nos guides sont rédigés à des fins éducatives et
-                    se concentrent sur des expériences de streaming stables et légales.
+                    Alle unsere Guides dienen Bildungszwecken und
+                    konzentrieren sich auf stabile und legale Streaming-Erfahrungen.
                   </p>
                 </div>
               </div>
@@ -233,22 +233,22 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
       <CTA
         title={
           <>
-            Prêt pour la Meilleure{" "}
-            <span className="text-gradient">Expérience Visuelle</span>?
+            Bereit für das Beste{" "}
+             <span className="text-gradient">Seherlebnis</span>?
           </>
         }
-        description={`Commencez à streamer dès aujourd'hui sur tous vos appareils. Découvrez pourquoi IPTV SERVICE est le choix numéro un pour ${page.keyword}.`}
+        description={`Streamen Sie noch heute auf all Ihren Geräten. Entdecken Sie, warum IPTV German die Nummer 1 Wahl für ${page.keyword} ist.`}
       />
 
       {/* Footer Back Link */}
       <div className="py-12 border-t border-blanc-50/5">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <Link
-            href="/iptv-streaming"
+            href="/iptv-german"
             className="inline-flex items-center gap-2 text-blanc-500 hover:text-blanc-50 transition-colors font-bold text-sm uppercase tracking-widest"
           >
             <ArrowLeft size={16} />
-            Retour à la Base de Connaissances
+            Zurück zur Wissensdatenbank
           </Link>
         </div>
       </div>

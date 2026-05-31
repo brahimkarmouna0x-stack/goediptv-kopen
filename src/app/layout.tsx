@@ -5,6 +5,8 @@ import NavBar from "@/components/layouts/NavBar";
 import Footer from "@/components/layouts/Footer";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { organizationSchema, websiteSchema } from "@/lib/structured-data";
+import Analytics from "@/components/analytics/Analytics";
+import WebVitals from "@/components/analytics/WebVitals";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,24 +16,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://iptvstreaming.nl"),
+  metadataBase: new URL("https://iptvgerman.de"),
   title: {
-    default: "IPTV SERVICE — Service IPTV Premium en France",
-    template: "%s | IPTV SERVICE",
+    default: "IPTV German — Premium IPTV Dienst in Deutschland",
+    template: "%s | IPTV German",
   },
   description:
-    "Streaming 4K illimité avec 25 000+ chaînes et zéro buffering. Découvrez le meilleur service IPTV premium en France avec IPTV SERVICE.",
+    "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering. Entdecken Sie den besten Premium-IPTV-Dienst in Deutschland mit IPTV German.",
   keywords: [
     "IPTV",
-    "service IPTV",
-    "meilleur service IPTV",
-    "abonnement IPTV",
-    "IPTV France",
-    "streaming 4K",
-    "IPTV premium",
-    "IPTV SERVICE",
+    "IPTV Deutschland",
+    "bester IPTV Dienst",
+    "IPTV Abonnement",
+    "IPTV German",
+    "Streaming 4K",
+    "IPTV Premium",
+    "deutscher IPTV Anbieter",
+    "Fernsehen über Internet",
   ],
-  authors: [{ name: "IPTV SERVICE" }],
+  authors: [{ name: "IPTV German" }],
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -63,32 +66,36 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "fr_FR",
-    url: "https://iptvstreaming.nl",
-    siteName: "IPTV SERVICE",
-    title: "IPTV SERVICE — Service IPTV Premium en France",
+    locale: "de_DE",
+    url: "https://iptvgerman.de",
+    siteName: "IPTV German",
+    title: "IPTV German — Premium IPTV Dienst in Deutschland",
     description:
-      "Streaming 4K illimité avec 25 000+ chaînes et zéro buffering.",
+      "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering.",
     images: [
       {
         url: "/images/logo.webp",
         width: 512,
         height: 512,
-        alt: "IPTV SERVICE",
+        alt: "IPTV German – Premium IPTV Dienst in Deutschland",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPTV SERVICE — Service IPTV Premium en France",
+    title: "IPTV German — Premium IPTV Dienst in Deutschland",
     description:
-      "Streaming 4K illimité avec 25 000+ chaînes et zéro buffering.",
+      "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering.",
     images: ["/images/logo.webp"],
   },
   robots: {
     index: true,
     follow: true,
   },
+  // Google Search Console verification — only emitted when the token is set.
+  ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } }
+    : {}),
 };
 
 export default function RootLayout({
@@ -98,7 +105,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="fr"
+      lang="de"
       className={`h-full antialiased ${inter.variable}`}
       suppressHydrationWarning
     >
@@ -125,13 +132,17 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        {/* Analytics (env-gated, afterInteractive) + Core Web Vitals reporting */}
+        <Analytics />
+        <WebVitals />
+
         {/* Skip-to-content link for keyboard users — first focusable element */}
         <a
           href="#main-content"
           id="skip-to-content"
           className="fixed -top-40 left-4 z-[9999] rounded-xl bg-rouge-500 px-6 py-3 font-black text-blanc-50 shadow-lg transition-all focus:top-4 focus:outline-2 focus:outline-france-400"
         >
-          Aller au contenu
+          Zum Inhalt springen
         </a>
 
         <NavBar />

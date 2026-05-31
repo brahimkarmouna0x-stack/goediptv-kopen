@@ -20,8 +20,8 @@ const Footer = () => {
               <Logo />
             </div>
             <p className="text-blanc-400 text-sm leading-relaxed mb-8 max-w-sm mt-6">
-              L'expérience IPTV premium ultime. Plus de 25 000 chaînes, 4K
-              Ultra HD et zéro buffering. Un divertissement sans limites.
+              Das ultimative Premium-IPTV-Erlebnis. Über 25.000 Sender, 4K
+              Ultra HD und null Buffering. Grenzenlose Unterhaltung.
             </p>
           </div>
 
@@ -38,11 +38,11 @@ const Footer = () => {
                 className="text-emerald-300"
                 aria-hidden="true"
               />
-              Support WhatsApp
+              WhatsApp Support
             </h2>
             <p className="text-sm text-blanc-400 mb-6 leading-relaxed">
-              Des questions sur l'installation, l'activation ou les abonnements ? Discutez directement
-              avec notre équipe.
+              Fragen zur Installation, Aktivierung oder zu Abonnements? Chatten Sie direkt
+              mit unserem Team.
             </p>
             <a
               href={WHATSAPP_URL}
@@ -51,7 +51,7 @@ const Footer = () => {
               className="inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-xl bg-emerald-400 px-5 py-3 text-sm font-black text-blanc-950 shadow-[0_0_15px_rgba(16,185,129,0.25)] transition-colors hover:bg-emerald-300"
             >
               <MessageCircle size={16} aria-hidden="true" />
-              Discuter sur WhatsApp
+              Auf WhatsApp chatten
             </a>
           </div>
         </div>
@@ -59,16 +59,16 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <p className="text-sm text-blanc-500">
-            &copy; 2026 <LogoText className="text-sm" />. Tous droits
-            réservés.
+            &copy; 2026 <LogoText className="text-sm" />. Alle Rechte
+            vorbehalten.
           </p>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
-            <FooterBottomLink label="Politique de confidentialité" href="/privacy-policy" />
+            <FooterBottomLink label="Datenschutz" href="/privacy-policy" />
             <FooterBottomLink
-              label="Conditions générales"
+              label="AGB"
               href="/terms-of-service"
             />
-            <FooterBottomLink label="Politique des cookies" href="/cookie-policy" />
+            <FooterBottomLink label="Cookie-Richtlinie" href="/cookie-policy" />
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@ const ProductsLinks = () => {
   return (
     <div className="flex flex-col items-center sm:items-start">
       <h2 className="text-sm font-black uppercase tracking-widest text-blanc-50/50 mb-6">
-        Produit
+        Produkte
       </h2>
       <ul className="space-y-4">
         {productsFooterLinks.map((link, idx) => (
@@ -112,7 +112,7 @@ const SupportLinks = () => {
   return (
     <div className="flex flex-col items-center sm:items-start">
       <h2 className="text-sm font-black uppercase tracking-widest text-blanc-50/50 mb-6">
-        Assistance
+        Support
       </h2>
       <ul className="space-y-4">
         {supportFooterLinks.map((link, idx) => (

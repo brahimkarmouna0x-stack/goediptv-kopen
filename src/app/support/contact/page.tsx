@@ -16,33 +16,33 @@ import {
 import { WHATSAPP_URL } from "@/constants";
 
 export const metadata: Metadata = {
-  title: "Contact — Support WhatsApp",
+  title: "Kontakt — WhatsApp Support",
   description:
-    "Contactez IPTV SERVICE via WhatsApp pour une aide rapide sur l'activation, l'installation et le support technique IPTV.",
+    "Kontaktieren Sie IPTV German via WhatsApp für schnelle Hilfe bei Aktivierung, Installation und technischem IPTV-Support.",
   alternates: {
-    canonical: "https://iptvstreaming.nl/support/contact",
+    canonical: "https://iptvgerman.de/support/contact",
   },
   openGraph: {
-    title: "Contact — Support WhatsApp | IPTV SERVICE",
+    title: "Kontakt — WhatsApp Support | IPTV German",
     description:
-      "Contactez IPTV SERVICE via WhatsApp pour une aide rapide sur l'activation, l'installation et le support technique IPTV.",
-    url: "https://iptvstreaming.nl/support/contact",
-    siteName: "IPTV SERVICE",
-    locale: "fr_FR",
+      "Kontaktieren Sie IPTV German via WhatsApp für schnelle Hilfe bei Aktivierung, Installation und technischem IPTV-Support.",
+    url: "https://iptvgerman.de/support/contact",
+    siteName: "IPTV German",
+    locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact — Support WhatsApp | IPTV SERVICE",
+    title: "Kontakt — WhatsApp Support | IPTV German",
     description:
-      "Contactez IPTV SERVICE via WhatsApp pour une aide rapide sur l'activation, l'installation et le support technique IPTV.",
+      "Kontaktieren Sie IPTV German via WhatsApp für schnelle Hilfe bei Aktivierung, Installation und technischem IPTV-Support.",
   },
 };
 
 const highlights = [
-  { label: "Réponse moyenne", value: "< 5 min" },
-  { label: "Disponible", value: "24/7" },
-  { label: "Canal de support", value: "WhatsApp" },
+  { label: "Durchschn. Antwort", value: "< 5 Min" },
+  { label: "Verfügbar", value: "24/7" },
+  { label: "Support-Kanal", value: "WhatsApp" },
 ];
 
 const supportTopics: Array<{
@@ -51,26 +51,26 @@ const supportTopics: Array<{
   Icon: LucideIcon;
 }> = [
   {
-    title: "Activation & abonnement",
-    text: "Envoyez votre forfait choisi ou votre demande de commande et nous vous aidons directement pour l'étape suivante.",
+    title: "Aktivierung & Abo",
+    text: "Senden Sie Ihr ausgewähltes Angebot oder Ihre Bestellanfrage und wir helfen Ihnen direkt beim nächsten Schritt.",
     Icon: CheckCircle2,
   },
   {
-    title: "Installation sur appareils",
-    text: "Aide pour Smart TV, IPTV Smarters, Android, Apple TV, Firestick et autres lecteurs.",
+    title: "Installation auf Geräten",
+    text: "Hilfe für Smart TV, IPTV Smarters, Android, Apple TV, Firestick und andere Player.",
     Icon: MonitorPlay,
   },
   {
-    title: "Problèmes de streaming",
-    text: "Support rapide pour le buffering, les erreurs de connexion, les listes de chaînes et l'accès VOD.",
+    title: "Streaming-Probleme",
+    text: "Schnelle Hilfe bei Buffering, Verbindungsfehlern, Senderlisten und VOD-Zugriff.",
     Icon: Zap,
   },
 ];
 
 const trustSignals = [
-  { label: "Chat sécurisé", Icon: ShieldCheck },
-  { label: "Mobile & desktop", Icon: Smartphone },
-  { label: "Réponse rapide", Icon: Clock3 },
+  { label: "Sicherer Chat", Icon: ShieldCheck },
+  { label: "Mobil & Desktop", Icon: Smartphone },
+  { label: "Schnelle Antwort", Icon: Clock3 },
 ];
 
 const ContactUsPage = () => {
@@ -82,15 +82,15 @@ const ContactUsPage = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-200">
                 <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                Support WhatsApp uniquement
+                Nur WhatsApp Support
               </span>
               <h1 className="mt-6 max-w-4xl font-display text-4xl font-black leading-tight text-blanc-50 sm:text-6xl lg:text-7xl">
-                Discutez directement avec IPTV SERVICE via WhatsApp.
+                Chatten Sie direkt mit IPTV German via WhatsApp.
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-blanc-300 sm:text-lg">
-                Pour commander, activer, installer et obtenir de l'aide technique,
-                WhatsApp est notre seul canal de contact. Vous obtenez ainsi une réponse
-                plus rapide et tout reste clair dans une seule conversation.
+                Für Bestellungen, Aktivierung, Installation und technische Hilfe ist
+                WhatsApp unser einziger Kontaktkanal. So erhalten Sie schneller eine Antwort
+                und alles bleibt in einem Gespräch klar.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -101,13 +101,13 @@ const ContactUsPage = () => {
                   className="inline-flex items-center justify-center gap-3 rounded-2xl bg-emerald-400 px-8 py-4 text-base font-black text-blanc-950 transition-colors hover:bg-emerald-300"
                 >
                   <MessageCircle className="h-5 w-5" aria-hidden="true" />
-                  Ouvrir WhatsApp
+                  WhatsApp öffnen
                 </Link>
                 <Link
                   href="/support/guides"
                   className="inline-flex items-center justify-center gap-3 rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.04] px-8 py-4 text-base font-bold text-blanc-50 transition-colors hover:bg-blanc-50/[0.08]"
                 >
-                  Guides d'installation
+                  Installationsanleitungen
                   <ArrowRight className="h-5 w-5" aria-hidden="true" />
                 </Link>
               </div>
@@ -132,7 +132,7 @@ const ContactUsPage = () => {
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.04]">
                   <Image
                     src="/images/logo.webp"
-                    alt="IPTV SERVICE"
+                    alt="IPTV German"
                     width={48}
                     height={48}
                     className="h-12 w-12 object-contain"
@@ -140,10 +140,10 @@ const ContactUsPage = () => {
                 </div>
                 <div>
                   <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-200">
-                    Accueil WhatsApp
+                    WhatsApp Startseite
                   </p>
                   <h2 className="mt-1 text-2xl font-black text-blanc-50">
-                    Prêt à vous aider
+                    Bereit zu helfen
                   </h2>
                 </div>
               </div>
@@ -176,11 +176,11 @@ const ContactUsPage = () => {
                   />
                   <div>
                     <p className="font-bold text-blanc-50">
-                      Démarrer une conversation WhatsApp
+                      Eine WhatsApp-Konversation starten
                     </p>
                     <p className="mt-1 text-sm leading-6 text-blanc-300">
-                      Indiquez votre appareil, application et question. Nous pourrons
-                      ainsi vous aider immédiatement.
+                      Geben Sie Ihr Gerät, Ihre App und Ihre Frage an. Wir können
+                      Ihnen dann sofort helfen.
                     </p>
                   </div>
                 </div>
@@ -198,10 +198,10 @@ const ContactUsPage = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-6">
             <p className="text-sm font-black uppercase tracking-[0.2em] text-emerald-200">
-              Avec quoi vous aidons-nous sur WhatsApp ?
+               Wobei helfen wir Ihnen auf WhatsApp?
             </p>
             <h2 className="mt-3 max-w-3xl text-3xl font-black text-blanc-50">
-              Un seul chat pour tout ce dont vous avez besoin pour streamer en toute fluidité.
+              Ein einziger Chat für alles, was Sie zum reibungslosen Streamen benötigen.
             </h2>
           </div>
 
@@ -230,11 +230,11 @@ const ContactUsPage = () => {
                 <Headphones className="h-6 w-6" aria-hidden="true" />
               </div>
               <h2 className="text-2xl font-black text-blanc-50">
-                Besoin d'aide avant de commander ?
+                Hilfe vor der Bestellung nötig?
               </h2>
               <p className="mt-3 text-sm leading-6 text-blanc-400">
-                Ouvrez WhatsApp et envoyez votre question. Nous vous aidons à choisir le bon
-                forfait, le nombre d'appareils et l'installation.
+                Öffnen Sie WhatsApp und senden Sie Ihre Frage. Wir helfen Ihnen bei der Auswahl des
+                richtigen Angebots, der Geräteanzahl und der Einrichtung.
               </p>
             </div>
 
@@ -245,7 +245,7 @@ const ContactUsPage = () => {
               className="inline-flex items-center justify-center gap-3 rounded-xl bg-emerald-400 px-6 py-4 text-sm font-black text-blanc-950 transition-colors hover:bg-emerald-300"
             >
               <MessageCircle className="h-5 w-5" aria-hidden="true" />
-              Discuter sur WhatsApp
+              Auf WhatsApp chatten
             </Link>
           </div>
         </div>

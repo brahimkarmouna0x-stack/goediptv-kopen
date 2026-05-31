@@ -61,11 +61,11 @@ const Partners = () => {
             Streaming Premium
           </span>
           <h2 className="mt-5 font-display text-4xl font-black tracking-tight text-blanc-50 sm:text-6xl">
-            Séries & <span className="text-gradient">Films</span>
+            Serien & <span className="text-gradient">Filme</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-8 text-blanc-300 sm:text-lg">
-            Toutes les séries et films inclus. Choisissez parmi des milliers de
-            chaînes et séries en qualité HD.
+            Alle Serien und Filme inklusive. Wählen Sie aus tausenden von
+            Sendern und Serien in HD-Qualität.
           </p>
         </div>
 

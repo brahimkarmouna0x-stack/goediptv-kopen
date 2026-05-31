@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { Search, ArrowRight, X } from "lucide-react";
 import Link from "next/link";
-import { IPTV_STREAMING_PAGES } from "@/content/iptv-streaming-pages";
+import { IPTV_GERMAN_PAGES } from "@/content/iptv-german-pages";
 
 const VaultSearch = () => {
   const [query, setQuery] = useState("");
@@ -12,7 +12,7 @@ const VaultSearch = () => {
     if (query.length < 2) return [];
 
     const searchTerms = query.toLowerCase().split(" ");
-    return IPTV_STREAMING_PAGES.filter((page) => {
+    return IPTV_GERMAN_PAGES.filter((page) => {
       const content =
         `${page.keyword} ${page.title} ${page.metaDescription}`.toLowerCase();
       return searchTerms.every((term) => content.includes(term));
@@ -31,8 +31,8 @@ const VaultSearch = () => {
       >
         {query.length >= 2
           ? resultCount > 0
-            ? `${resultCount} résultats trouvés`
-            : "Aucun résultat trouvé"
+            ? `${resultCount} Ergebnisse gefunden`
+            : "Keine Ergebnisse gefunden"
           : ""}
       </div>
       <div className="relative group">
@@ -44,7 +44,7 @@ const VaultSearch = () => {
         </div>
         <input
           type="text"
-          placeholder="Rechercher dans la base de connaissances (ex: Smarters, 4K, App...)"
+          placeholder="Wissensdatenbank durchsuchen (z.B. Smarters, 4K, App...)"
           className="w-full bg-france-950/80 backdrop-blur-xl border border-blanc-50/10 rounded-2xl py-5 pl-14 pr-12 text-blanc-50 placeholder:text-blanc-500 focus:outline-none focus:ring-2 focus:ring-france-700/50 focus:border-france-700/50 transition-all shadow-2xl"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -64,13 +64,13 @@ const VaultSearch = () => {
         <div
           className="absolute top-full mt-3 w-full bg-france-950 border border-blanc-50/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300"
           role="listbox"
-          aria-label="Résultats de recherche"
+          aria-label="Suchergebnisse"
         >
           <div className="p-2">
             {filteredResults.map((result) => (
               <Link
                 key={result.slug}
-                href={`/iptv-streaming/${result.slug}`}
+                href={`/iptv-german/${result.slug}`}
                 onClick={() => setQuery("")}
                 className="flex items-center justify-between p-4 rounded-xl hover:bg-blanc-50/5 transition-all group"
               >
@@ -91,7 +91,7 @@ const VaultSearch = () => {
           </div>
           <div className="bg-blanc-50/2 p-3 text-center border-t border-blanc-50/5">
             <p className="text-[10px] text-blanc-500 uppercase tracking-widest font-bold">
-              {filteredResults.length} résultats trouvés
+              {filteredResults.length} Ergebnisse gefunden
             </p>
           </div>
         </div>
@@ -100,7 +100,7 @@ const VaultSearch = () => {
       {query.length >= 2 && filteredResults.length === 0 && (
         <div className="absolute top-full mt-3 w-full bg-france-950 border border-blanc-50/10 rounded-2xl p-8 text-center shadow-2xl">
           <p className="text-blanc-400 text-sm">
-            Aucun résultat trouvé pour &quot;{query}&quot;
+            Keine Ergebnisse gefunden für &quot;{query}&quot;
           </p>
         </div>
       )}

@@ -34,7 +34,7 @@ export async function generateMetadata({
 
   if (!page) {
     return {
-      title: "Seite nicht gefunden | IPTV German",
+      title: "Seite nicht gefunden | IPTV Germany",
       robots: { index: false, follow: false },
     };
   }
@@ -46,7 +46,7 @@ export async function generateMetadata({
   if (page.hreflang.en) languages["en"] = page.hreflang.en;
 
   return {
-    // `absolute` bypasses the root layout's "%s | IPTV German" template so the
+    // `absolute` bypasses the root layout's "%s | IPTV Germany" template so the
     // brand isn't appended twice (metaTitle already includes it).
     title: { absolute: page.metaTitle },
     description: page.metaDescription,
@@ -57,7 +57,7 @@ export async function generateMetadata({
     openGraph: {
       type: page.structuredData === "Product" ? "website" : "article",
       url: page.canonicalUrl,
-      siteName: "IPTV German",
+      siteName: "IPTV Germany",
       title: page.metaTitle,
       description: page.metaDescription,
       locale: "de_DE",

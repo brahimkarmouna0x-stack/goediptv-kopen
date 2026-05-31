@@ -58,7 +58,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
       <div className="absolute -top-24 -left-24 z-0 h-96 w-96 rounded-full bg-france-500/10 blur-3xl" />
       <div className="absolute bottom-0 right-0 z-0 h-96 w-96 rounded-full bg-rouge-600/10 blur-3xl" />
 
-      <div className="relative z-10 container px-4 sm:px-6 lg:px-8 py-28 sm:py-32 lg:py-36">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-32 lg:py-36">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-12">
           {/* ===== LEFT — Message + CTA ===== */}
           <div className="w-full lg:w-[54%] flex flex-col items-center text-center lg:items-start lg:text-left animate-fade-up">

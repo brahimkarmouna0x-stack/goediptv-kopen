@@ -13,23 +13,23 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Service-Status — IPTV German",
-  description: "Echtzeit-Status der Dienste und Server-Cluster von IPTV German.",
+  title: "Service-Status — IPTV Germany",
+  description: "Echtzeit-Status der Dienste und Server-Cluster von IPTV Germany.",
   alternates: {
     canonical: "https://iptvgerman.de/support/status",
   },
   openGraph: {
-    title: "Service-Status — IPTV German",
-    description: "Echtzeit-Status der Dienste und Server-Cluster von IPTV German.",
+    title: "Service-Status — IPTV Germany",
+    description: "Echtzeit-Status der Dienste und Server-Cluster von IPTV Germany.",
     url: "https://iptvgerman.de/support/status",
-    siteName: "IPTV German",
+    siteName: "IPTV Germany",
     locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Service-Status — IPTV German",
-    description: "Echtzeit-Status der Dienste und Server-Cluster von IPTV German.",
+    title: "Service-Status — IPTV Germany",
+    description: "Echtzeit-Status der Dienste und Server-Cluster von IPTV Germany.",
   },
 };
 

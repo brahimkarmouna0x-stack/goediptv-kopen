@@ -26,8 +26,8 @@ const Loader = ({ size = "md", fullScreen = false }: LoaderProps) => {
         className={`absolute ${size === "sm" ? "w-5 h-5" : size === "lg" ? "w-14 h-14" : "w-9 h-9"} overflow-hidden rounded-full bg-france-950 flex items-center justify-center ring-1 ring-blanc-50/10`}
       >
         <Image
-          src="/images/logo.webp"
-          alt="IPTV German"
+          src="/images/site-logo.png"
+          alt="IPTV Germany"
           width={iconSizes[size]}
           height={iconSizes[size]}
           className="h-full w-full object-cover animate-pulse-gentle"
@@ -46,7 +46,7 @@ const Loader = ({ size = "md", fullScreen = false }: LoaderProps) => {
       <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-france-950/80 backdrop-blur-md">
         {loaderContent}
         <p className="mt-6 text-blanc-400 font-display font-medium tracking-widest uppercase text-xs animate-pulse">
-          IPTV German wird geladen...
+          IPTV Germany wird geladen...
         </p>
       </div>
     );

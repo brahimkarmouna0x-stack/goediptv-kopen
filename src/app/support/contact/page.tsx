@@ -18,24 +18,24 @@ import { WHATSAPP_URL } from "@/constants";
 export const metadata: Metadata = {
   title: "Kontakt — WhatsApp Support",
   description:
-    "Kontaktieren Sie IPTV German via WhatsApp für schnelle Hilfe bei Aktivierung, Installation und technischem IPTV-Support.",
+    "Kontaktieren Sie IPTV Germany via WhatsApp für schnelle Hilfe bei Aktivierung, Installation und technischem IPTV-Support.",
   alternates: {
     canonical: "https://iptvgerman.de/support/contact",
   },
   openGraph: {
-    title: "Kontakt — WhatsApp Support | IPTV German",
+    title: "Kontakt — WhatsApp Support | IPTV Germany",
     description:
-      "Kontaktieren Sie IPTV German via WhatsApp für schnelle Hilfe bei Aktivierung, Installation und technischem IPTV-Support.",
+      "Kontaktieren Sie IPTV Germany via WhatsApp für schnelle Hilfe bei Aktivierung, Installation und technischem IPTV-Support.",
     url: "https://iptvgerman.de/support/contact",
-    siteName: "IPTV German",
+    siteName: "IPTV Germany",
     locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kontakt — WhatsApp Support | IPTV German",
+    title: "Kontakt — WhatsApp Support | IPTV Germany",
     description:
-      "Kontaktieren Sie IPTV German via WhatsApp für schnelle Hilfe bei Aktivierung, Installation und technischem IPTV-Support.",
+      "Kontaktieren Sie IPTV Germany via WhatsApp für schnelle Hilfe bei Aktivierung, Installation und technischem IPTV-Support.",
   },
 };
 
@@ -131,8 +131,8 @@ const ContactUsPage = () => {
               <div className="flex items-center gap-4 border-b border-blanc-50/10 pb-5">
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.04]">
                   <Image
-                    src="/images/logo.webp"
-                    alt="IPTV German"
+                    src="/images/site-logo.png"
+                    alt="IPTV Germany"
                     width={48}
                     height={48}
                     className="h-12 w-12 object-contain"

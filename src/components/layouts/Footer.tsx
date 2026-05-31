@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo, { LogoText } from "../shared/Logo";
+import Logo from "../shared/Logo";
 import KeywordCloud from "../shared/KeywordCloud";
 import { productsFooterLinks, supportFooterLinks } from "@/constants/data";
 import { MessageCircle } from "lucide-react";
@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="sm:col-span-2 lg:col-span-2 flex flex-col items-center sm:items-start">
             <div className="mb-6">
-              <Logo />
+              <Logo className="h-20 w-auto" width={160} height={160} />
             </div>
             <p className="text-blanc-400 text-sm leading-relaxed mb-8 max-w-sm mt-6">
               Das ultimative Premium-IPTV-Erlebnis. Über 25.000 Sender, 4K
@@ -59,8 +59,11 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <p className="text-sm text-blanc-500">
-            &copy; 2026 <LogoText className="text-sm" />. Alle Rechte
-            vorbehalten.
+            &copy; 2026{" "}
+            <span className="font-display font-black text-blanc-50">
+              IPTV Germany
+            </span>
+            . Alle Rechte vorbehalten.
           </p>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
             <FooterBottomLink label="Datenschutz" href="/privacy-policy" />

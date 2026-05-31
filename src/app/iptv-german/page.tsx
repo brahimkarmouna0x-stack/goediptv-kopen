@@ -7,9 +7,9 @@ import VaultSearch from "@/components/iptv-german/VaultSearch";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "IPTV German Wissensdatenbank",
+  title: "IPTV Germany Wissensdatenbank",
   description:
-    "Durchsuchen Sie die IPTV German Wissensdatenbank mit Anleitungen zu Apps, Abonnements, 4K, IPTV, M3U-Playlists und sicherem Streaming.",
+    "Durchsuchen Sie die IPTV Germany Wissensdatenbank mit Anleitungen zu Apps, Abonnements, 4K, IPTV, M3U-Playlists und sicherem Streaming.",
   path: "/iptv-german",
 });
 

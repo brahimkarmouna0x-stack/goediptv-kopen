@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 
 // ─── Site configuration ────────────────────────────────────────────────────
 export const SITE = {
-  name: "IPTV German",
+  name: "IPTV Germany",
   url: "https://iptvgerman.de",
   locale: "de_DE",
   localeAlt: "en_DE",
   description:
-    "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering. Entdecken Sie den besten Premium-IPTV-Dienst in Deutschland mit IPTV German.",
+    "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering. Entdecken Sie den besten Premium-IPTV-Dienst in Deutschland mit IPTV Germany.",
   twitterHandle: undefined as string | undefined,
 } as const;
 
@@ -20,10 +20,10 @@ export function absoluteUrl(path: string): string {
 
 // ─── OpenGraph image (1200×630 recommended for social sharing) ──────────────
 export const OG_IMAGE = {
-  url: `${SITE.url}/images/logo.webp`,
-  width: 512,
-  height: 512,
-  alt: "IPTV German – Premium IPTV Dienst in Deutschland",
+  url: `${SITE.url}/images/site-logo.png`,
+  width: 2000,
+  height: 2000,
+  alt: "IPTV Germany – Premium IPTV Dienst in Deutschland",
 };
 
 // ─── Build canonical + alternate metadata ───────────────────────────────────

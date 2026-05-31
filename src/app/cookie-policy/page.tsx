@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 import { WHATSAPP_URL } from "@/constants";
 
 export const metadata: Metadata = {
-  title: "Cookie-Richtlinie — IPTV German",
+  title: "Cookie-Richtlinie — IPTV Germany",
   description: "Erfahren Sie, wie wir Cookies verwenden, um Ihr Erlebnis zu verbessern.",
   alternates: {
     canonical: "https://iptvgerman.de/cookie-policy",
   },
   openGraph: {
-    title: "Cookie-Richtlinie — IPTV German",
+    title: "Cookie-Richtlinie — IPTV Germany",
     description: "Erfahren Sie, wie wir Cookies verwenden, um Ihr Erlebnis zu verbessern.",
     url: "https://iptvgerman.de/cookie-policy",
-    siteName: "IPTV German",
+    siteName: "IPTV Germany",
     locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cookie-Richtlinie — IPTV German",
+    title: "Cookie-Richtlinie — IPTV Germany",
     description: "Erfahren Sie, wie wir Cookies verwenden, um Ihr Erlebnis zu verbessern.",
   },
 };

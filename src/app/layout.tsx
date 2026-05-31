@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/layouts/NavBar";
@@ -17,28 +17,29 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://iptvgerman.de"),
+  applicationName: "IPTV Germany",
   title: {
-    default: "IPTV German — Premium IPTV Dienst in Deutschland",
-    template: "%s | IPTV German",
+    default: "IPTV Germany — Premium IPTV Dienst in Deutschland",
+    template: "%s | IPTV Germany",
   },
   description:
-    "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering. Entdecken Sie den besten Premium-IPTV-Dienst in Deutschland mit IPTV German.",
+    "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering. Entdecken Sie den besten Premium-IPTV-Dienst in Deutschland mit IPTV Germany.",
   keywords: [
     "IPTV",
     "IPTV Deutschland",
     "bester IPTV Dienst",
     "IPTV Abonnement",
-    "IPTV German",
+    "IPTV Germany",
     "Streaming 4K",
     "IPTV Premium",
     "deutscher IPTV Anbieter",
     "Fernsehen über Internet",
   ],
-  authors: [{ name: "IPTV German" }],
+  authors: [{ name: "IPTV Germany" }],
   manifest: "/site.webmanifest",
   icons: {
     icon: [
-      { url: "/images/logo.webp", type: "image/webp", sizes: "512x512" },
+      { url: "/images/logo.png", type: "image/png", sizes: "512x512" },
       { url: "/favicon.ico", type: "image/x-icon" },
       { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
       { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
@@ -68,25 +69,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     url: "https://iptvgerman.de",
-    siteName: "IPTV German",
-    title: "IPTV German — Premium IPTV Dienst in Deutschland",
+    siteName: "IPTV Germany",
+    title: "IPTV Germany — Premium IPTV Dienst in Deutschland",
     description:
       "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering.",
     images: [
       {
-        url: "/images/logo.webp",
-        width: 512,
-        height: 512,
-        alt: "IPTV German – Premium IPTV Dienst in Deutschland",
+        url: "/images/site-logo.png",
+        width: 2000,
+        height: 2000,
+        alt: "IPTV Germany – Premium IPTV Dienst in Deutschland",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPTV German — Premium IPTV Dienst in Deutschland",
+    title: "IPTV Germany — Premium IPTV Dienst in Deutschland",
     description:
       "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering.",
-    images: ["/images/logo.webp"],
+    images: ["/images/site-logo.png"],
   },
   robots: {
     index: true,
@@ -96,6 +97,12 @@ export const metadata: Metadata = {
   ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION
     ? { verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } }
     : {}),
+};
+
+// Theme color + color scheme belong in the viewport export in Next.js 16.
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -110,8 +117,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <meta name="theme-color" content="#0F172A" />
-        <meta name="color-scheme" content="dark" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://image.tmdb.org" />

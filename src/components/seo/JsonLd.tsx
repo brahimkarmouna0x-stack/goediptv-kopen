@@ -69,7 +69,7 @@ function buildPrimarySchema(page: IPTVPage): Record<string, unknown> {
           name: SITE.name,
           logo: {
             "@type": "ImageObject",
-            url: `${SITE.url}/images/logo.webp`,
+            url: `${SITE.url}/images/site-logo.png`,
           },
         },
       };

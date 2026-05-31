@@ -15,22 +15,22 @@ import {
 
 export const metadata: Metadata = {
   title: "Hilfe-Center",
-  description: "Finden Sie Antworten auf Ihre Fragen und erfahren Sie, wie Sie IPTV German nutzen können.",
+  description: "Finden Sie Antworten auf Ihre Fragen und erfahren Sie, wie Sie IPTV Germany nutzen können.",
   alternates: {
     canonical: "https://iptvgerman.de/support",
   },
   openGraph: {
     title: "Hilfe-Center",
-    description: "Finden Sie Antworten auf Ihre Fragen und erfahren Sie, wie Sie IPTV German nutzen können.",
+    description: "Finden Sie Antworten auf Ihre Fragen und erfahren Sie, wie Sie IPTV Germany nutzen können.",
     url: "https://iptvgerman.de/support",
-    siteName: "IPTV German",
+    siteName: "IPTV Germany",
     locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Hilfe-Center",
-    description: "Finden Sie Antworten auf Ihre Fragen und erfahren Sie, wie Sie IPTV German nutzen können.",
+    description: "Finden Sie Antworten auf Ihre Fragen und erfahren Sie, wie Sie IPTV Germany nutzen können.",
   },
 };
 

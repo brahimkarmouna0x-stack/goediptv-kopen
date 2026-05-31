@@ -1,15 +1,13 @@
 /**
- * Generate all required favicon/icon sizes from the source logo.png
+ * Generate ALL required favicon/icon sizes from the source logo.png
  * Uses sharp for all image processing.
  *
- * Outputs to public/:
- *   favicon.ico              – multi-res ICO (16, 32, 48)
- *   favicon-16x16.png        – 16×16 PNG
- *   favicon-32x32.png        – 32×32 PNG
- *   favicon-48x48.png        – 48×48 PNG (good for desktop/taskbar)
- *   apple-touch-icon.png     – 180×180 PNG
- *   android-chrome-192x192   – 192×192 PNG
- *   android-chrome-512x512   – 512×512 PNG (source copy)
+ * Outputs to public/ (every icon referenced by layout.tsx + site.webmanifest):
+ *   favicon.ico                    – multi-res ICO (16, 32, 48)
+ *   favicon-{16..256}.png          – square PNG favicons
+ *   apple-touch-icon.png           – 180×180 (default Apple touch icon)
+ *   apple-touch-icon-{152,167,180} – sized Apple touch icons (iPad/iPhone)
+ *   android-chrome-192 / 512       – Android / PWA maskable icons
  */
 
 import sharp from "sharp";
@@ -35,8 +33,8 @@ async function png(size) {
  */
 async function createIco(pngBuffers) {
   const header = Buffer.alloc(6);
-  header.writeUInt16LE(0, 0);   // reserved
-  header.writeUInt16LE(1, 2);   // type = 1 (icon)
+  header.writeUInt16LE(0, 0); // reserved
+  header.writeUInt16LE(1, 2); // type = 1 (icon)
   header.writeUInt16LE(pngBuffers.length, 4); // count
 
   const entries = [];
@@ -52,11 +50,11 @@ async function createIco(pngBuffers) {
     // ICO stores 0 for 256; for smaller sizes use actual size
     entry.writeUInt8(w >= 256 ? 0 : w, 0);
     entry.writeUInt8(h >= 256 ? 0 : h, 1);
-    entry.writeUInt8(0, 2);  // colors (0 = no palette)
-    entry.writeUInt8(0, 3);  // reserved
-    entry.writeUInt16LE(1, 4);   // color planes
-    entry.writeUInt16LE(32, 6);  // bits per pixel
-    entry.writeUInt32LE(buf.length, 8);  // size in bytes
+    entry.writeUInt8(0, 2); // colors (0 = no palette)
+    entry.writeUInt8(0, 3); // reserved
+    entry.writeUInt16LE(1, 4); // color planes
+    entry.writeUInt16LE(32, 6); // bits per pixel
+    entry.writeUInt32LE(buf.length, 8); // size in bytes
     entry.writeUInt32LE(currentOffset, 12); // offset in file
     entries.push(entry);
     dataChunks.push(buf);
@@ -76,52 +74,49 @@ async function main() {
 
   console.log("✅ Source logo found — generating icons…\n");
 
-  // Generate all required sizes
-  const sizes = [16, 32, 48, 64, 180, 192, 512];
+  // Every square size we need to produce.
+  const faviconSizes = [16, 32, 48, 64, 72, 96, 128, 144, 152, 192, 256];
+  const appleSizes = [152, 167, 180];
+  const androidSizes = [192, 512];
 
-  const results = {};
-  for (const s of sizes) {
-    const buf = await png(s);
-    results[s] = buf;
-    console.log(`  ✓ ${s}×${s} PNG generated (${(buf.length / 1024).toFixed(1)} KB)`);
+  const cache = new Map();
+  const buf = async (size) => {
+    if (!cache.has(size)) cache.set(size, await png(size));
+    return cache.get(size);
+  };
+
+  // favicon-NxN.png
+  for (const s of faviconSizes) {
+    fs.writeFileSync(path.join(PUBLIC, `favicon-${s}x${s}.png`), await buf(s));
+    console.log(`  ✓ favicon-${s}x${s}.png`);
   }
 
-  // Write individual PNGs
-  fs.writeFileSync(path.join(PUBLIC, "favicon-16x16.png"), results[16]);
-  fs.writeFileSync(path.join(PUBLIC, "favicon-32x32.png"), results[32]);
-  fs.writeFileSync(path.join(PUBLIC, "favicon-48x48.png"), results[48]);
-  fs.writeFileSync(path.join(PUBLIC, "apple-touch-icon.png"), results[180]);
-  fs.writeFileSync(path.join(PUBLIC, "android-chrome-192x192.png"), results[192]);
-  fs.writeFileSync(path.join(PUBLIC, "android-chrome-512x512.png"), results[512]);
+  // apple-touch-icon-NxN.png + default apple-touch-icon.png (180)
+  for (const s of appleSizes) {
+    fs.writeFileSync(
+      path.join(PUBLIC, `apple-touch-icon-${s}x${s}.png`),
+      await buf(s),
+    );
+    console.log(`  ✓ apple-touch-icon-${s}x${s}.png`);
+  }
+  fs.writeFileSync(path.join(PUBLIC, "apple-touch-icon.png"), await buf(180));
+  console.log("  ✓ apple-touch-icon.png (180×180)");
 
-  // For 64x64, write it as a generic icon (not standard filename but useful)
-  fs.writeFileSync(path.join(PUBLIC, "favicon-64x64.png"), results[64]);
+  // android-chrome-NxN.png
+  for (const s of androidSizes) {
+    fs.writeFileSync(
+      path.join(PUBLIC, `android-chrome-${s}x${s}.png`),
+      await buf(s),
+    );
+    console.log(`  ✓ android-chrome-${s}x${s}.png`);
+  }
 
-  // Create multi-res ICO (16, 32, 48)
-  const icoBuf = await createIco([results[16], results[32], results[48]]);
+  // Multi-res ICO (16, 32, 48)
+  const icoBuf = await createIco([await buf(16), await buf(32), await buf(48)]);
   fs.writeFileSync(path.join(PUBLIC, "favicon.ico"), icoBuf);
-  console.log(`  ✓ favicon.ico generated (${(icoBuf.length / 1024).toFixed(1)} KB, contains 16/32/48)`);
+  console.log(`  ✓ favicon.ico (16/32/48, ${(icoBuf.length / 1024).toFixed(1)} KB)`);
 
-  // Copy original 512×512 as source backup (already done above)
   console.log("\n✅ All icons generated successfully!\n");
-
-  // Summary
-  console.log("Files written to public/:");
-  for (const f of [
-    "favicon.ico",
-    "favicon-16x16.png",
-    "favicon-32x32.png",
-    "favicon-48x48.png",
-    "favicon-64x64.png",
-    "apple-touch-icon.png",
-    "android-chrome-192x192.png",
-    "android-chrome-512x512.png",
-  ]) {
-    const fp = path.join(PUBLIC, f);
-    const exists = fs.existsSync(fp);
-    const size = exists ? fs.statSync(fp).size : 0;
-    console.log(`  ${exists ? "✓" : "✗"} ${f} (${(size / 1024).toFixed(1)} KB)`);
-  }
 }
 
 main().catch((err) => {

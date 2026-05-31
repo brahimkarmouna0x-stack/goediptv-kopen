@@ -10,26 +10,26 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Installationsanleitungen — IPTV German",
+  title: "Installationsanleitungen — IPTV Germany",
   description:
-    "Schritt-für-Schritt-Anleitungen zur Einrichtung von IPTV German auf allen Ihren Geräten.",
+    "Schritt-für-Schritt-Anleitungen zur Einrichtung von IPTV Germany auf allen Ihren Geräten.",
   alternates: {
     canonical: "https://iptvgerman.de/support/guides",
   },
   openGraph: {
-    title: "Installationsanleitungen — IPTV German",
+    title: "Installationsanleitungen — IPTV Germany",
     description:
-      "Schritt-für-Schritt-Anleitungen zur Einrichtung von IPTV German auf allen Ihren Geräten.",
+      "Schritt-für-Schritt-Anleitungen zur Einrichtung von IPTV Germany auf allen Ihren Geräten.",
     url: "https://iptvgerman.de/support/guides",
-    siteName: "IPTV German",
+    siteName: "IPTV Germany",
     locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Installationsanleitungen — IPTV German",
+    title: "Installationsanleitungen — IPTV Germany",
     description:
-      "Schritt-für-Schritt-Anleitungen zur Einrichtung von IPTV German auf allen Ihren Geräten.",
+      "Schritt-für-Schritt-Anleitungen zur Einrichtung von IPTV Germany auf allen Ihren Geräten.",
   },
 };
 

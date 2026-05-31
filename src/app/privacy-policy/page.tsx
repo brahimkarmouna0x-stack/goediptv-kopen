@@ -3,22 +3,22 @@ import { CheckCircle2, MessageCircle } from "lucide-react";
 import { WHATSAPP_URL } from "@/constants";
 
 export const metadata: Metadata = {
-  title: "Datenschutz — IPTV German",
+  title: "Datenschutz — IPTV Germany",
   description: "Lesen Sie unsere Datenschutzerklärung, um zu verstehen, wie wir Ihre Daten schützen.",
   alternates: {
     canonical: "https://iptvgerman.de/privacy-policy",
   },
   openGraph: {
-    title: "Datenschutz — IPTV German",
+    title: "Datenschutz — IPTV Germany",
     description: "Lesen Sie unsere Datenschutzerklärung, um zu verstehen, wie wir Ihre Daten schützen.",
     url: "https://iptvgerman.de/privacy-policy",
-    siteName: "IPTV German",
+    siteName: "IPTV Germany",
     locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Datenschutz — IPTV German",
+    title: "Datenschutz — IPTV Germany",
     description: "Lesen Sie unsere Datenschutzerklärung, um zu verstehen, wie wir Ihre Daten schützen.",
   },
 };

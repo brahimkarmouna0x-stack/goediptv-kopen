@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Entdecken Sie unsere umfangreiche Bibliothek mit Premium-Filmen, Serien und Live-TV-Sendern.",
     url: "https://iptvgerman.de/popular",
-    siteName: "IPTV German",
+    siteName: "IPTV Germany",
     locale: "de_DE",
     type: "website",
   },

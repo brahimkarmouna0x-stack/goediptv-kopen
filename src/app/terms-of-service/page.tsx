@@ -3,22 +3,22 @@ import { Info, MessageCircle } from "lucide-react";
 import { WHATSAPP_URL } from "@/constants";
 
 export const metadata: Metadata = {
-  title: "AGB — IPTV German",
+  title: "AGB — IPTV Germany",
   description: "Lesen Sie unsere Allgemeinen Geschäftsbedingungen, um Ihre Rechte und Pflichten zu verstehen.",
   alternates: {
     canonical: "https://iptvgerman.de/terms-of-service",
   },
   openGraph: {
-    title: "AGB — IPTV German",
+    title: "AGB — IPTV Germany",
     description: "Lesen Sie unsere Allgemeinen Geschäftsbedingungen, um Ihre Rechte und Pflichten zu verstehen.",
     url: "https://iptvgerman.de/terms-of-service",
-    siteName: "IPTV German",
+    siteName: "IPTV Germany",
     locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AGB — IPTV German",
+    title: "AGB — IPTV Germany",
     description: "Lesen Sie unsere Allgemeinen Geschäftsbedingungen, um Ihre Rechte und Pflichten zu verstehen.",
   },
 };

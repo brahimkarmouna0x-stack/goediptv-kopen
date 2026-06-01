@@ -11,7 +11,7 @@ const LEGAL_LAST_MOD = new Date("2026-01-15");
 const today = () => new Date();
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://iptvgerman.de";
+  const baseUrl = "https://goediptv-kopen.nl";
 
   // Static routes with priority and frequency
   const staticRoutes = [
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/privacy-policy", priority: 0.4, freq: "yearly" as const, lastMod: () => LEGAL_LAST_MOD },
     { url: "/terms-of-service", priority: 0.4, freq: "yearly" as const, lastMod: () => LEGAL_LAST_MOD },
     { url: "/cookie-policy", priority: 0.4, freq: "yearly" as const, lastMod: () => LEGAL_LAST_MOD },
-    { url: "/iptv-german", priority: 0.9, freq: "weekly" as const, lastMod: today },
+    { url: "/iptv-gids", priority: 0.9, freq: "weekly" as const, lastMod: today },
     { url: getIptvGermanPath("iptv-nederland"), priority: 0.9, freq: "weekly" as const, lastMod: today },
   ].map((route) => ({
     url: `${baseUrl}${route.url}`,

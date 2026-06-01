@@ -16,7 +16,7 @@ export function organizationSchema() {
     },
     address: {
       "@type": "PostalAddress",
-      addressCountry: "DE",
+      addressCountry: "NL",
     },
     sameAs: [] as string[],
   };
@@ -30,7 +30,7 @@ export function websiteSchema() {
     name: SITE.name,
     url: SITE.url,
     description: SITE.description,
-    inLanguage: "de",
+    inLanguage: "nl",
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE.url}/search?q={search_term_string}`,

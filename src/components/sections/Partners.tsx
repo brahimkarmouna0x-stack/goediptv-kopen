@@ -58,14 +58,14 @@ const Partners = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
           <span className="inline-flex rounded-full border border-france-300/20 bg-france-500/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-france-100">
-            Streaming Premium
+            Premium streaming
           </span>
           <h2 className="mt-5 font-display text-4xl font-black tracking-tight text-blanc-50 sm:text-6xl">
-            Serien & <span className="text-gradient">Filme</span>
+            Series & <span className="text-gradient">Films</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-8 text-blanc-300 sm:text-lg">
-            Alle Serien und Filme inklusive. Wählen Sie aus tausenden von
-            Sendern und Serien in HD-Qualität.
+            Alle series en films inbegrepen. Kies uit duizenden
+            kanalen en series in HD-kwaliteit.
           </p>
         </div>
 

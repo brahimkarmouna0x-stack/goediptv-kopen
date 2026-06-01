@@ -45,14 +45,14 @@ export const PurchaseModal = ({
   if (!isOpen || !plan || !mounted) return null;
 
   const devicesText =
-    plan.name === "Kostenlos Testen" || plan.devices === 1 ? "1 Gerät" : `${plan.devices} Geräte`;
+    plan.name === "Gratis Proef" || plan.devices === 1 ? "1 apparaat" : `${plan.devices} apparaten`;
 
-  const message = `Hallo, ich möchte bestellen:
+  const message = `Hallo, ik wil graag bestellen:
 
 - Abonnement: ${plan.name}
-- Anzahl Geräte: ${devicesText}
+- Aantal apparaten: ${devicesText}
 
-Können Sie mir mehr Details geben?
+Kunt u mij meer details geven?
 
 ${plan.name}
 ${plan.duration}
@@ -86,7 +86,7 @@ ${devicesText}`;
             e.stopPropagation();
             onClose();
           }}
-          aria-label="Schließen"
+          aria-label="Sluiten"
           className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-blanc-50/10 flex items-center justify-center text-blanc-400 hover:text-blanc-50 hover:bg-blanc-50/20 transition-all z-50 cursor-pointer active:scale-90"
         >
           <X size={18} className="pointer-events-none" aria-hidden="true" />
@@ -99,10 +99,10 @@ ${devicesText}`;
             </div>
             <div>
               <h3 className="text-xl md:text-2xl font-display font-bold text-blanc-50">
-                Ihre Bestellung
+                Uw bestelling
               </h3>
               <p className="text-blanc-400 text-xs md:text-sm">
-                Überprüfen Sie Ihr ausgewähltes Angebot
+                Controleer uw gekozen pakket
               </p>
             </div>
           </div>
@@ -124,7 +124,7 @@ ${devicesText}`;
               className="btn-shine w-full py-5 bg-emerald-500 hover:bg-emerald-600 text-blanc-950 font-bold rounded-2xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-emerald-500/20 cursor-pointer"
             >
               <MessageCircle size={24} aria-hidden="true" />
-              PER WHATSAPP BESTELLEN
+              BESTEL VIA WHATSAPP
             </a>
 
             <button
@@ -155,15 +155,15 @@ ${devicesText}`;
               </div>
               {copied && (
                 <span className="text-xs text-emerald-500 font-bold ml-2">
-                  Kopiert!
+                  Gekopieerd!
                 </span>
               )}
             </button>
           </div>
 
           <p className="mt-8 text-center text-blanc-500 text-xs px-4">
-            Sie werden zu WhatsApp weitergeleitet, um Ihre Bestellung sicher
-            mit einem unserer Berater abzuschließen.
+            U wordt doorgestuurd naar WhatsApp om uw bestelling veilig
+            af te ronden met een van onze adviseurs.
           </p>
         </div>
       </div>

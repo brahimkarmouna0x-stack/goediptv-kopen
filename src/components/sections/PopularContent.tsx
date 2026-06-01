@@ -142,14 +142,14 @@ const PopularContentInner = () => {
                 size={16}
                 className="group-hover:-translate-x-1 transition-transform"
               />
-              Zurück zur Startseite
+              Terug naar de homepagina
             </Link>
             <h1 className="font-display font-black text-4xl sm:text-6xl text-blanc-50 mb-4 leading-tight">
-              Beliebte <span className="text-gradient">Inhalte</span>
+              Populaire <span className="text-gradient">content</span>
             </h1>
             <p className="text-blanc-400 max-w-xl">
-              Entdecken Sie unsere umfangreiche Bibliothek mit Premium-Filmen, Serien und
-              Live-TV-Sendern aus aller Welt.
+              Ontdek onze uitgebreide bibliotheek met premium films, series en
+              live tv-kanalen van over de hele wereld.
             </p>
           </div>
 
@@ -167,7 +167,7 @@ const PopularContentInner = () => {
             )}
             <input
               type="text"
-              placeholder="Filme, Serien oder Genres suchen..."
+              placeholder="Zoek films, series of genres..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-14 pr-6 py-4 rounded-2xl glass text-blanc-50 placeholder-blanc-600 border border-blanc-50/10 focus:outline-none focus:border-france-400/50 transition-all outline-hidden"
@@ -209,11 +209,11 @@ const PopularContentInner = () => {
             {hasMore && !searchQuery && (
               <div className="flex flex-col items-center gap-4">
                 <Loader2 className="animate-spin text-france-400" size={32} />
-                <p className="text-blanc-500 text-sm font-bold uppercase tracking-widest">Mehr Inhalte laden...</p>
+                <p className="text-blanc-500 text-sm font-bold uppercase tracking-widest">Meer content laden...</p>
               </div>
             )}
             {!hasMore && !searchQuery && (
-              <p className="text-blanc-600 text-sm font-bold uppercase tracking-widest">Sie haben das Ende erreicht</p>
+              <p className="text-blanc-600 text-sm font-bold uppercase tracking-widest">U heeft het einde bereikt</p>
             )}
           </div>
         </>
@@ -223,10 +223,10 @@ const PopularContentInner = () => {
             <Search size={32} />
           </div>
           <h3 className="text-xl font-bold text-blanc-50 mb-2">
-            Keine Ergebnisse gefunden
+            Geen resultaten gevonden
           </h3>
           <p className="text-blanc-400">
-            Versuchen Sie einen anderen Suchbegriff oder ändern Sie die Filter.
+            Probeer een andere zoekterm of pas de filters aan.
           </p>
           <button
             onClick={() => {
@@ -236,7 +236,7 @@ const PopularContentInner = () => {
             }}
             className="mt-6 text-france-400 font-bold hover:underline cursor-pointer"
           >
-            Filter zurücksetzen
+            Filters resetten
           </button>
         </div>
       )}

@@ -2,7 +2,7 @@ import type { PageSection } from "@/content/iptv-german-pages";
 
 type Props = Extract<PageSection, { type: "channelList" }>;
 
-const fmt = (value: number) => value.toLocaleString("de-DE");
+const fmt = (value: number) => value.toLocaleString("nl-NL");
 
 export default function ChannelListSection({
   heading,

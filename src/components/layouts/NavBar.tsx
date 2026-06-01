@@ -101,7 +101,7 @@ const NavBar = () => {
 
   const goToPricing = useCallback(() => {
     setMenuOpen(false);
-    scrollToHashId("pricing");
+    scrollToHashId("pakketten");
   }, []);
 
   const handleLinkClick = useCallback((href: string) => {
@@ -116,7 +116,7 @@ const NavBar = () => {
 
         <nav
           className="hidden lg:flex items-center gap-7"
-          aria-label="Hauptnavigation"
+          aria-label="Hoofdnavigatie"
         >
           {NAV_LINKS.map((link) => {
             const isActive = activeLink === link.href;
@@ -149,14 +149,14 @@ const NavBar = () => {
             type="button"
             className="hidden lg:inline-flex whitespace-nowrap btn-shine items-center justify-center px-5 py-2.5 rounded-full bg-rouge-500 text-blanc-50 text-xs font-black uppercase tracking-[0.12em] shadow-lg shadow-rouge-500/20 hover:bg-rouge-600 active:scale-[0.98] transition-all duration-200"
           >
-            Abo auswählen
+            Kies abonnement
           </button>
         </div>
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             ref={menuToggleRef}
             type="button"
-            aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+            aria-label={menuOpen ? "Menu sluiten" : "Menu openen"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             onClick={() => setMenuOpen((open) => !open)}
@@ -172,14 +172,14 @@ const NavBar = () => {
         ref={mobileMenuRef}
         role="dialog"
         aria-modal="true"
-        aria-label="Navigationsmenü"
+        aria-label="Navigatiemenu"
         className={`lg:hidden overflow-hidden border-t border-blanc-800/20 bg-france-950/98 backdrop-blur-xl transition-[max-height,opacity] duration-300 ${
           menuOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav
           className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6"
-          aria-label="Mobile Navigation"
+          aria-label="Mobiele navigatie"
         >
           {NAV_LINKS.map((link) => {
             const isActive = activeLink === link.href;
@@ -204,7 +204,7 @@ const NavBar = () => {
             onClick={goToPricing}
             className="mt-2 rounded-xl bg-rouge-500 px-4 py-3 text-sm font-black text-blanc-50 shadow-[0_12px_30px_rgba(220,38,38,0.18)] hover:bg-rouge-600 transition-colors"
           >
-            Abo auswählen
+            Kies abonnement
           </button>
         </nav>
       </div>

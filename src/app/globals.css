@@ -1,37 +1,37 @@
 /* ===== TAILWIND BASE ===== */
 @import "tailwindcss";
 
-/* ===== DEUTSCHLAND DESIGN SYSTEM — Black · Red · Gold ===== */
+/* ===== NEDERLAND DESIGN SYSTEM — Red · White · Blue (dark premium) ===== */
 /* Token families keep their historic names (france/rouge/blanc) but now
-   express a German-flag identity:
-   - france-* : GOLD brand accent (bright end) blending into INK black (dark end)
-   - rouge-*  : RED — energetic primary CTA / live / danger
+   express a Dutch-flag identity (no gold anywhere):
+   - france-* : BLUE brand accent (#21468B, bright end) blending into deep NAVY ink (dark end)
+   - rouge-*  : RED (#AE1C28) — energetic primary CTA / live / danger
    - blanc-*  : neutral foundation (white → near-black) */
 @theme {
-  /* German Gold — Primary brand accent (bright end → ink at dark end) */
-  --color-france-50: #FBF8EE;
-  --color-france-100: #FBEFC9;
-  --color-france-200: #F6E29B;
-  --color-france-300: #F1D06A; /* light gold — hover / active links */
-  --color-france-400: #ECC94B; /* gold accent — text, icons, highlights */
-  --color-france-500: #E0A82E; /* primary gold */
-  --color-france-600: #C2871C; /* deep gold — solid gold buttons / hover */
-  --color-france-700: #2C2820; /* warm charcoal — borders & gradient bridge */
-  --color-france-800: #1A1713; /* deep ink — surfaces / headers */
-  --color-france-900: #121010; /* near-black */
-  --color-france-950: #0A0908; /* base background (black) */
+  /* Dutch Blue — Primary brand accent (bright end → navy ink at dark end) */
+  --color-france-50: #EEF3FB;
+  --color-france-100: #D6E1F4;
+  --color-france-200: #AEC2E8;
+  --color-france-300: #6E8FCB; /* light blue — hover / active links */
+  --color-france-400: #4A72BE; /* blue accent — text, icons, highlights */
+  --color-france-500: #21468B; /* primary Dutch blue */
+  --color-france-600: #1B3A74; /* deep blue — solid blue buttons / hover */
+  --color-france-700: #15294E; /* navy — borders & gradient bridge */
+  --color-france-800: #0F1B33; /* deep navy — surfaces / headers */
+  --color-france-900: #0A1322; /* near-black navy */
+  --color-france-950: #060B16; /* base background (deep navy-black) */
 
-  /* German Red — Accent / Live / Primary CTA */
-  --color-rouge-50: #FEF2F2;
-  --color-rouge-100: #FDE2E2;
-  --color-rouge-200: #FBC9C9;
-  --color-rouge-300: #F4A3A3;
-  --color-rouge-400: #EF6063;
-  --color-rouge-500: #DA2128; /* Primary accent — German red */
-  --color-rouge-600: #B81A20; /* Hover */
-  --color-rouge-700: #921418;
-  --color-rouge-800: #6E1013;
-  --color-rouge-900: #420A0C;
+  /* Dutch Red — Accent / Live / Primary CTA */
+  --color-rouge-50: #FCF2F3;
+  --color-rouge-100: #F8DEE0;
+  --color-rouge-200: #F0BCC0;
+  --color-rouge-300: #E08A90;
+  --color-rouge-400: #D05a62;
+  --color-rouge-500: #AE1C28; /* Primary accent — Dutch red */
+  --color-rouge-600: #951620; /* Hover */
+  --color-rouge-700: #79111A;
+  --color-rouge-800: #5C0D14;
+  --color-rouge-900: #3D080D;
 
   /* Neutral Foundation — white → near-black (no blue tint) */
   --color-blanc-50: #FFFFFF;
@@ -182,13 +182,13 @@
 @layer components {
   /* Glass morphism — neutral ink tint */
   .glass {
-    background: rgba(18, 16, 14, 0.82);
-    border: 1px solid rgba(236, 201, 75, 0.1);
+    background: rgba(10, 19, 34, 0.82);
+    border: 1px solid rgba(74, 114, 190, 0.14);
     box-shadow: 0 14px 34px -28px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
   .glass-strong {
-    background: rgba(14, 12, 10, 0.94);
-    border: 1px solid rgba(236, 201, 75, 0.14);
+    background: rgba(6, 11, 22, 0.94);
+    border: 1px solid rgba(74, 114, 190, 0.18);
     box-shadow: 0 18px 44px -32px rgba(0, 0, 0, 0.82), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 
@@ -223,7 +223,7 @@
     background: var(--color-rouge-700);
   }
 
-  /* Secondary CTA Button — solid gold with ink text */
+  /* Secondary CTA Button — solid Dutch blue with white text */
   .btn-gold {
     position: relative;
     overflow: hidden;
@@ -232,17 +232,17 @@
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
     font-weight: 700;
-    color: var(--color-france-950);
-    box-shadow: 0 10px 15px -3px rgba(224, 168, 46, 0.3);
+    color: #FFFFFF;
+    box-shadow: 0 10px 15px -3px rgba(33, 70, 139, 0.32);
     transition: all 0.2s var(--ease-france);
   }
   .btn-gold:hover {
-    background: var(--color-france-400);
-    box-shadow: 0 12px 22px -6px rgba(236, 201, 75, 0.45);
+    background: var(--color-france-600);
+    box-shadow: 0 12px 22px -6px rgba(33, 70, 139, 0.45);
   }
   .btn-gold:active {
     transform: scale(0.98);
-    background: var(--color-france-600);
+    background: var(--color-france-700);
   }
 
   /* Live Badge — Red pulse, GPU-only opacity animation */
@@ -279,17 +279,17 @@
     }
   }
 
-  /* German Gradient Hero — Ink → deep red → gold accent */
+  /* Dutch Gradient Hero — Navy ink → deep red → Dutch blue accent */
   .gradient-france {
-    background: linear-gradient(135deg, #0A0908 0%, #2A0E0E 52%, #6E1013 78%, #C2871C 100%);
+    background: linear-gradient(135deg, #060B16 0%, #3D080D 48%, #951620 72%, #21468B 100%);
   }
 
   /* Soft accent glows */
   .glow-gold {
-    box-shadow: 0 0 0 1px rgba(236, 201, 75, 0.12), 0 18px 60px -28px rgba(236, 201, 75, 0.4);
+    box-shadow: 0 0 0 1px rgba(74, 114, 190, 0.16), 0 18px 60px -28px rgba(33, 70, 139, 0.45);
   }
   .glow-red {
-    box-shadow: 0 0 0 1px rgba(218, 33, 40, 0.14), 0 18px 60px -28px rgba(218, 33, 40, 0.45);
+    box-shadow: 0 0 0 1px rgba(174, 28, 40, 0.16), 0 18px 60px -28px rgba(174, 28, 40, 0.45);
   }
 
   /* Content containment for heavy sections */
@@ -336,16 +336,16 @@
   .stagger-children > *:nth-child(7) { animation-delay: 300ms; }
   .stagger-children > *:nth-child(8) { animation-delay: 350ms; }
 
-  /* Text gradient for premium headings */
+  /* Text gradient for premium headings — light blue → white → light red */
   .text-gradient-france {
-    background: linear-gradient(135deg, var(--color-france-400), var(--color-france-500), var(--color-rouge-400));
+    background: linear-gradient(135deg, #6E8FCB, #FFFFFF, #E08A90);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #ECC94B, #FFFFFF, #DA2128);
+    background: linear-gradient(135deg, #6E8FCB, #FFFFFF, #E08A90);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

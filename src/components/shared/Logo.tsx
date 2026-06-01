@@ -2,51 +2,52 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface LogoProps {
-  /**
-   * Tailwind sizing utilities applied to the image. Overrides the default
-   * when provided (pass your own `h-*`/`w-*` to avoid conflicting utilities).
-   */
+  /** Tailwind sizing utilities applied to the logo image (height drives the size; width stays auto). */
   className?: string;
-  /** Intrinsic width used for aspect ratio + responsive srcset generation. */
-  width?: number;
-  /** Intrinsic height used for aspect ratio + responsive srcset generation. */
-  height?: number;
-  /** Eager-load + high priority. Defaults to true (logo is above the fold). */
-  priority?: boolean;
   /** Link target. Pass `null` to render the image without a link wrapper. */
   href?: string | null;
+  /**
+   * Kept for backwards compatibility with call sites that still pass
+   * width/height. Ignored — the image always uses its true intrinsic ratio
+   * so the aspect ratio is preserved (no stretching, no CLS).
+   */
+  width?: number;
+  height?: number;
+  /** Eagerly preload the image (Next 16 replacement for the deprecated `priority`). */
+  preload?: boolean;
 }
 
+/** The brand mark asset and its true intrinsic dimensions (keeps aspect ratio correct). */
+const LOGO_SRC = "/images/site-logo.png";
+const LOGO_WIDTH = 1505;
+const LOGO_HEIGHT = 1352;
+
 /**
- * Single source of truth for the IPTV Germany brand mark.
+ * Single source of truth for the goediptv-kopen brand mark.
  *
- * Renders `public/images/site-logo.png` through next/image:
- * - Responsive + sharp on Retina (next/image emits a 1x/2x srcset)
- * - No CLS (explicit width/height preserve the aspect ratio)
- * - No hydration mismatch (pure server-renderable markup)
- * - Accessible (descriptive alt + link label)
+ * Renders the official brand image (`site-logo.png`) only. The image keeps its
+ * native aspect ratio and is sized via the `className` height utility — never
+ * stretched. The transparent PNG sits cleanly on the dark navbar/footer.
  */
 const Logo = ({
-  className = "h-16 w-auto",
-  width = 128,
-  height = 128,
-  priority = true,
+  className = "h-12 w-auto sm:h-14",
   href = "/",
+  preload = false,
 }: LogoProps) => {
-  const image = (
+  const mark = (
     <Image
-      src="/images/site-logo.png"
-      alt="IPTV Germany"
-      width={width}
-      height={height}
-      priority={priority}
-      className={`${className} object-contain transition-transform duration-300 group-hover:scale-105`}
+      src={LOGO_SRC}
+      alt="goediptv-kopen"
+      width={LOGO_WIDTH}
+      height={LOGO_HEIGHT}
+      preload={preload}
+      className={`object-contain transition-transform duration-300 group-hover:scale-105 ${className}`}
     />
   );
 
   if (href === null) {
     return (
-      <span className="group inline-flex shrink-0 items-center">{image}</span>
+      <span className="group inline-flex shrink-0 items-center">{mark}</span>
     );
   }
 
@@ -54,9 +55,9 @@ const Logo = ({
     <Link
       href={href}
       className="group flex shrink-0 items-center"
-      aria-label="IPTV Germany – Startseite"
+      aria-label="goediptv-kopen – Startpagina"
     >
-      {image}
+      {mark}
     </Link>
   );
 };

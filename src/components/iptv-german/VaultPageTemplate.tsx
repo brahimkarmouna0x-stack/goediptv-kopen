@@ -72,14 +72,14 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
             className={`flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blanc-500 mb-8 ${page.isCentered ? "justify-center" : ""}`}
           >
               <Link href="/" className="hover:text-france-500 transition-colors">
-                Startseite
+                Home
               </Link>
             <ChevronRight size={12} />
             <Link
-              href="/iptv-german"
+              href="/iptv-gids"
               className="hover:text-france-500 transition-colors"
             >
-              Wissensdatenbank
+              Kennisbank
             </Link>
             <ChevronRight size={12} />
             <span className="text-blanc-300">{page.keyword}</span>
@@ -88,7 +88,7 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
           <div className={page.isCentered ? "mx-auto max-w-4xl" : "max-w-4xl"}>
             <span className="inline-flex items-center gap-2 rounded-full border border-france-500/25 bg-france-500/15 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-france-100 mb-6">
               <Zap size={14} className="text-france-500" />
-              IPTV German Wissensdatenbank
+              goediptv-kopen Kennisbank
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-blanc-50 leading-[1.1] tracking-tight mb-8">
               {page.heroHeading}
@@ -101,17 +101,17 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
               className={`flex flex-wrap gap-4 ${page.isCentered ? "justify-center" : ""}`}
             >
               <Link
-                href={`/iptv-german/${page.slug}/#pricing`}
+                href={`/iptv-gids/${page.slug}/#pakketten`}
                 className="btn-shine px-8 py-4 rounded-full bg-linear-to-r from-rouge-500 to-rouge-600 text-blanc-50 font-bold text-sm uppercase tracking-widest shadow-lg shadow-rouge-500/25 transition-all active:scale-95 flex items-center gap-3"
               >
-                Pakete Ansehen
+                Bekijk pakketten
                 <ArrowRight size={18} />
               </Link>
               <Link
-                href="/iptv-german"
+                href="/iptv-gids"
                 className="px-8 py-4 rounded-full glass text-blanc-50 font-bold text-sm uppercase tracking-widest border border-blanc-50/10 hover:bg-blanc-50/5 transition-all flex items-center gap-3"
               >
-                Alle Guides
+                Alle gidsen
               </Link>
             </div>
           </div>
@@ -177,7 +177,7 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
                 {/* Search in Sidebar */}
                 <div className="mb-8">
                   <h3 className="text-sm font-bold text-blanc-500 uppercase tracking-widest mb-4 px-2">
-                    Guides durchsuchen
+                    Gidsen doorzoeken
                   </h3>
                   <VaultSearch />
                 </div>
@@ -186,7 +186,7 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
                 <div className="rounded-3xl border border-blanc-50/10 bg-blanc-50/[0.03] p-8 backdrop-blur-md">
                   <h3 className="text-xl font-black text-blanc-50 mb-6 flex items-center gap-3">
                     <Layout size={20} className="text-rouge-500" />
-                    Verwandte Guides
+                    Gerelateerde gidsen
                   </h3>
                   <div className="space-y-4">
                     {page.internalLinks.map((link, index) => (
@@ -210,11 +210,11 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
                 <div className="rounded-3xl border border-emerald-500/20 bg-emerald-500/5 p-8">
                   <ShieldCheck size={32} className="text-emerald-400 mb-4" />
                   <h3 className="text-lg font-black text-blanc-50 mb-2">
-                    IPTV German Garantie
+                    goediptv-kopen garantie
                   </h3>
                   <p className="text-sm text-blanc-400 leading-relaxed font-medium">
-                    Alle unsere Guides dienen Bildungszwecken und
-                    konzentrieren sich auf stabile und legale Streaming-Erfahrungen.
+                    Al onze gidsen zijn bedoeld voor educatieve doeleinden en
+                    richten zich op stabiele en legale streamingervaringen.
                   </p>
                 </div>
               </div>
@@ -233,22 +233,22 @@ export default function VaultPageTemplate({ page }: VaultPageTemplateProps) {
       <CTA
         title={
           <>
-            Bereit für das Beste{" "}
-             <span className="text-gradient">Seherlebnis</span>?
+            Klaar voor de beste{" "}
+             <span className="text-gradient">kijkervaring</span>?
           </>
         }
-        description={`Streamen Sie noch heute auf all Ihren Geräten. Entdecken Sie, warum IPTV German die Nummer 1 Wahl für ${page.keyword} ist.`}
+        description={`Stream vandaag nog op al uw apparaten. Ontdek waarom goediptv-kopen de nummer 1 keuze is voor ${page.keyword}.`}
       />
 
       {/* Footer Back Link */}
       <div className="py-12 border-t border-blanc-50/5">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <Link
-            href="/iptv-german"
+            href="/iptv-gids"
             className="inline-flex items-center gap-2 text-blanc-500 hover:text-blanc-50 transition-colors font-bold text-sm uppercase tracking-widest"
           >
             <ArrowLeft size={16} />
-            Zurück zur Wissensdatenbank
+            Terug naar de kennisbank
           </Link>
         </div>
       </div>

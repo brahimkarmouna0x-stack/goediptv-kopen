@@ -20,8 +20,8 @@ const Footer = () => {
               <Logo className="h-20 w-auto" width={160} height={160} />
             </div>
             <p className="text-blanc-400 text-sm leading-relaxed mb-8 max-w-sm mt-6">
-              Das ultimative Premium-IPTV-Erlebnis. Über 25.000 Sender, 4K
-              Ultra HD und null Buffering. Grenzenlose Unterhaltung.
+              De ultieme premium IPTV-ervaring. Meer dan 25.000 kanalen, 4K
+              Ultra HD en nul buffering. Grenzeloos entertainment.
             </p>
           </div>
 
@@ -41,8 +41,8 @@ const Footer = () => {
               WhatsApp Support
             </h2>
             <p className="text-sm text-blanc-400 mb-6 leading-relaxed">
-              Fragen zur Installation, Aktivierung oder zu Abonnements? Chatten Sie direkt
-              mit unserem Team.
+              Vragen over installatie, activering of abonnementen? Chat direct
+              met ons team.
             </p>
             <a
               href={WHATSAPP_URL}
@@ -51,7 +51,7 @@ const Footer = () => {
               className="inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-xl bg-emerald-400 px-5 py-3 text-sm font-black text-blanc-950 shadow-[0_0_15px_rgba(16,185,129,0.25)] transition-colors hover:bg-emerald-300"
             >
               <MessageCircle size={16} aria-hidden="true" />
-              Auf WhatsApp chatten
+              Chat op WhatsApp
             </a>
           </div>
         </div>
@@ -61,17 +61,17 @@ const Footer = () => {
           <p className="text-sm text-blanc-500">
             &copy; 2026{" "}
             <span className="font-display font-black text-blanc-50">
-              IPTV Germany
+              goediptv-kopen
             </span>
-            . Alle Rechte vorbehalten.
+            . Alle rechten voorbehouden.
           </p>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
-            <FooterBottomLink label="Datenschutz" href="/privacy-policy" />
+            <FooterBottomLink label="Privacybeleid" href="/privacy-policy" />
             <FooterBottomLink
-              label="AGB"
+              label="Algemene voorwaarden"
               href="/terms-of-service"
             />
-            <FooterBottomLink label="Cookie-Richtlinie" href="/cookie-policy" />
+            <FooterBottomLink label="Cookiebeleid" href="/cookie-policy" />
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@ const ProductsLinks = () => {
   return (
     <div className="flex flex-col items-center sm:items-start">
       <h2 className="text-sm font-black uppercase tracking-widest text-blanc-50/50 mb-6">
-        Produkte
+        Producten
       </h2>
       <ul className="space-y-4">
         {productsFooterLinks.map((link, idx) => (
@@ -115,7 +115,7 @@ const SupportLinks = () => {
   return (
     <div className="flex flex-col items-center sm:items-start">
       <h2 className="text-sm font-black uppercase tracking-widest text-blanc-50/50 mb-6">
-        Support
+        Ondersteuning
       </h2>
       <ul className="space-y-4">
         {supportFooterLinks.map((link, idx) => (

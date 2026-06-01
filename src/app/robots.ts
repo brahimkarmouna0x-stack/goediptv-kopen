@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/_next/", "/static/", "/api/"],
     },
-    sitemap: "https://iptvgerman.de/sitemap.xml",
+    sitemap: "https://goediptv-kopen.nl/sitemap.xml",
   };
 }

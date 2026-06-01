@@ -4,9 +4,9 @@ import Hero from "@/components/sections/Hero";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "IPTV Germany — Premium IPTV Dienst in Deutschland",
+  title: "goediptv-kopen — Beste IPTV Abonnement van Nederland",
   description:
-    "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering. Entdecken Sie den besten Premium-IPTV-Dienst in Deutschland mit IPTV Germany.",
+    "Het beste IPTV abonnement van Nederland: 25.000+ kanalen, 140.000+ films & series in 4K, nul buffering. Premium IPTV bestellen met gratis proef.",
   path: "/",
 });
 

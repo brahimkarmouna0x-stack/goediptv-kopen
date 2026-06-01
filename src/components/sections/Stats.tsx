@@ -30,10 +30,10 @@ const Stats = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-4 sm:gap-8 lg:grid-cols-4">
-          <StatItem value="31K+" label="Sender" icon={Tv} />
-          <StatItem value="140K+" label="Filme & Serien" icon={Clapperboard} />
-          <StatItem value="99,9%" label="Streaming-Qualität" icon={Zap} />
-          <StatItem value="10K+" label="Aktive Nutzer" icon={Users} />
+          <StatItem value="31K+" label="Kanalen" icon={Tv} />
+          <StatItem value="140K+" label="Films & series" icon={Clapperboard} />
+          <StatItem value="99,9%" label="Streamingkwaliteit" icon={Zap} />
+          <StatItem value="10K+" label="Actieve gebruikers" icon={Users} />
         </div>
       </div>
     </section>

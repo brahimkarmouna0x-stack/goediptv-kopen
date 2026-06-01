@@ -1,7 +1,7 @@
 {
-  "name": "IPTV Germany",
-  "short_name": "IPTV Germany",
-  "description": "Unbegrenztes 4K-Streaming — 25.000+ Sender, null Buffering. Premium IPTV Dienst in Deutschland.",
+  "name": "goediptv-kopen",
+  "short_name": "goediptv-kopen",
+  "description": "Onbeperkt 4K-streaming met 25.000+ kanalen en nul buffering. Ontdek het beste premium IPTV abonnement van Nederland bij goediptv-kopen.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",

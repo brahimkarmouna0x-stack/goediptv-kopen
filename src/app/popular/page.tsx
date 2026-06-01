@@ -2,26 +2,26 @@ import type { Metadata } from "next";
 import PopularContent from "@/components/sections/PopularContent";
 
 export const metadata: Metadata = {
-  title: "Beliebte Inhalte",
+  title: "Populaire content",
   description:
-    "Entdecken Sie unsere umfangreiche Bibliothek mit Premium-Filmen, Serien und Live-TV-Sendern.",
+    "Ontdek onze uitgebreide bibliotheek met premium films, series en live tv-kanalen.",
   alternates: {
-    canonical: "https://iptvgerman.de/popular",
+    canonical: "https://goediptv-kopen.nl/popular",
   },
   openGraph: {
-    title: "Beliebte Inhalte",
+    title: "Populaire content",
     description:
-      "Entdecken Sie unsere umfangreiche Bibliothek mit Premium-Filmen, Serien und Live-TV-Sendern.",
-    url: "https://iptvgerman.de/popular",
-    siteName: "IPTV Germany",
-    locale: "de_DE",
+      "Ontdek onze uitgebreide bibliotheek met premium films, series en live tv-kanalen.",
+    url: "https://goediptv-kopen.nl/popular",
+    siteName: "goediptv-kopen",
+    locale: "nl_NL",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Beliebte Inhalte",
+    title: "Populaire content",
     description:
-      "Entdecken Sie unsere umfangreiche Bibliothek mit Premium-Filmen, Serien und Live-TV-Sendern.",
+      "Ontdek onze uitgebreide bibliotheek met premium films, series en live tv-kanalen.",
   },
 };
 

@@ -24,15 +24,15 @@ const TrendingSection = () => {
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-france-500/20 bg-france-500/15 px-3.5 py-1.5 text-xs font-black uppercase tracking-[0.14em] text-france-100">
               <Sparkles size={14} aria-hidden="true" />
-              Premium Streaming
+              Premium streaming
             </span>
             <h2 className="mt-4 font-display text-4xl font-black leading-tight text-blanc-50 sm:text-5xl">
-              Beliebte Filme &amp; Serien
+              Populaire films &amp; series
             </h2>
           </div>
           <p className="max-w-xl text-sm font-medium leading-6 text-blanc-400 sm:text-base">
-            Entdecken Sie die meistgesehenen Serien und Filme wie Game of Thrones, Vikings und The
-            Walking Dead sowie die neuesten Blockbuster.
+            Ontdek de meest bekeken series en films zoals Game of Thrones, Vikings en The
+            Walking Dead, plus de nieuwste blockbusters.
           </p>
         </div>
 
@@ -44,14 +44,14 @@ const TrendingSection = () => {
                   <span className="grid h-10 w-10 place-items-center rounded-full border border-france-300/20 bg-france-500/15 text-france-300">
                     <PlayCircle size={21} aria-hidden="true" />
                   </span>
-                  Meistgesehene Serien &amp; Filme
+                  Meest bekeken series &amp; films
                 </h3>
               </div>
 
               <SliderFrame>
                 <div
                   className="overflow-hidden pb-7 pt-2"
-                  aria-label="Meistgesehene Serien und Filme"
+                  aria-label="Meest bekeken series en films"
                 >
                   <div className="poster-slider-track flex w-max">
                     <div className="flex gap-4 pr-4 sm:gap-5 sm:pr-5">
@@ -84,20 +84,20 @@ const TrendingSection = () => {
             <div>
               <div className="mb-5 flex items-center justify-between gap-4">
                 <span className="text-xs font-black uppercase tracking-[0.16em] text-france-100/65">
-                  Chaînes Premium
+                  Premium kanalen
                 </span>
                 <h3 className="flex items-center gap-3 text-xl font-black text-blanc-50">
                   <span className="grid h-10 w-10 place-items-center rounded-full border border-rouge-300/15 bg-rouge-400/10 text-rouge-200">
                     <Radio size={21} aria-hidden="true" />
                   </span>
-                  TV Live
+                  Live tv
                 </h3>
               </div>
 
               <SliderFrame compact>
                 <div
                   className="overflow-hidden pb-7 pt-2"
-                  aria-label="Chaînes TV live premium"
+                  aria-label="Premium live tv-kanalen"
                 >
                   <div className="channel-slider-track flex w-max">
                     <div className="flex gap-4 pr-4">

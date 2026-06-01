@@ -18,10 +18,10 @@ import Trending from "@/components/sections/Trending";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "IPTV Niederlande — #1 Premium IPTV Abo (2026)",
+  title: "IPTV Nederland — #1 Premium IPTV Abonnement (2026)",
   description:
-    "Beste IPTV Niederlande & Belgien mit 31.000+ Sendern, 140.000+ VOD in 4K/8K Qualität. IPTV kaufen mit 24/7 Support, sofortiger Aktivierung und 100% stabil.",
-  path: "/iptv-german/iptv-nederland",
+    "Beste IPTV Nederland & België met 31.000+ kanalen, 140.000+ VOD in 4K/8K kwaliteit. IPTV kopen met 24/7 klantenservice, directe activering en 100% stabiel.",
+  path: "/iptv-gids/iptv-nederland",
 });
 
 const IPTVNederland = () => {
@@ -29,16 +29,16 @@ const IPTVNederland = () => {
     <main className="flex-1">
       {/* Bespoke Hero Section with Generated Background */}
       <Hero
-        pillText="Der #1 IPTV Dienst der Niederlande"
+        pillText="De #1 IPTV-dienst van Nederland"
         bgImage="/images/iptv-nederland-hero.webp"
           title={
             <>
-              IPTV Premium <span className="text-gradient">Niederlande</span>
+              IPTV Premium <span className="text-gradient">Nederland</span>
               <br className="hidden md:block" />
-              Die Zukunft des Fernsehens
+              De toekomst van televisie
             </>
           }
-          subtitle="Erleben Sie Unterhaltung wie nie zuvor mit dem stabilsten IPTV-Abonnement der Niederlande. 31.000+ Live-Sender, 140.000+ Filme & Serien in 4K/8K, sofortige Aktivierung auf all Ihren Geräten."
+          subtitle="Beleef entertainment zoals nooit tevoren met het meest stabiele IPTV-abonnement van Nederland. 31.000+ live kanalen, 140.000+ films & series in 4K/8K, directe activering op al uw apparaten."
       />
 
       <div className="space-y-32 pb-32">
@@ -53,14 +53,14 @@ const IPTVNederland = () => {
             <div className="max-w-3xl relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6">
                 <ShieldCheck size={14} />
-                Ohne Risiko
+                Zonder risico
               </div>
               <h2 className="text-3xl lg:text-4xl font-black text-blanc-50 mb-6">
-                Geld-zurück-Garantie
+                Niet-goed-geld-terug-garantie
               </h2>
               <p className="text-xl text-blanc-300 leading-relaxed">
-                Nicht zufrieden nach dem IPTV-Kauf? Vollständige Rückerstattung –{" "}
-                <span className="text-blanc-50 font-bold">ohne Komplikationen.</span>
+                Niet tevreden na uw IPTV-aankoop? Volledige terugbetaling –{" "}
+                <span className="text-blanc-50 font-bold">zonder gedoe.</span>
               </p>
             </div>
           </div>
@@ -71,53 +71,53 @@ const IPTVNederland = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="animate-slide-up">
               <span className="text-france-500 font-bold uppercase tracking-widest text-sm mb-4 block">
-                Warum uns wählen
+                Waarom voor ons kiezen
               </span>
               <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 leading-tight mb-8">
-                Warum unser IPTV-Anbieter die{" "}
-                <span className="text-gradient">beste Wahl</span> in den Niederlanden ist
+                Waarom onze IPTV-aanbieder de{" "}
+                <span className="text-gradient">beste keuze</span> in Nederland is
               </h2>
               <div className="space-y-6 text-blanc-300 text-lg leading-relaxed">
                 <p>
-                  Als einer der führenden IPTV-Anbieter in den Niederlanden
-                  konzentrieren wir uns auf das, was wirklich zählt:{" "}
+                  Als een van de toonaangevende IPTV-aanbieders in Nederland
+                  richten wij ons op wat echt telt:{" "}
                   <span className="text-blanc-50 font-semibold">
-                    Stabilität, Geschwindigkeit und Zuverlässigkeit.
+                    stabiliteit, snelheid en betrouwbaarheid.
                   </span>{" "}
-                  Unsere Server-Infrastruktur ist speziell für den
-                  niederländischen Markt optimiert – das bedeutet minimale Latenz, null
-                  Pufferung und 99,9 % Verfügbarkeit.
+                  Onze serverinfrastructuur is speciaal geoptimaliseerd voor de
+                  Nederlandse markt – dat betekent minimale latentie, nul
+                  buffering en 99,9% beschikbaarheid.
                 </p>
                 <p>
-                  Ob während der Hauptsendezeit der Eredivisie oder beim
-                  Streamen eines neuen Films – Ihr Bild bleibt flüssig und
-                  stabil. Was uns von anderen Anbietern unterscheidet: Wir
-                  bieten einen{" "}
+                  Of het nu tijdens de primetime van de Eredivisie is of bij het
+                  streamen van een nieuwe film – uw beeld blijft vloeiend en
+                  stabiel. Wat ons onderscheidt van andere aanbieders: wij
+                  bieden een{" "}
                   <span className="text-blanc-50 font-semibold">
-                    Kundenservice auf Deutsch
+                    klantenservice in het Nederlands
                   </span>{" "}
-                  verfügbar 24/7 per WhatsApp, E-Mail oder Telefon.
+                  24/7 beschikbaar via WhatsApp, e-mail of telefoon.
                 </p>
                 <p>
-                  Die Installation ist sehr einfach: Nach dem Kauf erhalten Sie Ihre
-                  Zugangsdaten per E-Mail – fertig. Keine technischen
-                  Kenntnisse erforderlich, keine komplizierte Einrichtung. Geben Sie
-                  einfach die Daten in Ihre bevorzugte App ein und
-                  beginnen Sie sofort. So einfach wird IPTV kaufen.
+                  De installatie is heel eenvoudig: na uw aankoop ontvangt u uw
+                  inloggegevens per e-mail – klaar. Geen technische
+                  kennis nodig, geen ingewikkelde installatie. Voer
+                  simpelweg de gegevens in uw favoriete app in en
+                  begin direct. Zo eenvoudig is IPTV kopen.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                "99,9% Uptime",
-                "Stabile Server",
-                "Null Pufferung",
-                "Schnelle Streams",
-                "Support 24/7",
-                "Auf Deutsch",
-                "Einfache Nutzung",
-                "Sofort Bereit",
+                "99,9% uptime",
+                "Stabiele servers",
+                "Nul buffering",
+                "Snelle streams",
+                "Klantenservice 24/7",
+                "In het Nederlands",
+                "Eenvoudig in gebruik",
+                "Direct klaar",
               ].map((benefit) => (
                 <div
                   key={benefit}
@@ -137,12 +137,12 @@ const IPTVNederland = () => {
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 mb-6">
-              Wie kaufe ich IPTV?{" "}
-              <span className="text-gradient">(Schritt für Schritt)</span>
+              Hoe koop ik IPTV?{" "}
+              <span className="text-gradient">(Stap voor stap)</span>
             </h2>
             <p className="text-blanc-400 max-w-2xl mx-auto text-lg">
-              Bereit zum Streamen in wenigen Minuten auf all Ihren
-              Lieblingsgeräten.
+              Klaar om binnen enkele minuten te streamen op al uw
+              favoriete apparaten.
             </p>
           </div>
 
@@ -150,29 +150,29 @@ const IPTVNederland = () => {
             {[
               {
                 step: "1",
-                title: "Paket wählen",
-                desc: "Wählen Sie das IPTV-Paket, das am besten zu Ihnen passt – 6 Monate, 1 Jahr oder 2 Jahre.",
+                title: "Pakket kiezen",
+                desc: "Kies het IPTV-pakket dat het beste bij u past – 6 maanden, 1 jaar of 2 jaar.",
                 icon: ShoppingCart,
                 color: "from-france-700 to-france-500",
               },
               {
                 step: "2",
-                title: "Bestellung abschließen",
-                desc: "Bezahlen Sie sicher per PayPal, Kreditkarte oder einer anderen Zahlungsmethode Ihrer Wahl.",
+                title: "Bestelling afronden",
+                desc: "Betaal veilig met PayPal, creditcard of een andere betaalmethode naar keuze.",
                 icon: Zap,
                 color: "from-rouge-500 to-rouge-600",
               },
               {
                 step: "3",
-                title: "Zugangsdaten erhalten",
-                desc: "Innerhalb von 1-5 Minuten erhalten Sie Ihren Aktivierungscode oder M3U-Link per E-Mail.",
+                title: "Inloggegevens ontvangen",
+                desc: "Binnen 1-5 minuten ontvangt u uw activeringscode of M3U-link per e-mail.",
                 icon: Key,
-                color: "from-[#F4C430] to-[#e6b020]",
+                color: "from-france-400 to-france-600",
               },
               {
                 step: "4",
-                title: "Sofort loslegen",
-                desc: "Geben Sie die Daten in Ihre IPTV-App ein und genießen Sie sofort 31.000+ Sender in 4K.",
+                title: "Direct beginnen",
+                desc: "Voer de gegevens in uw IPTV-app in en geniet direct van 31.000+ kanalen in 4K.",
                 icon: PlayCircle,
                 color: "from-emerald-500 to-teal-500",
               },
@@ -202,15 +202,15 @@ const IPTVNederland = () => {
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-france-500 font-bold uppercase tracking-widest text-sm mb-4 block">
-              Marktvergleich
+              Marktvergelijking
             </span>
             <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 mb-6">
-              Warum <span className="text-gradient">IPTV German</span> die
-              beste Wahl ist
+              Waarom <span className="text-gradient">goediptv-kopen</span> de
+              beste keuze is
             </h2>
             <p className="text-blanc-400 max-w-3xl mx-auto text-lg">
-              Wir bieten nicht nur mehr Inhalt, sondern auch einen überlegenen Service und
-              Stabilität im Vergleich zu anderen Anbietern auf dem Markt.
+              Wij bieden niet alleen meer content, maar ook een superieure service en
+              stabiliteit vergeleken met andere aanbieders op de markt.
             </p>
           </div>
 
@@ -219,55 +219,55 @@ const IPTVNederland = () => {
               <thead>
                 <tr className="border-b border-blanc-50/10">
                   <th className="p-6 text-blanc-400 font-bold uppercase tracking-wider text-sm">
-                    Funktion
+                    Functie
                   </th>
                   <th className="p-6 text-france-500 font-black uppercase tracking-wider text-sm bg-france-500/5">
-                    IPTV German
+                    goediptv-kopen
                   </th>
                   <th className="p-6 text-blanc-400 font-bold uppercase tracking-wider text-sm">
-                    Anbieter A
+                    Aanbieder A
                   </th>
                   <th className="p-6 text-blanc-400 font-bold uppercase tracking-wider text-sm">
-                    Anbieter B
+                    Aanbieder B
                   </th>
                 </tr>
               </thead>
               <tbody className="text-blanc-50">
                 {[
                   {
-                    name: "Anzahl Sender",
+                    name: "Aantal kanalen",
                     v: "31 000+",
                     a: "~10 000",
                     b: "~15 000",
                   },
                   {
-                    name: "VOD-Inhalt (Filme & Serien)",
+                    name: "VOD-content (films & series)",
                     v: "140 000+",
                     a: "~50 000",
                     b: "~80 000",
                   },
-                  { name: "4K / 8K UHD Qualität", v: true, a: false, b: true },
+                  { name: "4K / 8K UHD kwaliteit", v: true, a: false, b: true },
                   {
-                    name: "24/7 Support auf Deutsch",
+                    name: "24/7 support in het Nederlands",
                     v: true,
                     a: false,
                     b: false,
                   },
-                  { name: "Installationshilfe", v: true, a: false, b: false },
+                  { name: "Installatiehulp", v: true, a: false, b: false },
                   {
-                    name: "Server Uptime",
-                    v: "99.9% garantiert",
-                    a: "Nicht angegeben",
+                    name: "Server uptime",
+                    v: "99.9% gegarandeerd",
+                    a: "Niet vermeld",
                     b: "99.5%",
                   },
                   {
-                    name: "Anti-Freeze Technologie",
+                    name: "Anti-freeze technologie",
                     v: true,
                     a: false,
                     b: false,
                   },
                   {
-                    name: "Sichere Zahlung (PayPal, Karte)",
+                    name: "Veilig betalen (PayPal, kaart)",
                     v: true,
                     a: true,
                     b: false,
@@ -330,11 +330,11 @@ const IPTVNederland = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <span className="text-france-500 font-bold uppercase tracking-widest text-sm mb-4 block">
-                IPTV Guide 2026
+                IPTV Gids 2026
               </span>
               <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 mb-8">
-                IPTV in den Niederlanden kaufen –{" "}
-                <span className="text-gradient">Ihr vollständiger Guide</span>
+                IPTV in Nederland kopen –{" "}
+                <span className="text-gradient">uw complete gids</span>
               </h2>
             </div>
 
@@ -345,28 +345,28 @@ const IPTVNederland = () => {
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-france-700/15 border border-france-700/25 text-france-500">
                     1
                   </span>
-                  Was bedeutet IPTV kaufen?
+                  Wat betekent IPTV kopen?
                 </h3>
                 <div className="text-blanc-300 text-lg leading-relaxed space-y-4">
                   <p>
-                    IPTV kaufen bedeutet, einen digitalen Streaming-Dienst zu
-                    erwerben, der Fernsehprogramme über das Internet anbietet.
-                    Im Gegensatz zum herkömmlichen Kabel- oder
-                    Satellitenfernsehen benötigt IPTV nur eine
-                    stabile Internetverbindung und ein kompatibles Gerät.
+                    IPTV kopen betekent het aanschaffen van een digitale
+                    streamingdienst die tv-programma's via internet aanbiedt.
+                    In tegenstelling tot traditionele kabel- of
+                    satelliettelevisie heeft IPTV alleen een
+                    stabiele internetverbinding en een compatibel apparaat nodig.
                   </p>
                   <p>
-                    Wenn Sie IPTV bei{" "}
-                    <span className="text-blanc-50 font-bold">IPTV German</span> kaufen,
-                    haben Sie Zugang zu über{" "}
+                    Wanneer u IPTV koopt bij{" "}
+                    <span className="text-blanc-50 font-bold">goediptv-kopen</span>,
+                    heeft u toegang tot meer dan{" "}
                     <span className="text-france-500 font-bold">
-                       31.000 Live-Sendern
+                       31.000 live kanalen
                     </span>{" "}
-                    und über{" "}
+                    en meer dan{" "}
                     <span className="text-france-500 font-bold">
-                       140.000 Filme und Serien
+                       140.000 films en series
                     </span>{" "}
-                    – alles in kristallklarer HD und 4K Qualität.
+                    – allemaal in kristalheldere HD- en 4K-kwaliteit.
                   </p>
                 </div>
               </div>
@@ -377,23 +377,23 @@ const IPTVNederland = () => {
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rouge-500/15 border border-rouge-500/25 text-rouge-500">
                     2
                   </span>
-                  Warum IPTV kaufen?
+                  Waarom IPTV kopen?
                 </h3>
                 <p className="text-blanc-300 text-lg mb-8">
-                  Immer mehr Deutsche wechseln zu IPTV. Hier sind die
-                  Hauptgründe:
+                  Steeds meer Nederlanders stappen over op IPTV. Dit zijn de
+                  belangrijkste redenen:
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    { t: "Riesiges Angebot", d: "31.000+ Sender weltweit." },
-                    { t: "VOD-Bibliothek", d: "140.000+ Filme und Serien." },
-                    { t: "Beste Qualität", d: "4K, 8K und UHD Unterstützung." },
-                    { t: "Niedrige Preise", d: "Ab nur 4,92 € pro Monat." },
+                    { t: "Enorm aanbod", d: "31.000+ kanalen wereldwijd." },
+                    { t: "VOD-bibliotheek", d: "140.000+ films en series." },
+                    { t: "Beste kwaliteit", d: "4K, 8K en UHD ondersteuning." },
+                    { t: "Lage prijzen", d: "Vanaf slechts 4,92 € per maand." },
                     {
-                      t: "Ohne Bindung",
-                      d: "Flexibel und monatlich kündbar.",
+                      t: "Zonder binding",
+                      d: "Flexibel en maandelijks opzegbaar.",
                     },
-                    { t: "Sofortige Aktivierung", d: "Fertig in unter 5 Minuten." },
+                    { t: "Directe activering", d: "Klaar in minder dan 5 minuten." },
                   ].map((item) => (
                     <div
                       key={item.t}
@@ -418,17 +418,17 @@ const IPTVNederland = () => {
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-france-500/15 border border-france-500/25 text-france-500">
                     3
                   </span>
-                  Welche Geräte werden unterstützt?
+                  Welke apparaten worden ondersteund?
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {[
-                    "Samsung Smart TV",
-                    "LG Smart TV",
+                    "Samsung Smart-tv",
+                    "LG Smart-tv",
                     "Amazon Fire Stick",
                     "Android TV Box",
                     "Apple TV",
                     "iPhone & iPad",
-                    "Android Mobile",
+                    "Android mobiel",
                     "Windows & Mac",
                     "Formuler & MAG",
                     "NVIDIA Shield",
@@ -448,19 +448,19 @@ const IPTVNederland = () => {
               {/* Point 4 */}
               <div className="p-8 rounded-3xl border border-france-700/25 bg-france-700/10">
                 <h3 className="text-2xl font-black text-blanc-50 mb-6">
-                  Niederländische Sender & Sport
+                  Nederlandse kanalen & sport
                 </h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h4 className="text-france-500 font-bold mb-4 uppercase tracking-wider text-xs">
-                      Niederländische Sender
+                      Nederlandse kanalen
                     </h4>
                     <ul className="space-y-2 text-blanc-300">
                       <li>• NPO 1, 2, 3 (HD)</li>
                       <li>• RTL 4, 5, 7, 8, Z</li>
                       <li>• SBS6, Veronica, Net5</li>
                       <li>• Ziggo Sport & ESPN</li>
-                      <li>• Alle regionalen Sender</li>
+                      <li>• Alle regionale zenders</li>
                     </ul>
                   </div>
                   <div>
@@ -468,9 +468,9 @@ const IPTVNederland = () => {
                       Sport
                     </h4>
                     <ul className="space-y-2 text-blanc-300">
-                      <li>• Eredivisie & Keuken Kampioen</li>
+                      <li>• Eredivisie & Keuken Kampioen Divisie</li>
                       <li>• Champions & Europa League</li>
-                      <li>• Formel 1 (Viaplay & F1TV)</li>
+                      <li>• Formule 1 (Viaplay & F1TV)</li>
                       <li>• MotoGP, UFC, NBA, NFL</li>
                     </ul>
                   </div>
@@ -480,13 +480,13 @@ const IPTVNederland = () => {
               {/* Point 6 */}
               <div className="border-t border-blanc-50/10 pt-16">
                 <h3 className="text-2xl font-black text-blanc-50 mb-8">
-                  Sicherheit beim IPTV-Kauf
+                  Veiligheid bij het kopen van IPTV
                 </h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   {[
-                    { t: "SSL Verschlüsselung", icon: ShieldCheck },
-                    { t: "Sichere Zahlung", icon: ShoppingCart },
-                    { t: "Datenschutz", icon: Key },
+                    { t: "SSL-versleuteling", icon: ShieldCheck },
+                    { t: "Veilig betalen", icon: ShoppingCart },
+                    { t: "Privacy", icon: Key },
                     { t: "Garantie", icon: ShieldCheck },
                   ].map((s) => (
                     <div
@@ -512,53 +512,53 @@ const IPTVNederland = () => {
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-france-500 font-bold uppercase tracking-widest text-sm mb-4 block">
-              Kompatibilität
+              Compatibiliteit
             </span>
             <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 mb-6">
-              IPTV kaufen für{" "}
-              <span className="text-gradient">alle Geräte</span>
+              IPTV kopen voor{" "}
+              <span className="text-gradient">alle apparaten</span>
             </h2>
             <p className="text-blanc-400 max-w-2xl mx-auto text-lg">
-              Unser IPTV-Dienst funktioniert auf über 50 Gerätetypen. Einmal
-              kaufen und überall streamen.
+              Onze IPTV-dienst werkt op meer dan 50 soorten apparaten. Eén keer
+              kopen en overal streamen.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                label: "Beliebteste Wahl",
-                title: "Smart TV",
+                label: "Populairste keuze",
+                title: "Smart-tv",
                 desc: "Samsung, LG, Sony, Philips, Hisense, TCL",
                 icon: "tv",
               },
               {
-                label: "Einfachste Installation",
-                title: "Streaming-Sticks",
+                label: "Eenvoudigste installatie",
+                title: "Streaming-sticks",
                 desc: "Fire TV Stick, Chromecast, Roku, Apple TV, NVIDIA Shield",
                 icon: "zap",
               },
               {
-                label: "Streamen unterwegs",
+                label: "Onderweg streamen",
                 title: "Smartphones",
                 desc: "iPhone, Samsung Galaxy, Pixel, Huawei, Xiaomi",
                 icon: "mobile",
               },
               {
-                label: "Großer Bildschirm",
+                label: "Groot scherm",
                 title: "Tablets",
                 desc: "iPad, Samsung Tab, Amazon Fire, Lenovo, Surface",
                 icon: "tablet",
               },
               {
-                label: "Volle Kontrolle",
-                title: "Computer",
+                label: "Volledige controle",
+                title: "Computers",
                 desc: "Windows PC, Mac, Linux, Chromebook",
                 icon: "laptop",
               },
               {
-                label: "Premium-Erlebnis",
-                title: "Konsolen & Boxen",
+                label: "Premium-ervaring",
+                title: "Consoles & boxen",
                 desc: "PS5, Xbox, MAG Box, Formuler, Enigma2",
                 icon: "box",
               },
@@ -584,11 +584,11 @@ const IPTVNederland = () => {
 
           <div className="mt-12 p-6 rounded-2xl border border-blanc-50/5 bg-blanc-50/[0.02] text-center">
             <p className="text-blanc-400 italic">
-              + viele weitere Geräte. Hilfe bei der Einrichtung? Unser{" "}
+              + nog veel meer apparaten. Hulp bij de installatie? Onze{" "}
               <span className="text-blanc-50 font-bold">
-                24/7 Support auf Deutsch
+                24/7 klantenservice in het Nederlands
               </span>{" "}
-              ist für Sie da.
+              staat voor u klaar.
             </p>
           </div>
         </section>
@@ -603,36 +603,36 @@ const IPTVNederland = () => {
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-france-500 font-bold uppercase tracking-widest text-sm mb-4 block">
-              Garantien
+              Garanties
             </span>
             <h2 className="text-3xl lg:text-5xl font-black text-blanc-50 mb-6">
-              Unsere <span className="text-gradient">Garantien</span>
+              Onze <span className="text-gradient">garanties</span>
             </h2>
             <p className="text-blanc-400 max-w-2xl mx-auto text-lg">
-              Ihr Vertrauen ist unser Kapital. Wir untermauern unseren Service mit
-              Garantien, die Ihre Sicherheit und ein erstklassiges Erlebnis gewährleisten.
+              Uw vertrouwen is ons kapitaal. Wij onderbouwen onze service met
+              garanties die uw veiligheid en een eersteklas ervaring waarborgen.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Geld-zurück-Garantie",
-                desc: "Wenn Sie nicht zufrieden sind, bieten wir eine problemlose Rückerstattungsgarantie innerhalb der ersten 7 Tage.",
+                title: "Niet-goed-geld-terug-garantie",
+                desc: "Bent u niet tevreden? Dan bieden wij een probleemloze terugbetalingsgarantie binnen de eerste 7 dagen.",
                 icon: ShieldCheck,
                 color: "text-emerald-400",
                 bg: "bg-emerald-500/10",
               },
               {
-                title: "Datenschutz & Sicherheit",
-                desc: "Ihre Daten sind bei uns sicher. Wir halten die höchsten Datenschutzstandards ein und geben keine Daten an Dritte weiter.",
+                title: "Privacy & veiligheid",
+                desc: "Uw gegevens zijn bij ons veilig. Wij hanteren de hoogste privacynormen en delen geen gegevens met derden.",
                 icon: Key,
                 color: "text-france-500",
                 bg: "bg-france-700/15",
               },
               {
-                title: "Regelmäßige Updates",
-                desc: "Unsere Senderlisten und VOD werden täglich aktualisiert, um Ihnen stets die aktuellsten Inhalte zu garantieren.",
+                title: "Regelmatige updates",
+                desc: "Onze kanaallijsten en VOD worden dagelijks bijgewerkt, zodat u altijd de meest actuele content krijgt.",
                 icon: Zap,
                 color: "text-rouge-500",
                 bg: "bg-rouge-500/15",
@@ -659,11 +659,11 @@ const IPTVNederland = () => {
         <CTA
           title={
             <>
-              Bereit für das Beste{" "}
-              <span className="text-gradient">IPTV-Erlebnis</span>?
+              Klaar voor de beste{" "}
+              <span className="text-gradient">IPTV-ervaring</span>?
             </>
           }
-          description="Schließen Sie sich tausenden zufriedenen Kunden in den Niederlanden und Belgien an. Starten Sie noch heute mit IPTV German."
+          description="Sluit u aan bij duizenden tevreden klanten in Nederland en België. Begin vandaag nog met goediptv-kopen."
         />
       </div>
     </main>

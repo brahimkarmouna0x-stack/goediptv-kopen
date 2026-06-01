@@ -99,7 +99,7 @@ export const ChannelCard = memo(function ChannelCard({
       <div className="mb-4 flex items-center justify-between gap-2">
         <span className="inline-flex items-center gap-1.5 rounded-full border border-rouge-300/15 bg-rouge-400/10 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-rouge-100">
           <span className="h-1.5 w-1.5 rounded-full bg-rouge-400" />
-          En Direct
+          Live
         </span>
         <span className="rounded-full border border-blanc-50/10 bg-blanc-50/[0.06] px-2 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-blanc-300">
           {item.quality}
@@ -123,7 +123,7 @@ export const ChannelCard = memo(function ChannelCard({
       </h3>
       <div className="mt-4 flex items-center justify-center gap-1.5">
         <span className="text-[10px] font-black uppercase tracking-[0.14em] text-france-100/65">
-            En Direct HD
+            Live HD
         </span>
       </div>
     </article>

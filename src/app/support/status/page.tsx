@@ -13,23 +13,23 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Service-Status — IPTV Germany",
-  description: "Echtzeit-Status der Dienste und Server-Cluster von IPTV Germany.",
+  title: "Servicestatus — goediptv-kopen",
+  description: "Realtime status van de diensten en serverclusters van goediptv-kopen.",
   alternates: {
-    canonical: "https://iptvgerman.de/support/status",
+    canonical: "https://goediptv-kopen.nl/support/status",
   },
   openGraph: {
-    title: "Service-Status — IPTV Germany",
-    description: "Echtzeit-Status der Dienste und Server-Cluster von IPTV Germany.",
-    url: "https://iptvgerman.de/support/status",
-    siteName: "IPTV Germany",
-    locale: "de_DE",
+    title: "Servicestatus — goediptv-kopen",
+    description: "Realtime status van de diensten en serverclusters van goediptv-kopen.",
+    url: "https://goediptv-kopen.nl/support/status",
+    siteName: "goediptv-kopen",
+    locale: "nl_NL",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Service-Status — IPTV Germany",
-    description: "Echtzeit-Status der Dienste und Server-Cluster von IPTV Germany.",
+    title: "Servicestatus — goediptv-kopen",
+    description: "Realtime status van de diensten en serverclusters van goediptv-kopen.",
   },
 };
 
@@ -40,19 +40,19 @@ const StatusPage = () => {
     health: number;
     Icon: LucideIcon;
   }> = [
-    { name: "Globaler Streaming-Cluster", status: "Betriebsbereit", health: 100, Icon: Server },
-    { name: "Xtream Codes API", status: "Betriebsbereit", health: 100, Icon: Code2 },
-    { name: "VOD-Bibliothek Zugriff", status: "Betriebsbereit", health: 100, Icon: Film },
-    { name: "EPG-Datenanbieter", status: "Betriebsbereit", health: 99, Icon: List },
-    { name: "Zahlungsabwicklung", status: "Betriebsbereit", health: 100, Icon: CreditCard },
-    { name: "Kunden-Support-Portal", status: "Betriebsbereit", health: 100, Icon: Headphones }
+    { name: "Wereldwijde streaming-cluster", status: "Operationeel", health: 100, Icon: Server },
+    { name: "Xtream Codes API", status: "Operationeel", health: 100, Icon: Code2 },
+    { name: "VOD-bibliotheek toegang", status: "Operationeel", health: 100, Icon: Film },
+    { name: "EPG-dataleverancier", status: "Operationeel", health: 99, Icon: List },
+    { name: "Betalingsverwerking", status: "Operationeel", health: 100, Icon: CreditCard },
+    { name: "Klantenserviceportaal", status: "Operationeel", health: 100, Icon: Headphones }
   ];
 
   const regions = [
-    { name: "Nordamerika", latency: "24ms", load: "34%" },
+    { name: "Noord-Amerika", latency: "24ms", load: "34%" },
     { name: "Europa", latency: "18ms", load: "42%" },
-    { name: "Naher Osten", latency: "45ms", load: "28%" },
-    { name: "Asien-Pazifik", latency: "62ms", load: "31%" }
+    { name: "Midden-Oosten", latency: "45ms", load: "28%" },
+    { name: "Azië-Pacific", latency: "62ms", load: "31%" }
   ];
 
   return (
@@ -61,13 +61,13 @@ const StatusPage = () => {
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-emerald-400 text-sm font-bold mb-4 uppercase tracking-wider">
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-live-pulse" aria-hidden="true" />
-            Alle Systeme Betriebsbereit
+            Alle systemen operationeel
           </span>
           <h1 className="font-display font-black text-4xl sm:text-6xl mb-6       text-blanc-50 leading-tight">
-            Service-<span className="text-gradient">Status</span>
+            Service<span className="text-gradient">status</span>
           </h1>
           <p className="text-blanc-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Echtzeit-Überwachung unserer globalen Infrastruktur und Streaming-Dienste.
+            Realtime monitoring van onze wereldwijde infrastructuur en streamingdiensten.
           </p>
         </div>
 
@@ -84,13 +84,13 @@ const StatusPage = () => {
               <div className="absolute inset-0 bg-emerald-500/20 blur-xl rounded-full"></div>
             </div>
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold       text-blanc-50 mb-1">Alle Systeme Betriebsbereit</h2>
-              <p className="text-blanc-400 text-sm">Letzte Überprüfung: Sofort (automatische Aktualisierung)</p>
+              <h2 className="text-xl sm:text-2xl font-bold       text-blanc-50 mb-1">Alle systemen operationeel</h2>
+              <p className="text-blanc-400 text-sm">Laatste controle: zojuist (automatische update)</p>
             </div>
           </div>
           <div className="flex gap-4 w-full md:w-auto">
              <button className="px-6 py-3 rounded-xl glass       text-blanc-50 font-bold hover:bg-blanc-50/10 transition-all border border-blanc-50/10">
-                Status aktualisieren
+                Status vernieuwen
              </button>
           </div>
         </div>
@@ -98,7 +98,7 @@ const StatusPage = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Services */}
           <div className="lg:col-span-2 space-y-4 animate-slide-up">
-            <h2 className="text-xl font-bold       text-blanc-50 mb-6 ml-2">Hauptdienste</h2>
+            <h2 className="text-xl font-bold       text-blanc-50 mb-6 ml-2">Hoofddiensten</h2>
             {services.map((service, i) => (
               <div key={i} className="glass rounded-2xl p-5 sm:p-6 border border-blanc-50/5 hover:border-blanc-50/10 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4 group">
                 <div className="flex items-center gap-4 min-w-0">
@@ -114,7 +114,7 @@ const StatusPage = () => {
                           style={{ width: `${service.health}%` }}
                         ></div>
                       </div>
-                      <span className="text-[10px] text-blanc-500">{service.health}% Gesundheit</span>
+                      <span className="text-[10px] text-blanc-500">{service.health}% gezondheid</span>
                     </div>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ const StatusPage = () => {
           {/* Regional Status */}
           <div className="space-y-8 animate-slide-up">
             <div>
-              <h2 className="text-xl font-bold       text-blanc-50 mb-6 ml-2">Regionale Knoten</h2>
+              <h2 className="text-xl font-bold       text-blanc-50 mb-6 ml-2">Regionale knooppunten</h2>
               <div className="glass rounded-2xl p-6 sm:p-8 border border-blanc-50/5 space-y-8">
                 {regions.map((region, i) => (
                   <div key={i} className="space-y-3">
@@ -144,7 +144,7 @@ const StatusPage = () => {
                       ></div>
                     </div>
                     <div className="flex justify-between text-[10px] font-medium text-blanc-500">
-                      <span>Serverlast</span>
+                      <span>Serverbelasting</span>
                       <span>{region.load}</span>
                     </div>
                   </div>
@@ -155,10 +155,10 @@ const StatusPage = () => {
             {/* Support Callout */}
             <div className="glass rounded-2xl p-6 sm:p-8 border border-france-500/20 bg-france-500/5 relative overflow-hidden group">
                <div className="absolute -right-8 -bottom-8 w-24 h-24 bg-france-500/10 blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-               <h2 className="text-lg font-bold       text-blanc-50 mb-2">Ein Problem bemerkt?</h2>
-               <p className="text-sm text-blanc-400 mb-6 leading-relaxed">Wenn Sie Streaming-Probleme haben, die hier nicht angezeigt werden, kontaktieren Sie uns bitte.</p>
+               <h2 className="text-lg font-bold       text-blanc-50 mb-2">Een probleem opgemerkt?</h2>
+               <p className="text-sm text-blanc-400 mb-6 leading-relaxed">Heeft u streamingproblemen die hier niet worden weergegeven? Neem dan contact met ons op.</p>
                <Link href="/support/contact" className="text-sm font-bold text-france-500 hover:      text-blanc-50 transition-colors flex items-center gap-2 group/btn">
-                  Problem melden
+                  Probleem melden
                   <ArrowRight
                     className="h-4 w-4 transition-transform group-hover/btn:translate-x-1"
                     aria-hidden="true"

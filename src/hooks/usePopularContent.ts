@@ -19,10 +19,10 @@ const fetchGenres = async () => {
   try {
     const [mG, sG] = await Promise.all([
       fetch(
-          `${TMDB_BASE_URL}/genre/movie/list?api_key=${TMDB_API_KEY}&language=de-DE`,
+          `${TMDB_BASE_URL}/genre/movie/list?api_key=${TMDB_API_KEY}&language=nl-NL`,
         ),
         fetch(
-          `${TMDB_BASE_URL}/genre/tv/list?api_key=${TMDB_API_KEY}&language=de-DE`,
+          `${TMDB_BASE_URL}/genre/tv/list?api_key=${TMDB_API_KEY}&language=nl-NL`,
       ),
     ]);
 
@@ -99,11 +99,11 @@ export const usePopularContent = () => {
 
         const [mRes, sRes, lRes, sportsRes] = await Promise.all([
           fetch(
-            `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&language=de-DE&sort_by=popularity.desc&page=1`,
+            `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&language=nl-NL&sort_by=popularity.desc&page=1`,
             { signal: controller.signal },
           ),
           fetch(
-            `${TMDB_BASE_URL}/discover/tv?api_key=${TMDB_API_KEY}&language=de-DE&sort_by=popularity.desc&page=1`,
+            `${TMDB_BASE_URL}/discover/tv?api_key=${TMDB_API_KEY}&language=nl-NL&sort_by=popularity.desc&page=1`,
             { signal: controller.signal },
           ),
           fetch("https://iptv-org.github.io/api/logos.json", {
@@ -214,10 +214,10 @@ export const usePopularContent = () => {
     try {
       const [mRes, sRes] = await Promise.all([
         fetch(
-          `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&language=de-DE&sort_by=popularity.desc&page=${moviePage}`,
+          `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&language=nl-NL&sort_by=popularity.desc&page=${moviePage}`,
         ),
         fetch(
-          `${TMDB_BASE_URL}/discover/tv?api_key=${TMDB_API_KEY}&language=de-DE&sort_by=popularity.desc&page=${tvPage}`,
+          `${TMDB_BASE_URL}/discover/tv?api_key=${TMDB_API_KEY}&language=nl-NL&sort_by=popularity.desc&page=${tvPage}`,
         ),
       ]);
 

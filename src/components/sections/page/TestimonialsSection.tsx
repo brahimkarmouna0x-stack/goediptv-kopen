@@ -8,7 +8,7 @@ type Props = Extract<PageSection, { type: "testimonials" }>;
 
 function Stars({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-0.5" aria-label={`${rating} von 5 Sternen`}>
+    <div className="flex gap-0.5" aria-label={`${rating} van 5 sterren`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
@@ -90,7 +90,7 @@ export default function TestimonialsSection({
                 <button
                   type="button"
                   onClick={() => go(index - 1)}
-                  aria-label="Vorherige Bewertung"
+                  aria-label="Vorige beoordeling"
                   className="glass flex h-10 w-10 items-center justify-center rounded-full border border-blanc-50/10 text-blanc-300 transition-colors hover:text-blanc-50"
                 >
                   <ChevronLeft size={18} aria-hidden="true" />
@@ -98,7 +98,7 @@ export default function TestimonialsSection({
                 <button
                   type="button"
                   onClick={() => go(index + 1)}
-                  aria-label="Nächste Bewertung"
+                  aria-label="Volgende beoordeling"
                   className="glass flex h-10 w-10 items-center justify-center rounded-full border border-blanc-50/10 text-blanc-300 transition-colors hover:text-blanc-50"
                 >
                   <ChevronRight size={18} aria-hidden="true" />
@@ -114,7 +114,7 @@ export default function TestimonialsSection({
                   key={i}
                   type="button"
                   onClick={() => setIndex(i)}
-                  aria-label={`Bewertung ${i + 1}`}
+                  aria-label={`Beoordeling ${i + 1}`}
                   aria-current={i === index}
                   className={`h-2 rounded-full transition-all ${
                     i === index ? "w-6 bg-france-400" : "w-2 bg-blanc-700"

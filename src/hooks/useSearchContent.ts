@@ -62,7 +62,7 @@ export const useSearchContent = () => {
       setInternalIsSearching(true);
       try {
         const res = await fetch(
-          `${TMDB_BASE_URL}/search/multi?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(searchQuery)}&language=de-DE`,
+          `${TMDB_BASE_URL}/search/multi?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(searchQuery)}&language=nl-NL`,
           { signal: controller.signal },
         );
         const data = (await res.json()) as { results: TMDBItem[] };

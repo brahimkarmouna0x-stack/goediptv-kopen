@@ -18,8 +18,8 @@ const CTA = ({
             <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 text-blanc-50 leading-tight">
               {title || (
                 <>
-                  Bereit für{" "}
-                  <span className="text-gradient">grenzenlose Unterhaltung</span>
+                  Klaar voor{" "}
+                  <span className="text-gradient">grenzeloos entertainment</span>
                   <br />
                   ?
                 </>
@@ -27,15 +27,15 @@ const CTA = ({
             </h2>
             <p className="text-blanc-400 text-lg max-w-2xl mx-auto mb-10 font-medium leading-relaxed">
               {description ||
-                "Werden Sie Teil von über 500.000 zufriedenen Abonnenten weltweit. Starten Sie noch heute Ihre Streaming-Reise mit unserem risikofreien Test."}
+                "Word onderdeel van meer dan 500.000 tevreden abonnees wereldwijd. Begin vandaag nog met streamen dankzij onze risicovrije proef."}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="#pricing"
-                className="btn-shine px-10 py-5 rounded-full bg-rouge-500 text-blanc-50 font-bold text-lg shadow-[0_18px_50px_-12px_rgba(218,33,40,0.5)] hover:bg-rouge-600 hover:shadow-[0_22px_60px_-12px_rgba(218,33,40,0.6)] hover:-translate-y-0.5 transition-all active:translate-y-0 active:scale-[0.98] flex items-center gap-3 will-change-transform"
+                href="#pakketten"
+                className="btn-shine px-10 py-5 rounded-full bg-rouge-500 text-blanc-50 font-bold text-lg shadow-[0_18px_50px_-12px_rgba(174,28,40,0.5)] hover:bg-rouge-600 hover:shadow-[0_22px_60px_-12px_rgba(174,28,40,0.6)] hover:-translate-y-0.5 transition-all active:translate-y-0 active:scale-[0.98] flex items-center gap-3 will-change-transform"
               >
                 <Rocket size={21} className="text-france-300" aria-hidden="true" />
-                Kostenlosen Test starten
+                Start gratis proef
               </Link>
               <a
                 href={WHATSAPP_URL}
@@ -44,11 +44,11 @@ const CTA = ({
                 className="px-10 py-5 rounded-full glass text-blanc-50 font-bold text-lg hover:bg-white/10 transition-all flex items-center gap-3 border border-blanc-50/10 active:scale-95"
               >
                 <MessageCircle size={21} aria-hidden="true" />
-                Mit uns chatten
+                Chat met ons
               </a>
             </div>
             <p className="text-xs text-blanc-500 mt-6 font-bold tracking-wider uppercase">
-              Keine Kreditkarte erforderlich. Jederzeit kündbar.
+              Geen creditcard nodig. Altijd opzegbaar.
             </p>
           </div>
         </div>

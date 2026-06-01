@@ -17,26 +17,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://iptvgerman.de"),
-  applicationName: "IPTV Germany",
+  metadataBase: new URL("https://goediptv-kopen.nl"),
+  applicationName: "goediptv-kopen",
   title: {
-    default: "IPTV Germany — Premium IPTV Dienst in Deutschland",
-    template: "%s | IPTV Germany",
+    default: "goediptv-kopen — Beste IPTV Abonnement van Nederland",
+    template: "%s | goediptv-kopen",
   },
   description:
-    "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering. Entdecken Sie den besten Premium-IPTV-Dienst in Deutschland mit IPTV Germany.",
+    "Onbeperkt 4K-streaming met 25.000+ kanalen en nul buffering. Ontdek het beste premium IPTV abonnement van Nederland bij goediptv-kopen.",
   keywords: [
-    "IPTV",
-    "Best IPTV German",
-    "bester IPTV Dienst",
-    "IPTV Abonnement",
-    "IPTV Germany",
-    "Streaming 4K",
-    "IPTV Premium",
-    "deutscher IPTV Anbieter",
-    "Fernsehen über Internet",
+    "iptv abonnement",
+    "iptv abonnementen",
+    "iptv aanbieder",
+    "beste iptv providers",
+    "premium iptv nederland",
+    "iptv in nederland",
+    "goedkoop iptv",
+    "iptv vergelijken",
+    "iptv bestellen",
+    "iptv pakket",
+    "iptv 4k",
+    "iptv kopen",
   ],
-  authors: [{ name: "IPTV Germany" }],
+  authors: [{ name: "goediptv-kopen" }],
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -68,26 +71,26 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "de_DE",
-    url: "https://iptvgerman.de",
-    siteName: "IPTV Germany",
-    title: "IPTV Germany — Premium IPTV Dienst in Deutschland",
+    locale: "nl_NL",
+    url: "https://goediptv-kopen.nl",
+    siteName: "goediptv-kopen",
+    title: "goediptv-kopen — Beste IPTV Abonnement van Nederland",
     description:
-      "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering.",
+      "Onbeperkt 4K-streaming met 25.000+ kanalen en nul buffering.",
     images: [
       {
         url: "/images/site-logo.png",
-        width: 2000,
-        height: 2000,
-        alt: "IPTV Germany – Premium IPTV Dienst in Deutschland",
+        width: 1505,
+        height: 1352,
+        alt: "goediptv-kopen – Premium IPTV abonnement in Nederland",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPTV Germany — Premium IPTV Dienst in Deutschland",
+    title: "goediptv-kopen — Beste IPTV Abonnement van Nederland",
     description:
-      "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering.",
+      "Onbeperkt 4K-streaming met 25.000+ kanalen en nul buffering.",
     images: ["/images/site-logo.png"],
   },
   robots: {
@@ -102,7 +105,7 @@ export const metadata: Metadata = {
 
 // Theme color + color scheme belong in the viewport export in Next.js 16.
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#060B16",
   colorScheme: "dark",
 };
 
@@ -113,7 +116,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="de"
+      lang="nl"
       className={`h-full antialiased ${inter.variable}`}
       suppressHydrationWarning
     >
@@ -148,7 +151,7 @@ export default function RootLayout({
           id="skip-to-content"
           className="fixed -top-40 left-4 z-[9999] rounded-xl bg-rouge-500 px-6 py-3 font-black text-blanc-50 shadow-lg transition-all focus:top-4 focus:outline-2 focus:outline-france-400"
         >
-          Zum Inhalt springen
+          Naar inhoud springen
         </a>
 
         <NavBar />

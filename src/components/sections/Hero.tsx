@@ -19,16 +19,16 @@ interface HeroProps {
 }
 
 const quickPoints = [
-  "Sofortige Aktivierung",
-  "Alle Geräte",
-  "24/7 Support",
+  "Directe activering",
+  "Alle apparaten",
+  "24/7 klantenservice",
 ];
 
 const showcaseStats = [
-  { icon: Tv, label: "Live-Sender", value: "31.000+" },
-  { icon: Film, label: "Filme & Serien (VOD)", value: "140.000+" },
-  { icon: MonitorPlay, label: "Bildqualität", value: "4K & 8K HDR" },
-  { icon: ShieldCheck, label: "Server-Verfügbarkeit", value: "99,9% Uptime" },
+  { icon: Tv, label: "Live kanalen", value: "31.000+" },
+  { icon: Film, label: "Films & series (VOD)", value: "140.000+" },
+  { icon: MonitorPlay, label: "Beeldkwaliteit", value: "4K & 8K HDR" },
+  { icon: ShieldCheck, label: "Serverbeschikbaarheid", value: "99,9% uptime" },
 ];
 
 const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
@@ -64,15 +64,15 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
           <div className="w-full lg:w-[54%] flex flex-col items-center text-center lg:items-start lg:text-left animate-fade-up">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-france-950/70 backdrop-blur-md border border-france-500/30 mb-7 text-xs sm:text-sm text-france-300 font-semibold tracking-wide shadow-[0_0_20px_rgba(236,201,75,0.12)]">
               <span className="h-2 w-2 rounded-full bg-france-400 animate-live-pulse" aria-hidden="true" />
-              {pillText || "Premium IPTV Dienst · Made for Deutschland"}
+              {pillText || "Premium IPTV · Gemaakt voor Nederland"}
             </span>
 
             <h1 className="font-display font-bold text-[1.75rem] leading-[1.12] sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3.4rem] mb-5 text-blanc-50 tracking-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
               {title || (
                 <>
-                  Best IPTV German
+                  Beste IPTV Abonnement van Nederland
                   <span className="mt-3 block bg-linear-to-r from-france-300 via-france-400 to-france-500 bg-clip-text text-transparent">
-                    31.000+ Sender &amp; 140.000+ VOD in 4K/8K
+                    31.000+ kanalen &amp; 140.000+ VOD in 4K/8K
                   </span>
                 </>
               )}
@@ -80,7 +80,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
 
             <p className="text-base sm:text-lg md:text-xl text-blanc-300 max-w-xl mb-7 leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">
               {subtitle ||
-                "Premium IPTV in Deutschland — sofortige Aktivierung, stabile Server und gestochen scharfes 4K/8K-Streaming auf jedem Gerät."}
+                "Premium IPTV in Nederland — directe activering, stabiele servers en messcherp 4K/8K-streaming op elk apparaat."}
             </p>
 
             {/* Quick value chips */}
@@ -101,8 +101,8 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
             {/* Primary actions */}
             <div className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4 mb-8">
               <Link
-                href="#pricing"
-                className="group btn-shine w-full sm:w-auto px-9 py-4 rounded-2xl bg-rouge-500 text-blanc-50 font-bold text-base sm:text-lg hover:bg-rouge-600 transition-all flex items-center justify-center gap-3 shadow-[0_16px_44px_-12px_rgba(218,33,40,0.55)] hover:shadow-[0_22px_56px_-12px_rgba(218,33,40,0.6)] hover:-translate-y-0.5 active:translate-y-0 will-change-transform"
+                href="#pakketten"
+                className="group btn-shine w-full sm:w-auto px-9 py-4 rounded-2xl bg-rouge-500 text-blanc-50 font-bold text-base sm:text-lg hover:bg-rouge-600 transition-all flex items-center justify-center gap-3 shadow-[0_16px_44px_-12px_rgba(174,28,40,0.55)] hover:shadow-[0_22px_56px_-12px_rgba(174,28,40,0.6)] hover:-translate-y-0.5 active:translate-y-0 will-change-transform"
               >
                 <Play
                   size={20}
@@ -110,14 +110,14 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
                   className="group-hover:scale-110 transition-transform"
                   aria-hidden="true"
                 />
-                Sofortiger Zugriff
+                Start gratis proef
               </Link>
               <Link
-                href="#pricing"
+                href="#pakketten"
                 className="w-full sm:w-auto px-9 py-4 rounded-2xl bg-france-950/40 backdrop-blur-md text-blanc-50 font-bold text-base sm:text-lg hover:bg-france-500/10 transition-all flex items-center justify-center gap-3 border border-france-500/35 hover:border-france-400/60"
               >
                 <Layers size={20} className="text-france-400" aria-hidden="true" />
-                Abos &amp; Preise
+                Bekijk pakketten
               </Link>
             </div>
 
@@ -136,7 +136,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
                   >
                     <Image
                       src={src}
-                      alt={`Benutzer ${i + 1}`}
+                      alt={`Gebruiker ${i + 1}`}
                       fill
                       sizes="36px"
                       className="object-cover"
@@ -161,7 +161,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
                   </span>
                 </div>
                 <p className="text-xs text-blanc-400 font-medium">
-                  Verifiziert von 50.000+ Nutzern
+                  Geverifieerd door 50.000+ gebruikers
                 </p>
               </div>
             </div>
@@ -177,7 +177,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
               <div className="hero-float-card absolute -left-10 top-10 z-20 flex items-center gap-2 rounded-2xl border border-france-500/30 bg-france-950/80 px-4 py-3 backdrop-blur-md shadow-2xl">
                 <span className="badge-live">LIVE</span>
                 <span className="text-sm font-semibold text-blanc-50">
-                  Bundesliga
+                  Eredivisie
                 </span>
               </div>
               <div
@@ -185,7 +185,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
                 style={{ animationDelay: "1.2s" }}
               >
                 <MonitorPlay size={18} className="text-france-400" aria-hidden="true" />
-                <span className="text-sm font-semibold text-blanc-50">4K · Kein Buffering</span>
+                <span className="text-sm font-semibold text-blanc-50">4K · Geen buffering</span>
               </div>
 
               {/* Main glass command panel */}
@@ -197,7 +197,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
                       <Tv size={18} aria-hidden="true" />
                     </span>
                     <div>
-                      <p className="text-sm font-bold text-blanc-50">IPTV German</p>
+                      <p className="text-sm font-bold text-blanc-50">goediptv-kopen</p>
                       <p className="text-[11px] text-blanc-400">Premium Streaming</p>
                     </div>
                   </div>
@@ -225,11 +225,11 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
                 </div>
 
                 <Link
-                  href="#pricing"
+                  href="#pakketten"
                   className="btn-gold mt-5 flex w-full items-center justify-center gap-2"
                 >
                   <Play size={16} fill="currentColor" aria-hidden="true" />
-                  Jetzt starten
+                  Start nu
                 </Link>
               </div>
             </div>

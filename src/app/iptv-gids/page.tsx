@@ -7,10 +7,10 @@ import VaultSearch from "@/components/iptv-german/VaultSearch";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "IPTV Germany Wissensdatenbank",
+  title: "goediptv-kopen Kennisbank",
   description:
-    "Durchsuchen Sie die IPTV Germany Wissensdatenbank mit Anleitungen zu Apps, Abonnements, 4K, IPTV, M3U-Playlists und sicherem Streaming.",
-  path: "/iptv-german",
+    "Doorzoek de goediptv-kopen kennisbank met handleidingen over apps, abonnementen, 4K, IPTV, M3U-playlists en veilig streamen.",
+  path: "/iptv-gids",
 });
 
 export default function IPTVStreamingPage() {
@@ -18,14 +18,14 @@ export default function IPTVStreamingPage() {
     <main className="flex-1 px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pt-40">
       <div className="mx-auto max-w-7xl">
         <p className="mb-5 inline-flex rounded-full border border-france-500/25 bg-france-500/15 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-france-100">
-          IPTV German Wissensdatenbank
+          goediptv-kopen Kennisbank
         </p>
         <h1 className="max-w-4xl text-4xl font-black leading-tight tracking-tight text-blanc-50 sm:text-5xl lg:text-6xl">
-          IPTV German
+          IPTV Gids
         </h1>
         <p className="mt-6 max-w-3xl text-base leading-8 text-blanc-300 sm:text-lg">
-          Eine zentrale Bibliothek mit praktischen IPTV-Anleitungen für
-          Apps, Player, Geräte, Abonnements, Qualität und sicheres Streaming.
+          Een centrale bibliotheek met praktische IPTV-handleidingen voor
+          apps, spelers, apparaten, abonnementen, kwaliteit en veilig streamen.
         </p>
 
         <div className="mt-12">
@@ -37,7 +37,7 @@ export default function IPTVStreamingPage() {
           {IPTV_GERMAN_PAGES.map((page) => (
             <Link
               key={page.slug}
-              href={`/iptv-german/${page.slug}`}
+              href={`/iptv-gids/${page.slug}`}
               className="rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.035] p-5 transition-colors hover:border-france-500/40 hover:bg-blanc-50/5"
             >
               <h2 className="text-lg font-black text-blanc-50">{page.keyword}</h2>
@@ -54,9 +54,9 @@ export default function IPTVStreamingPage() {
       </div>
 
       <div className="mt-32">
-        <CTA 
-          title={<>Starten Sie Heute mit <span className="text-gradient">IPTV German</span></>}
-          description="Entdecken Sie das beste IPTV-Erlebnis mit tausenden Sendern, Filmen und Serien in höchster Qualität."
+        <CTA
+          title={<>Begin vandaag met <span className="text-gradient">goediptv-kopen</span></>}
+          description="Ontdek de beste IPTV-ervaring met duizenden kanalen, films en series in de hoogste kwaliteit."
         />
       </div>
     </main>

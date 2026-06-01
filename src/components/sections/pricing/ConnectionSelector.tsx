@@ -44,7 +44,7 @@ const ConnectionButton = memo(({
       onClick={handleClick}
       className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-colors duration-200 whitespace-nowrap flex items-center gap-2 cursor-pointer ${
         active === num
-          ? "bg-france-500 text-blanc-950"
+          ? "bg-france-500 text-blanc-50"
           : "text-blanc-400 hover:text-blanc-50 hover:bg-blanc-50/5"
       }`}
     >
@@ -54,8 +54,8 @@ const ConnectionButton = memo(({
         aria-hidden="true"
       />
       {num === 4
-        ? "4+ Écrans"
-        : `${num} ${num === 1 ? "Écran" : "Écrans"}`}
+        ? "4+ schermen"
+        : `${num} ${num === 1 ? "scherm" : "schermen"}`}
     </button>
   );
 });

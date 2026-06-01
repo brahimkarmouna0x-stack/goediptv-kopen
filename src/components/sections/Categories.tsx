@@ -29,43 +29,43 @@ const categoryCopy: Record<
   }
 > = {
   Sport: {
-    eyebrow: "Live-Spiele",
-    description: "Wettbewerbe, Pay-per-View-Events und Premium-Sportkanäle.",
+    eyebrow: "Live wedstrijden",
+    description: "Competities, pay-per-view-evenementen en premium sportkanalen.",
     icon: Trophy,
     href: "/popular?type=sports",
     tone: "from-france-500/20 to-france-700/15 text-france-300",
   },
-  Filme: {
-    eyebrow: "Kino zu Hause",
-    description: "Neuheiten, Klassiker und internationale Filme.",
+  Films: {
+    eyebrow: "Bioscoop thuis",
+    description: "Nieuwe releases, klassiekers en internationale films.",
     icon: Clapperboard,
     href: "/popular?type=movies",
     tone: "from-rouge-500/20 to-rouge-500/10 text-rouge-500/80",
   },
-  Serien: {
-    eyebrow: "Binge-Wert",
-    description: "Beliebte Serien und komplette Staffeln zum Streamen.",
+  Series: {
+    eyebrow: "Bingewaardig",
+    description: "Populaire series en complete seizoenen om te streamen.",
     icon: Tv,
     href: "/popular?type=series",
     tone: "from-france-500/20 to-france-500/10 text-france-500/80",
   },
-  Kinder: {
-    eyebrow: "Familienfreundlich",
-    description: "Sichere Kindersender, Animationen und Familienfilme.",
-    icon: Baby,
-    href: "/popular?genre=Famille",
-    tone: "from-[#F4C430]/20 to-[#F4C430]/10 text-[#F4C430]/80",
-  },
-  "TV Live": {
-    eyebrow: "Immer an",
-    description: "Nachrichten, Unterhaltung und Live-Sendungen direkt.",
+  Documentaires: {
+    eyebrow: "Verdiep je",
+    description: "Boeiende documentaires over natuur, wetenschap en geschiedenis.",
     icon: RadioTower,
     href: "/popular?type=lives",
     tone: "from-france-700/25 to-france-500/15 text-france-300",
   },
-  International: {
-    eyebrow: "Weltweit",
-    description: "Sender aus Europa, Amerika, MENA und Asien-Pazifik.",
+  Kinderkanalen: {
+    eyebrow: "Gezinsvriendelijk",
+    description: "Veilige kinderkanalen, animaties en familiefilms.",
+    icon: Baby,
+    href: "/popular?genre=Famille",
+    tone: "from-rouge-400/20 to-rouge-500/10 text-rouge-300",
+  },
+  "Internationale Kanalen": {
+    eyebrow: "Wereldwijd",
+    description: "Kanalen uit Europa, Amerika, MENA en Azië-Pacific.",
     icon: Globe2,
     href: "/popular?genre=Internationaal",
     tone: "from-france-500/20 to-rouge-500/10 text-france-100",
@@ -77,7 +77,7 @@ const Categories = () => {
 
   return (
     <section
-      id="categories"
+      id="kanalen"
       className="relative py-16 sm:py-24"
       style={{ contentVisibility: "auto", containIntrinsicSize: "auto 700px" }}
     >
@@ -86,15 +86,15 @@ const Categories = () => {
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-france-500/20 bg-france-500/15 px-3.5 py-1.5 text-xs font-black uppercase tracking-[0.14em] text-france-100">
               <Sparkles size={14} aria-hidden="true" />
-              Bibliothek
+              Kanalen
             </span>
             <h2 className="mt-4 font-display text-3xl font-black leading-tight text-blanc-50 sm:text-5xl">
-              Wählen Sie Ihren Seh-Moment.
+              Kies uw kijkmoment.
             </h2>
           </div>
           <p className="max-w-xl text-sm font-medium leading-6 text-blanc-400 sm:text-base">
-            Schneller Zugriff auf Live-Sport, Filme, Serien und internationales Fernsehen,
-            entwickelt für eine flüssige Navigation auf Mobilgeräten und Desktop.
+            Snelle toegang tot live sport, films, series en internationale televisie,
+            ontworpen voor vloeiende navigatie op mobiel en desktop.
           </p>
         </div>
 
@@ -155,7 +155,7 @@ const CategoryFeature = memo(function CategoryFeature({ category }: { category: 
             {category.count}
           </span>
           <span className="text-sm font-bold text-france-100 transition-transform group-hover:translate-x-1">
-            Explorer
+            Ontdek
           </span>
         </div>
       </div>

@@ -3,23 +3,23 @@ import { Info, MessageCircle } from "lucide-react";
 import { WHATSAPP_URL } from "@/constants";
 
 export const metadata: Metadata = {
-  title: "AGB — IPTV Germany",
-  description: "Lesen Sie unsere Allgemeinen Geschäftsbedingungen, um Ihre Rechte und Pflichten zu verstehen.",
+  title: "Algemene voorwaarden — goediptv-kopen",
+  description: "Lees onze algemene voorwaarden om uw rechten en plichten te begrijpen.",
   alternates: {
-    canonical: "https://iptvgerman.de/terms-of-service",
+    canonical: "https://goediptv-kopen.nl/terms-of-service",
   },
   openGraph: {
-    title: "AGB — IPTV Germany",
-    description: "Lesen Sie unsere Allgemeinen Geschäftsbedingungen, um Ihre Rechte und Pflichten zu verstehen.",
-    url: "https://iptvgerman.de/terms-of-service",
-    siteName: "IPTV Germany",
-    locale: "de_DE",
+    title: "Algemene voorwaarden — goediptv-kopen",
+    description: "Lees onze algemene voorwaarden om uw rechten en plichten te begrijpen.",
+    url: "https://goediptv-kopen.nl/terms-of-service",
+    siteName: "goediptv-kopen",
+    locale: "nl_NL",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AGB — IPTV Germany",
-    description: "Lesen Sie unsere Allgemeinen Geschäftsbedingungen, um Ihre Rechte und Pflichten zu verstehen.",
+    title: "Algemene voorwaarden — goediptv-kopen",
+    description: "Lees onze algemene voorwaarden om uw rechten en plichten te begrijpen.",
   },
 };
 
@@ -29,40 +29,40 @@ const TermsOfServicePage = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <span className="inline-block px-4 py-1.5 rounded-full glass text-rouge-400 text-sm font-bold mb-4 uppercase tracking-wider glow-red">
-            Rechtlich
+            Juridisch
           </span>
           <h1 className="font-display font-black text-4xl sm:text-6xl mb-6 text-blanc-50 leading-tight">
-            Allgemeine <span className="text-gradient">Geschäftsbedingungen</span>
+            Algemene <span className="text-gradient">voorwaarden</span>
           </h1>
           <p className="text-blanc-400 text-lg">
-            Zuletzt aktualisiert: 6. Mai 2026
+            Laatst bijgewerkt: 6 mei 2026
           </p>
         </div>
 
         <div className="glass rounded-2xl p-5 sm:p-8 lg:p-12 space-y-10 sm:space-y-12 animate-slide-up">
           <section>
-            <h2 className="text-2xl font-bold text-blanc-50 mb-4">1. Annahme der Bedingungen</h2>
+            <h2 className="text-2xl font-bold text-blanc-50 mb-4">1. Aanvaarding van de voorwaarden</h2>
             <p className="text-blanc-300 leading-relaxed">
-              Durch den Besuch oder die Nutzung von IPTV German stimmen Sie diesen Allgemeinen Geschäftsbedingungen zu. Wenn Sie nicht allen Bedingungen zustimmen, dürfen Sie den Dienst nicht nutzen.
+              Door goediptv-kopen te bezoeken of te gebruiken, gaat u akkoord met deze algemene voorwaarden. Als u niet met alle voorwaarden akkoord gaat, mag u de dienst niet gebruiken.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-blanc-50 mb-4">2. Beschreibung des Dienstes</h2>
+            <h2 className="text-2xl font-bold text-blanc-50 mb-4">2. Omschrijving van de dienst</h2>
             <p className="text-blanc-300 leading-relaxed">
-              IPTV German bietet einen IPTV-Abonnementdienst, der Benutzern den Zugang zu Live-Fernsehsendern und Video-on-Demand-Inhalten über das Internet ermöglicht. Die Verfügbarkeit von Inhalten kann je nach Region variieren und ist Änderungen vorbehalten.
+              goediptv-kopen biedt een IPTV-abonnementsdienst die gebruikers toegang geeft tot live tv-kanalen en video-on-demand content via internet. De beschikbaarheid van content kan per regio verschillen en is onderhevig aan wijzigingen.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-blanc-50 mb-4">3. Pflichten des Nutzers</h2>
+            <h2 className="text-2xl font-bold text-blanc-50 mb-4">3. Verplichtingen van de gebruiker</h2>
             <ul className="space-y-4">
               {[
-                "Sie müssen mindestens 18 Jahre alt sein, um diesen Dienst zu nutzen.",
-                "Sie sind für die Vertraulichkeit Ihres Kontos verantwortlich.",
-                "Der Dienst ist ausschließlich für den persönlichen, nicht-kommerziellen Gebrauch bestimmt.",
-                "Sie stimmen zu, die angebotenen Inhalte nicht weiterzuverbreiten oder zu veröffentlichen.",
-                "Ein Abonnement gilt nur für die angegebene Anzahl von Geräteverbindungen."
+                "U moet minstens 18 jaar oud zijn om deze dienst te gebruiken.",
+                "U bent verantwoordelijk voor de vertrouwelijkheid van uw account.",
+                "De dienst is uitsluitend bedoeld voor persoonlijk, niet-commercieel gebruik.",
+                "U gaat ermee akkoord de aangeboden content niet te verspreiden of te publiceren.",
+                "Een abonnement geldt alleen voor het aangegeven aantal apparaatverbindingen."
               ].map((item, index) => (
                 <li key={index} className="flex gap-3 text-blanc-300">
                   <Info
@@ -76,22 +76,22 @@ const TermsOfServicePage = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-blanc-50 mb-4">4. Zahlung und Rückerstattungen</h2>
+            <h2 className="text-2xl font-bold text-blanc-50 mb-4">4. Betaling en terugbetalingen</h2>
             <p className="text-blanc-300 leading-relaxed">
-              Abonnements werden im Voraus auf wiederkehrender Basis abgerechnet. Alle Zahlungen sind nicht erstattungsfähig, sofern nicht gesetzlich vorgeschrieben oder in unserer Rückerstattungsrichtlinie festgelegt. Wir behalten uns das Recht vor, unsere Preise jederzeit mit Vorankündigung zu ändern.
+              Abonnementen worden vooraf op terugkerende basis gefactureerd. Alle betalingen zijn niet-restitueerbaar, tenzij wettelijk verplicht of vastgelegd in ons terugbetalingsbeleid. Wij behouden ons het recht voor om onze prijzen op elk moment met voorafgaande kennisgeving te wijzigen.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-blanc-50 mb-4">5. Haftungsbeschränkung</h2>
+            <h2 className="text-2xl font-bold text-blanc-50 mb-4">5. Beperking van aansprakelijkheid</h2>
             <p className="text-blanc-300 leading-relaxed">
-              IPTV German haftet nicht für indirekte, zufällige, besondere oder Folgeschäden, die aus der Nutzung oder der Unfähigkeit zur Nutzung des Dienstes entstehen.
+              goediptv-kopen is niet aansprakelijk voor indirecte, incidentele, bijzondere of gevolgschade die voortvloeit uit het gebruik of het onvermogen om de dienst te gebruiken.
             </p>
           </section>
 
           <section className="pt-8 border-t border-blanc-50/10 text-center">
             <p className="text-blanc-400 mb-6 font-medium">
-              Benötigen Sie Klarstellungen zu unseren Bedingungen?
+              Heeft u verduidelijking nodig over onze voorwaarden?
             </p>
             <a
               href={WHATSAPP_URL}

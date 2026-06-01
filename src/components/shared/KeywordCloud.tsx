@@ -16,10 +16,10 @@ const KeywordCloud = () => {
 
       <div className="text-center mb-12">
         <span className="inline-block px-3 py-1 rounded-full bg-blanc-50/5 border border-blanc-50/10 text-[10px] font-black uppercase tracking-[0.2em] text-france-500 mb-4">
-          Base de connaissances & Guides
+          Kennisbank & Gidsen
         </span>
         <h2 className="text-3xl font-black text-blanc-50 tracking-tight">
-          Populaires <span className="text-gradient">Sujets</span>
+          Populaire <span className="text-gradient">Onderwerpen</span>
         </h2>
       </div>
 
@@ -41,8 +41,8 @@ const KeywordCloud = () => {
         <details className="group max-w-6xl mx-auto px-4 mb-16">
           <summary className="list-none text-center cursor-pointer mb-8">
             <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blanc-50/3 border border-blanc-50/10 text-xs font-bold text-blanc-400 hover:text-blanc-50 hover:border-france-700/40 transition-all duration-300 group-open:border-france-700/40 group-open:text-france-400">
-              <span className="group-open:hidden">Afficher tous les {FOOTER_PAGES.length} sujets</span>
-              <span className="hidden group-open:inline">Afficher moins</span>
+              <span className="group-open:hidden">Toon alle {FOOTER_PAGES.length} onderwerpen</span>
+              <span className="hidden group-open:inline">Toon minder</span>
               <svg
                 className="w-3.5 h-3.5 transition-transform duration-300 group-open:rotate-180"
                 viewBox="0 0 24 24"

@@ -35,7 +35,7 @@ export default function FaqSection({ faqs }: { faqs: PageFaq[] }) {
             FAQ
           </span>
           <h2 className="font-display text-3xl font-bold text-blanc-50 sm:text-4xl">
-            Häufige Fragen
+            Veelgestelde vragen
           </h2>
         </div>
 
@@ -49,8 +49,8 @@ export default function FaqSection({ faqs }: { faqs: PageFaq[] }) {
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Fragen durchsuchen…"
-            aria-label="Fragen durchsuchen"
+            placeholder="Zoek vragen…"
+            aria-label="Zoek vragen"
             className="w-full rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.03] py-3.5 pl-11 pr-4 text-sm font-medium text-blanc-100 placeholder:text-blanc-500 focus:border-france-400/40 focus:outline-none"
           />
         </div>
@@ -109,7 +109,7 @@ export default function FaqSection({ faqs }: { faqs: PageFaq[] }) {
 
           {filtered.length === 0 && (
             <p className="rounded-2xl border border-blanc-50/5 bg-blanc-50/[0.03] p-6 text-center text-sm font-medium text-blanc-400">
-              Keine passenden Fragen gefunden.
+              Geen passende vragen gevonden.
             </p>
           )}
         </div>

@@ -8,7 +8,7 @@ const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-8 right-8 z-[999] group"
-      aria-label="Contactez-nous sur WhatsApp"
+      aria-label="Neem contact op via WhatsApp"
     >
       <div className="relative">
         {/* Pulsing rings */}
@@ -21,7 +21,7 @@ const WhatsAppButton = () => {
         
         {/* Tooltip */}
         <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-france-900/90 backdrop-blur-md border border-blanc-50/10 rounded-xl text-blanc-50 text-sm font-bold whitespace-nowrap opacity-0 -translate-x-4 transition-[opacity,transform] duration-300 group-hover:opacity-100 group-hover:translate-x-0 shadow-xl pointer-events-none">
-          Besoin d'aide ? Discutez avec nous !
+          Hulp nodig? Chat met ons!
           <div className="absolute left-full top-1/2 -translate-y-1/2 w-2 h-2 bg-france-900 border-r border-t border-blanc-50/10 rotate-45 -ml-1"></div>
         </div>
       </div>

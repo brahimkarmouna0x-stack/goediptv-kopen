@@ -54,7 +54,7 @@ const Stars = ({ rating, className = "" }: { rating: number; className?: string 
   <div
     role="img"
     className={`flex items-center gap-0.5 ${className}`}
-    aria-label={`${rating} von 5 Sternen`}
+    aria-label={`${rating} van 5 sterren`}
   >
     {Array.from({ length: 5 }, (_, index) => (
       <svg
@@ -87,18 +87,18 @@ const Testimonials = () => {
                 id="reviews-title"
                 className="mt-4 text-xl font-black tracking-tight text-blanc-950"
               >
-                Google Bewertungen
+                Google Beoordelingen
               </h2>
               <div className="mt-3 flex items-center gap-2">
                 <span className="text-2xl font-black text-blanc-950">4,9</span>
                 <Stars rating={5} />
               </div>
               <p className="mt-1 text-sm font-medium text-blanc-500">
-                Basierend auf 2.470+ Bewertungen
+                Gebaseerd op 2.470+ beoordelingen
               </p>
               <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-blanc-200/50 bg-blanc-50 px-3 py-1.5 text-xs font-bold text-blanc-700">
                 <span className="h-2 w-2 rounded-full bg-[#34a853]" />
-                Verifizierte Kunden
+                Geverifieerde klanten
               </div>
             </div>
 

@@ -14,23 +14,23 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Hilfe-Center",
-  description: "Finden Sie Antworten auf Ihre Fragen und erfahren Sie, wie Sie IPTV Germany nutzen können.",
+  title: "Helpcentrum",
+  description: "Vind antwoorden op uw vragen en ontdek hoe u goediptv-kopen gebruikt.",
   alternates: {
-    canonical: "https://iptvgerman.de/support",
+    canonical: "https://goediptv-kopen.nl/support",
   },
   openGraph: {
-    title: "Hilfe-Center",
-    description: "Finden Sie Antworten auf Ihre Fragen und erfahren Sie, wie Sie IPTV Germany nutzen können.",
-    url: "https://iptvgerman.de/support",
-    siteName: "IPTV Germany",
-    locale: "de_DE",
+    title: "Helpcentrum",
+    description: "Vind antwoorden op uw vragen en ontdek hoe u goediptv-kopen gebruikt.",
+    url: "https://goediptv-kopen.nl/support",
+    siteName: "goediptv-kopen",
+    locale: "nl_NL",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hilfe-Center",
-    description: "Finden Sie Antworten auf Ihre Fragen und erfahren Sie, wie Sie IPTV Germany nutzen können.",
+    title: "Helpcentrum",
+    description: "Vind antwoorden op uw vragen en ontdek hoe u goediptv-kopen gebruikt.",
   },
 };
 
@@ -44,55 +44,55 @@ const HelpCenterPage = () => {
   }> = [
     {
       Icon: Rocket,
-      title: "Erste Schritte",
-      desc: "Erfahren Sie, wie Sie Ihr Abonnement in wenigen Minuten auf jedem Gerät einrichten.",
+      title: "Aan de slag",
+      desc: "Ontdek hoe u uw abonnement binnen enkele minuten op elk apparaat instelt.",
       color: "text-france-400",
       href: "/support/guides",
     },
     {
       Icon: CreditCard,
-      title: "Abrechnung & Angebote",
-      desc: "Informationen zu Abonnements, Verlängerungen und Zahlungsmethoden.",
+      title: "Facturatie & pakketten",
+      desc: "Informatie over abonnementen, verlengingen en betaalmethoden.",
       color: "text-rouge-400",
       href: "#",
     },
     {
       Icon: ShieldCheck,
-      title: "Sicherheit",
-      desc: "Wie wir Ihre Daten schützen und Tipps zur Sicherung Ihres Kontos.",
+      title: "Veiligheid",
+      desc: "Hoe wij uw gegevens beschermen en tips om uw account te beveiligen.",
       color: "text-emerald-400",
       href: "#",
     },
     {
       Icon: Wrench,
-      title: "Fehlerbehebung",
-      desc: "Lösen Sie häufige Streaming-Probleme und Wiedergabefehler.",
-      color: "text-yellow-400",
+      title: "Problemen oplossen",
+      desc: "Los veelvoorkomende streaming- en weergaveproblemen op.",
+      color: "text-france-300",
       href: "#",
     },
     {
       Icon: Tv,
-      title: "Inhalte & Sender",
-      desc: "Entdecken Sie unsere Senderlisten, VOD-Bibliothek und EPG-Details.",
+      title: "Content & kanalen",
+      desc: "Ontdek onze kanaallijsten, VOD-bibliotheek en EPG-details.",
       color: "text-rouge-500",
       href: "#",
     },
     {
       Icon: CircleHelp,
-      title: "Allgemeine FAQ",
-      desc: "Schnelle Antworten auf die häufigsten Fragen.",
+      title: "Algemene FAQ",
+      desc: "Snelle antwoorden op de meestgestelde vragen.",
       color: "text-france-400",
       href: "#",
     },
   ];
 
   const articles = [
-    "So konfigurieren Sie IPTV Smarters Pro",
-    "Welche Geräte unterstützen 4K-Streaming?",
-    "Wie verlängere ich mein Abonnement",
-    "Die Xtream Codes API verstehen",
-    "Häufige Lösungen gegen Buffering",
-    "So nutzen Sie den elektronischen Programmführer (EPG)",
+    "Zo configureer je IPTV Smarters Pro",
+    "Welke apparaten ondersteunen 4K-streaming?",
+    "Hoe verleng ik mijn abonnement",
+    "De Xtream Codes API begrijpen",
+    "Veelgebruikte oplossingen tegen buffering",
+    "Zo gebruik je de elektronische programmagids (EPG)",
   ];
 
   return (
@@ -104,12 +104,12 @@ const HelpCenterPage = () => {
             Support
           </span>
           <h1 className="font-display font-black text-4xl sm:text-6xl mb-6 text-blanc-50 leading-tight">
-            Hilfe<span className="text-gradient">Center</span>
+            Help<span className="text-gradient">centrum</span>
           </h1>
           <div className="max-w-2xl mx-auto relative mt-8">
-            <input 
-              type="text" 
-              placeholder="Suchen Sie Artikel, Anleitungen oder Lösungen..." 
+            <input
+              type="text"
+              placeholder="Zoek artikelen, handleidingen of oplossingen..."
               className="w-full px-5 sm:px-8 py-4 sm:py-5 rounded-2xl glass text-blanc-50 placeholder-blanc-500 border border-blanc-50/10 focus:outline-none focus:border-france-500/50 text-base sm:text-lg shadow-2xl"
             />
             <Search
@@ -141,7 +141,7 @@ const HelpCenterPage = () => {
         <div className="glass rounded-2xl p-5 sm:p-8 md:p-12 border border-blanc-50/10">
           <h2 className="text-xl sm:text-2xl font-bold text-blanc-50 mb-6 sm:mb-8 flex items-center gap-3">
             <Flame className="h-6 w-6 text-orange-500" aria-hidden="true" />
-            Beliebte Artikel
+            Populaire artikelen
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {articles.map((article, index) => (

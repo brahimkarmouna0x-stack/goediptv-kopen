@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 
 // ─── Site configuration ────────────────────────────────────────────────────
 export const SITE = {
-  name: "IPTV Germany",
-  url: "https://iptvgerman.de",
-  locale: "de_DE",
-  localeAlt: "en_DE",
+  name: "goediptv-kopen",
+  url: "https://goediptv-kopen.nl",
+  locale: "nl_NL",
+  localeAlt: "en_NL",
   description:
-    "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering. Entdecken Sie den besten Premium-IPTV-Dienst in Deutschland mit IPTV Germany.",
+    "Onbeperkt 4K-streaming met 25.000+ kanalen en nul buffering. Ontdek het beste premium IPTV abonnement van Nederland bij goediptv-kopen.",
   twitterHandle: undefined as string | undefined,
 } as const;
 
@@ -21,9 +21,9 @@ export function absoluteUrl(path: string): string {
 // ─── OpenGraph image (1200×630 recommended for social sharing) ──────────────
 export const OG_IMAGE = {
   url: `${SITE.url}/images/site-logo.png`,
-  width: 2000,
-  height: 2000,
-  alt: "IPTV Germany – Premium IPTV Dienst in Deutschland",
+  width: 1505,
+  height: 1352,
+  alt: "goediptv-kopen – Premium IPTV abonnement in Nederland",
 };
 
 // ─── Build canonical + alternate metadata ───────────────────────────────────
@@ -34,7 +34,7 @@ export function canonicalMetadata(
   return {
     alternates: {
       canonical: absoluteUrl(path),
-      ...(language && language !== "de"
+      ...(language && language !== "nl"
         ? { languages: { [language]: absoluteUrl(path) } }
         : {}),
     },

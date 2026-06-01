@@ -66,10 +66,10 @@ export default function PageHero({
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
             <Link
-              href="/iptv-german"
+              href="/iptv-gids"
               className="glass flex items-center gap-3 rounded-full border border-blanc-50/10 px-8 py-4 text-sm font-bold uppercase tracking-widest text-blanc-50 transition-all hover:bg-blanc-50/5"
             >
-              Alle Guides
+              Alle gidsen
             </Link>
           </div>
         </div>

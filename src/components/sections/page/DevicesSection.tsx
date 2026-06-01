@@ -13,11 +13,11 @@ const PLATFORM_LABEL: Record<DevicePlatform | "all", string> = {
   all: "Alle",
   android: "Android",
   ios: "iOS",
-  "smart-tv": "Smart TV",
+  "smart-tv": "Smart-tv",
   browser: "Browser",
-  box: "TV-Box",
+  box: "Tv-box",
   windows: "Windows",
-  other: "Sonstige",
+  other: "Overige",
 };
 
 export default function DevicesSection({ heading, subheading, list }: Props) {
@@ -53,7 +53,7 @@ export default function DevicesSection({ heading, subheading, list }: Props) {
 
         <div
           role="tablist"
-          aria-label="Geräte filtern"
+          aria-label="Apparaten filteren"
           className="mb-10 flex flex-wrap justify-center gap-2"
         >
           {platforms.map((platform) => {
@@ -67,7 +67,7 @@ export default function DevicesSection({ heading, subheading, list }: Props) {
                 onClick={() => setActive(platform)}
                 className={`rounded-full px-4 py-2 text-sm font-bold transition-all ${
                   selected
-                    ? "bg-france-500 text-france-950"
+                    ? "bg-france-500 text-blanc-50"
                     : "glass border border-blanc-50/10 text-blanc-300 hover:bg-blanc-50/5"
                 }`}
               >
@@ -92,7 +92,7 @@ export default function DevicesSection({ heading, subheading, list }: Props) {
                   {device.name}
                 </h3>
                 <p className="text-xs font-bold uppercase tracking-wider text-blanc-500">
-                  {device.steps} Schritte zur Einrichtung
+                  {device.steps} stappen om in te stellen
                 </p>
               </div>
             );

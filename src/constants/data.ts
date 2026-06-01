@@ -6,73 +6,69 @@ import {
 
 export const NAV_LINKS: Link[] = [
   {
-    label: "IPTV German",
+    label: "goediptv-kopen",
     href: "/",
   },
   {
-    label: "Best IPTV German",
-    href: "/iptv-german/iptv-deutschland",
+    label: "Voordelen",
+    href: "/#voordelen",
   },
   {
-    label: "Preise",
-    href: "/#pricing",
+    label: "Kanalen",
+    href: "/#kanalen",
   },
   {
-    label: "IPTV kaufen",
-    href: "/iptv-german/iptv-abonnement",
+    label: "Pakketten",
+    href: "/#pakketten",
   },
   {
-    label: "IPTV Abo",
-    href: "/iptv-german/iptv-abonnement",
+    label: "Prijzen",
+    href: "/#prijzen",
   },
   {
-    label: "bester IPTV",
-    href: "/iptv-german/meilleur-iptv",
+    label: "FAQ",
+    href: "/#faq",
   },
   {
-    label: "IPTV Anbieter",
-    href: "/iptv-german/fournisseur-iptv",
-  },
-  {
-    label: "Kontakt",
+    label: "Contact",
     href: "/support/contact",
   },
 ];
 
 export const productsFooterLinks: Link[] = [
   {
-    label: "Funktionen",
-    href: "#features",
+    label: "Voordelen",
+    href: "/#voordelen",
   },
   {
-    label: "Preise",
-    href: "#pricing",
+    label: "Prijzen",
+    href: "/#prijzen",
   },
   {
-    label: "Senderliste",
-    href: "#features",
+    label: "Kanalen",
+    href: "/#kanalen",
   },
   {
-    label: "VOD-Bibliothek",
-    href: "#features",
+    label: "Pakketten",
+    href: "/#pakketten",
   },
 ];
 
 export const supportFooterLinks: Link[] = [
   {
-    label: "Hilfe-Center",
+    label: "Helpcentrum",
     href: "/support",
   },
   {
-    label: "Installationsanleitungen",
+    label: "Installatiehandleidingen",
     href: "/support/guides",
   },
   {
-    label: "Kontakt",
+    label: "Contact",
     href: "/support/contact",
   },
   {
-    label: "Systemstatus",
+    label: "Systeemstatus",
     href: "/support/status",
   },
 ];
@@ -80,37 +76,37 @@ export const supportFooterLinks: Link[] = [
 export const categories = [
   {
     name: "Sport",
-    count: "2.400+ Sender",
+    count: "2.400+ kanalen",
     image:
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=80&auto=format&fit=crop",
   },
   {
-    name: "Filme",
-    count: "50.000+ Titel",
+    name: "Films",
+    count: "50.000+ titels",
     image:
       "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
   {
-    name: "Serien",
-    count: "15.000+ Shows",
+    name: "Series",
+    count: "15.000+ shows",
     image:
       "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
   {
-    name: "Kinder",
-    count: "800+ Sender",
-    image:
-      "https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=1200&q=82&auto=format&fit=crop&crop=entropy",
-  },
-  {
-    name: "TV Live",
-    count: "Live in Echtzeit",
+    name: "Documentaires",
+    count: "3.500+ titels",
     image:
       "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
   {
-    name: "International",
-    count: "190+ Länder",
+    name: "Kinderkanalen",
+    count: "800+ kanalen",
+    image:
+      "https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=1200&q=82&auto=format&fit=crop&crop=entropy",
+  },
+  {
+    name: "Internationale Kanalen",
+    count: "190+ landen",
     image:
       "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
@@ -118,54 +114,54 @@ export const categories = [
 
 export const features = [
   {
-    title: "Ultra HD Streaming",
+    title: "Ultra HD 4K Streaming",
     description:
-      "Kristallklare 4K-Auflösung mit HDR-Unterstützung. Erleben Sie jedes Bild mit atemberaubender Detailtreue.",
+      "Kristalheldere 4K-resolutie met HDR-ondersteuning. Beleef elk beeld met adembenemende details.",
     icon: "tv",
     color: "text-france-400",
     gradient: "from-france-600/30 to-france-400/15",
     hoverBorder: "hover:border-france-500/40",
   },
   {
-    title: "Schnelle Server",
+    title: "Supersnelle Servers",
     description:
-      "Globales CDN-Netzwerk mit 99,9% Verfügbarkeit. Inhalte werden vom nächstgelegenen Edge-Server geliefert.",
+      "Wereldwijd CDN-netwerk met 99,9% beschikbaarheid. Content wordt geleverd vanaf de dichtstbijzijnde server.",
     icon: "server",
     color: "text-rouge-400",
     gradient: "from-rouge-600/30 to-rouge-500/15",
     hoverBorder: "hover:border-rouge-500/40",
   },
   {
-    title: "Null Buffering",
+    title: "Nul Buffering",
     description:
-      "Adaptives Bitrate-Streaming sorgt für flüssige Wiedergabe, auch bei langsameren Verbindungen.",
+      "Adaptieve bitrate-streaming zorgt voor vloeiende weergave, zelfs bij een tragere internetverbinding.",
     icon: "bolt",
     color: "text-france-400",
     gradient: "from-france-600/30 to-france-400/15",
     hoverBorder: "hover:border-france-500/40",
   },
   {
-    title: "Multi-Geräte Support",
+    title: "Meerdere Apparaten",
     description:
-      "Streamen Sie auf Smart TV, Handy, Tablet oder Laptop. Nahtlose Synchronisierung zwischen all Ihren Geräten.",
+      "Stream op Smart TV, telefoon, tablet of laptop. Naadloze synchronisatie tussen al uw apparaten.",
     icon: "mobile",
     color: "text-rouge-400",
     gradient: "from-rouge-600/30 to-rouge-500/15",
     hoverBorder: "hover:border-rouge-500/40",
   },
   {
-    title: "Weltweite Sender",
+    title: "Wereldwijde Kanalen",
     description:
-      "Zugriff auf Inhalte aus 190+ Ländern. Lokale und internationale Sender an einem Ort.",
+      "Toegang tot content uit 190+ landen. Lokale en internationale kanalen op één plek.",
     icon: "globe",
     color: "text-france-400",
     gradient: "from-france-600/30 to-france-400/15",
     hoverBorder: "hover:border-france-500/40",
   },
   {
-    title: "24/7 Support",
+    title: "24/7 Klantenservice",
     description:
-      "Fachkundige Hilfe rund um die Uhr. Durchschnittliche Antwortzeit unter 5 Minuten.",
+      "Deskundige hulp dag en nacht. Gemiddelde reactietijd onder de 5 minuten.",
     icon: "headset",
     color: "text-rouge-400",
     gradient: "from-rouge-600/30 to-rouge-500/15",
@@ -175,34 +171,114 @@ export const features = [
 
 export const faqs = [
   {
-    question: "Welche Geräte werden unterstützt?",
+    question: "Wat is een IPTV abonnement precies?",
     answer:
-      "IPTV German funktioniert auf nahezu allen modernen Geräten, darunter Smart-TVs (Samsung, LG, Sony), Android-Handys und -Tablets, iPhones und iPads, Windows- und Mac-Computer, Amazon Fire Stick, Android-TV-Boxen und MAG-Geräte. Wir unterstützen auch gängige IPTV-Apps wie IPTV Smarters, TiviMate und VLC.",
+      "Een IPTV abonnement (Internet Protocol Television) laat u live tv-kanalen, films en series streamen via uw internetverbinding in plaats van via een traditionele kabel of schotel. Met goediptv-kopen kijkt u op elk apparaat, waar u ook bent, met meer dan 25.000 kanalen en 140.000+ films & series in 4K.",
   },
   {
-    question: "Wie richte ich mein Abonnement ein?",
+    question: "Welke apparaten worden ondersteund?",
     answer:
-      "Die Einrichtung dauert weniger als 5 Minuten. Nach dem Kauf erhalten Sie eine E-Mail mit Ihrer M3U-Playlist-URL und den Xtream-Codes-API-Daten. Geben Sie diese Informationen in Ihre bevorzugte IPTV-App ein und schon können Sie streamen. Unser Support-Team steht Ihnen rund um die Uhr zur Verfügung.",
+      "goediptv-kopen werkt op vrijwel alle moderne apparaten: Smart TV's (Samsung, LG, Sony), Android-telefoons en -tablets, iPhones en iPads, Windows- en Mac-computers, Amazon Fire TV Stick, Android TV-boxen, Chromecast en MAG-apparaten. We ondersteunen ook populaire IPTV-apps zoals IPTV Smarters Pro, TiviMate en VLC.",
   },
   {
-    question: "Kann ich auf mehreren Geräten gleichzeitig sehen?",
+    question: "Hoe stel ik mijn IPTV abonnement in?",
     answer:
-      "Ja! Je nach Abonnement können Sie auf 1 bis 4 Geräten gleichzeitig streamen. Das Jahresabo unterstützt 4 Verbindungen. Ihre ganze Familie kann also gleichzeitig verschiedene Inhalte auf unterschiedlichen Geräten genießen.",
+      "De installatie duurt minder dan 5 minuten. Na uw bestelling ontvangt u direct een e-mail met uw M3U-playlist-URL en Xtream Codes API-gegevens. Voer deze gegevens in uw favoriete IPTV-app in en u kunt meteen kijken. Ons supportteam helpt u 24/7 bij de installatie.",
   },
   {
-    question: "Gibt es eine kostenlose Testversion?",
+    question: "Is er een gratis proef beschikbaar?",
     answer:
-      "Ja! Wir bieten eine 24-stündige kostenlose Testversion an, damit Sie unseren Dienst vor einer Entscheidung testen können. Die Testversion beinhaltet vollen Zugriff auf alle Sender und VOD-Inhalte. Kontaktieren Sie unser Support-Team, um Ihre kostenlose Testversion anzufordern.",
+      "Ja! We bieden een gratis IPTV proef aan zodat u onze dienst kunt testen voordat u een keuze maakt. De proefperiode geeft volledige toegang tot alle kanalen en VOD-content. Neem contact op met ons supportteam via WhatsApp om uw gratis proef aan te vragen.",
   },
   {
-    question: "Welche Internetgeschwindigkeit benötige ich?",
+    question: "Kan ik op meerdere apparaten tegelijk kijken?",
     answer:
-      "Für optimales Streaming empfehlen wir: SD-Qualität (10 Mbps), HD-Qualität (15 Mbps) und 4K Ultra HD (25 Mbps). Unsere adaptive Streaming-Technologie passt die Qualität automatisch an Ihre Verbindung an, um Pufferung zu vermeiden.",
+      "Ja! Afhankelijk van uw abonnement kunt u op 1 tot 4 apparaten tegelijk streamen. Zo kan het hele gezin tegelijkertijd verschillende programma's bekijken op verschillende apparaten, zonder onderbrekingen.",
   },
   {
-    question: "Wie kann ich mein Abonnement kündigen?",
+    question: "Welke internetsnelheid heb ik nodig voor IPTV?",
     answer:
-      "Sie können jederzeit über Ihr Dashboard oder durch Kontaktaufnahme mit unserem Support-Team kündigen. Es fallen keine Kündigungsgebühren oder versteckten Kosten an. Ihr Service bleibt bis zum Ende Ihres aktuellen Abrechnungszeitraums aktiv.",
+      "Voor optimaal streamen adviseren wij: SD-kwaliteit (10 Mbps), HD-kwaliteit (15 Mbps) en 4K Ultra HD (25 Mbps). Onze adaptieve streamingtechnologie past de kwaliteit automatisch aan uw verbinding aan om buffering te voorkomen.",
+  },
+  {
+    question: "Welke IPTV aanbieder is het beste in Nederland?",
+    answer:
+      "De beste IPTV aanbieder biedt een stabiele verbinding, 4K-kwaliteit, een groot aanbod Nederlandse en internationale kanalen, snelle servers en betrouwbare 24/7 klantenservice. goediptv-kopen combineert dit alles met scherpe prijzen en een gratis proef, waardoor wij tot de beste premium IPTV providers van Nederland behoren.",
+  },
+  {
+    question: "Is IPTV legaal in Nederland?",
+    answer:
+      "Het kijken van content via IPTV is een grijs gebied. Wij raden u aan altijd te kiezen voor diensten die de juiste rechten hebben. goediptv-kopen levert een technische streamingdienst; controleer altijd de lokale wet- en regelgeving voor uw situatie.",
+  },
+  {
+    question: "Welke Nederlandse kanalen zijn beschikbaar?",
+    answer:
+      "Ons aanbod bevat alle populaire Nederlandse kanalen, waaronder NPO 1, 2 en 3, RTL 4, 5, 7 en 8, SBS6, Net5, Veronica, Ziggo Sport en ESPN. Daarnaast krijgt u toegang tot duizenden internationale kanalen uit meer dan 190 landen.",
+  },
+  {
+    question: "Kan ik live sport zoals de Eredivisie kijken?",
+    answer:
+      "Absoluut. U kunt live sport volgen via onder andere ESPN, Ziggo Sport en internationale sportkanalen. Eredivisie, Champions League, Formule 1, tennis en meer worden in HD en 4K aangeboden, zodat u geen wedstrijd hoeft te missen.",
+  },
+  {
+    question: "Wat is het verschil tussen IPTV en gewone kabel-tv?",
+    answer:
+      "Bij gewone kabel-tv betaalt u een vast pakket via een coaxkabel of schotel. IPTV streamt content via internet, waardoor u veel meer kanalen, films en series krijgt voor een lagere prijs, zonder vaste contracten en bruikbaar op al uw apparaten.",
+  },
+  {
+    question: "Hoe kan ik een IPTV abonnement bestellen?",
+    answer:
+      "U kiest eenvoudig een pakket op onze prijzenpagina, selecteert het aantal verbindingen en de looptijd, en rondt de bestelling af. Direct daarna ontvangt u uw inloggegevens per e-mail. IPTV bestellen bij goediptv-kopen is binnen enkele minuten geregeld.",
+  },
+  {
+    question: "Welke IPTV speler of app raden jullie aan?",
+    answer:
+      "Populaire IPTV spelers zijn IPTV Smarters Pro, TiviMate en VLC. Op de Fire TV Stick werkt IPTV Smarters Pro uitstekend, terwijl TiviMate favoriet is op Android TV. U ontvangt bij ons een duidelijke handleiding voor elke app.",
+  },
+  {
+    question: "Ondersteunen jullie 4K en 8K streaming?",
+    answer:
+      "Ja. Een groot deel van ons aanbod is beschikbaar in 4K Ultra HD met HDR, en geselecteerde content zelfs in 8K. Voor 4K adviseren wij een internetsnelheid van minimaal 25 Mbps voor een vloeiende kijkervaring zonder buffering.",
+  },
+  {
+    question: "Is goediptv-kopen een goedkoop IPTV abonnement?",
+    answer:
+      "Wij bieden premium IPTV tegen een scherpe prijs. Hoe langer de looptijd die u kiest, hoe lager de maandprijs. Daarmee bieden wij een van de meest voordelige en betrouwbare IPTV abonnementen van Nederland, zonder in te leveren op kwaliteit.",
+  },
+  {
+    question: "Hoe kan ik verschillende IPTV abonnementen vergelijken?",
+    answer:
+      "Let bij het vergelijken van IPTV abonnementen op de beeldkwaliteit (HD/4K), het aantal kanalen, de stabiliteit van de servers, het aantal gelijktijdige verbindingen, de klantenservice en de prijs. Op onze prijzenpagina ziet u alles overzichtelijk naast elkaar.",
+  },
+  {
+    question: "Werkt IPTV ook met een VPN?",
+    answer:
+      "Ja, onze dienst werkt prima in combinatie met een VPN. Een VPN kan zelfs nuttig zijn als uw internetprovider bepaalde streams beperkt. De streamkwaliteit kan licht variëren afhankelijk van de gekozen VPN-server.",
+  },
+  {
+    question: "Krijg ik ook films en series on demand (VOD)?",
+    answer:
+      "Zeker. Naast live tv krijgt u toegang tot een uitgebreide VOD-bibliotheek met meer dan 140.000 films en series, inclusief de nieuwste releases. U kijkt wanneer het u uitkomt, met ondertiteling waar beschikbaar.",
+  },
+  {
+    question: "Wat gebeurt er als een kanaal niet werkt?",
+    answer:
+      "Onze servers worden 24/7 gemonitord en problemen worden meestal binnen enkele minuten opgelost. Werkt een kanaal toch niet? Neem dan contact op via WhatsApp of e-mail; ons supportteam staat dag en nacht voor u klaar.",
+  },
+  {
+    question: "Hoe veilig is mijn betaling?",
+    answer:
+      "Alle betalingen verlopen via een beveiligde verbinding. Wij gaan zorgvuldig om met uw gegevens en delen deze nooit met derden. Raadpleeg ons privacybeleid voor meer informatie over hoe wij uw gegevens beschermen.",
+  },
+  {
+    question: "Kan ik mijn IPTV abonnement verlengen of upgraden?",
+    answer:
+      "Ja, u kunt uw abonnement op elk moment verlengen of upgraden naar meer verbindingen of een langere looptijd. Neem contact op met ons supportteam en wij regelen de wijziging zonder onderbreking van uw service.",
+  },
+  {
+    question: "Hoe kan ik mijn abonnement opzeggen?",
+    answer:
+      "U kunt op elk moment opzeggen door contact op te nemen met ons supportteam. Er zijn geen opzegkosten of verborgen kosten. Uw service blijft actief tot het einde van uw huidige factuurperiode.",
   },
 ];
 export const FOOTER_PAGES: Link[] = IPTV_GERMAN_PAGES.map((page) => ({

@@ -68,7 +68,7 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
   const monthlyPrices = useMemo(() => {
     const calc = (price: string, months: number) => {
       const num = parseFloat(price.replace(",", "."));
-      return (num / months).toLocaleString("de-DE", {
+      return (num / months).toLocaleString("nl-NL", {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
       });
@@ -82,7 +82,7 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
 
   return (
     <section
-      id="pricing"
+      id="pakketten"
       className="py-24 relative overflow-hidden"
       style={{ contentVisibility: "auto", containIntrinsicSize: "auto 900px" }}
     >
@@ -90,7 +90,7 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <PricingHeading pillText={pillText} title={title} subtitle={subtitle} />
 
-        <div className="text-center mb-16">
+        <div id="prijzen" className="scroll-mt-24 text-center mb-16">
               <ConnectionSelector
             active={connections}
             onChange={handleConnectionsChange}
@@ -100,24 +100,24 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {/* Free Trial */}
           <PlanCard
-            name="Kostenlos Testen"
-            duration="1 Stunde"
+            name="Gratis Proef"
+            duration="1 uur"
             isFree
             connections={1}
             features={[
-              "Zugang zu Basissendern",
-              "Kunden-Support 24/7",
-              "HD & Full HD Qualität",
-              "4K verfügbar",
-              "Keine Kreditkarte nötig",
-              "Sofortige Aktivierung",
-              "Ohne Verpflichtung",
+              "Toegang tot basiskanalen",
+              "Klantenservice 24/7",
+              "HD & Full HD kwaliteit",
+              "4K beschikbaar",
+              "Geen creditcard nodig",
+              "Directe activering",
+              "Zonder verplichting",
             ]}
-            buttonText="1h kostenlos testen"
+            buttonText="1u gratis proberen"
             onBuy={() =>
               handleBuy({
-                name: "Kostenlos Testen",
-                duration: "1 Stunde",
+                name: "Gratis Proef",
+                duration: "1 uur",
                 isFree: true,
               })
             }
@@ -125,30 +125,30 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
 
           {/* 6 Months */}
           <PlanCard
-            name="6 Monate Abo"
-            duration="6 Monate"
+            name="6 Maanden Abonnement"
+            duration="6 maanden"
             price={currentPrices.halfYear}
             connections={connections}
             badge={{
               icon: Bolt,
-              text: "40% RABATT",
+              text: "40% KORTING",
               className: "text-france-400",
             }}
-            savingsLabel={`SPAREN - €${monthlyPrices.halfYear}/Monat`}
-            monthlyPriceLabel={`Nur €${monthlyPrices.halfYear} pro Monat`}
+            savingsLabel={`BESPAREN - €${monthlyPrices.halfYear}/maand`}
+            monthlyPriceLabel={`Slechts €${monthlyPrices.halfYear} per maand`}
             features={[
-              "+140.000 Filme & Serien",
-              "Kunden-Support 24/7",
+              "+140.000 films & series",
+              "Klantenservice 24/7",
               "4K, Full HD, HD & SD",
-              "+31.000 IPTV-Sender",
-              "Kostenlose Updates",
-              "30 Tage Geld-zurück-Garantie",
+              "+31.000 IPTV-kanalen",
+              "Gratis updates",
+              "30 dagen niet-goed-geld-terug",
             ]}
-            buttonText="Jetzt starten"
+            buttonText="Bestel nu"
             onBuy={() =>
               handleBuy({
-                name: "6 MONATE ABO",
-                duration: "6 Monate",
+                name: "6 MAANDEN ABONNEMENT",
+                duration: "6 maanden",
                 price: currentPrices.halfYear,
               })
             }
@@ -156,31 +156,31 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
 
           {/* 12 Months - POPULAR */}
           <PlanCard
-            name="1 Jahr Abo"
-            duration="1 Jahr"
+            name="1 Jaar Abonnement"
+            duration="1 jaar"
             price={currentPrices.yearly}
             isPopular
             connections={connections}
             badge={{
               icon: Star,
-              text: "EMPFEHLUNG | 50% RABATT",
-              className: "text-yellow-400",
+              text: "AANBEVOLEN | 50% KORTING",
+              className: "text-france-300",
             }}
-            savingsLabel={`BELIEBT - €${monthlyPrices.yearly}/Monat`}
-            monthlyPriceLabel={`Nur €${monthlyPrices.yearly} pro Monat`}
+            savingsLabel={`POPULAIR - €${monthlyPrices.yearly}/maand`}
+            monthlyPriceLabel={`Slechts €${monthlyPrices.yearly} per maand`}
             features={[
-              "+140.000 Filme & Serien",
-              "Kunden-Support 24/7",
+              "+140.000 films & series",
+              "Klantenservice 24/7",
               "4K, Full HD, HD & SD",
-              "+31.000 IPTV-Sender",
-              "Kostenlose Updates",
-              "30 Tage Geld-zurück-Garantie",
+              "+31.000 IPTV-kanalen",
+              "Gratis updates",
+              "30 dagen niet-goed-geld-terug",
             ]}
-            buttonText="Jetzt starten"
+            buttonText="Bestel nu"
             onBuy={() =>
               handleBuy({
-                name: "1 JAHR ABO",
-                duration: "1 Jahr",
+                name: "1 JAAR ABONNEMENT",
+                duration: "1 jaar",
                 price: currentPrices.yearly,
               })
             }
@@ -188,31 +188,31 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
 
           {/* 24 Months - BEST VALUE */}
           <PlanCard
-            name="2 Jahre Abo"
-            duration="2 Jahre"
+            name="2 Jaar Abonnement"
+            duration="2 jaar"
             price={currentPrices.biyearly}
             isBestValue
             connections={connections}
             badge={{
               icon: Gem,
-              text: "BESTER PREIS | 60% RABATT",
+              text: "BESTE PRIJS | 60% KORTING",
               className: "text-rouge-500",
             }}
-            savingsLabel={`2 JAHRE SPAREN - €${monthlyPrices.biyearly}/Monat`}
-            monthlyPriceLabel={`Nur €${monthlyPrices.biyearly} pro Monat`}
+            savingsLabel={`2 JAAR BESPAREN - €${monthlyPrices.biyearly}/maand`}
+            monthlyPriceLabel={`Slechts €${monthlyPrices.biyearly} per maand`}
             features={[
-              "+140.000 Filme & Serien",
-              "VIP-Support 24/7",
+              "+140.000 films & series",
+              "VIP-klantenservice 24/7",
               "4K, Full HD, HD & SD",
-              "+31.000 IPTV-Sender",
-              "Priorisierte Updates",
-              "30 Tage Geld-zurück-Garantie",
+              "+31.000 IPTV-kanalen",
+              "Updates met voorrang",
+              "30 dagen niet-goed-geld-terug",
             ]}
-            buttonText="Jetzt starten"
+            buttonText="Bestel nu"
             onBuy={() =>
               handleBuy({
-                name: "2 JAHRE ABO",
-                duration: "2 Jahre",
+                name: "2 JAAR ABONNEMENT",
+                duration: "2 jaar",
                 price: currentPrices.biyearly,
               })
             }

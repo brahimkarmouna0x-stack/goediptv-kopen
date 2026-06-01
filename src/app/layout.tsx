@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/layouts/NavBar";
 import Footer from "@/components/layouts/Footer";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
+import HashScrollManager from "@/components/shared/HashScrollManager";
 import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 import Analytics from "@/components/analytics/Analytics";
 import WebVitals from "@/components/analytics/WebVitals";
@@ -151,6 +152,7 @@ export default function RootLayout({
         </a>
 
         <NavBar />
+        <HashScrollManager />
 
         <div id="main-content" className="flex-1 flex flex-col">
           {children}

@@ -4,6 +4,7 @@ import Logo from "../shared/Logo";
 import { NAV_LINKS } from "@/constants/data";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
+import { scrollToHashId } from "@/lib/scroll";
 
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState<string>(NAV_LINKS[0].href);
@@ -100,9 +101,7 @@ const NavBar = () => {
 
   const goToPricing = useCallback(() => {
     setMenuOpen(false);
-    document
-      .getElementById("pricing")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollToHashId("pricing");
   }, []);
 
   const handleLinkClick = useCallback((href: string) => {

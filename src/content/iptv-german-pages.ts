@@ -358,7 +358,58 @@ const titleOverrides: Partial<Record<RawSlug, string>> = {
     "IPTV-Playlist sicher nutzen: Legal und ohne Risiko streamen",
 };
 
-const formatKeyword = (slug: string) =>
+// German display keywords for slugs whose raw tokens are French/English.
+// The URL slug stays untouched (legacy SEO); only the rendered label/title is
+// translated so every visible string on the site reads as German.
+const KEYWORD_DE: Partial<Record<string, string>> = {
+  "iptv-ott-service": "IPTV OTT-Dienst",
+  "iptv-service": "IPTV-Dienst",
+  "service-iptv": "IPTV-Dienst",
+  "meilleur-service-iptv": "Bester IPTV-Dienst",
+  "iptv-services": "IPTV-Dienste",
+  "services-iptv": "IPTV-Dienste",
+  "iptv-boitier": "IPTV-Box",
+  "boitier-iptv": "IPTV-Box",
+  "boitier-iptv-amazon": "IPTV-Box Amazon",
+  "box-iptv": "IPTV-Box",
+  "decodeur-iptv": "IPTV-Receiver",
+  "decodeur-iptv-avec-code": "IPTV-Receiver mit Code",
+  "meilleur-iptv": "Bestes IPTV",
+  "meilleurs-iptv": "Beste IPTV-Dienste",
+  "meilleur-abonnement-iptv": "Bestes IPTV-Abonnement",
+  "meilleur-application-iptv": "Beste IPTV-App",
+  "fournisseur-iptv": "IPTV-Anbieter",
+  "agence-iptv": "IPTV-Agentur",
+  "france-iptv": "IPTV Frankreich",
+  "french-iptv": "Französisches IPTV",
+  "abonnement-iptv-france": "IPTV-Abonnement Frankreich",
+  "iptv-gratuit": "IPTV Kostenlos",
+  "iptv-gratuit-sans-code": "IPTV Kostenlos Ohne Code",
+  "iptv-test-gratuit": "IPTV Kostenloser Test",
+  "iptv-free-trial": "IPTV Kostenloser Test",
+  "iptv-smarters-pro-gratuit": "IPTV Smarters Pro Kostenlos",
+  "code-iptv-gratuit-2025": "Kostenlose IPTV-Codes 2025",
+  "code-iptv-smarters-pro-gratuit-2025": "Kostenlose IPTV Smarters Pro Codes 2025",
+  "code-downloader-iptv-gratuit-2025": "Kostenloser IPTV-Code-Downloader 2025",
+  "comment-avoir-les-codes-iptv-gratuit": "Kostenlose IPTV-Codes Erhalten",
+  "telecharger-iptv-gratuit": "IPTV Kostenlos Herunterladen",
+  "telecharger-iptv-smarters-pro-apk": "IPTV Smarters Pro APK Herunterladen",
+  "iptv-prix": "IPTV Preis",
+  "iptv-pas-cher": "IPTV Günstig",
+  "programme-tv-iptv": "IPTV TV-Programm",
+  "programme-iptv": "IPTV-Programm",
+  "application-iptv": "IPTV-Anwendung",
+  "iptv-application": "IPTV-Anwendung",
+  "appli-iptv": "IPTV-App",
+  "setting-iptv": "IPTV-Einstellungen",
+  "free-popular-iptv-playlist": "Beliebte IPTV-Playlist",
+  "iptv-laws": "IPTV-Gesetze",
+  "legality-of-iptv": "Legalität von IPTV",
+  "iptv-with-4k": "IPTV mit 4K",
+};
+
+const formatKeyword = (slug: string): string =>
+  KEYWORD_DE[slug] ??
   slug
     .replace(/-/g, " ")
     .replace(/\biptv\b/gi, "IPTV")
@@ -507,7 +558,7 @@ const intentCopy: Record<
       "Nutzen Sie nur Quellen, für die Sie die Berechtigung haben, und vermeiden Sie unbekannte Listen, die gegen Rechte oder die Privatsphäre verstoßen könnten.",
   },
   netherlands: {
-    label: "IPTV Deutschland",
+    label: "Best IPTV German",
     promise:
       "ein praktischer Leitfaden für lokale Sender, regionale Inhalte und deutschsprachiges Fernsehen",
     benefitSeed: [
@@ -1404,8 +1455,8 @@ const PAGE_OVERRIDES: Partial<Record<RawSlug, Partial<IPTVPage>>> = {
     },
   },
   "iptv-deutschland": {
-    metaTitle: "IPTV Deutschland – 25.000+ Sender in 4K | IPTV German",
-    metaDescription: "IPTV Deutschland mit allen deutschen Sendern, 140.000+ VOD-Titeln in 4K/8K und deutschem EPG. Keine Vertragsbindung. Jetzt 7 Tage testen!",
+    metaTitle: "Best IPTV German – 25.000+ Sender in 4K | IPTV German",
+    metaDescription: "Best IPTV German mit allen deutschen Sendern, 140.000+ VOD-Titeln in 4K/8K und deutschem EPG. Keine Vertragsbindung. Jetzt 7 Tage testen!",
   },
   iptv: {
     metaTitle: "Was ist IPTV? Guide für stabiles Streaming | IPTV German",

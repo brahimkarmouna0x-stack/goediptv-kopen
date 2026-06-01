@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Unbegrenztes 4K-Streaming mit 25.000+ Sendern und null Buffering. Entdecken Sie den besten Premium-IPTV-Dienst in Deutschland mit IPTV Germany.",
   keywords: [
     "IPTV",
-    "IPTV Deutschland",
+    "Best IPTV German",
     "bester IPTV Dienst",
     "IPTV Abonnement",
     "IPTV Germany",

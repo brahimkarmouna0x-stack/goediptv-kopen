@@ -126,8 +126,8 @@ const PlanCardComponent = ({
               aria-hidden="true"
             />
             {isFree
-              ? "Fonctionne sur tous les appareils"
-              : `${connections === 4 ? "4+" : connections} ${connections === 1 ? "Appareil" : "Appareils"} Connexions`}
+              ? "Funktioniert auf allen Geräten"
+              : `${connections === 4 ? "4+" : connections} ${connections === 1 ? "Gerät" : "Geräte"} gleichzeitig`}
           </li>
           {features.map((feature, idx) => (
             <li
@@ -145,7 +145,7 @@ const PlanCardComponent = ({
           {isFree && (
             <li className="flex items-start gap-3 text-xs text-[#F4C430]/80 font-medium pt-2 border-t border-blanc-50/5">
               <TriangleAlert size={14} className="mt-0.5" aria-hidden="true" />
-              <span>Sport en direct et événements non inclus</span>
+              <span>Live-Sport und Events nicht inbegriffen</span>
             </li>
           )}
         </ul>

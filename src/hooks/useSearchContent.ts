@@ -11,9 +11,9 @@ import {
 
 const mapSearchItem = (item: TMDBItem, type: "movies" | "series") => ({
   id: item.id,
-  title: item.title || item.name || "Inconnu",
+  title: item.title || item.name || "Unbekannt",
   quality: "4K",
-  genre: type === "movies" ? "Film" : "Série",
+  genre: type === "movies" ? "Film" : "Serie",
   rating: item.vote_average ?? 0,
   popularity: item.popularity,
   date: item.release_date || item.first_air_date
@@ -62,7 +62,7 @@ export const useSearchContent = () => {
       setInternalIsSearching(true);
       try {
         const res = await fetch(
-          `${TMDB_BASE_URL}/search/multi?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(searchQuery)}&language=fr-FR`,
+          `${TMDB_BASE_URL}/search/multi?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(searchQuery)}&language=de-DE`,
           { signal: controller.signal },
         );
         const data = (await res.json()) as { results: TMDBItem[] };

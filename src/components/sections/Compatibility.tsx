@@ -22,13 +22,13 @@ import { DEVICE_CATEGORIES } from "@/constants/compatibility-data";
 
 const iconMap: Record<string, typeof Tv> = {
   "Smartphones & Tablets": Smartphone,
-  "Smart TV's & Streaming": Tv,
-  "Computers & Laptops": Laptop,
-  "Streaming-apparaten": MonitorPlay,
-  "Set-top boxen": Box,
-  Gameconsoles: Gamepad2,
-  Mediaspelers: PlayCircle,
-  Browsers: Globe2,
+  "Smart-TVs & Streaming": Tv,
+  "Computer & Laptops": Laptop,
+  "Streaming-Geräte": MonitorPlay,
+  "TV-Boxen": Box,
+  Spielekonsolen: Gamepad2,
+  "Multimedia-Player": PlayCircle,
+  Browser: Globe2,
 };
 
 const Compatibility = () => {
@@ -161,7 +161,7 @@ const Compatibility = () => {
                         {category.title}
                       </h3>
                       <p className="mt-0.5 text-xs font-bold uppercase tracking-[0.12em] text-blanc-500">
-                        {category.matchedItems.length} options
+                        {category.matchedItems.length} Optionen
                       </p>
                     </div>
                   </div>
@@ -249,7 +249,7 @@ const Compatibility = () => {
                 className="inline-flex items-center justify-center gap-3 rounded-xl border border-blanc-50/10 bg-blanc-50/[0.05] px-5 py-3 text-sm font-bold text-blanc-50 transition-colors hover:bg-white/10"
               >
                 <Copy size={16} aria-hidden="true" />
-                {copied ? "Copié" : `+${WHATSAPP_PHONE}`}
+                {copied ? "Kopiert" : `+${WHATSAPP_PHONE}`}
               </button>
             </div>
           </div>

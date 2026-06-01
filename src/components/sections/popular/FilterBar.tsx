@@ -27,17 +27,17 @@ const FilterBarComponent = ({
         {/* Type Filter */}
         <div className="relative flex items-center gap-1 p-1 bg-blanc-50/5 backdrop-blur-md rounded-full border border-blanc-50/5 overflow-x-auto scrollbar-hide">
           {([
-            { id: "all", label: "Tout" },
-            { id: "movies", label: "Films" },
-            { id: "series", label: "Séries" },
-            { id: "lives", label: "Live TV" },
-            { id: "sports", label: "Sports" },
+            { id: "all", label: "Alle" },
+            { id: "movies", label: "Filme" },
+            { id: "series", label: "Serien" },
+            { id: "lives", label: "Live-TV" },
+            { id: "sports", label: "Sport" },
           ] as const).map((type) => (
             <button
               key={type.id}
               onClick={() => {
                 setActiveType(type.id);
-                setActiveGenre("Tous");
+                setActiveGenre("Alle");
               }}
               className={cn(
                 "relative px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 z-10 whitespace-nowrap cursor-pointer",
@@ -55,9 +55,9 @@ const FilterBarComponent = ({
         {/* Sort Selector */}
         <div className="flex items-center gap-3 glass p-1.5 rounded-2xl border border-blanc-50/5 self-start overflow-x-auto scrollbar-hide">
           {([
-            { id: "popularity", label: "Populaire", Icon: Flame },
-            { id: "rating", label: "Les Mieux Notés", Icon: Star },
-            { id: "newest", label: "Nouveautés", Icon: CalendarDays },
+            { id: "popularity", label: "Beliebt", Icon: Flame },
+            { id: "rating", label: "Bestbewertet", Icon: Star },
+            { id: "newest", label: "Neueste", Icon: CalendarDays },
           ] as const).map((opt) => (
             <button
               key={opt.id}

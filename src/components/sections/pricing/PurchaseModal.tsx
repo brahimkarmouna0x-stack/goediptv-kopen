@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Check, Copy, MessageCircle, Quote, ShoppingCart, X } from "lucide-react";
 import { WHATSAPP_PHONE, WHATSAPP_URL } from "@/constants";
 
@@ -23,9 +24,25 @@ export const PurchaseModal = ({
   plan,
 }: PurchaseModalProps) => {
   const [copied, setCopied] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const phoneNumber = WHATSAPP_PHONE;
 
-  if (!isOpen || !plan) return null;
+  // Portal target is only available on the client.
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Close on Escape for proper modal behavior.
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [isOpen, onClose]);
+
+  if (!isOpen || !plan || !mounted) return null;
 
   const devicesText =
     plan.name === "Kostenlos Testen" || plan.devices === 1 ? "1 Gerät" : `${plan.devices} Geräte`;
@@ -49,13 +66,17 @@ ${devicesText}`;
     setTimeout(() => setCopied(false), 2000);
   };
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6">
+  const modal = (
+    <div
+      role="dialog"
+      aria-modal="true"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6"
+    >
       <div
         onClick={onClose}
         className="absolute inset-0 bg-france-950/90 backdrop-blur-md cursor-pointer animate-fade-in"
       />
-      <div className="relative w-[94%] max-w-lg bg-france-900 border border-blanc-50/10 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 shadow-2xl overflow-hidden animate-modal-enter">
+      <div className="relative flex max-h-[calc(100dvh-2rem)] md:max-h-[calc(100dvh-3rem)] w-[94%] max-w-lg flex-col overflow-hidden rounded-[2rem] md:rounded-[2.5rem] bg-france-900 border border-blanc-50/10 shadow-2xl animate-modal-enter">
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-france-400/10 blur-[80px] pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-rouge-400/10 blur-[80px] pointer-events-none"></div>
 
@@ -65,14 +86,15 @@ ${devicesText}`;
             e.stopPropagation();
             onClose();
           }}
+          aria-label="Schließen"
           className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-blanc-50/10 flex items-center justify-center text-blanc-400 hover:text-blanc-50 hover:bg-blanc-50/20 transition-all z-50 cursor-pointer active:scale-90"
         >
           <X size={18} className="pointer-events-none" aria-hidden="true" />
         </button>
 
-        <div className="relative z-10">
-          <div className="flex items-center gap-4 mb-6 md:mb-8">
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-france-400/10 flex items-center justify-center text-france-400 text-xl md:text-2xl">
+        <div className="relative z-10 overflow-y-auto overscroll-contain p-6 md:p-10">
+          <div className="flex items-center gap-4 mb-6 md:mb-8 pr-12 md:pr-14">
+            <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-france-400/10 flex items-center justify-center text-france-400 text-xl md:text-2xl shrink-0">
               <ShoppingCart size={24} aria-hidden="true" />
             </div>
             <div>
@@ -147,4 +169,6 @@ ${devicesText}`;
       </div>
     </div>
   );
+
+  return createPortal(modal, document.body);
 };

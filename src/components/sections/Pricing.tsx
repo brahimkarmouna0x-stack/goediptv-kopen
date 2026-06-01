@@ -68,7 +68,7 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
   const monthlyPrices = useMemo(() => {
     const calc = (price: string, months: number) => {
       const num = parseFloat(price.replace(",", "."));
-      return (num / months).toLocaleString("fr-FR", {
+      return (num / months).toLocaleString("de-DE", {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
       });

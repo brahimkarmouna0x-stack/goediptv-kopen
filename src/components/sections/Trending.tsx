@@ -51,7 +51,7 @@ const TrendingSection = () => {
               <SliderFrame>
                 <div
                   className="overflow-hidden pb-7 pt-2"
-                  aria-label="Séries et films les plus regardés"
+                  aria-label="Meistgesehene Serien und Filme"
                 >
                   <div className="poster-slider-track flex w-max">
                     <div className="flex gap-4 pr-4 sm:gap-5 sm:pr-5">

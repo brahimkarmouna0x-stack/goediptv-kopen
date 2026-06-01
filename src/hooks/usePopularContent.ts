@@ -19,10 +19,10 @@ const fetchGenres = async () => {
   try {
     const [mG, sG] = await Promise.all([
       fetch(
-          `${TMDB_BASE_URL}/genre/movie/list?api_key=${TMDB_API_KEY}&language=fr-FR`,
+          `${TMDB_BASE_URL}/genre/movie/list?api_key=${TMDB_API_KEY}&language=de-DE`,
         ),
         fetch(
-          `${TMDB_BASE_URL}/genre/tv/list?api_key=${TMDB_API_KEY}&language=fr-FR`,
+          `${TMDB_BASE_URL}/genre/tv/list?api_key=${TMDB_API_KEY}&language=de-DE`,
       ),
     ]);
 
@@ -43,11 +43,11 @@ const fetchGenres = async () => {
 
 const mapTMDBItem = (item: TMDBItem, type: "movies" | "series") => ({
   id: item.id,
-  title: item.title || item.name || "Inconnu",
+  title: item.title || item.name || "Unbekannt",
   quality: "4K",
   genre:
     genreMap.get(item.genre_ids?.[0] ?? -1) ||
-    (type === "movies" ? "Film" : "Série"),
+    (type === "movies" ? "Film" : "Serie"),
   rating: item.vote_average ?? 0,
   popularity: item.popularity,
   date: item.release_date || item.first_air_date
@@ -99,11 +99,11 @@ export const usePopularContent = () => {
 
         const [mRes, sRes, lRes, sportsRes] = await Promise.all([
           fetch(
-            `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&language=fr-FR&sort_by=popularity.desc&page=1`,
+            `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&language=de-DE&sort_by=popularity.desc&page=1`,
             { signal: controller.signal },
           ),
           fetch(
-            `${TMDB_BASE_URL}/discover/tv?api_key=${TMDB_API_KEY}&language=fr-FR&sort_by=popularity.desc&page=1`,
+            `${TMDB_BASE_URL}/discover/tv?api_key=${TMDB_API_KEY}&language=de-DE&sort_by=popularity.desc&page=1`,
             { signal: controller.signal },
           ),
           fetch("https://iptv-org.github.io/api/logos.json", {
@@ -214,10 +214,10 @@ export const usePopularContent = () => {
     try {
       const [mRes, sRes] = await Promise.all([
         fetch(
-          `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&language=fr-FR&sort_by=popularity.desc&page=${moviePage}`,
+          `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&language=de-DE&sort_by=popularity.desc&page=${moviePage}`,
         ),
         fetch(
-          `${TMDB_BASE_URL}/discover/tv?api_key=${TMDB_API_KEY}&language=fr-FR&sort_by=popularity.desc&page=${tvPage}`,
+          `${TMDB_BASE_URL}/discover/tv?api_key=${TMDB_API_KEY}&language=de-DE&sort_by=popularity.desc&page=${tvPage}`,
         ),
       ]);
 

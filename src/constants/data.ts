@@ -10,7 +10,7 @@ export const NAV_LINKS: Link[] = [
     href: "/",
   },
   {
-    label: "IPTV Deutschland",
+    label: "Best IPTV German",
     href: "/iptv-german/iptv-deutschland",
   },
   {

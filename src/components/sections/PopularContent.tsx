@@ -52,7 +52,7 @@ const PopularContentInner = () => {
     paramType && CONTENT_TYPES.includes(paramType as ContentType)
       ? (paramType as ContentType)
       : "all";
-  const initialGenre = searchParams.get("genre") || "Tous";
+  const initialGenre = searchParams.get("genre") || "Alle";
 
   const [activeType, setActiveType] = useState<ContentType>(initialType);
   const [activeGenre, setActiveGenre] = useState(initialGenre);
@@ -66,7 +66,7 @@ const PopularContentInner = () => {
       ? searchContent
       : [...trendingContent, ...liveContent, ...sportsContent];
     const allGenres = currentData.map((item) => item.genre);
-    return ["Tous", ...Array.from(new Set(allGenres))];
+    return ["Alle", ...Array.from(new Set(allGenres))];
   }, [searchQuery, searchContent, trendingContent, liveContent, sportsContent]);
 
   const filteredContent = useMemo(() => {
@@ -86,7 +86,7 @@ const PopularContentInner = () => {
 
     const result = source.filter((item) => {
       const matchesType = activeType === "all" || item.type === activeType;
-      const matchesGenre = activeGenre === "Tous" || item.genre === activeGenre;
+      const matchesGenre = activeGenre === "Alle" || item.genre === activeGenre;
       return matchesType && matchesGenre;
     });
 
@@ -209,11 +209,11 @@ const PopularContentInner = () => {
             {hasMore && !searchQuery && (
               <div className="flex flex-col items-center gap-4">
                 <Loader2 className="animate-spin text-france-400" size={32} />
-                <p className="text-blanc-500 text-sm font-bold uppercase tracking-widest">Charger plus de contenu...</p>
+                <p className="text-blanc-500 text-sm font-bold uppercase tracking-widest">Mehr Inhalte laden...</p>
               </div>
             )}
             {!hasMore && !searchQuery && (
-              <p className="text-blanc-600 text-sm font-bold uppercase tracking-widest">Vous avez atteint la fin</p>
+              <p className="text-blanc-600 text-sm font-bold uppercase tracking-widest">Sie haben das Ende erreicht</p>
             )}
           </div>
         </>
@@ -226,13 +226,13 @@ const PopularContentInner = () => {
             Keine Ergebnisse gefunden
           </h3>
           <p className="text-blanc-400">
-            Essayez un autre terme de recherche ou modifiez les filtres.
+            Versuchen Sie einen anderen Suchbegriff oder ändern Sie die Filter.
           </p>
           <button
             onClick={() => {
               setSearchQuery("");
               setActiveType("all");
-              setActiveGenre("Tous");
+              setActiveGenre("Alle");
             }}
             className="mt-6 text-france-400 font-bold hover:underline cursor-pointer"
           >

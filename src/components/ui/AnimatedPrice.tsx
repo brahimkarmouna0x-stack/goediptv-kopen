@@ -4,7 +4,7 @@ interface AnimatedPriceProps {
 
 export const AnimatedPrice = ({ price }: AnimatedPriceProps) => {
   const value = parseFloat(price.replace(",", "."));
-  const formatted = new Intl.NumberFormat("fr-FR", {
+  const formatted = new Intl.NumberFormat("de-DE", {
     style: "currency",
     currency: "EUR",
   }).format(value);

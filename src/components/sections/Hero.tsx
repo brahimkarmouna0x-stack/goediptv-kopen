@@ -70,7 +70,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
             <h1 className="font-display font-bold text-[1.75rem] leading-[1.12] sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3.4rem] mb-5 text-blanc-50 tracking-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
               {title || (
                 <>
-                  IPTV Deutschland
+                  Best IPTV German
                   <span className="mt-3 block bg-linear-to-r from-france-300 via-france-400 to-france-500 bg-clip-text text-transparent">
                     31.000+ Sender &amp; 140.000+ VOD in 4K/8K
                   </span>

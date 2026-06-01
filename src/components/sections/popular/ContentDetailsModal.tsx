@@ -171,7 +171,7 @@ export const ContentDetailsModal = ({
                 className="flex w-full items-center justify-center gap-3 rounded-2xl bg-rouge-500 py-4 text-lg font-bold text-blanc-50 shadow-lg shadow-rouge-500/25 transition-transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Play size={20} fill="currentColor" aria-hidden="true" />
-                Regarder
+                Ansehen
               </button>
               <button
                 type="button"

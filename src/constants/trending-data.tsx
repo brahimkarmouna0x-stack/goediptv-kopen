@@ -105,7 +105,7 @@ export const trendingNow: Trending[] = [
   {
     title: "BBC News",
     quality: "HD",
-    genre: "Actualités",
+    genre: "Nachrichten",
     rating: "Live",
     type: "lives",
     image: "/images-/bbc.webp",
@@ -113,7 +113,7 @@ export const trendingNow: Trending[] = [
   {
     title: "HBO Max",
     quality: "4K",
-    genre: "Films",
+    genre: "Filme",
     rating: "Live",
     type: "lives",
     image: "/images-/hbomax.webp",
@@ -137,7 +137,7 @@ export const trendingNow: Trending[] = [
   {
     title: "100 NL TV",
     quality: "HD",
-    genre: "Music",
+    genre: "Musik",
     rating: "Live",
     type: "lives",
     image: "/images-/nl.webp",

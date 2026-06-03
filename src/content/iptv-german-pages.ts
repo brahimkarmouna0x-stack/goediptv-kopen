@@ -1289,6 +1289,134 @@ const INTENT_PROFILE: Record<PageIntent, IntentProfile> = {
   },
 };
 
+// ── Why Choose Us — trust-signal features per intent ─────────────────────────
+const WHY_CHOOSE_US_FEATURES: Record<PageIntent, Feature[]> = {
+  general: [
+    F("BadgeCheck", "Jarenlange ervaring", "Al jaren actief in de IPTV-markt met duizenden tevreden klanten in Nederland en België."),
+    F("Eye", "Transparante werkwijze", "Geen verborgen kosten, duidelijke informatie en eerlijke voorwaarden – van A tot Z."),
+    F("Server", "Premium servers", "Anti-buffering infrastructuur voor een stabiele kijkervaring, 24/7."),
+    F("Headphones", "Persoonlijke support", "Onze klantenservice staat 24/7 voor u klaar – snel, vriendelijk en in het Nederlands."),
+  ],
+  guide: [
+    F("BookOpen", "Expertkennis", "Jarenlange ervaring gebundeld in heldere, praktische handleidingen zonder jargon."),
+    F("ListChecks", "Stap voor stap", "Duidelijke uitleg, geschikt voor beginners met oog voor detail."),
+    F("RefreshCw", "Altijd actueel", "Up-to-date informatie over de nieuwste apps, apparaten en technieken."),
+    F("Wrench", "Probleemoplossing", "Veelvoorkomende fouten en direct toepasbare oplossingen in één overzicht."),
+  ],
+  app: [
+    F("Download", "Eenvoudige installatie", "In 5 minuten klaar met duidelijke instructies voor elke app en speler."),
+    F("AppWindow", "Alle spelers ondersteund", "M3U, Xtream Codes – compatibel met Smarters Pro, TiviMate, XCIPTV en meer."),
+    F("RotateCcw", "Regelmatige updates", "Altijd de nieuwste functies, prestaties en beveiligingsupdates."),
+    F("Navigation", "Gebruiksvriendelijk", "Nederlandstalige EPG, intuïtieve navigatie en logische kanaalgroepen."),
+  ],
+  device: [
+    F("MonitorSmartphone", "Breedste compatibiliteit", "Fire TV Stick, Smart-tv, MAG, Android TV, Apple TV – alles wordt ondersteund."),
+    F("Zap", "Geoptimaliseerd", "Hardware-decodering voor vloeiende 4K-weergave, afgestemd op uw apparaat."),
+    F("Settings", "Eenvoudig in te stellen", "Stap-voor-stap gids voor ieder platform – geen technische kennis nodig."),
+    F("Wifi", "LAN en wifi", "Stabiel streamen via ethernet of optimaal wifi-advies voor draadloze installaties."),
+  ],
+  subscription: [
+    F("BadgeEuro", "Beste prijs-kwaliteit", "Premium IPTV vanaf slechts 6,66 € per maand, zonder verborgen kosten."),
+    F("Zap", "Directe activering", "Na uw bestelling direct toegang – geen installatiekosten, geen gedoe."),
+    F("Gift", "Gratis proefperiode", "Test 7 dagen risicovrij voordat u een beslissing neemt."),
+    F("FileX", "Geen contract", "Flexibele looptijden zonder automatische verlenging of opzegtermijn."),
+  ],
+  provider: [
+    F("Star", "Bewezen betrouwbaar", "Duizenden klanten beoordelen ons met een gemiddelde van 4,9 sterren."),
+    F("Scale", "Eerlijk vergeleken", "Geen marketingpraat, maar feitelijke informatie om aanbieders te vergelijken."),
+    F("ShieldCheck", "Service met garantie", "Niet-goed-geld-terug binnen 30 dagen – uw tevredenheid staat voorop."),
+    F("MessageCircle", "Altijd bereikbaar", "Via WhatsApp, e-mail en telefoon – 24/7 voor u klaar in het Nederlands."),
+  ],
+  legal: [
+    F("Scale", "Volledig legaal", "Wij werken alleen met gelicentieerde content en transparante bronnen."),
+    F("Lock", "Privacy eerst", "Uw gegevens zijn veilig en worden nooit gedeeld met derden."),
+    F("ShieldCheck", "Zonder risico", "Geen sommaties of boetes – u kiest voor een legale, veilige dienst."),
+    F("Lightbulb", "Helder advies", "Eerlijke informatie over rechten, risico's en verantwoord streamen."),
+  ],
+  playlist: [
+    F("FileCheck", "Betrouwbare lijsten", "Stabiele M3U- en Xtream-playlists zonder dode links of malware."),
+    F("RefreshCw", "Altijd actueel", "Playlists worden regelmatig ververst voor een optimale kijkervaring."),
+    F("ShieldCheck", "Veilig gebruik", "Geen dubieuze bronnen, geen verborgen scripts, geen risico voor uw privacy."),
+    F("MessageCircle", "Snelle ondersteuning", "Hulp bij het installeren van uw playlist in elke gangbare speler."),
+  ],
+  quality: [
+    F("Sparkles", "Haarscherp beeld", "Native 4K- en 8K-streams met hoge bitrate voor maximale scherpte."),
+    F("Gauge", "Minimale buffering", "Premium anti-buffering servers voor vloeiend beeld, ook tijdens piekuren."),
+    F("SlidersHorizontal", "Optimaal afgesteld", "Advies over bitrate, hardware en netwerk voor het beste resultaat."),
+    F("Sun", "HDR-ondersteuning", "HDR10 en Dolby Vision op compatibele apparaten en content."),
+  ],
+  landing: [
+    F("Gem", "Alles-in-één", "Premium IPTV met kanalen, VOD, 4K/8K en support in één compleet pakket."),
+    F("Flag", "Nederlandstalig", "Nederlandse EPG, support in uw eigen taal en lokaal afgestemde diensten."),
+    F("Star", "Bewezen kwaliteit", "12.000+ tevreden klanten en een gemiddelde beoordeling van 4,9 sterren."),
+    F("Gift", "Risicovrij proberen", "7 dagen gratis testen, daarna pas betalen – geen enkel risico."),
+  ],
+};
+
+// ── IPTV Benefits — cost-savings & convenience features per intent ────────────
+const IPTV_BENEFITS_FEATURES: Record<PageIntent, Feature[]> = {
+  general: [
+    F("Wallet", "Bespaar op tv-kosten", "IPTV is aanzienlijk voordeliger dan een traditioneel kabel- of satellietabonnement."),
+    F("Tv", "Enorme kanaalkeuze", "25.000+ kanalen uit binnen- en buitenland – sport, nieuws, films, series en meer."),
+    F("MonitorSmartphone", "Kijk op uw eigen apparaat", "Smart-tv, smartphone, tablet, laptop of box – u kiest waar en wanneer u kijkt."),
+    F("Sparkles", "Stream in topkwaliteit", "Full HD, 4K en zelfs 8K – afhankelijk van uw apparaat en internetverbinding."),
+  ],
+  guide: [
+    F("BookOpen", "Leren in uw eigen tempo", "Helder uitgelegd met voorbeelden, stappenplannen en praktische tips."),
+    F("Lightbulb", "Begrijp de techniek", "Geen ingewikkeld jargon, maar heldere uitleg die u direct kunt toepassen."),
+    F("ShieldCheck", "Fouten voorkomen", "Leer van veelgemaakte fouten en bespaar uzelf tijd en frustratie."),
+    F("Zap", "Zelfverzekerd streamen", "Na het lezen van deze gids weet u precies hoe alles werkt."),
+  ],
+  app: [
+    F("AppWindow", "Gebruik elke speler", "Compatibel met Smarters Pro, TiviMate, IPTV Smarters, XCIPTV en vele anderen."),
+    F("MonitorSmartphone", "Eén account, alles toegankelijk", "Eenmaal instellen en overal kijken – op al uw apparaten tegelijk."),
+    F("CalendarClock", "Nederlandse EPG", "Programmagids in het Nederlands met juiste tijdzones en duidelijke info."),
+    F("Zap", "Snel schakelen", "Korte zaptijden en vloeiende weergave van al uw zenders."),
+  ],
+  device: [
+    F("MonitorSmartphone", "Één apparaat, eindeloos kijken", "Smart-tv, Fire TV Stick, Android-box, Apple TV – alle platformen worden ondersteund."),
+    F("Sparkles", "Altijd de beste beeldkwaliteit", "Automatische aanpassing aan uw apparaat, tot 4K en HDR toe."),
+    F("Wallet", "Geen dure hardware nodig", "Meestal volstaat uw bestaande apparaat – geen extra investering."),
+    F("Smartphone", "Ook onderweg", "Mobiel kijken op smartphone en tablet, waar u ook bent."),
+  ],
+  subscription: [
+    F("Wallet", "Geen verborgen kosten", "Alles inclusief vanaf 6,66 € per maand – geen installatiekosten of verrassingen."),
+    F("FileX", "Flexibel opzeggen", "Geen langdurig contract, geen opzegtermijn, volledige vrijheid."),
+    F("Sparkles", "Premium kwaliteit", "Anti-buffering servers, 4K/8K-beeld, 140.000+ VOD-titels en 25.000+ kanalen."),
+    F("MonitorSmartphone", "Meerdere apparaten", "Stream op tot 5 apparaten tegelijk, afhankelijk van uw pakket."),
+  ],
+  provider: [
+    F("Scale", "Vergelijk bewust", "Krijg helder inzicht in kanalen, prijzen, kwaliteit en echte service."),
+    F("Server", "Echte prestaties", "Geen loze marketingclaims, maar echte servers en bewezen beeldkwaliteit."),
+    F("BadgeCheck", "Transparantie voorop", "Duidelijke voorwaarden, eerlijke prijzen en zichtbare klantbeoordelingen."),
+    F("Gift", "Proef voor u koopt", "Gratis testperiode om alles rustig te beoordelen zonder enig risico."),
+  ],
+  legal: [
+    F("ShieldCheck", "Stream met een gerust hart", "Legale IPTV betekent geen risico op boetes of juridische problemen."),
+    F("Server", "Stabiel en betrouwbaar", "Kwaliteit van een gelicentieerde bron met heldere rechten."),
+    F("Lock", "Privacy beschermd", "Geen dataverzameling door dubieuze partijen, geen tracking."),
+    F("Wallet", "Betaal voor kwaliteit", "Een eerlijke prijs voor een eerlijke dienst met echte ondersteuning."),
+  ],
+  playlist: [
+    F("List", "Georganiseerd kijken", "M3U-playlists met logische kanaalgroepen en volledige EPG-ondersteuning."),
+    F("Settings", "Zelf beheren", "Eigen playlist ordenen, kanalen groeperen en favorieten instellen."),
+    F("Zap", "Geen dode links", "Een betrouwbare dienst met actuele, werkende streams – geen gedoe."),
+    F("ShieldCheck", "Veilig en overzichtelijk", "Geen malware, geen phishing – alleen werkende en veilige kanalen."),
+  ],
+  quality: [
+    F("Sparkles", "4K zoals het hoort", "Echte 4K-streams met hoge bitrate, geen opgeschaald beeld."),
+    F("Gauge", "Geen haperingen", "Anti-buffering servers voor een vloeiende weergave, ook tijdens piekuren."),
+    F("Sun", "HDR10 en Dolby Vision", "Ondersteuning voor de nieuwste HDR-standaarden op compatibele apparaten."),
+    F("Cpu", "Toekomstbestendig", "Naast 4K ook 8K-ready voor de nieuwste televisies en schermen."),
+  ],
+  landing: [
+    F("Tv", "Complete tv-ervaring", "25.000+ kanalen, 140.000+ films & series en 4K/8K – alles in één abonnement."),
+    F("Wallet", "Aanzienlijke besparing", "Tot 80% goedkoper dan een traditioneel kabelabonnement."),
+    F("MonitorSmartphone", "Altijd en overal", "Kijk thuis op uw tv of onderweg op uw telefoon – waar u ook bent."),
+    F("Gift", "Gratis uitproberen", "7 dagen gratis, daarna pas betalen – zonder enig risico."),
+  ],
+};
+
 // ── Internal-link hubs per intent (all targets exist in IPTV_GERMAN_SLUGS) ────
 const INTENT_LINKS: Record<PageIntent, RawSlug[]> = {
   general: ["iptv-deutschland", "iptv-abonnement", "iptv-smarters-pro", "iptv-box", "m3u-iptv", "iptv-illegal"],
@@ -1373,32 +1501,79 @@ const richDeep = (profile: IntentProfile, kw: string): PageSection => {
   return { type: "richText", heading, html };
 };
 
-/** Compose the section list for an intent (always ≥5; CTA always closes). */
+const whyChooseUsSection = (intent: PageIntent, kw: string): PageSection => ({
+  type: "features",
+  heading: "Waarom kiezen voor goediptv-kopen?",
+  subheading: INTENT_PROFILE[intent].label,
+  items: WHY_CHOOSE_US_FEATURES[intent],
+});
+
+const iptvBenefitsSection = (intent: PageIntent, kw: string): PageSection => ({
+  type: "features",
+  heading: "De voordelen van IPTV",
+  subheading: INTENT_PROFILE[intent].label,
+  items: IPTV_BENEFITS_FEATURES[intent],
+});
+
+/** Every page gets the full conversion-optimised section flow:
+ *  richIntro → features → testimonials → whyChooseUs → iptvBenefits →
+ *  devices → howItWorks → [intent-specific extras] → pricing → cta.
+ *  No sections are removed from the original intent profiles — the extras
+ *  (comparison, channelList, richDeep) are preserved after the core flow.
+ */
 const buildSectionsFor = (intent: PageIntent, kw: string): PageSection[] => {
   const p = INTENT_PROFILE[intent];
+
+  // ── Core sections (every page gets these in a fixed order) ────────────────
+  const sections: PageSection[] = [
+    richIntro(p, kw),
+    featuresSection(p),
+    testimonialsSection(),
+    whyChooseUsSection(intent, kw),
+    iptvBenefitsSection(intent, kw),
+    devicesSection(),
+    howSection(),
+  ];
+
+  // ── Intent-specific extras (preserves all original differentiating content) ─
   switch (intent) {
     case "subscription":
-      return [richIntro(p, kw), pricingSection(), comparisonSection(), featuresSection(p), testimonialsSection(), channelSection(), ctaSection(kw)];
+      sections.push(comparisonSection(), pricingSection(), channelSection());
+      break;
     case "landing":
-      return [richIntro(p, kw), featuresSection(p), comparisonSection(), channelSection(), testimonialsSection(), pricingSection(), ctaSection(kw)];
+      sections.push(comparisonSection(), channelSection(), pricingSection());
+      break;
     case "provider":
-      return [richIntro(p, kw), comparisonSection(), featuresSection(p), testimonialsSection(), pricingSection(), richDeep(p, kw), ctaSection(kw)];
+      sections.push(comparisonSection(), pricingSection(), richDeep(p, kw));
+      break;
     case "device":
-      return [richIntro(p, kw), devicesSection(), howSection(), featuresSection(p), comparisonSection(), ctaSection(kw)];
+      sections.push(comparisonSection(), pricingSection());
+      break;
     case "app":
-      return [richIntro(p, kw), featuresSection(p), howSection(), devicesSection(), comparisonSection(), ctaSection(kw)];
+      sections.push(comparisonSection(), pricingSection());
+      break;
     case "playlist":
-      return [richIntro(p, kw), howSection(), featuresSection(p), richDeep(p, kw), devicesSection(), ctaSection(kw)];
+      sections.push(richDeep(p, kw), pricingSection());
+      break;
     case "quality":
-      return [richIntro(p, kw), featuresSection(p), comparisonSection(), howSection(), devicesSection(), ctaSection(kw)];
+      sections.push(comparisonSection(), pricingSection());
+      break;
     case "legal":
-      return [richIntro(p, kw), richDeep(p, kw), featuresSection(p), howSection(), comparisonSection(), ctaSection(kw)];
+      sections.push(richDeep(p, kw), comparisonSection(), pricingSection());
+      break;
     case "guide":
-      return [richIntro(p, kw), howSection(), featuresSection(p), richDeep(p, kw), comparisonSection(), ctaSection(kw)];
+      sections.push(richDeep(p, kw), comparisonSection(), pricingSection());
+      break;
     case "general":
     default:
-      return [richIntro(p, kw), featuresSection(p), channelSection(), howSection(), comparisonSection(), ctaSection(kw)];
+      sections.push(channelSection(), comparisonSection(), pricingSection());
+      break;
   }
+
+  // ── Always close with a CTA ──────────────────────────────────────────────
+  sections.push(ctaSection(kw));
+
+  return sections;
 };
 
 /** Base FAQs shared by every page, plus intent-specific extras (total ≥5). */

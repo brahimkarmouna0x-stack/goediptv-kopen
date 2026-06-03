@@ -20,7 +20,7 @@ export function absoluteUrl(path: string): string {
 
 // ─── OpenGraph image (1200×630 recommended for social sharing) ──────────────
 export const OG_IMAGE = {
-  url: `${SITE.url}/images/site-logo.png`,
+  url: `${SITE.url}/images/logo-goed-iptv.png`,
   width: 1505,
   height: 1352,
   alt: "goediptv-kopen – Premium IPTV abonnement in Nederland",

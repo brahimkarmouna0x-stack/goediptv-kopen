@@ -386,6 +386,24 @@
   }
 }
 
+/* ===== CATEGORIES MARQUEE TRACKS ===== */
+.categories-track-1 {
+  width: max-content;
+  will-change: transform;
+  animation: marquee 48s linear infinite;
+}
+
+.categories-track-2 {
+  width: max-content;
+  will-change: transform;
+  animation: marqueeReverse 48s linear infinite;
+}
+
+@keyframes marqueeReverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
 /* ===== MARQUEE TRACKS ===== */
 .poster-slider-track {
   will-change: transform;
@@ -433,6 +451,8 @@
 
   .poster-slider-track,
   .channel-slider-track,
+  .categories-track-1,
+  .categories-track-2,
   .feature-logo-track,
   .google-review-track,
   .animate-marquee {
@@ -458,6 +478,8 @@
   .google-review-track,
   .poster-slider-track,
   .channel-slider-track,
+  .categories-track-1,
+  .categories-track-2,
   .animate-marquee {
     animation-duration: 70s;
   }

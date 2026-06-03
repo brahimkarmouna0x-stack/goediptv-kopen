@@ -131,7 +131,7 @@ const ContactUsPage = () => {
               <div className="flex items-center gap-4 border-b border-blanc-50/10 pb-5">
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.04]">
                   <Image
-                    src="/images/site-logo.png"
+                    src="/images/logo.png"
                     alt="goediptv-kopen"
                     width={48}
                     height={48}

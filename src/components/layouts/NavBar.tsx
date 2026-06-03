@@ -112,10 +112,10 @@ const NavBar = () => {
   return (
     <header className="fixed left-0 right-0 z-50 top-0 px-0 border-b border-blanc-800/20 bg-france-950/95 backdrop-blur-sm">
       <div className="mx-auto flex justify-between items-center container px-4 sm:px-6 lg:px-8 py-3.5 md:py-4">
-        <Logo />
+        <Logo className="h-10 w-auto sm:h-11 lg:h-12" preload />
 
         <nav
-          className="hidden lg:flex items-center gap-7"
+          className="hidden lg:flex flex-1 items-center justify-center gap-6 xl:gap-8 2xl:gap-10"
           aria-label="Hoofdnavigatie"
         >
           {NAV_LINKS.map((link) => {

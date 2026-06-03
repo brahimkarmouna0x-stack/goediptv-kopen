@@ -7,7 +7,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: SITE.name,
     url: SITE.url,
-    logo: `${SITE.url}/images/site-logo.png`,
+    logo: `${SITE.url}/images/logo-goed-iptv.png`,
     description: SITE.description,
     contactPoint: {
       "@type": "ContactPoint",

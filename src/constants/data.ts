@@ -6,7 +6,7 @@ import {
 
 export const NAV_LINKS: Link[] = [
   {
-    label: "goediptv-kopen",
+    label: "goed iptv",
     href: "/",
   },
   {

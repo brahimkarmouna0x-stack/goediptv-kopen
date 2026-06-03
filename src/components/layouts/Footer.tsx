@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="sm:col-span-2 lg:col-span-2 flex flex-col items-center sm:items-start">
             <div className="mb-6">
-              <Logo className="h-20 w-auto" width={160} height={160} />
+              <Logo className="h-16 w-auto sm:h-20 lg:h-24" />
             </div>
             <p className="text-blanc-400 text-sm leading-relaxed mb-8 max-w-sm mt-6">
               De ultieme premium IPTV-ervaring. Meer dan 25.000 kanalen, 4K

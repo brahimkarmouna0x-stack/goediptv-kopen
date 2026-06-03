@@ -26,11 +26,11 @@ const Loader = ({ size = "md", fullScreen = false }: LoaderProps) => {
         className={`absolute ${size === "sm" ? "w-5 h-5" : size === "lg" ? "w-14 h-14" : "w-9 h-9"} overflow-hidden rounded-full bg-france-950 flex items-center justify-center ring-1 ring-blanc-50/10`}
       >
         <Image
-          src="/images/site-logo.png"
+          src="/images/logo.png"
           alt="goediptv-kopen"
           width={iconSizes[size]}
           height={iconSizes[size]}
-          className="h-full w-full object-cover animate-pulse-gentle"
+          className="h-full w-full object-contain p-1 animate-pulse-gentle"
         />
       </div>
 

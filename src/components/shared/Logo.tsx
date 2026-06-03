@@ -17,10 +17,16 @@ interface LogoProps {
   preload?: boolean;
 }
 
-/** The brand mark asset and its true intrinsic dimensions (keeps aspect ratio correct). */
-const LOGO_SRC = "/images/site-logo.png";
-const LOGO_WIDTH = 1505;
-const LOGO_HEIGHT = 1352;
+/**
+ * The brand wordmark asset and its TRUE intrinsic dimensions.
+ * `site-logo.png` is a wide horizontal wordmark (icon + "IPTV" + tagline).
+ * The real pixel ratio is 2749×700 (~3.93:1) — declaring the correct ratio is
+ * essential so `w-auto` derives the proper width and the mark is never
+ * letterboxed/shrunk inside a mismatched box (and keeps CLS at zero).
+ */
+const LOGO_SRC = "/images/logo-goed-iptv.png";
+const LOGO_WIDTH = 2749;
+const LOGO_HEIGHT = 700;
 
 /**
  * Single source of truth for the goediptv-kopen brand mark.
@@ -30,7 +36,7 @@ const LOGO_HEIGHT = 1352;
  * stretched. The transparent PNG sits cleanly on the dark navbar/footer.
  */
 const Logo = ({
-  className = "h-12 w-auto sm:h-14",
+  className = "h-11 w-auto sm:h-12",
   href = "/",
   preload = false,
 }: LogoProps) => {
@@ -41,7 +47,8 @@ const Logo = ({
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
       preload={preload}
-      className={`object-contain transition-transform duration-300 group-hover:scale-105 ${className}`}
+      // Height-driven sizing keeps the true 3.93:1 ratio; w-auto follows it.
+      className={`w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${className}`}
     />
   );
 

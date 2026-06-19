@@ -13,7 +13,7 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
-import { WHATSAPP_URL } from "@/constants";
+import { getPhoneNumber, whatsappUrl } from "@/lib/settings";
 
 export const metadata: Metadata = {
   title: "Contact — WhatsApp support",
@@ -73,7 +73,9 @@ const trustSignals = [
   { label: "Snelle reactie", Icon: Clock3 },
 ];
 
-const ContactUsPage = () => {
+const ContactUsPage = async () => {
+  const phone = await getPhoneNumber();
+  const whatsapp = phone ? whatsappUrl(phone) : "#";
   return (
     <main className="pt-28 sm:pt-32 pb-20 sm:pb-24">
       <section className="px-4 sm:px-6 lg:px-8">
@@ -95,7 +97,7 @@ const ContactUsPage = () => {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href={WHATSAPP_URL}
+                  href={whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 rounded-2xl bg-emerald-400 px-8 py-4 text-base font-black text-blanc-950 transition-colors hover:bg-emerald-300"
@@ -164,7 +166,7 @@ const ContactUsPage = () => {
               </div>
 
               <Link
-                href={WHATSAPP_URL}
+                href={whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 flex items-center justify-between gap-4 rounded-2xl border border-emerald-300/20 bg-emerald-400/10 p-5 transition-colors hover:bg-emerald-400/15"
@@ -239,7 +241,7 @@ const ContactUsPage = () => {
             </div>
 
             <Link
-              href={WHATSAPP_URL}
+              href={whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 rounded-xl bg-emerald-400 px-6 py-4 text-sm font-black text-blanc-950 transition-colors hover:bg-emerald-300"

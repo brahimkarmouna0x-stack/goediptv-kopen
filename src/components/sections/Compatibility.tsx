@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { WHATSAPP_PHONE, WHATSAPP_URL } from "@/constants";
+import { usePhoneNumber } from "@/hooks/usePhoneNumber";
 import {
   Box,
   Check,
@@ -34,6 +34,7 @@ const iconMap: Record<string, typeof Tv> = {
 const Compatibility = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [copied, setCopied] = useState(false);
+  const { phoneNumber, whatsappUrl, isLoading } = usePhoneNumber();
 
   const query = searchQuery.toLowerCase().trim();
 
@@ -71,7 +72,8 @@ const Compatibility = () => {
   );
 
   const copyPhone = () => {
-    navigator.clipboard.writeText(`+${WHATSAPP_PHONE}`);
+    if (!phoneNumber) return;
+    navigator.clipboard.writeText(`+${phoneNumber}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 1800);
   };
@@ -236,7 +238,7 @@ const Compatibility = () => {
 
             <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
               <a
-                href={WHATSAPP_URL}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-xl bg-rouge-500 px-5 py-3 text-sm font-black text-blanc-50 transition-colors hover:bg-rouge-600"
@@ -249,7 +251,7 @@ const Compatibility = () => {
                 className="inline-flex items-center justify-center gap-3 rounded-xl border border-blanc-50/10 bg-blanc-50/[0.05] px-5 py-3 text-sm font-bold text-blanc-50 transition-colors hover:bg-white/10"
               >
                 <Copy size={16} aria-hidden="true" />
-                {copied ? "Gekopieerd" : `+${WHATSAPP_PHONE}`}
+                {copied ? "Gekopieerd" : phoneNumber ? `+${phoneNumber}` : ""}
               </button>
             </div>
           </div>

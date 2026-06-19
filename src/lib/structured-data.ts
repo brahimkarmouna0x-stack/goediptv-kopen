@@ -1,7 +1,18 @@
 import { SITE } from "./seo";
 
 // ─── Organization Schema ───────────────────────────────────────────────────
-export function organizationSchema() {
+export function organizationSchema(phoneNumber?: string) {
+  const contactPoint: Record<string, string> = {
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    url: `${SITE.url}/support/contact`,
+  };
+
+  // Include phone in schema when available (improves SEO/local search)
+  if (phoneNumber) {
+    contactPoint.telephone = `+${phoneNumber}`;
+  }
+
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -9,11 +20,7 @@ export function organizationSchema() {
     url: SITE.url,
     logo: `${SITE.url}/images/logo-goed-iptv.png`,
     description: SITE.description,
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "customer support",
-      url: `${SITE.url}/support/contact`,
-    },
+    contactPoint,
     address: {
       "@type": "PostalAddress",
       addressCountry: "NL",

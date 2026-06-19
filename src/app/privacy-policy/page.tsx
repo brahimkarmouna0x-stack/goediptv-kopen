@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CheckCircle2, MessageCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/constants";
+import { getPhoneNumber, whatsappUrl } from "@/lib/settings";
 
 export const metadata: Metadata = {
   title: "Privacybeleid — goediptv-kopen",
@@ -23,7 +23,9 @@ export const metadata: Metadata = {
   },
 };
 
-const PrivacyPolicyPage = () => {
+const PrivacyPolicyPage = async () => {
+  const phone = await getPhoneNumber();
+  const whatsapp = phone ? whatsappUrl(phone) : "#";
   return (
     <main className="pt-28 sm:pt-32 pb-20 sm:pb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,7 +100,7 @@ const PrivacyPolicyPage = () => {
               Vragen over ons privacybeleid?
             </p>
             <a
-              href={WHATSAPP_URL}
+              href={whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-rouge-500 text-blanc-50 font-bold hover:bg-rouge-600 hover:-translate-y-0.5 transition-all glow-red"

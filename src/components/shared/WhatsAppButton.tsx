@@ -1,10 +1,13 @@
 import { MessageCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/constants";
+import { getPhoneNumber, whatsappUrl } from "@/lib/settings";
 
-const WhatsAppButton = () => {
+const WhatsAppButton = async () => {
+  const phone = await getPhoneNumber();
+  const url = phone ? whatsappUrl(phone) : "#";
+
   return (
     <a
-      href={WHATSAPP_URL}
+      href={url}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-8 right-8 z-[999] group"

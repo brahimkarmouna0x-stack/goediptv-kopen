@@ -6,6 +6,7 @@ import Footer from "@/components/layouts/Footer";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import HashScrollManager from "@/components/shared/HashScrollManager";
 import { organizationSchema, websiteSchema } from "@/lib/structured-data";
+import { getPhoneNumber } from "@/lib/settings";
 import Analytics from "@/components/analytics/Analytics";
 import WebVitals from "@/components/analytics/WebVitals";
 
@@ -105,11 +106,12 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const phoneNumber = await getPhoneNumber();
   return (
     <html
       lang="nl"
@@ -126,7 +128,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema()),
+            __html: JSON.stringify(organizationSchema(phoneNumber)),
           }}
         />
         <script

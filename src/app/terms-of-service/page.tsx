@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Info, MessageCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/constants";
+import { getPhoneNumber, whatsappUrl } from "@/lib/settings";
 
 export const metadata: Metadata = {
   title: "Algemene voorwaarden — goediptv-kopen",
@@ -23,7 +23,9 @@ export const metadata: Metadata = {
   },
 };
 
-const TermsOfServicePage = () => {
+const TermsOfServicePage = async () => {
+  const phone = await getPhoneNumber();
+  const whatsapp = phone ? whatsappUrl(phone) : "#";
   return (
     <main className="pt-28 sm:pt-32 pb-20 sm:pb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,7 +96,7 @@ const TermsOfServicePage = () => {
               Heeft u verduidelijking nodig over onze voorwaarden?
             </p>
             <a
-              href={WHATSAPP_URL}
+              href={whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass text-blanc-50 font-bold hover:bg-blanc-50/10 transition-all border border-blanc-50/10"

@@ -1,8 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { Check, Copy, MessageCircle, Quote, ShoppingCart, X } from "lucide-react";
-import { WHATSAPP_PHONE, WHATSAPP_URL } from "@/constants";
+import {
+  Check,
+  Copy,
+  MessageCircle,
+  Quote,
+  ShoppingCart,
+  X,
+} from "lucide-react";
+import { usePhoneNumber } from "@/hooks/usePhoneNumber";
 
 interface Plan {
   name: string;
@@ -25,7 +32,7 @@ export const PurchaseModal = ({
 }: PurchaseModalProps) => {
   const [copied, setCopied] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const phoneNumber = WHATSAPP_PHONE;
+  const { phoneNumber, whatsappUrl } = usePhoneNumber();
 
   // Portal target is only available on the client.
   useEffect(() => {
@@ -45,7 +52,9 @@ export const PurchaseModal = ({
   if (!isOpen || !plan || !mounted) return null;
 
   const devicesText =
-    plan.name === "Gratis Proef" || plan.devices === 1 ? "1 apparaat" : `${plan.devices} apparaten`;
+    plan.name === "Gratis Proef" || plan.devices === 1
+      ? "1 apparaat"
+      : `${plan.devices} apparaten`;
 
   const message = `Hallo, ik wil graag bestellen:
 
@@ -58,7 +67,9 @@ ${plan.name}
 ${plan.duration}
 ${devicesText}`;
 
-  const whatsappUrl = `${WHATSAPP_URL}&text=${encodeURIComponent(message)}`;
+  const whatsappLink = whatsappUrl
+    ? `${whatsappUrl}&text=${encodeURIComponent(message)}`
+    : "#";
 
   const copyNumber = () => {
     navigator.clipboard.writeText(`+${phoneNumber}`);
@@ -118,7 +129,7 @@ ${devicesText}`;
 
           <div className="space-y-4">
             <a
-              href={whatsappUrl}
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shine w-full py-5 bg-emerald-500 hover:bg-emerald-600 text-blanc-950 font-bold rounded-2xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-emerald-500/20 cursor-pointer"
@@ -162,8 +173,8 @@ ${devicesText}`;
           </div>
 
           <p className="mt-8 text-center text-blanc-500 text-xs px-4">
-            U wordt doorgestuurd naar WhatsApp om uw bestelling veilig
-            af te ronden met een van onze adviseurs.
+            U wordt doorgestuurd naar WhatsApp om uw bestelling veilig af te
+            ronden met een van onze adviseurs.
           </p>
         </div>
       </div>

@@ -3,9 +3,11 @@ import Logo from "../shared/Logo";
 import KeywordCloud from "../shared/KeywordCloud";
 import { productsFooterLinks, supportFooterLinks } from "@/constants/data";
 import { MessageCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/constants";
+import { getPhoneNumber, whatsappUrl } from "@/lib/settings";
 
-const Footer = () => {
+const Footer = async () => {
+  const phone = await getPhoneNumber();
+  const whatsapp = phone ? whatsappUrl(phone) : "#";
   return (
     <footer className="mt-15 border-t border-white/5 pt-20 pb-10 min-h-[300px]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,7 +47,7 @@ const Footer = () => {
               met ons team.
             </p>
             <a
-              href={WHATSAPP_URL}
+              href={whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-xl bg-emerald-400 px-5 py-3 text-sm font-black text-blanc-950 shadow-[0_0_15px_rgba(16,185,129,0.25)] transition-colors hover:bg-emerald-300"

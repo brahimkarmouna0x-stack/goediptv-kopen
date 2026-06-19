@@ -25,6 +25,7 @@ export default function PageHero({
             alt=""
             fill
             priority
+            fetchPriority="high"
             quality={50}
             sizes="100vw"
             className="object-cover blur-sm"

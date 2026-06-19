@@ -30,6 +30,10 @@ export const NAV_LINKS: Link[] = [
     href: "/#faq",
   },
   {
+    label: "Over Ons",
+    href: "/over-ons",
+  },
+  {
     label: "Contact",
     href: "/support/contact",
   },
@@ -70,6 +74,10 @@ export const supportFooterLinks: Link[] = [
   {
     label: "Systeemstatus",
     href: "/support/status",
+  },
+  {
+    label: "Over Ons",
+    href: "/over-ons",
   },
 ];
 

@@ -75,3 +75,34 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
     })),
   };
 }
+
+// ─── Product Schema ────────────────────────────────────────────────────────
+export function productSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Premium IPTV Abonnement",
+    image: `${SITE.url}/images/logo-goed-iptv.png`,
+    description: "Het beste premium IPTV abonnement van Nederland met 31.000+ kanalen en 140.000+ VOD in 4K/8K.",
+    brand: {
+      "@type": "Brand",
+      name: SITE.name,
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      url: `${SITE.url}/#pakketten`,
+      priceCurrency: "EUR",
+      lowPrice: "14.99",
+      highPrice: "69.99",
+      offerCount: "4",
+      availability: "https://schema.org/InStock"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "50842",
+      bestRating: "5",
+      worstRating: "1"
+    }
+  };
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
 import { buildMetadata } from "@/lib/seo";
+import { productSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildMetadata({
   title: "goediptv-kopen — Beste IPTV Abonnement van Nederland",
@@ -50,6 +51,12 @@ const CTA = dynamic(() => import("@/components/sections/CTA"), { ssr: true });
 export default function Home() {
   return (
     <main className="home-page flex-1">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productSchema()),
+        }}
+      />
       <Hero />
       <FeatureMarquee />
       <Testimonials />

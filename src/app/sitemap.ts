@@ -5,7 +5,7 @@ import {
 } from "@/content/iptv-german-pages";
 
 /** Stable date for legal pages that rarely change (avoids "lastModified" churn) */
-const LEGAL_LAST_MOD = new Date("2026-01-15");
+const LEGAL_LAST_MOD = new Date();
 
 /** Build ISO date string for today — content pages actually update */
 const today = () => new Date();

@@ -240,6 +240,24 @@ export type IptvGermanPage = {
 
 const basePath = "/iptv-gids";
 
+/**
+ * Slugs that have been promoted to dedicated root-level landing pages. Any
+ * internal link to one of these must point straight at the canonical root URL
+ * so we never emit a 308 redirect hop (`/iptv-gids/x` → `/x`). External/stale
+ * inbound links are still caught by the redirects in `next.config.ts`.
+ */
+export const PROMOTED_TO_ROOT: Record<string, string> = {
+  "iptv-abonnement": "/iptv-abonnement",
+  "iptv-smarters-pro": "/iptv-smarters-pro",
+  "iptv-nederland": "/iptv-nederland",
+  "iptv-kopen": "/iptv-kopen",
+  "iptv-aanbieder": "/iptv-aanbieder",
+};
+
+/** Canonical in-app path for a vault slug (root URL for promoted slugs). */
+export const iptvPath = (slug: string): string =>
+  PROMOTED_TO_ROOT[slug] ?? `${basePath}/${slug}`;
+
 export const IPTV_GERMAN_SLUGS = [
   "iptv",
   "iptv-ott-service",
@@ -696,7 +714,7 @@ const buildMetaDescription = (
 const createFaqs = (
   keyword: string,
   intent: IptvGermanPage["intent"],
-  language: IptvGermanPage["language"],
+  _language: IptvGermanPage["language"],
 ): VaultFaq[] => {
   const copy = intentCopy[intent];
   const localized =
@@ -852,7 +870,7 @@ export const IPTV_GERMAN_PAGES: IptvGermanPage[] =
 
           return {
             label,
-            href: `${basePath}/${relatedSlug}`,
+            href: iptvPath(relatedSlug),
             description: `Lees meer over ${label} in de goediptv-kopen kennisbank.`,
           };
         },
@@ -867,7 +885,7 @@ export const IPTV_GERMAN_PAGE_MAP = new Map(
 export const getIptvGermanPage = (slug: string) =>
   IPTV_GERMAN_PAGE_MAP.get(slug);
 
-export const getIptvGermanPath = (slug: string) => `${basePath}/${slug}`;
+export const getIptvGermanPath = (slug: string) => iptvPath(slug);
 
 // ═════════════════════════════════════════════════════════════════════════════
 //  PHASE 3 — RICH CONTENT ENGINE  (emits IPTVPage[] for all 105 slugs)
@@ -879,7 +897,9 @@ export const getIptvGermanPath = (slug: string) => `${basePath}/${slug}`;
 // ═════════════════════════════════════════════════════════════════════════════
 
 const UPDATED_AT = "2026-05-31";
-const ORDER_HREF = `${basePath}/iptv-abonnement`;
+// Primary CTA target across all vault pages — points at the root money page
+// directly (no /iptv-gids redirect hop).
+const ORDER_HREF = iptvPath("iptv-abonnement");
 const OG = OG_IMAGE.url;
 
 /** Truncate to a hard max length, appending an ellipsis at a word boundary. */
@@ -1501,14 +1521,14 @@ const richDeep = (profile: IntentProfile, kw: string): PageSection => {
   return { type: "richText", heading, html };
 };
 
-const whyChooseUsSection = (intent: PageIntent, kw: string): PageSection => ({
+const whyChooseUsSection = (intent: PageIntent, _kw: string): PageSection => ({
   type: "features",
   heading: "Waarom kiezen voor goediptv-kopen?",
   subheading: INTENT_PROFILE[intent].label,
   items: WHY_CHOOSE_US_FEATURES[intent],
 });
 
-const iptvBenefitsSection = (intent: PageIntent, kw: string): PageSection => ({
+const iptvBenefitsSection = (intent: PageIntent, _kw: string): PageSection => ({
   type: "features",
   heading: "De voordelen van IPTV",
   subheading: INTENT_PROFILE[intent].label,
@@ -1586,20 +1606,47 @@ const buildFaqsFor = (intent: PageIntent, kw: string): PageFaq[] => {
   return [...base, ...INTENT_PROFILE[intent].extraFaqs(kw)];
 };
 
-/** ≥4 contextual internal links to other existing pages. */
+// These three root money pages must appear on every vault page to concentrate
+// crawl authority. They are not in IPTV_GERMAN_SLUGS, so they are injected
+// as explicit InternalLink objects rather than going through iptvPath().
+const MONEY_PAGE_LINKS: InternalLink[] = [
+  {
+    label: "IPTV Kopen",
+    href: "/iptv-kopen",
+    description: "In 4 stappen IPTV kopen: pakket kiezen, betalen en binnen 5 minuten streamen.",
+  },
+  {
+    label: "IPTV Abonnement",
+    href: "/iptv-abonnement",
+    description: "Vergelijk alle IPTV abonnementen met 25.000+ kanalen en 4K kwaliteit.",
+  },
+  {
+    label: "IPTV Aanbieder",
+    href: "/iptv-aanbieder",
+    description: "Ontdek waarom goediptv-kopen de beste IPTV aanbieder van Nederland is.",
+  },
+];
+
+/** ≥4 contextual internal links — always includes the 3 root money pages. */
 const buildLinksFor = (slug: string, intent: PageIntent): InternalLink[] => {
-  const fallback: RawSlug[] = ["iptv", "iptv-deutschland", "iptv-abonnement", "iptv-smarters-pro", "iptv-box", "m3u-iptv"];
+  const fallback: RawSlug[] = ["iptv", "iptv-deutschland", "iptv-smarters-pro", "iptv-box", "m3u-iptv"];
   const targets = [...INTENT_LINKS[intent], ...fallback]
     .filter((s, i, arr) => s !== slug && arr.indexOf(s) === i)
-    .slice(0, 6);
-  return targets.map((target) => {
+    .slice(0, 3);
+  const vaultLinks: InternalLink[] = targets.map((target) => {
     const label = titleCase(formatKeyword(target));
     return {
       label,
-      href: `${basePath}/${target}`,
+      href: iptvPath(target),
       description: `Meer weten: ${label} in de goediptv-kopen kennisbank.`,
     };
   });
+  // Money pages first; deduplicate by href so vault links that resolve to the
+  // same root path (e.g. iptv-abonnement → /iptv-abonnement) don't appear twice.
+  const seen = new Set<string>();
+  return [...MONEY_PAGE_LINKS, ...vaultLinks]
+    .filter((l) => !seen.has(l.href) && seen.add(l.href) as unknown as boolean)
+    .slice(0, 6);
 };
 
 // ── Per-page bespoke overrides for the highest-value pages ────────────────────

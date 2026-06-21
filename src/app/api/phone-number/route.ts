@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { getPhoneNumber } from "@/lib/settings";
 
-export const dynamic = "force-dynamic";
-
 /**
  * GET /api/phone-number
  *

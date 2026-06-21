@@ -1,28 +1,13 @@
 import type { Metadata } from "next";
 import { getPhoneNumber, whatsappUrl } from "@/lib/settings";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Cookiebeleid — goediptv-kopen",
-  description: "Ontdek hoe wij cookies gebruiken om uw ervaring te verbeteren.",
-  alternates: {
-    canonical: "https://goediptv-kopen.nl/cookie-policy",
-  },
-  openGraph: {
-    title: "Cookiebeleid — goediptv-kopen",
-    description:
-      "Ontdek hoe wij cookies gebruiken om uw ervaring te verbeteren.",
-    url: "https://goediptv-kopen.nl/cookie-policy",
-    siteName: "goediptv-kopen",
-    locale: "nl_NL",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cookiebeleid — goediptv-kopen",
-    description:
-      "Ontdek hoe wij cookies gebruiken om uw ervaring te verbeteren.",
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Cookiebeleid — Transparant Gebruik van Cookies | goediptv-kopen",
+  description:
+    "Lees hoe goediptv-kopen cookies gebruikt voor noodzakelijke functies, analyses en voorkeursinstellingen. AVG-conform cookiebeleid.",
+  path: "/cookie-policy",
+});
 
 const CookiePolicyPage = async () => {
   const phone = await getPhoneNumber();

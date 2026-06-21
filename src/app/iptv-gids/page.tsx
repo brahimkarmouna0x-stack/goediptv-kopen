@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { IPTV_GERMAN_PAGES } from "@/content/iptv-german-pages";
+import { IPTV_GERMAN_PAGES, iptvPath } from "@/content/iptv-german-pages";
 import Pricing from "@/components/sections/Pricing";
 import CTA from "@/components/sections/CTA";
 import Link from "next/link";
 import VaultSearch from "@/components/iptv-german/VaultSearch";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildMetadata({
   title: "goediptv-kopen Kennisbank",
@@ -15,7 +16,17 @@ export const metadata: Metadata = buildMetadata({
 
 export default function IPTVStreamingPage() {
   return (
-    <main className="flex-1 px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pt-40">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema([
+            { name: "Home", url: "https://goediptv-kopen.nl" },
+            { name: "IPTV Gids", url: "https://goediptv-kopen.nl/iptv-gids" },
+          ])),
+        }}
+      />
+      <main className="flex-1 px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pt-40">
       <div className="mx-auto max-w-7xl">
         <p className="mb-5 inline-flex rounded-full border border-france-500/25 bg-france-500/15 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-france-100">
           goediptv-kopen Kennisbank
@@ -37,7 +48,7 @@ export default function IPTVStreamingPage() {
           {IPTV_GERMAN_PAGES.map((page) => (
             <Link
               key={page.slug}
-              href={`/iptv-gids/${page.slug}`}
+              href={iptvPath(page.slug)}
               className="rounded-2xl border border-blanc-50/10 bg-blanc-50/[0.035] p-5 transition-colors hover:border-france-500/40 hover:bg-blanc-50/5"
             >
               <h2 className="text-lg font-black text-blanc-50">{page.keyword}</h2>
@@ -60,5 +71,6 @@ export default function IPTVStreamingPage() {
         />
       </div>
     </main>
+    </>
   );
 }

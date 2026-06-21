@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -15,29 +16,12 @@ import {
 } from "lucide-react";
 import { getPhoneNumber, whatsappUrl } from "@/lib/settings";
 
-export const metadata: Metadata = {
-  title: "Contact — WhatsApp support",
+export const metadata: Metadata = buildMetadata({
+  title: "Contact — WhatsApp IPTV Support 24/7 | goediptv-kopen",
   description:
-    "Neem contact op met goediptv-kopen via WhatsApp voor snelle hulp bij activering, installatie en technische IPTV-support.",
-  alternates: {
-    canonical: "https://goediptv-kopen.nl/support/contact",
-  },
-  openGraph: {
-    title: "Contact — WhatsApp support | goediptv-kopen",
-    description:
-      "Neem contact op met goediptv-kopen via WhatsApp voor snelle hulp bij activering, installatie en technische IPTV-support.",
-    url: "https://goediptv-kopen.nl/support/contact",
-    siteName: "goediptv-kopen",
-    locale: "nl_NL",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact — WhatsApp support | goediptv-kopen",
-    description:
-      "Neem contact op met goediptv-kopen via WhatsApp voor snelle hulp bij activering, installatie en technische IPTV-support.",
-  },
-};
+    "Neem direct contact op via WhatsApp voor IPTV-hulp bij activering, installatie en technische problemen. Reactie binnen 5 minuten, 24/7 beschikbaar.",
+  path: "/support/contact",
+});
 
 const highlights = [
   { label: "Gem. reactietijd", value: "< 5 min" },

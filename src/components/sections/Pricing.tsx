@@ -86,12 +86,17 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
       className="py-24 relative overflow-hidden"
       style={{ contentVisibility: "auto", containIntrinsicSize: "auto 900px" }}
     >
+      {/* Scroll anchor for the /#prijzen nav link — 1 px block at the section
+          top so the IntersectionObserver detects the section entering viewport.
+          scroll-mt-24 offsets browser-native hash navigation past the navbar. */}
+      <span id="prijzen" className="block h-px scroll-mt-24" aria-hidden="true" />
+
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-france-400/5 to-transparent"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <PricingHeading pillText={pillText} title={title} subtitle={subtitle} />
 
-        <div id="prijzen" className="scroll-mt-24 text-center mb-16">
-              <ConnectionSelector
+        <div className="scroll-mt-24 text-center mb-16">
+          <ConnectionSelector
             active={connections}
             onChange={handleConnectionsChange}
           />
@@ -137,10 +142,10 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
             savingsLabel={`BESPAREN - €${monthlyPrices.halfYear}/maand`}
             monthlyPriceLabel={`Slechts €${monthlyPrices.halfYear} per maand`}
             features={[
-              "+140.000 films & series",
+              "Films & series on demand",
               "Klantenservice 24/7",
               "4K, Full HD, HD & SD",
-              "+31.000 IPTV-kanalen",
+              "Uitgebreid kanaalaanbod",
               "Gratis updates",
               "30 dagen niet-goed-geld-terug",
             ]}
@@ -169,10 +174,10 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
             savingsLabel={`POPULAIR - €${monthlyPrices.yearly}/maand`}
             monthlyPriceLabel={`Slechts €${monthlyPrices.yearly} per maand`}
             features={[
-              "+140.000 films & series",
+              "Films & series on demand",
               "Klantenservice 24/7",
               "4K, Full HD, HD & SD",
-              "+31.000 IPTV-kanalen",
+              "Uitgebreid kanaalaanbod",
               "Gratis updates",
               "30 dagen niet-goed-geld-terug",
             ]}
@@ -201,10 +206,10 @@ const Pricing = ({ pillText, title, subtitle }: PricingProps = {}) => {
             savingsLabel={`2 JAAR BESPAREN - €${monthlyPrices.biyearly}/maand`}
             monthlyPriceLabel={`Slechts €${monthlyPrices.biyearly} per maand`}
             features={[
-              "+140.000 films & series",
+              "Films & series on demand",
               "VIP-klantenservice 24/7",
               "4K, Full HD, HD & SD",
-              "+31.000 IPTV-kanalen",
+              "Uitgebreid kanaalaanbod",
               "Updates met voorrang",
               "30 dagen niet-goed-geld-terug",
             ]}

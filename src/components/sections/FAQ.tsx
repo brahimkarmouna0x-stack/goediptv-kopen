@@ -12,7 +12,7 @@ const FAQ = ({
 }: {
   faqsData?: { question: string; answer: string }[];
 }) => {
-  const displayFaqs = faqsData || faqs;
+  const displayFaqs = faqsData || faqs.slice(0, 8);
 
   return (
     <section id="faq" className="py-24 relative overflow-hidden" style={{ contentVisibility: "auto", containIntrinsicSize: "auto 700px" }}>
@@ -25,7 +25,7 @@ const FAQ = ({
               Veelgestelde <span className="text-gradient">Vragen</span>
             </h2>
             <p className="text-blanc-400 font-medium">
-              Alles wat u moet weten over goediptv-kopen.
+              Alles wat u moet weten over Goed IPTV en ons abonnement.
             </p>
         </div>
 

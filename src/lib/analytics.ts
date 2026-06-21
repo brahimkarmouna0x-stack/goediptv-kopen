@@ -39,7 +39,11 @@ export function trackEvent(
 /** Stable handles for use inside Client Components / event handlers. */
 export function useAnalytics() {
   return {
-    trackPageView: useCallback(trackPageView, []),
-    trackEvent: useCallback(trackEvent, []),
+    trackPageView: useCallback((url: string) => trackPageView(url), []),
+    trackEvent: useCallback(
+      (action: string, category?: string, label?: string, value?: number) =>
+        trackEvent(action, category, label, value),
+      [],
+    ),
   };
 }

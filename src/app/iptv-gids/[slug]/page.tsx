@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import {
   getIptvGermanPageV2,
   IPTV_GERMAN_PAGES_V2,
+  PROMOTED_TO_ROOT,
 } from "@/content/iptv-german-pages";
 import JsonLd from "@/components/seo/JsonLd";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
@@ -17,13 +18,13 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-// Only the 105 known slugs are served; anything else 404s.
-export const dynamicParams = false;
-// Static generation + daily ISR (see Phase 5 perf notes).
-export const revalidate = 86400;
-
+// Unknown slugs automatically 404 via notFound() in the page component.
 export function generateStaticParams() {
-  return IPTV_GERMAN_PAGES_V2.map((page) => ({ slug: page.slug }));
+  // Skip slugs promoted to root-level pages — they 308-redirect via next.config,
+  // so generating them here would only produce unreachable duplicate routes.
+  return IPTV_GERMAN_PAGES_V2.filter(
+    (page) => !PROMOTED_TO_ROOT[page.slug],
+  ).map((page) => ({ slug: page.slug }));
 }
 
 export async function generateMetadata({

@@ -38,11 +38,6 @@ export function websiteSchema() {
     url: SITE.url,
     description: SITE.description,
     inLanguage: "nl",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${SITE.url}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 
@@ -83,7 +78,7 @@ export function productSchema() {
     "@type": "Product",
     name: "Premium IPTV Abonnement",
     image: `${SITE.url}/images/logo-goed-iptv.png`,
-    description: "Het beste premium IPTV abonnement van Nederland met 31.000+ kanalen en 140.000+ VOD in 4K/8K.",
+    description: "Het beste premium IPTV abonnement van Nederland met duizenden kanalen en een uitgebreide VOD-bibliotheek in 4K/8K.",
     brand: {
       "@type": "Brand",
       name: SITE.name,
@@ -97,12 +92,5 @@ export function productSchema() {
       offerCount: "4",
       availability: "https://schema.org/InStock"
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "50842",
-      bestRating: "5",
-      worstRating: "1"
-    }
   };
 }

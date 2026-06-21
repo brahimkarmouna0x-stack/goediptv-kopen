@@ -1,4 +1,4 @@
-import { cache } from "react";
+import { cacheLife, cacheTag } from "next/cache";
 
 export type PhoneNumberData = {
   phone_number: string;
@@ -8,21 +8,13 @@ const FALLBACK_PHONE = process.env.NEXT_PUBLIC_FALLBACK_PHONE ?? "";
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-/**
- * Fetch the business phone number from Supabase.
- *
- * Falls back to:
- *   1. Supabase `phone_numbers` table (first row)
- *   2. NEXT_PUBLIC_FALLBACK_PHONE env var
- *   3. Empty string
- *
- * During static generation / build, Supabase may not be reachable,
- * so a short AbortController timeout prevents build hangs.
- */
+/** Cache tag for the business phone number — call `revalidateTag(PHONE_NUMBER_TAG, "max")`
+ *  (see /api/revalidate) after updating the number in Supabase to refresh it. */
+export const PHONE_NUMBER_TAG = "phone-number";
+
 const FETCH_TIMEOUT_MS = 5_000;
 
 async function fetchPhoneNumberFromSupabase(): Promise<string> {
-  // Skip fetch entirely if Supabase is not configured
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
     return FALLBACK_PHONE;
   }
@@ -39,7 +31,6 @@ async function fetchPhoneNumberFromSupabase(): Promise<string> {
           Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
         },
         signal: controller.signal,
-        cache: "no-store", // Bypass Next.js fetch cache to handle errors and timeouts cleanly
       },
     );
 
@@ -71,9 +62,17 @@ async function fetchPhoneNumberFromSupabase(): Promise<string> {
   }
 }
 
-export const getPhoneNumber = cache(async (): Promise<string> => {
+/**
+ * Tag-cached phone number via the Next.js 16 `use cache` system.
+ * Refreshed every hour (cacheLife "hours") or on demand via
+ * `revalidateTag(PHONE_NUMBER_TAG, "max")` (POST /api/revalidate).
+ */
+export async function getPhoneNumber(): Promise<string> {
+  "use cache";
+  cacheTag(PHONE_NUMBER_TAG);
+  cacheLife("hours");
   return fetchPhoneNumberFromSupabase();
-});
+}
 
 /**
  * Build a WhatsApp deep-link URL from a phone number.

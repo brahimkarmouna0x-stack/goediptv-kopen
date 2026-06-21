@@ -25,8 +25,8 @@ const quickPoints = [
 ];
 
 const showcaseStats = [
-  { icon: Tv, label: "Live kanalen", value: "31.000+" },
-  { icon: Film, label: "Films & series (VOD)", value: "140.000+" },
+  { icon: Tv, label: "Live kanalen", value: "Duizenden zenders" },
+  { icon: Film, label: "Films & series (VOD)", value: "Uitgebreide VOD" },
   { icon: MonitorPlay, label: "Beeldkwaliteit", value: "4K & 8K HDR" },
   { icon: ShieldCheck, label: "Serverbeschikbaarheid", value: "99,9% uptime" },
 ];
@@ -64,7 +64,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
           <div className="w-full lg:w-[54%] flex flex-col items-center text-center lg:items-start lg:text-left animate-fade-up">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-france-950/70 backdrop-blur-md border border-france-500/30 mb-7 text-xs sm:text-sm text-france-300 font-semibold tracking-wide shadow-[0_0_20px_rgba(236,201,75,0.12)]">
               <span className="h-2 w-2 rounded-full bg-france-400 animate-live-pulse" aria-hidden="true" />
-              {pillText || "Premium IPTV · Gemaakt voor Nederland"}
+              {pillText || "Premium IPTV · Goed IPTV Nederland"}
             </span>
 
             <h1 className="font-display font-bold text-[1.75rem] leading-[1.12] sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3.4rem] mb-5 text-blanc-50 tracking-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
@@ -72,7 +72,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
                 <>
                   Beste IPTV Abonnement van Nederland
                   <span className="mt-3 block bg-linear-to-r from-france-300 via-france-400 to-france-500 bg-clip-text text-transparent">
-                    31.000+ kanalen &amp; 140.000+ VOD in 4K/8K
+                    Stabiel streamen met Goed IPTV
                   </span>
                 </>
               )}
@@ -80,7 +80,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
 
             <p className="text-base sm:text-lg md:text-xl text-blanc-300 max-w-xl mb-7 leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">
               {subtitle ||
-                "Premium IPTV in Nederland — directe activering, stabiele servers en messcherp 4K/8K-streaming op elk apparaat."}
+                "Premium IPTV-abonnement met betrouwbare servers, alle Nederlandse zenders en messcherpe 4K-kwaliteit op elk apparaat."}
             </p>
 
             {/* Quick value chips */}
@@ -161,7 +161,7 @@ const Hero = ({ pillText, title, subtitle, bgImage }: HeroProps) => {
                   </span>
                 </div>
                 <p className="text-xs text-blanc-400 font-medium">
-                  Geverifieerd door 50.000+ gebruikers
+                  Vertrouwd door kijkers in Nederland
                 </p>
               </div>
             </div>

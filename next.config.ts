@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Enable the Next.js 16 Cache Components system — replaces unstable_cache +
+  // route-segment `revalidate` with the `use cache` / cacheLife / cacheTag API.
+  cacheComponents: true,
   // Optimize images with AVIF and WebP formats
   images: {
     formats: ["image/avif", "image/webp"],
@@ -35,6 +38,28 @@ const nextConfig: NextConfig = {
     removeConsole: {
       exclude: ["error", "warn"],
     },
+  },
+
+  // Consolidate legacy /iptv-gids/* paths onto the primary root landing pages
+  // (canonical de-duplication — 308 so search engines transfer ranking signals).
+  async redirects() {
+    return [
+      {
+        source: "/iptv-gids/iptv-nederland",
+        destination: "/iptv-nederland",
+        permanent: true,
+      },
+      {
+        source: "/iptv-gids/iptv-abonnement",
+        destination: "/iptv-abonnement",
+        permanent: true,
+      },
+      {
+        source: "/iptv-gids/iptv-smarters-pro",
+        destination: "/iptv-smarters-pro",
+        permanent: true,
+      },
+    ];
   },
 
   // Add security and performance headers

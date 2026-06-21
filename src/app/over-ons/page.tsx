@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/structured-data";
 import PageHero from "@/components/sections/page/PageHero";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
@@ -12,7 +13,17 @@ export const metadata: Metadata = buildMetadata({
 
 export default function AboutPage() {
   return (
-    <main className="flex-1 bg-france-950">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema([
+            { name: "Home", url: "https://goediptv-kopen.nl" },
+            { name: "Over Ons", url: "https://goediptv-kopen.nl/over-ons" },
+          ])),
+        }}
+      />
+      <main className="flex-1 bg-france-950">
       <PageHero
         hero={{
           headline: "Over goediptv-kopen",
@@ -47,7 +58,7 @@ export default function AboutPage() {
             <h2>Waarom Kiezen Voor Ons?</h2>
             <ul>
               <li><strong>Betrouwbaarheid:</strong> Onze servers bieden een gegarandeerde uptime van 99,9%.</li>
-              <li><strong>Kwaliteit:</strong> We leveren meer dan 31.000 live kanalen en 140.000 VODs in kristalheldere kwaliteit.</li>
+              <li><strong>Kwaliteit:</strong> We leveren duizenden live kanalen en een uitgebreide VOD-bibliotheek in kristalheldere 4K-kwaliteit.</li>
               <li><strong>Klantenservice:</strong> Ons team staat 24/7 voor u klaar via WhatsApp om u te helpen bij installatie of technische vragen.</li>
             </ul>
 
@@ -59,5 +70,6 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

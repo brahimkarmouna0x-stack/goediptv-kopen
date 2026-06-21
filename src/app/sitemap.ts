@@ -1,52 +1,70 @@
 import { MetadataRoute } from "next";
-import {
-  getIptvGermanPath,
-  IPTV_GERMAN_PAGES_V2,
-} from "@/content/iptv-german-pages";
+import { IPTV_GERMAN_PAGES_V2 } from "@/content/iptv-german-pages";
 
-/** Stable date for legal pages that rarely change (avoids "lastModified" churn) */
-const LEGAL_LAST_MOD = new Date();
+/**
+ * Slugs that now live as primary root landing pages and 308-redirect away from
+ * /iptv-gids/* — excluded here so the sitemap never lists a redirecting URL.
+ */
+const REDIRECTED_VAULT_SLUGS = new Set([
+  "iptv-abonnement",
+  "iptv-smarters-pro",
+]);
 
-/** Build ISO date string for today — content pages actually update */
-const today = () => new Date();
+/** Stable date for legal/about pages that rarely change. */
+const LEGAL_LAST_MOD = new Date("2026-01-15");
+
+/**
+ * Last-modified date for actively maintained content pages.
+ * Using a fixed build date prevents lastModified churn on every request
+ * while still signalling to Google that these pages are current.
+ */
+const CONTENT_LAST_MOD = new Date("2026-06-21");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://goediptv-kopen.nl";
 
-  // Static routes with priority and frequency
-  const staticRoutes = [
-    { url: "", priority: 1.0, freq: "weekly" as const, lastMod: today },
-    { url: "/popular", priority: 0.9, freq: "weekly" as const, lastMod: today },
-    { url: "/support", priority: 0.8, freq: "weekly" as const, lastMod: today },
-    { url: "/support/guides", priority: 0.8, freq: "monthly" as const, lastMod: today },
-    { url: "/support/contact", priority: 0.8, freq: "monthly" as const, lastMod: today },
-    { url: "/support/status", priority: 0.6, freq: "daily" as const, lastMod: today },
-    { url: "/privacy-policy", priority: 0.4, freq: "yearly" as const, lastMod: () => LEGAL_LAST_MOD },
-    { url: "/terms-of-service", priority: 0.4, freq: "yearly" as const, lastMod: () => LEGAL_LAST_MOD },
-    { url: "/cookie-policy", priority: 0.4, freq: "yearly" as const, lastMod: () => LEGAL_LAST_MOD },
-    { url: "/iptv-gids", priority: 0.9, freq: "weekly" as const, lastMod: today },
-    { url: getIptvGermanPath("iptv-nederland"), priority: 0.9, freq: "weekly" as const, lastMod: today },
-  ].map((route) => ({
-    url: `${baseUrl}${route.url}`,
-    lastModified: route.lastMod(),
-    changeFrequency: route.freq,
-    priority: route.priority,
-  }));
+  const staticRoutes: MetadataRoute.Sitemap = [
+    // ── Money pages / primary landing pages (highest ranking priority) ──────
+    { url: `${baseUrl}`,               lastModified: CONTENT_LAST_MOD, changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${baseUrl}/iptv-kopen`,    lastModified: CONTENT_LAST_MOD, changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${baseUrl}/iptv-abonnement`, lastModified: CONTENT_LAST_MOD, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${baseUrl}/iptv-aanbieder`, lastModified: CONTENT_LAST_MOD, changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${baseUrl}/iptv-nederland`, lastModified: CONTENT_LAST_MOD, changeFrequency: "weekly",  priority: 1.0 },
+    // ── Hub / guide pages ───────────────────────────────────────────────────
+    { url: `${baseUrl}/iptv-gids`,     lastModified: CONTENT_LAST_MOD, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${baseUrl}/iptv-smarters-pro`, lastModified: CONTENT_LAST_MOD, changeFrequency: "weekly", priority: 0.9 },
+    // ── Support pages ───────────────────────────────────────────────────────
+    { url: `${baseUrl}/support`,       lastModified: CONTENT_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/support/guides`, lastModified: CONTENT_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/support/contact`, lastModified: CONTENT_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/support/status`, lastModified: CONTENT_LAST_MOD, changeFrequency: "weekly",  priority: 0.4 },
+    // ── Content / showcase pages ────────────────────────────────────────────
+    { url: `${baseUrl}/popular`,       lastModified: CONTENT_LAST_MOD, changeFrequency: "weekly",  priority: 0.6 },
+    // ── About / legal pages ─────────────────────────────────────────────────
+    { url: `${baseUrl}/over-ons`,      lastModified: LEGAL_LAST_MOD,   changeFrequency: "yearly",  priority: 0.5 },
+    { url: `${baseUrl}/privacy-policy`, lastModified: LEGAL_LAST_MOD,  changeFrequency: "yearly",  priority: 0.4 },
+    { url: `${baseUrl}/terms-of-service`, lastModified: LEGAL_LAST_MOD, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${baseUrl}/cookie-policy`, lastModified: LEGAL_LAST_MOD,   changeFrequency: "yearly",  priority: 0.4 },
+  ];
 
-  // All 105 IPTV vault pages — per-page priority + weekly freshness.
-  const PRIORITY: Record<string, number> = {
-    "iptv-abonnement": 0.9,
-    "abonnement-iptv": 0.9,
+  // Per-slug priority overrides for high-value vault pages.
+  const VAULT_PRIORITY: Record<string, number> = {
+    "iptv-abonnement":  0.9,
+    "abonnement-iptv":  0.9,
     "iptv-deutschland": 0.9,
-    iptv: 0.8,
+    iptv:               0.8,
     "iptv-smarters-pro": 0.8,
-    "meilleur-iptv": 0.8,
+    "meilleur-iptv":    0.8,
   };
-  const vaultPages = IPTV_GERMAN_PAGES_V2.map((page) => ({
+
+  // All IPTV vault pages — skip slugs that 308-redirect to root-level pages.
+  const vaultPages: MetadataRoute.Sitemap = IPTV_GERMAN_PAGES_V2.filter(
+    (page) => !REDIRECTED_VAULT_SLUGS.has(page.slug),
+  ).map((page) => ({
     url: page.canonicalUrl,
     lastModified: new Date(page.updatedAt),
-    changeFrequency: "weekly" as const,
-    priority: PRIORITY[page.slug] ?? 0.7,
+    changeFrequency: "weekly",
+    priority: VAULT_PRIORITY[page.slug] ?? 0.7,
   }));
 
   return [...staticRoutes, ...vaultPages];

@@ -7,7 +7,7 @@ export const SITE = {
   locale: "nl_NL",
   localeAlt: "en_NL",
   description:
-    "Onbeperkt 4K-streaming met 25.000+ kanalen en nul buffering. Ontdek het beste premium IPTV abonnement van Nederland bij goediptv-kopen.",
+    "Premium IPTV abonnement van Nederland. Stabiele 4K-streams, duizenden kanalen en nul buffering. Ontdek het beste IPTV aanbod bij Goed IPTV.",
   twitterHandle: undefined as string | undefined,
 } as const;
 
@@ -90,6 +90,7 @@ export function buildMetadata({
   type = "website",
   locale,
   noIndex = false,
+  ogImage = true,
 }: {
   title: string;
   description: string;
@@ -97,6 +98,11 @@ export function buildMetadata({
   type?: "website" | "article";
   locale?: string;
   noIndex?: boolean;
+  /**
+   * Set `false` on routes that provide their own `opengraph-image.tsx` so the
+   * file-based social card is the single source (avoids a duplicate og:image).
+   */
+  ogImage?: boolean;
 }): Metadata {
   const url = absoluteUrl(path);
   return {
@@ -110,13 +116,13 @@ export function buildMetadata({
       siteName: SITE.name,
       title,
       description,
-      images: [OG_IMAGE],
+      ...(ogImage ? { images: [OG_IMAGE] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [OG_IMAGE.url],
+      ...(ogImage ? { images: [OG_IMAGE.url] } : {}),
     },
     ...(noIndex
       ? { robots: { index: false, follow: false } }

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | goediptv-kopen",
   },
   description:
-    "Onbeperkt 4K-streaming met 25.000+ kanalen en nul buffering. Ontdek het beste premium IPTV abonnement van Nederland bij goediptv-kopen.",
+    "Premium IPTV abonnement van Nederland. Stabiele 4K-streams, duizenden kanalen en nul buffering. Ontdek het beste IPTV aanbod bij Goed IPTV.",
   keywords: [
     "iptv abonnement",
     "iptv abonnementen",
@@ -73,12 +73,12 @@ export const metadata: Metadata = {
     siteName: "goediptv-kopen",
     title: "goediptv-kopen — Beste IPTV Abonnement van Nederland",
     description:
-      "Onbeperkt 4K-streaming met 25.000+ kanalen en nul buffering.",
+      "Stabiele 4K-streaming, duizenden kanalen en nul buffering.",
     images: [
       {
         url: "/images/logo-goed-iptv.png",
-        width: 2749,
-        height: 700,
+        width: 1505,
+        height: 1352,
         alt: "goediptv-kopen – Premium IPTV abonnement in Nederland",
       },
     ],
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "goediptv-kopen — Beste IPTV Abonnement van Nederland",
     description:
-      "Onbeperkt 4K-streaming met 25.000+ kanalen en nul buffering.",
+      "Stabiele 4K-streaming, duizenden kanalen en nul buffering.",
     images: ["/images/logo-goed-iptv.png"],
   },
   robots: {

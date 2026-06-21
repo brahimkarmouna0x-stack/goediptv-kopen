@@ -22,8 +22,7 @@ const Footer = async () => {
               <Logo className="h-16 w-auto sm:h-20 lg:h-24" />
             </div>
             <p className="text-blanc-400 text-sm leading-relaxed mb-8 max-w-sm mt-6">
-              De ultieme premium IPTV-ervaring. Meer dan 25.000 kanalen, 4K
-              Ultra HD en nul buffering. Grenzeloos entertainment.
+              De ultieme premium IPTV-ervaring. Duizenden kanalen in 4K Ultra HD zonder buffering. Grenzeloos entertainment.
             </p>
           </div>
 

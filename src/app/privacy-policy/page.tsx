@@ -1,27 +1,15 @@
 import type { Metadata } from "next";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 import { getPhoneNumber, whatsappUrl } from "@/lib/settings";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacybeleid — goediptv-kopen",
-  description: "Lees ons privacybeleid om te begrijpen hoe wij uw gegevens beschermen.",
-  alternates: {
-    canonical: "https://goediptv-kopen.nl/privacy-policy",
-  },
-  openGraph: {
-    title: "Privacybeleid — goediptv-kopen",
-    description: "Lees ons privacybeleid om te begrijpen hoe wij uw gegevens beschermen.",
-    url: "https://goediptv-kopen.nl/privacy-policy",
-    siteName: "goediptv-kopen",
-    locale: "nl_NL",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Privacybeleid — goediptv-kopen",
-    description: "Lees ons privacybeleid om te begrijpen hoe wij uw gegevens beschermen.",
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Privacybeleid — Hoe Wij Uw Gegevens Beschermen | goediptv-kopen",
+  description:
+    "Lees het privacybeleid van goediptv-kopen: welke gegevens wij verzamelen, hoe wij ze gebruiken en hoe wij uw privacy beschermen conform de AVG.",
+  path: "/privacy-policy",
+  noIndex: false,
+});
 
 const PrivacyPolicyPage = async () => {
   const phone = await getPhoneNumber();

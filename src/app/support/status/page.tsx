@@ -11,27 +11,14 @@ import {
   Server,
   type LucideIcon,
 } from "lucide-react";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Servicestatus — goediptv-kopen",
-  description: "Realtime status van de diensten en serverclusters van goediptv-kopen.",
-  alternates: {
-    canonical: "https://goediptv-kopen.nl/support/status",
-  },
-  openGraph: {
-    title: "Servicestatus — goediptv-kopen",
-    description: "Realtime status van de diensten en serverclusters van goediptv-kopen.",
-    url: "https://goediptv-kopen.nl/support/status",
-    siteName: "goediptv-kopen",
-    locale: "nl_NL",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Servicestatus — goediptv-kopen",
-    description: "Realtime status van de diensten en serverclusters van goediptv-kopen.",
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Servicestatus — IPTV Uptime Monitor | goediptv-kopen",
+  description:
+    "Realtime overzicht van de servicestatus en uptime van alle goediptv-kopen streamingdiensten en serverclusters. Alle systemen operationeel.",
+  path: "/support/status",
+});
 
 const StatusPage = () => {
   const services: Array<{

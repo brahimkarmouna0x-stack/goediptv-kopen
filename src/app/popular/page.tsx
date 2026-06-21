@@ -1,29 +1,13 @@
 import type { Metadata } from "next";
 import PopularContent from "@/components/sections/PopularContent";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Populaire content",
+export const metadata: Metadata = buildMetadata({
+  title: "Populaire IPTV Content — Films, Series & Live TV | goediptv-kopen",
   description:
-    "Ontdek onze uitgebreide bibliotheek met premium films, series en live tv-kanalen.",
-  alternates: {
-    canonical: "https://goediptv-kopen.nl/popular",
-  },
-  openGraph: {
-    title: "Populaire content",
-    description:
-      "Ontdek onze uitgebreide bibliotheek met premium films, series en live tv-kanalen.",
-    url: "https://goediptv-kopen.nl/popular",
-    siteName: "goediptv-kopen",
-    locale: "nl_NL",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Populaire content",
-    description:
-      "Ontdek onze uitgebreide bibliotheek met premium films, series en live tv-kanalen.",
-  },
-};
+    "Ontdek de meest bekeken films, series en live tv-kanalen via goediptv-kopen. 140.000+ titels in 4K beschikbaar voor alle abonnees.",
+  path: "/popular",
+});
 
 export default function PopularPage() {
   return (

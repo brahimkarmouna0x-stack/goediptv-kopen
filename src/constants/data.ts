@@ -6,39 +6,38 @@ import {
 
 export const NAV_LINKS: Link[] = [
   {
-    label: "goed iptv",
+    label: "Goed IPTV",
     href: "/",
   },
   {
-    label: "Voordelen",
-    href: "/#voordelen",
-  },
-  {
-    label: "Kanalen",
-    href: "/#kanalen",
-  },
-  {
-    label: "Pakketten",
-    href: "/#pakketten",
-  },
-  {
     label: "Prijzen",
-    href: "/#prijzen",
+    href: "#prijzen",
   },
   {
-    label: "FAQ",
-    href: "/#faq",
+    label: "IPTV Kopen",
+    href: "/iptv-kopen",
   },
   {
-    label: "Over Ons",
-    href: "/over-ons",
+    label: "IPTV Abonnement",
+    href: "/iptv-abonnement",
+  },
+  {
+    label: "IPTV Aanbieder",
+    href: "/iptv-aanbieder",
+  },
+  {
+    label: "IPTV Nederland",
+    href: "/iptv-nederland",
+  },
+  {
+    label: "IPTV Smarters Pro",
+    href: "/iptv-smarters-pro",
   },
   {
     label: "Contact",
     href: "/support/contact",
   },
 ];
-
 export const productsFooterLinks: Link[] = [
   {
     label: "Voordelen",
@@ -84,31 +83,31 @@ export const supportFooterLinks: Link[] = [
 export const categories = [
   {
     name: "Sport",
-    count: "2.400+ kanalen",
+    count: "Honderden sportkanalen",
     image:
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=80&auto=format&fit=crop",
   },
   {
     name: "Films",
-    count: "50.000+ titels",
+    count: "Duizenden films",
     image:
       "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
   {
     name: "Series",
-    count: "15.000+ shows",
+    count: "Duizenden shows",
     image:
       "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
   {
     name: "Documentaires",
-    count: "3.500+ titels",
+    count: "Breed aanbod",
     image:
       "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
   {
     name: "Kinderkanalen",
-    count: "800+ kanalen",
+    count: "Veilig & gevarieerd",
     image:
       "https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=1200&q=82&auto=format&fit=crop&crop=entropy",
   },
@@ -181,7 +180,7 @@ export const faqs = [
   {
     question: "Wat is een IPTV abonnement precies?",
     answer:
-      "Een IPTV abonnement (Internet Protocol Television) laat u live tv-kanalen, films en series streamen via uw internetverbinding in plaats van via een traditionele kabel of schotel. Met goediptv-kopen kijkt u op elk apparaat, waar u ook bent, met meer dan 25.000 kanalen en 140.000+ films & series in 4K.",
+      "Een IPTV abonnement (Internet Protocol Television) laat u live tv-kanalen, films en series streamen via uw internetverbinding in plaats van via een traditionele kabel of schotel. Met goediptv-kopen kijkt u op elk apparaat, waar u ook bent, met duizenden kanalen en een uitgebreide VOD-bibliotheek in 4K.",
   },
   {
     question: "Welke apparaten worden ondersteund?",
@@ -266,7 +265,7 @@ export const faqs = [
   {
     question: "Krijg ik ook films en series on demand (VOD)?",
     answer:
-      "Zeker. Naast live tv krijgt u toegang tot een uitgebreide VOD-bibliotheek met meer dan 140.000 films en series, inclusief de nieuwste releases. U kijkt wanneer het u uitkomt, met ondertiteling waar beschikbaar.",
+      "Zeker. Naast live tv krijgt u toegang tot een uitgebreide VOD-bibliotheek met films en series, inclusief de nieuwste releases. U kijkt wanneer het u uitkomt, met ondertiteling waar beschikbaar.",
   },
   {
     question: "Wat gebeurt er als een kanaal niet werkt?",

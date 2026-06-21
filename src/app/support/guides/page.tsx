@@ -8,30 +8,14 @@ import {
   Play,
   type LucideIcon,
 } from "lucide-react";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Installatiehandleidingen — goediptv-kopen",
+export const metadata: Metadata = buildMetadata({
+  title: "IPTV Installatiehandleidingen — Smart TV, Android & iOS | goediptv-kopen",
   description:
-    "Stapsgewijze handleidingen om goediptv-kopen op al uw apparaten in te stellen.",
-  alternates: {
-    canonical: "https://goediptv-kopen.nl/support/guides",
-  },
-  openGraph: {
-    title: "Installatiehandleidingen — goediptv-kopen",
-    description:
-      "Stapsgewijze handleidingen om goediptv-kopen op al uw apparaten in te stellen.",
-    url: "https://goediptv-kopen.nl/support/guides",
-    siteName: "goediptv-kopen",
-    locale: "nl_NL",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Installatiehandleidingen — goediptv-kopen",
-    description:
-      "Stapsgewijze handleidingen om goediptv-kopen op al uw apparaten in te stellen.",
-  },
-};
+    "Stapsgewijze IPTV-installatiehandleidingen voor Smart TV, Android, Firestick en Apple. Binnen 5 minuten streamen via goediptv-kopen.",
+  path: "/support/guides",
+});
 
 const SetupGuidesPage = () => {
   const guides: Array<{

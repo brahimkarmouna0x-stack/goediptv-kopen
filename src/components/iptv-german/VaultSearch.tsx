@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { Search, ArrowRight, X } from "lucide-react";
 import Link from "next/link";
-import { IPTV_GERMAN_PAGES } from "@/content/iptv-german-pages";
+import { IPTV_GERMAN_PAGES, iptvPath } from "@/content/iptv-german-pages";
 
 const VaultSearch = () => {
   const [query, setQuery] = useState("");
@@ -70,7 +70,7 @@ const VaultSearch = () => {
             {filteredResults.map((result) => (
               <Link
                 key={result.slug}
-                href={`/iptv-gids/${result.slug}`}
+                href={iptvPath(result.slug)}
                 onClick={() => setQuery("")}
                 className="flex items-center justify-between p-4 rounded-xl hover:bg-blanc-50/5 transition-all group"
               >

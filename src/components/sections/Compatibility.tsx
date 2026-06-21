@@ -34,7 +34,7 @@ const iconMap: Record<string, typeof Tv> = {
 const Compatibility = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [copied, setCopied] = useState(false);
-  const { phoneNumber, whatsappUrl, isLoading } = usePhoneNumber();
+  const { phoneNumber, whatsappUrl } = usePhoneNumber();
 
   const query = searchQuery.toLowerCase().trim();
 

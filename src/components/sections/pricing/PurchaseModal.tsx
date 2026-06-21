@@ -1,6 +1,16 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
+
+// Client-mount detection without setState-in-effect: server returns false,
+// client returns true, so the portal only renders after hydration.
+const subscribe = () => () => {};
+const useIsMounted = () =>
+  useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
 import {
   Check,
   Copy,
@@ -31,13 +41,8 @@ export const PurchaseModal = ({
   plan,
 }: PurchaseModalProps) => {
   const [copied, setCopied] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useIsMounted();
   const { phoneNumber, whatsappUrl } = usePhoneNumber();
-
-  // Portal target is only available on the client.
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Close on Escape for proper modal behavior.
   useEffect(() => {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IPTV_GERMAN_PAGES } from "@/content/iptv-german-pages";
+import { IPTV_GERMAN_PAGES, iptvPath } from "@/content/iptv-german-pages";
 
 interface SmartTextProps {
   text: string;
@@ -40,7 +40,7 @@ const SmartText = ({ text, currentSlug }: SmartTextProps) => {
       result.push(
         <Link 
           key={i} 
-          href={`/iptv-gids/${matchedPage.slug}`}
+          href={iptvPath(matchedPage.slug)}
           className="text-france-500 hover:text-france-400 underline decoration-france-500/35 underline-offset-4 font-bold transition-colors"
         >
           {part}

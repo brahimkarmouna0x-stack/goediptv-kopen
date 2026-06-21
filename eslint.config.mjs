@@ -17,6 +17,15 @@ const eslintConfig = defineConfig([
     rules: {
       // Allow single quotes (apostrophes) in French text content
       "react/no-unescaped-entities": ["error", { forbid: [">", "}"] }],
+      // Permit intentionally-unused args/vars when prefixed with `_`.
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
     },
   },
 ]);

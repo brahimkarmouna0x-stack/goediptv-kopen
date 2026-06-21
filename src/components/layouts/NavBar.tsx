@@ -2,19 +2,48 @@
 import Link from "next/link";
 import Logo from "../shared/Logo";
 import { NAV_LINKS } from "@/constants/data";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { scrollToHashId } from "@/lib/scroll";
+import { usePathname } from "next/navigation";
 
 const NavBar = () => {
-  const [activeLink, setActiveLink] = useState<string>(NAV_LINKS[0].href);
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  // Scroll-spy sets a transient hash-based active link (homepage only).
+  // null = fall back to the pathname-derived active link.
+  const [scrollActive, setScrollActive] = useState<string | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const menuToggleRef = useRef<HTMLButtonElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
-  // IntersectionObserver for active section tracking
+  // Track previous pathname to reset scroll-spy when navigating away.
+  // Calling setState during render (prev !== current) is the React-approved
+  // pattern for resetting derived state on value change — not an effect.
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setScrollActive(null);
+  }
+
+  // Derive the active link from the current pathname during render — no effect needed.
+  const pathnameActive = useMemo(() => {
+    const pageLink = NAV_LINKS.find((link) => {
+      if (link.href.includes("#")) return false;
+      if (link.href === "/") return pathname === "/";
+      return pathname === link.href || pathname.startsWith(link.href + "/");
+    });
+    return pageLink ? pageLink.href : NAV_LINKS[0].href;
+  }, [pathname]);
+
+  // Scroll-spy takes precedence on the homepage; other routes use pathname.
+  const activeLink = scrollActive ?? pathnameActive;
+
+  // Scroll-spy: observe in-page hash sections — homepage only.
+  // Landing pages keep their own page link highlighted regardless of scroll.
   useEffect(() => {
+    if (pathname !== "/") return;
+
     const sectionLinks = NAV_LINKS.filter((l) => l.href.includes("#"));
     const visibleRatios = new Map<string, number>();
 
@@ -33,15 +62,16 @@ const NavBar = () => {
           }
         });
 
+        // No tracked section visible — fall back to the pathname-derived link.
         if (bestRatio < 0.05) {
-          if (window.scrollY < 300) setActiveLink(NAV_LINKS[0].href);
+          setScrollActive(null);
           return;
         }
 
         const matched = sectionLinks.find(
           (l) => l.href.split("#")[1] === bestId,
         );
-        if (matched) setActiveLink(matched.href);
+        setScrollActive(matched ? matched.href : null);
       },
       {
         threshold: [0, 0.1, 0.3, 0.5, 0.8, 1.0],
@@ -56,7 +86,7 @@ const NavBar = () => {
     });
 
     return () => observerRef.current?.disconnect();
-  }, []);
+  }, [pathname]);
 
   // Keyboard focus trap when mobile menu is open
   useEffect(() => {
@@ -104,8 +134,7 @@ const NavBar = () => {
     scrollToHashId("pakketten");
   }, []);
 
-  const handleLinkClick = useCallback((href: string) => {
-    setActiveLink(href);
+  const handleLinkClick = useCallback(() => {
     setMenuOpen(false);
   }, []);
 
@@ -124,7 +153,7 @@ const NavBar = () => {
               <Link
                 key={link.label}
                 href={link.href}
-                onClick={() => handleLinkClick(link.href)}
+                onClick={handleLinkClick}
                 className={`text-[11px] font-bold relative group uppercase tracking-[0.12em] transition-colors duration-300 ${
                   isActive
                     ? "text-france-300"
@@ -187,7 +216,7 @@ const NavBar = () => {
               <Link
                 key={link.label}
                 href={link.href}
-                onClick={() => handleLinkClick(link.href)}
+                onClick={handleLinkClick}
                 className={`rounded-xl px-4 py-3 text-sm font-bold uppercase tracking-wide transition-colors duration-300 ${
                   isActive
                     ? "bg-france-500/15 text-france-100"

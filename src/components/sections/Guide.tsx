@@ -1,7 +1,7 @@
 import { CheckCircle2, Globe2, Infinity, Sparkles, Tv, Zap } from "lucide-react";
 
 const accessItems = [
-  "Toegang tot 31.000+ live kanalen wereldwijd",
+  "Toegang tot duizenden live kanalen wereldwijd",
   "Nederlandse & internationale kanalen (NPO, RTL, SBS6, Net5)",
   "Premium sportkanalen & filmbibliotheek",
   "Zonder contract en verborgen kosten",

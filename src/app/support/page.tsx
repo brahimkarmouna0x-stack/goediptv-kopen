@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -13,26 +14,12 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Helpcentrum",
-  description: "Vind antwoorden op uw vragen en ontdek hoe u goediptv-kopen gebruikt.",
-  alternates: {
-    canonical: "https://goediptv-kopen.nl/support",
-  },
-  openGraph: {
-    title: "Helpcentrum",
-    description: "Vind antwoorden op uw vragen en ontdek hoe u goediptv-kopen gebruikt.",
-    url: "https://goediptv-kopen.nl/support",
-    siteName: "goediptv-kopen",
-    locale: "nl_NL",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Helpcentrum",
-    description: "Vind antwoorden op uw vragen en ontdek hoe u goediptv-kopen gebruikt.",
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Helpcentrum — IPTV Support & Handleidingen | goediptv-kopen",
+  description:
+    "Vind antwoorden op uw IPTV-vragen. Installatiehandleidingen voor Smart TV, Android, Apple TV en meer. 24/7 WhatsApp-support via goediptv-kopen.",
+  path: "/support",
+});
 
 const HelpCenterPage = () => {
   const categories: Array<{

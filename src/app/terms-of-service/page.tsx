@@ -1,27 +1,14 @@
 import type { Metadata } from "next";
 import { Info, MessageCircle } from "lucide-react";
 import { getPhoneNumber, whatsappUrl } from "@/lib/settings";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Algemene voorwaarden — goediptv-kopen",
-  description: "Lees onze algemene voorwaarden om uw rechten en plichten te begrijpen.",
-  alternates: {
-    canonical: "https://goediptv-kopen.nl/terms-of-service",
-  },
-  openGraph: {
-    title: "Algemene voorwaarden — goediptv-kopen",
-    description: "Lees onze algemene voorwaarden om uw rechten en plichten te begrijpen.",
-    url: "https://goediptv-kopen.nl/terms-of-service",
-    siteName: "goediptv-kopen",
-    locale: "nl_NL",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Algemene voorwaarden — goediptv-kopen",
-    description: "Lees onze algemene voorwaarden om uw rechten en plichten te begrijpen.",
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Algemene Voorwaarden IPTV Abonnement | goediptv-kopen",
+  description:
+    "Lees de algemene voorwaarden van goediptv-kopen voor uw IPTV-abonnement. Duidelijke afspraken over gebruik, betaling en garantie.",
+  path: "/terms-of-service",
+});
 
 const TermsOfServicePage = async () => {
   const phone = await getPhoneNumber();
